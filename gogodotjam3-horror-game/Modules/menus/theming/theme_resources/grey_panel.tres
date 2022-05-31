@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=2]
+
+[ext_resource path="res://Modules/kenney_ui_textures/PNG/grey_panel.png" type="Texture" id=1]
+
+[resource]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 100, 100 )
+margin_left = 3.75238
+margin_right = 3.59834
+margin_top = 3.59834
+margin_bottom = 3.59834

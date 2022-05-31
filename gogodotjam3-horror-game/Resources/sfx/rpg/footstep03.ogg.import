@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/footstep03.ogg-382cd11d00d5255bb8a70557deb75a9f.oggstr"
+
+[deps]
+
+source_file="res://Resources/sfx/rpg/footstep03.ogg"
+dest_files=[ "res://.import/footstep03.ogg-382cd11d00d5255bb8a70557deb75a9f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

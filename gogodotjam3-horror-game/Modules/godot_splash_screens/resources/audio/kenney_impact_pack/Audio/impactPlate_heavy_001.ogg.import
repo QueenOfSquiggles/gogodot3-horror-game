@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/impactPlate_heavy_001.ogg-cb5d50ae32fdd93bc6856b738e85fd74.oggstr"
+
+[deps]
+
+source_file="res://Modules/godot_splash_screens/resources/audio/kenney_impact_pack/Audio/impactPlate_heavy_001.ogg"
+dest_files=[ "res://.import/impactPlate_heavy_001.ogg-cb5d50ae32fdd93bc6856b738e85fd74.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

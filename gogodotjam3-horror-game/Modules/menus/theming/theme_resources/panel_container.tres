@@ -1,0 +1,9 @@
+[gd_resource type="StyleBoxTexture" format=2]
+
+[resource]
+region_rect = Rect2( 0, 0, 100, 100 )
+margin_left = 3.75238
+margin_right = 3.59834
+margin_top = 3.59834
+margin_bottom = 3.59834
+modulate_color = Color( 0.556863, 0.556863, 0.556863, 1 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/impactBell_heavy_003.ogg-db6c81191aa1e907df93265f3c8b80f8.oggstr"
+
+[deps]
+
+source_file="res://Modules/godot_splash_screens/resources/audio/kenney_impact_pack/Audio/impactBell_heavy_003.ogg"
+dest_files=[ "res://.import/impactBell_heavy_003.ogg-db6c81191aa1e907df93265f3c8b80f8.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

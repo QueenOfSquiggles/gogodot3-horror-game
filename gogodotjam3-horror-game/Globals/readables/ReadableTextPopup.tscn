@@ -1,0 +1,12 @@
+[gd_scene format=2]
+
+[node name="ReadableText" type="AcceptDialog"]
+pause_mode = 2
+margin_left = 246.0
+margin_top = 177.0
+margin_right = 522.0
+margin_bottom = 350.0
+popup_exclusive = true
+window_title = "Readable"
+resizable = true
+dialog_autowrap = true

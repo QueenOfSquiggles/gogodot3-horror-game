@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/impactWood_medium_003.ogg-0b71c462d3ace59bf78bb4eba2e40bff.oggstr"
+
+[deps]
+
+source_file="res://Modules/godot_splash_screens/resources/audio/kenney_impact_pack/Audio/impactWood_medium_003.ogg"
+dest_files=[ "res://.import/impactWood_medium_003.ogg-0b71c462d3ace59bf78bb4eba2e40bff.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

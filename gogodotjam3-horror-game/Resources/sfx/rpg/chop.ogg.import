@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/chop.ogg-3ff5840ee71e92a52e07e5c1e4f44482.oggstr"
+
+[deps]
+
+source_file="res://Resources/sfx/rpg/chop.ogg"
+dest_files=[ "res://.import/chop.ogg-3ff5840ee71e92a52e07e5c1e4f44482.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

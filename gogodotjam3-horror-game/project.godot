@@ -1,0 +1,289 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Leaf",
+"class": "ActionLeaf",
+"language": "GDScript",
+"path": "res://Modules/behaviour_tree/nodes/leaves/action.gd"
+}, {
+"base": "Decorator",
+"class": "AlwaysFailDecorator",
+"language": "GDScript",
+"path": "res://Modules/behaviour_tree/nodes/decorators/failer.gd"
+}, {
+"base": "Decorator",
+"class": "AlwaysSucceedDecorator",
+"language": "GDScript",
+"path": "res://Modules/behaviour_tree/nodes/decorators/succeeder.gd"
+}, {
+"base": "Node",
+"class": "AudioLib",
+"language": "GDScript",
+"path": "res://Modules/audio_library/AudioLib.gd"
+}, {
+"base": "Spatial",
+"class": "AudioLib3D",
+"language": "GDScript",
+"path": "res://Modules/audio_library/AudioLib3D.gd"
+}, {
+"base": "Node",
+"class": "BehaviorTree",
+"language": "GDScript",
+"path": "res://Modules/behaviour_tree/nodes/behavior_tree.gd"
+}, {
+"base": "BehaviorTree",
+"class": "BehaviorTreeNode",
+"language": "GDScript",
+"path": "res://Modules/behaviour_tree/nodes/bt_node.gd"
+}, {
+"base": "BehaviorTree",
+"class": "BehaviorTreeRoot",
+"language": "GDScript",
+"path": "res://Modules/behaviour_tree/nodes/bt_root.gd"
+}, {
+"base": "Reference",
+"class": "Blackboard",
+"language": "GDScript",
+"path": "res://Modules/behaviour_tree/blackboard.gd"
+}, {
+"base": "BehaviorTreeNode",
+"class": "Composite",
+"language": "GDScript",
+"path": "res://Modules/behaviour_tree/nodes/composites/composite.gd"
+}, {
+"base": "Leaf",
+"class": "ConditionLeaf",
+"language": "GDScript",
+"path": "res://Modules/behaviour_tree/nodes/leaves/condition.gd"
+}, {
+"base": "BehaviorTreeNode",
+"class": "Decorator",
+"language": "GDScript",
+"path": "res://Modules/behaviour_tree/nodes/decorators/decorator.gd"
+}, {
+"base": "KinematicBody",
+"class": "FirstPersonCharacterBase",
+"language": "GDScript",
+"path": "res://TierTwoModules/first_person_controller/PlayerUseBT.gd"
+}, {
+"base": "Node",
+"class": "GraphicsPresets",
+"language": "GDScript",
+"path": "res://Globals/settings_management/GraphicsPresets.gd"
+}, {
+"base": "KinematicBody",
+"class": "InteractDoorKeyed",
+"language": "GDScript",
+"path": "res://Modules/interactables/InteractDoorKeyed.gd"
+}, {
+"base": "RayCast",
+"class": "InteractionRayCast",
+"language": "GDScript",
+"path": "res://TierTwoModules/first_person_controller/PlayerSelectionCast.gd"
+}, {
+"base": "Decorator",
+"class": "InverterDecorator",
+"language": "GDScript",
+"path": "res://Modules/behaviour_tree/nodes/decorators/inverter.gd"
+}, {
+"base": "Spatial",
+"class": "Label3D",
+"language": "GDScript",
+"path": "res://Modules/label-3D/Label3D.gd"
+}, {
+"base": "BehaviorTreeNode",
+"class": "Leaf",
+"language": "GDScript",
+"path": "res://Modules/behaviour_tree/nodes/leaves/leaf.gd"
+}, {
+"base": "Decorator",
+"class": "LimiterDecorator",
+"language": "GDScript",
+"path": "res://Modules/behaviour_tree/nodes/decorators/limiter.gd"
+}, {
+"base": "Control",
+"class": "LoadingScreen",
+"language": "GDScript",
+"path": "res://Globals/scene_management/LoadingScreen.gd"
+}, {
+"base": "RigidBody",
+"class": "PickupItemBase",
+"language": "GDScript",
+"path": "res://TierTwoModules/pickup_items/PickupItemBase.gd"
+}, {
+"base": "PickupItemBase",
+"class": "PickupItemContainer",
+"language": "GDScript",
+"path": "res://TierTwoModules/pickup_items/PickupItemContainer.gd"
+}, {
+"base": "Composite",
+"class": "SelectorComposite",
+"language": "GDScript",
+"path": "res://Modules/behaviour_tree/nodes/composites/selector.gd"
+}, {
+"base": "Composite",
+"class": "SequenceComposite",
+"language": "GDScript",
+"path": "res://Modules/behaviour_tree/nodes/composites/sequence.gd"
+}, {
+"base": "Node",
+"class": "Splash",
+"language": "GDScript",
+"path": "res://Modules/godot_splash_screens/splash/Splash.gd"
+}, {
+"base": "Node",
+"class": "SubtitleData",
+"language": "GDScript",
+"path": "res://addons/subtitles/scenes/SubtitleData.gd"
+}, {
+"base": "CanvasLayer",
+"class": "SubtitlesLayer2D",
+"language": "GDScript",
+"path": "res://addons/subtitles/scenes/SubtitlesLayer2D.gd"
+}, {
+"base": "CanvasLayer",
+"class": "SubtitlesLayer3D",
+"language": "GDScript",
+"path": "res://addons/subtitles/scenes/SubtitlesLayer3D.gd"
+}, {
+"base": "CanvasLayer",
+"class": "SubtitlesLayerDialogue",
+"language": "GDScript",
+"path": "res://addons/subtitles/scenes/SubtitlesLayerDialogue.gd"
+}, {
+"base": "Decorator",
+"class": "TimeLimiterDecorator",
+"language": "GDScript",
+"path": "res://Modules/behaviour_tree/nodes/decorators/time_limiter.gd"
+} ]
+_global_script_class_icons={
+"ActionLeaf": "",
+"AlwaysFailDecorator": "",
+"AlwaysSucceedDecorator": "",
+"AudioLib": "",
+"AudioLib3D": "",
+"BehaviorTree": "",
+"BehaviorTreeNode": "",
+"BehaviorTreeRoot": "",
+"Blackboard": "",
+"Composite": "",
+"ConditionLeaf": "",
+"Decorator": "",
+"FirstPersonCharacterBase": "",
+"GraphicsPresets": "",
+"InteractDoorKeyed": "",
+"InteractionRayCast": "",
+"InverterDecorator": "",
+"Label3D": "",
+"Leaf": "",
+"LimiterDecorator": "",
+"LoadingScreen": "",
+"PickupItemBase": "",
+"PickupItemContainer": "",
+"SelectorComposite": "",
+"SequenceComposite": "",
+"Splash": "",
+"SubtitleData": "",
+"SubtitlesLayer2D": "",
+"SubtitlesLayer3D": "",
+"SubtitlesLayerDialogue": "",
+"TimeLimiterDecorator": ""
+}
+
+[Subtitles]
+
+General/subtitles_enabled=true
+General/use_auto_dialogue_line_splitter=true
+Advanced/auto_line_splitter_regular_expression="[^.|,|!|?|\"|'|:|;|`|º|,|\\s]+"
+
+[application]
+
+config/name="GoGodotJam3 Horror Game"
+run/main_scene="res://GameDefinitions/Levels/TestingLevel.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Subtitles="*res://addons/subtitles/scenes/Subtitles.gd"
+Globals="*res://Globals/autoload/Globals.gd"
+LocksManager="*res://Globals/autoload/LocksManager.gd"
+SaveData="*res://Globals/autoload/SaveData.gd"
+SceneManagement="*res://Globals/autoload/SceneManagement.gd"
+Settings="*res://Globals/autoload/Settings.gd"
+Readables="*res://Globals/autoload/Readables.gd"
+
+[editor]
+
+scene/scene_naming=1
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/color_grading_lut/plugin.cfg", "res://addons/jamcountdown/plugin.cfg", "res://addons/scatter-master/plugin.cfg", "res://addons/subtitles/plugin.cfg" )
+
+[input]
+
+move_forwards={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_backwards={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+sprint={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+jump={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+use_item={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+toggle_rotate_item={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777240,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+interact={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[physics]
+
+common/physics_fps=30
+3d/active_soft_world=false
+
+[rendering]
+
+threads/thread_model=2
+gles3/shaders/shader_compilation_mode=2
+quality/filters/use_fxaa=true
+environment/default_environment="res://default_env.tres"

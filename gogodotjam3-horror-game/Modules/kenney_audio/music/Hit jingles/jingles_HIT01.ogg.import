@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/jingles_HIT01.ogg-7f2e45580cf4826bf228bf3805f1ef48.oggstr"
+
+[deps]
+
+source_file="res://Modules/kenney_audio/music/Hit jingles/jingles_HIT01.ogg"
+dest_files=[ "res://.import/jingles_HIT01.ogg-7f2e45580cf4826bf228bf3805f1ef48.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

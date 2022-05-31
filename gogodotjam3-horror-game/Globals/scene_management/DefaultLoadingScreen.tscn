@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Globals/scene_management/LoadingScreen.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[node name="DefaultLoadingScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": "This could be edited directly to make a change to the default screen that displays when loading large scenes"
+}
+path_title = NodePath("Progress/HBoxContainer/VBoxContainer/LabelBar")
+path_progress_bar = NodePath("Progress/HBoxContainer/VBoxContainer/ProgressBar")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.368627, 0.368627, 0.368627, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+
+[node name="Progress" type="PanelContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Progress"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1017.0
+margin_bottom = 57.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Progress/HBoxContainer"]
+margin_right = 1010.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+
+[node name="LabelBar" type="Label" parent="Progress/HBoxContainer/VBoxContainer"]
+margin_top = 4.0
+margin_right = 1010.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "Progress TItle"
+align = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Progress/HBoxContainer/VBoxContainer"]
+margin_top = 27.0
+margin_right = 1010.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 2

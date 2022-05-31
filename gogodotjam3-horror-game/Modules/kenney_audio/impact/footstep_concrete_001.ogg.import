@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/footstep_concrete_001.ogg-4c72446dc2b5bc7b9b539e8747d6feac.oggstr"
+
+[deps]
+
+source_file="res://Modules/kenney_audio/impact/footstep_concrete_001.ogg"
+dest_files=[ "res://.import/footstep_concrete_001.ogg-4c72446dc2b5bc7b9b539e8747d6feac.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

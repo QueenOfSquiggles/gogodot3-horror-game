@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Modules/menus/ui_sounds/UiSoundPack.gd" type="Script" id=1]
+[ext_resource path="res://Modules/kenney_audio/ui/switch1.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Modules/kenney_audio/ui/click1.ogg" type="AudioStream" id=3]
+
+[node name="UiSoundPack" type="Node"]
+script = ExtResource( 1 )
+sfx_focus_enter = ExtResource( 3 )
+sfx_mouse_enter = ExtResource( 3 )
+sfx_button_pressed = ExtResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = "Misc"

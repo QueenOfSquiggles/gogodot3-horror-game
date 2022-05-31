@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Modules/audio_library/AudioLib.gd" type="Script" id=1]
+[ext_resource path="res://Resources/sfx/impacts/impactPlank_medium_002.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Resources/sfx/rpg/dropLeather.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Resources/sfx/rpg/bookPlace3.ogg" type="AudioStream" id=4]
+[ext_resource path="res://addons/subtitles/scenes/SubtitleData.gd" type="Script" id=5]
+[ext_resource path="res://addons/subtitles/scripts/ASP_3D_Events.gd" type="Script" id=6]
+
+[node name="PickupItemsAudioLib" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="impact" type="Spatial" parent="."]
+script = ExtResource( 1 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="impact"]
+stream = ExtResource( 2 )
+bus = "SoundEffects"
+script = ExtResource( 6 )
+
+[node name="SubtitleData" type="Node" parent="impact/AudioStreamPlayer3D"]
+script = ExtResource( 5 )
+subtitle_key = "sfx.impact"
+
+[node name="pickup" type="Spatial" parent="."]
+script = ExtResource( 1 )
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="pickup"]
+stream = ExtResource( 3 )
+bus = "SoundEffects"
+script = ExtResource( 6 )
+
+[node name="SubtitleData" type="Node" parent="pickup/AudioStreamPlayer3D2"]
+script = ExtResource( 5 )
+subtitle_key = "sfx.pickup"
+
+[node name="drop" type="Spatial" parent="."]
+script = ExtResource( 1 )
+
+[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="drop"]
+stream = ExtResource( 4 )
+bus = "SoundEffects"
+script = ExtResource( 6 )
+
+[node name="SubtitleData" type="Node" parent="drop/AudioStreamPlayer3D3"]
+script = ExtResource( 5 )
+subtitle_key = "sfx.drop"

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://TierTwoModules/pickup_items/PickupItemPropertySetter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://TierTwoModules/pickup_items/PickupItemKey.gd" type="Script" id=2]
+
+[node name="PickupItemKey" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+static_mode_style = 2
+keep_rotation = true
+desired_property_name = "locked"
