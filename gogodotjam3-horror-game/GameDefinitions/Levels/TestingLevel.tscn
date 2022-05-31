@@ -1,12 +1,19 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://GameDefinitions/Rendering/PlayViewport.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TierTwoModules/first_person_controller/FirstPersonCharacterBase.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Modules/blockout_assets/prototyping/materials/proto_mat_green_01.tres" type="Material" id=3]
 [ext_resource path="res://Modules/menus/PauseMenu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://GameDefinitions/Items/bases/PickupItemReadable.tscn" type="PackedScene" id=5]
-
-[sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 0.0823529, 0.6, 0.176471, 1 )
+[ext_resource path="res://Modules/blockout_assets/prototyping/materials/proto_mat_orange_01.tres" type="Material" id=6]
+[ext_resource path="res://Modules/blockout_assets/prototyping/materials/proto_mat_purple_01.tres" type="Material" id=7]
+[ext_resource path="res://Modules/blockout_assets/prototyping/materials/proto_mat_red_01.tres" type="Material" id=8]
+[ext_resource path="res://Modules/blockout_assets/prototyping/materials/proto_mat_dark_01.tres" type="Material" id=9]
+[ext_resource path="res://Resources/Models/Props/vintage_wooden_drawer/vintage_wooden_drawer_01_1k.gltf" type="PackedScene" id=10]
+[ext_resource path="res://Resources/Models/Props/rocking_chair/Rockingchair_01_1k.gltf" type="PackedScene" id=11]
+[ext_resource path="res://Resources/Models/Props/classic_nightstand/ClassicNightstand_01_1k.gltf" type="PackedScene" id=12]
+[ext_resource path="res://Resources/Models/Props/shelf/Shelf_01_1k.gltf" type="PackedScene" id=13]
+[ext_resource path="res://Resources/Models/Props/coffee_table/CoffeeTable_01_1k.gltf" type="PackedScene" id=14]
 
 [sub_resource type="Environment" id=2]
 background_mode = 1
@@ -42,7 +49,7 @@ use_collision = true
 width = 51.0
 height = 30.0
 depth = 43.0
-material = SubResource( 1 )
+material = ExtResource( 9 )
 
 [node name="CSGBox2" type="CSGBox" parent="Viewport/Spatial/Rooms/RoomGroup/Room/CSGBox" index="0"]
 operation = 2
@@ -50,7 +57,7 @@ use_collision = true
 width = 47.0
 height = 18.0
 depth = 39.0
-material = SubResource( 1 )
+material = ExtResource( 9 )
 
 [node name="CSGBox3" type="CSGBox" parent="Viewport/Spatial/Rooms/RoomGroup/Room/CSGBox" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -14 )
@@ -59,7 +66,7 @@ use_collision = true
 width = 6.0
 height = 18.0
 depth = 6.0
-material = SubResource( 1 )
+material = ExtResource( 9 )
 
 [node name="CSGBox4" type="CSGBox" parent="Viewport/Spatial/Rooms/RoomGroup/Room/CSGBox" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -21 )
@@ -68,7 +75,7 @@ use_collision = true
 width = 6.0
 height = 18.0
 depth = 6.0
-material = SubResource( 1 )
+material = ExtResource( 9 )
 
 [node name="Portal" type="Portal" parent="Viewport/Spatial/Rooms/RoomGroup/Room" index="1"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24, 0, -12 )
@@ -77,6 +84,23 @@ points = PoolVector2Array( 3, -7, 3, 11, -3, 11, -3, -7 )
 [node name="Portal2" type="Portal" parent="Viewport/Spatial/Rooms/RoomGroup/Room" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -19 )
 points = PoolVector2Array( 3, -7, 3, 11, -3, 11, -3, -7 )
+
+[node name="Room1Props" type="Spatial" parent="Viewport/Spatial/Rooms/RoomGroup/Room" index="3"]
+
+[node name="CoffeeTable_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room/Room1Props" index="0" instance=ExtResource( 14 )]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -11, -7, 0 )
+
+[node name="Rockingchair_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room/Room1Props" index="1" instance=ExtResource( 11 )]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -6, -7, -7 )
+
+[node name="ClassicNightstand_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room/Room1Props" index="2" instance=ExtResource( 12 )]
+transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, -4, -7, 4 )
+
+[node name="Shelf_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room/Room1Props" index="3" instance=ExtResource( 13 )]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 4, -7, -15 )
+
+[node name="vintage_wooden_drawer_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room/Room1Props" index="4" instance=ExtResource( 10 )]
+transform = Transform( 2, 0, -3.4641, 0, 4, 0, 3.4641, 0, 2, 9, -7, 0 )
 
 [node name="Room2" type="Room" parent="Viewport/Spatial/Rooms/RoomGroup" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 7, -28 )
@@ -89,7 +113,7 @@ use_collision = true
 width = 51.0
 height = 30.0
 depth = 43.0
-material = SubResource( 1 )
+material = ExtResource( 8 )
 
 [node name="CSGBox2" type="CSGBox" parent="Viewport/Spatial/Rooms/RoomGroup/Room2/CSGBox2" index="0"]
 operation = 2
@@ -97,7 +121,7 @@ use_collision = true
 width = 47.0
 height = 18.0
 depth = 39.0
-material = SubResource( 1 )
+material = ExtResource( 8 )
 
 [node name="CSGBox5" type="CSGBox" parent="Viewport/Spatial/Rooms/RoomGroup/Room2/CSGBox2" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 15 )
@@ -106,7 +130,7 @@ use_collision = true
 width = 6.0
 height = 18.0
 depth = 6.0
-material = SubResource( 1 )
+material = ExtResource( 8 )
 
 [node name="CSGBox6" type="CSGBox" parent="Viewport/Spatial/Rooms/RoomGroup/Room2/CSGBox2" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -22 )
@@ -115,7 +139,19 @@ use_collision = true
 width = 6.0
 height = 18.0
 depth = 6.0
-material = SubResource( 1 )
+material = ExtResource( 8 )
+
+[node name="Room2Props" type="Spatial" parent="Viewport/Spatial/Rooms/RoomGroup/Room2" index="1"]
+
+[node name="CoffeeTable_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room2/Room2Props" index="0" instance=ExtResource( 14 )]
+
+[node name="Rockingchair_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room2/Room2Props" index="1" instance=ExtResource( 11 )]
+
+[node name="ClassicNightstand_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room2/Room2Props" index="2" instance=ExtResource( 12 )]
+
+[node name="Shelf_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room2/Room2Props" index="3" instance=ExtResource( 13 )]
+
+[node name="vintage_wooden_drawer_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room2/Room2Props" index="4" instance=ExtResource( 10 )]
 
 [node name="Room3" type="Room" parent="Viewport/Spatial/Rooms/RoomGroup" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 7, -43 )
@@ -128,7 +164,7 @@ use_collision = true
 width = 51.0
 height = 30.0
 depth = 43.0
-material = SubResource( 1 )
+material = ExtResource( 7 )
 
 [node name="CSGBox2" type="CSGBox" parent="Viewport/Spatial/Rooms/RoomGroup/Room3/CSGBox3" index="0"]
 operation = 2
@@ -136,7 +172,7 @@ use_collision = true
 width = 47.0
 height = 18.0
 depth = 39.0
-material = SubResource( 1 )
+material = ExtResource( 7 )
 
 [node name="CSGBox5" type="CSGBox" parent="Viewport/Spatial/Rooms/RoomGroup/Room3/CSGBox3" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 22 )
@@ -145,7 +181,19 @@ use_collision = true
 width = 6.0
 height = 18.0
 depth = 6.0
-material = SubResource( 1 )
+material = ExtResource( 7 )
+
+[node name="Room3Props" type="Spatial" parent="Viewport/Spatial/Rooms/RoomGroup/Room3" index="1"]
+
+[node name="CoffeeTable_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room3/Room3Props" index="0" instance=ExtResource( 14 )]
+
+[node name="Rockingchair_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room3/Room3Props" index="1" instance=ExtResource( 11 )]
+
+[node name="ClassicNightstand_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room3/Room3Props" index="2" instance=ExtResource( 12 )]
+
+[node name="Shelf_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room3/Room3Props" index="3" instance=ExtResource( 13 )]
+
+[node name="vintage_wooden_drawer_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room3/Room3Props" index="4" instance=ExtResource( 10 )]
 
 [node name="Room4" type="Room" parent="Viewport/Spatial/Rooms/RoomGroup" index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -53, 7, -73 )
@@ -158,7 +206,7 @@ use_collision = true
 width = 12.0
 height = 30.0
 depth = 43.0
-material = SubResource( 1 )
+material = ExtResource( 6 )
 
 [node name="CSGBox2" type="CSGBox" parent="Viewport/Spatial/Rooms/RoomGroup/Room4/CSGBox4" index="0"]
 operation = 2
@@ -166,7 +214,7 @@ use_collision = true
 width = 10.0
 height = 18.0
 depth = 38.0
-material = SubResource( 1 )
+material = ExtResource( 6 )
 
 [node name="CSGBox7" type="CSGBox" parent="Viewport/Spatial/Rooms/RoomGroup/Room4/CSGBox4" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 21 )
@@ -175,7 +223,7 @@ use_collision = true
 width = 6.0
 height = 18.0
 depth = 6.0
-material = SubResource( 1 )
+material = ExtResource( 6 )
 
 [node name="CSGBox8" type="CSGBox" parent="Viewport/Spatial/Rooms/RoomGroup/Room4/CSGBox4" index="2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22 )
@@ -184,7 +232,7 @@ use_collision = true
 width = 6.0
 height = 18.0
 depth = 6.0
-material = SubResource( 1 )
+material = ExtResource( 6 )
 
 [node name="Portal" type="Portal" parent="Viewport/Spatial/Rooms/RoomGroup/Room4" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -21 )
@@ -193,6 +241,18 @@ points = PoolVector2Array( 3, -8, 3, 11, -3, 11, -3, -7 )
 [node name="Portal2" type="Portal" parent="Viewport/Spatial/Rooms/RoomGroup/Room4" index="2"]
 transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 22 )
 points = PoolVector2Array( 3, -7, 3, 11, -3, 11, -3, -7 )
+
+[node name="Room4Props" type="Spatial" parent="Viewport/Spatial/Rooms/RoomGroup/Room4" index="3"]
+
+[node name="CoffeeTable_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room4/Room4Props" index="0" instance=ExtResource( 14 )]
+
+[node name="Rockingchair_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room4/Room4Props" index="1" instance=ExtResource( 11 )]
+
+[node name="ClassicNightstand_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room4/Room4Props" index="2" instance=ExtResource( 12 )]
+
+[node name="Shelf_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room4/Room4Props" index="3" instance=ExtResource( 13 )]
+
+[node name="vintage_wooden_drawer_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room4/Room4Props" index="4" instance=ExtResource( 10 )]
 
 [node name="Room5" type="Room" parent="Viewport/Spatial/Rooms/RoomGroup" index="4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 7, -113 )
@@ -205,7 +265,7 @@ use_collision = true
 width = 51.0
 height = 30.0
 depth = 43.0
-material = SubResource( 1 )
+material = ExtResource( 3 )
 
 [node name="CSGBox2" type="CSGBox" parent="Viewport/Spatial/Rooms/RoomGroup/Room5/CSGBox5" index="0"]
 operation = 2
@@ -213,7 +273,7 @@ use_collision = true
 width = 47.0
 height = 18.0
 depth = 39.0
-material = SubResource( 1 )
+material = ExtResource( 3 )
 
 [node name="CSGBox9" type="CSGBox" parent="Viewport/Spatial/Rooms/RoomGroup/Room5/CSGBox5" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 21 )
@@ -222,25 +282,81 @@ use_collision = true
 width = 6.0
 height = 18.0
 depth = 6.0
-material = SubResource( 1 )
+material = ExtResource( 3 )
+
+[node name="Room5Props" type="Spatial" parent="Viewport/Spatial/Rooms/RoomGroup/Room5" index="1"]
+
+[node name="CoffeeTable_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room5/Room5Props" index="0" instance=ExtResource( 14 )]
+
+[node name="Rockingchair_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room5/Room5Props" index="1" instance=ExtResource( 11 )]
+
+[node name="ClassicNightstand_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room5/Room5Props" index="2" instance=ExtResource( 12 )]
+
+[node name="Shelf_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room5/Room5Props" index="3" instance=ExtResource( 13 )]
+
+[node name="vintage_wooden_drawer_01_1k" parent="Viewport/Spatial/Rooms/RoomGroup/Room5/Room5Props" index="4" instance=ExtResource( 10 )]
 
 [node name="FirstPersonCharacterBase" parent="Viewport/Spatial" index="1" instance=ExtResource( 2 )]
-transform = Transform( -0.583045, 0, -0.81244, 0, 1, 0, 0.81244, 0, -0.583045, 0, 0.632352, 0 )
-
-[node name="OmniLight" type="OmniLight" parent="Viewport/Spatial/FirstPersonCharacterBase" index="6"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.54256, 0 )
-light_energy = 0.5
-light_bake_mode = 0
-omni_range = 10.0
-omni_attenuation = 1.7411
+transform = Transform( 0.986757, 0, 0.162207, 0, 1, 0, -0.162207, 0, 0.986757, 0, 0.632352, 0 )
 
 [node name="Lighting" type="Spatial" parent="Viewport/Spatial" index="2"]
 
 [node name="DirectionalLight" type="DirectionalLight" parent="Viewport/Spatial/Lighting" index="0"]
 transform = Transform( 1, 0, 0, 0, 0.480331, 0.877087, 0, -0.877087, 0.480331, 0, 40.3988, 0 )
+editor_only = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Viewport/Spatial/Lighting" index="1"]
 environment = SubResource( 2 )
+
+[node name="SpotLight" type="SpotLight" parent="Viewport/Spatial/Lighting" index="2"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 6, -8 )
+shadow_enabled = true
+spot_range = 9.0
+
+[node name="SpotLight2" type="SpotLight" parent="Viewport/Spatial/Lighting" index="3"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -40, 6, -38 )
+shadow_enabled = true
+spot_range = 9.0
+
+[node name="SpotLight3" type="SpotLight" parent="Viewport/Spatial/Lighting" index="4"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -66, 6, -19 )
+shadow_enabled = true
+spot_range = 9.0
+
+[node name="SpotLight4" type="SpotLight" parent="Viewport/Spatial/Lighting" index="5"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -53, 6, -50 )
+shadow_enabled = true
+spot_range = 9.0
+
+[node name="SpotLight5" type="SpotLight" parent="Viewport/Spatial/Lighting" index="6"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -37, 6, -15 )
+shadow_enabled = true
+spot_range = 9.0
+
+[node name="SpotLight6" type="SpotLight" parent="Viewport/Spatial/Lighting" index="7"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 21, 7, -47 )
+shadow_enabled = true
+spot_range = 9.0
+
+[node name="SpotLight7" type="SpotLight" parent="Viewport/Spatial/Lighting" index="8"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 46, 7, -37 )
+shadow_enabled = true
+spot_range = 9.0
+
+[node name="SpotLight8" type="SpotLight" parent="Viewport/Spatial/Lighting" index="9"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -52, 6, -76 )
+shadow_enabled = true
+spot_range = 9.0
+
+[node name="SpotLight9" type="SpotLight" parent="Viewport/Spatial/Lighting" index="10"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -45, 6, -116 )
+shadow_enabled = true
+spot_range = 9.0
+
+[node name="SpotLight10" type="SpotLight" parent="Viewport/Spatial/Lighting" index="11"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -20, 6, -105 )
+shadow_enabled = true
+spot_range = 9.0
 
 [node name="Items" type="Spatial" parent="Viewport/Spatial" index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -8 )

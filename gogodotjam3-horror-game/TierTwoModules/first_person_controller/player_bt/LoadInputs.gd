@@ -9,6 +9,8 @@ export (String) var input_jump := "jump"
 export (String) var input_sprint := "sprint"
 export (String) var toggle_mouse_capture := "ui_cancel"
 
+export (String) var input_toggle_flashlight := "toggle_flashlight"
+
 export (String) var input_interact := "interact"
 export (String) var input_use_item := "use_item"
 export (String) var input_toggle_rotate_item := "toggle_rotate_item"
@@ -26,7 +28,7 @@ func tick(_actor : Node, bb : Blackboard) -> int:
 	var b_interact := Input.is_action_just_pressed(input_interact)
 	var b_use_item := Input.is_action_just_pressed(input_use_item)
 	var b_toggle_rotate_item := Input.is_action_pressed(input_toggle_rotate_item)
-	
+	var b_toggle_flashlight := Input.is_action_just_pressed(input_toggle_flashlight)
 	# set values
 	bb.set("move_vector", move_vector)
 	bb.set("input_sprint", b_sprint)
@@ -36,7 +38,7 @@ func tick(_actor : Node, bb : Blackboard) -> int:
 	bb.set("input_interact", b_interact)
 	bb.set("input_use_item", b_use_item)
 	bb.set("input_toggle_rotate_item", b_toggle_rotate_item)
-	
+	bb.set("input_toggle_flashlight", b_toggle_flashlight)
 	return SUCCESS
 
 func _get_mouse_delta() -> Vector2:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://TierTwoModules/first_person_controller/player_bt/LoadInputs.gd" type="Script" id=1]
 [ext_resource path="res://Resources/UI/Reticle/crosshair118.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://TierTwoModules/first_person_controller/PlayerUseBT.gd" type="Script" id=14]
 [ext_resource path="res://TierTwoModules/first_person_controller/player_bt/GrabMouse.gd" type="Script" id=15]
 [ext_resource path="res://TierTwoModules/first_person_controller/InteractItemHeld.gd" type="Script" id=16]
+[ext_resource path="res://TierTwoModules/first_person_controller/ToggleFlashlight.gd" type="Script" id=17]
 [ext_resource path="res://Modules/behaviour_tree/nodes/composites/selector.gd" type="Script" id=18]
 [ext_resource path="res://TierTwoModules/first_person_controller/UseCurrentItem.gd" type="Script" id=19]
 
@@ -119,10 +120,19 @@ collide_with_areas = true
 script = ExtResource( 6 )
 
 [node name="held_object" type="Position3D" parent="Pivot/Camera"]
-transform = Transform( 0.752806, 0, 0.658243, 0, 1, 0, -0.658243, 0, 0.752806, 0, 0, -1.97 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.97 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="DropPosition" type="Position3D" parent="Pivot/Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.67458 )
+
+[node name="SpotLight" type="SpotLight" parent="Pivot/Camera"]
+light_energy = 0.6
+spot_range = 20.0
+spot_attenuation = 2.14355
+spot_angle_attenuation = 0.287174
 
 [node name="internal_hud" type="Control" parent="."]
 anchor_right = 1.0
@@ -216,6 +226,13 @@ script = ExtResource( 13 )
 
 [node name="UseCurrentItem" type="Node" parent="PlayerBehaviourTree/root/NormalInteractions/Item Use Succeeder"]
 script = ExtResource( 19 )
+
+[node name="FlashlightSucceeder" type="Node" parent="PlayerBehaviourTree/root/NormalInteractions"]
+script = ExtResource( 13 )
+
+[node name="ToggleFlashlight" type="Node" parent="PlayerBehaviourTree/root/NormalInteractions/FlashlightSucceeder"]
+script = ExtResource( 17 )
+light_toggle_path = NodePath("../../../../../Pivot/Camera/SpotLight")
 
 [node name="SelectorComposite" type="Node" parent="PlayerBehaviourTree/root/NormalInteractions"]
 script = ExtResource( 18 )

@@ -24,6 +24,9 @@ export (String) var sfx_impact := "impact"
 export (String) var sfx_pickup := "pickup"
 export (String) var sfx_drop := "drop"
 
+export (String) var item_name := "item.generic.name"
+export (String) var item_description := "item.generic.description"
+
 onready var original_parent := get_parent()
 onready var original_collision_layer := self.collision_layer
 onready var original_collision_mask := self.collision_mask

@@ -33,8 +33,9 @@ func _on_anim_done(anim_name : String) -> void:
 func set_held_item(item : Spatial = null) -> void:
 	if held_item_root.get_child_count() > 0:
 		var cur_item := held_item_root.get_child(0)
-		(cur_item as Spatial).global_transform.basis = drop_item_pos.global_transform.basis
 		if cur_item and cur_item.has_method("remove_item"):
+			held_item_root.remove_child(cur_item)
+			drop_item_pos.add_child(cur_item)
 			cur_item.remove_item(self)
 	if item:
 		# check here so we can pass null to clear held items
