@@ -5,6 +5,7 @@ onready var bt := $PlayerBehaviourTree
 onready var anim_player := $AnimationPlayer
 onready var held_item_root := $Pivot/Camera/held_object
 onready var selection_raycast : InteractionRayCast = $"Pivot/Camera/SelectionCast"
+onready var drop_item_pos := $Pivot/Camera/DropPosition
 
 var anim_queue := []
 
@@ -32,6 +33,7 @@ func _on_anim_done(anim_name : String) -> void:
 func set_held_item(item : Spatial = null) -> void:
 	if held_item_root.get_child_count() > 0:
 		var cur_item := held_item_root.get_child(0)
+		(cur_item as Spatial).global_transform.basis = drop_item_pos.global_transform.basis
 		if cur_item and cur_item.has_method("remove_item"):
 			cur_item.remove_item(self)
 	if item:

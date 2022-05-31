@@ -1,6 +1,6 @@
 extends Leaf
 
-export (String) var input_name := "input_use_item"
+export (String) var input_name := "input_interact"
 
 func tick(actor : Node, bb : Blackboard) -> int:
 	if not bb.get(input_name, false) as bool:
@@ -10,9 +10,8 @@ func tick(actor : Node, bb : Blackboard) -> int:
 	if held_obj_root.get_child_count() <= 0:
 		return FAILURE
 
-
 	var item := held_obj_root.get_child(0) as PickupItemBase
 	if not item:
 		return FAILURE
-	item.use_item(actor)
+	item.interact(actor)
 	return SUCCESS

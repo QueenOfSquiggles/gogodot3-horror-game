@@ -43,10 +43,10 @@ func _ready() -> void:
 		push_warning("PickupItem [%s] does not have an AudioLib3D set" % self.name)
 
 func interact(player : FirstPersonCharacterBase) -> void:
-	player.set_held_item(self)
+	player.set_held_item(null if is_being_held else self)
 
-func use_item(player : FirstPersonCharacterBase) -> void:
-	player.set_held_item(null)
+func use_item(_player : FirstPersonCharacterBase) -> void:
+	pass
 
 func pickup_item(_player : FirstPersonCharacterBase) -> void:
 	is_being_held = true

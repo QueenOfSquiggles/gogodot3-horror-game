@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://TierTwoModules/first_person_controller/player_bt/LoadInputs.gd" type="Script" id=1]
 [ext_resource path="res://Resources/UI/Reticle/crosshair118.png" type="Texture" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://TierTwoModules/first_person_controller/player_bt/Move.gd" type="Script" id=5]
 [ext_resource path="res://TierTwoModules/first_person_controller/PlayerSelectionCast.gd" type="Script" id=6]
 [ext_resource path="res://TierTwoModules/first_person_controller/player_bt/IsOccupied.gd" type="Script" id=7]
-[ext_resource path="res://TierTwoModules/first_person_controller/player_bt/ItemInteract.gd" type="Script" id=8]
+[ext_resource path="res://TierTwoModules/first_person_controller/player_bt/ItemInteractExternal.gd" type="Script" id=8]
 [ext_resource path="res://TierTwoModules/first_person_controller/player_bt/LookCam.gd" type="Script" id=9]
 [ext_resource path="res://TierTwoModules/first_person_controller/player_bt/HeldItemRotate.gd" type="Script" id=10]
 [ext_resource path="res://TierTwoModules/first_person_controller/player_bt/LoadExports.gd" type="Script" id=11]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Modules/behaviour_tree/nodes/decorators/succeeder.gd" type="Script" id=13]
 [ext_resource path="res://TierTwoModules/first_person_controller/PlayerUseBT.gd" type="Script" id=14]
 [ext_resource path="res://TierTwoModules/first_person_controller/player_bt/GrabMouse.gd" type="Script" id=15]
+[ext_resource path="res://TierTwoModules/first_person_controller/InteractItemHeld.gd" type="Script" id=16]
 [ext_resource path="res://Modules/behaviour_tree/nodes/composites/selector.gd" type="Script" id=18]
 [ext_resource path="res://TierTwoModules/first_person_controller/UseCurrentItem.gd" type="Script" id=19]
 
@@ -117,8 +118,11 @@ cast_to = Vector3( 0, 0, -10 )
 collide_with_areas = true
 script = ExtResource( 6 )
 
-[node name="held_object" type="Spatial" parent="Pivot/Camera"]
+[node name="held_object" type="Position3D" parent="Pivot/Camera"]
 transform = Transform( 0.752806, 0, 0.658243, 0, 1, 0, -0.658243, 0, 0.752806, 0, 0, -1.97 )
+
+[node name="DropPosition" type="Position3D" parent="Pivot/Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.67458 )
 
 [node name="internal_hud" type="Control" parent="."]
 anchor_right = 1.0
@@ -195,16 +199,22 @@ script = ExtResource( 3 )
 [node name="LoadInputs" type="Node" parent="PlayerBehaviourTree/root/NormalInteractions"]
 script = ExtResource( 1 )
 
-[node name="Interaction" type="Node" parent="PlayerBehaviourTree/root/NormalInteractions"]
+[node name="Interaction Succeeder" type="Node" parent="PlayerBehaviourTree/root/NormalInteractions"]
 script = ExtResource( 13 )
 
-[node name="Interact" type="Node" parent="PlayerBehaviourTree/root/NormalInteractions/Interaction"]
+[node name="InteractionSelector" type="Node" parent="PlayerBehaviourTree/root/NormalInteractions/Interaction Succeeder"]
+script = ExtResource( 18 )
+
+[node name="InteractExternal" type="Node" parent="PlayerBehaviourTree/root/NormalInteractions/Interaction Succeeder/InteractionSelector"]
 script = ExtResource( 8 )
 
-[node name="Item Use" type="Node" parent="PlayerBehaviourTree/root/NormalInteractions"]
+[node name="InteractHeld" type="Node" parent="PlayerBehaviourTree/root/NormalInteractions/Interaction Succeeder/InteractionSelector"]
+script = ExtResource( 16 )
+
+[node name="Item Use Succeeder" type="Node" parent="PlayerBehaviourTree/root/NormalInteractions"]
 script = ExtResource( 13 )
 
-[node name="UseCurrentItem" type="Node" parent="PlayerBehaviourTree/root/NormalInteractions/Item Use"]
+[node name="UseCurrentItem" type="Node" parent="PlayerBehaviourTree/root/NormalInteractions/Item Use Succeeder"]
 script = ExtResource( 19 )
 
 [node name="SelectorComposite" type="Node" parent="PlayerBehaviourTree/root/NormalInteractions"]
