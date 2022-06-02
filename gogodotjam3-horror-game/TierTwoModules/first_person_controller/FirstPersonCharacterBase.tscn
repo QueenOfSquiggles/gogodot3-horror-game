@@ -22,7 +22,7 @@
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.78681
-height = 2.78478
+height = 2.15563
 
 [sub_resource type="Shader" id=5]
 code = "shader_type canvas_item;
@@ -101,7 +101,7 @@ tracks/0/keys = {
 script = ExtResource( 14 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.19899, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.88695, -1.36397e-08 )
 shape = SubResource( 1 )
 
 [node name="CharacterModel" type="Spatial" parent="."]

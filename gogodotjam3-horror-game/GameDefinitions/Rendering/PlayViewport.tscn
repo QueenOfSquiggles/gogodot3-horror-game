@@ -6,7 +6,7 @@
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
 shader_param/col_depth = 16.0
-shader_param/dither_uv_scale = 0.5
+shader_param/dither_uv_scale = 1.0
 shader_param/dith_range = 1.0
 shader_param/dither_tex = ExtResource( 2 )
 
@@ -15,9 +15,10 @@ material = SubResource( 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 stretch = true
+stretch_shrink = 2
 
 [node name="Viewport" type="Viewport" parent="."]
-size = Vector2( 1024, 600 )
+size = Vector2( 512, 300 )
 handle_input_locally = false
 render_target_update_mode = 3
 
