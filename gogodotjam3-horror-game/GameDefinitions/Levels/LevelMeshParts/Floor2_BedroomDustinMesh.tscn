@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Modules/blockout_assets/prototyping/materials/proto_mat_red_01.tres" type="Material" id=1]
+
+[node name="Floor2_BedroomDustinMesh" type="CSGBox"]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 24, 14, -10 )
+use_collision = true
+width = 9.0
+height = 6.0
+depth = 14.0
+material = ExtResource( 1 )
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+operation = 2
+width = 8.0
+height = 5.0
+depth = 13.0
+material = ExtResource( 1 )
+
+[node name="HallDoor" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.4, 7 )
+operation = 2
+height = 4.0
+
+[node name="DoorStairs" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49998, -0.400002, -4 )
+operation = 2
+height = 4.0

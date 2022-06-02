@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Modules/blockout_assets/prototyping/materials/proto_mat_green_01.tres" type="Material" id=1]
+[ext_resource path="res://Modules/blockout_assets/prototyping/materials/proto_mat_dark_01.tres" type="Material" id=2]
+
+[node name="Floor2_MainHallMesh" type="CSGBox"]
+transform = Transform( 2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, 15, 14, 5.5 )
+use_collision = true
+width = 38.0
+height = 6.0
+depth = 4.0
+material = ExtResource( 1 )
+
+[node name="CSGBox2" type="CSGBox" parent="."]
+operation = 2
+width = 37.0
+height = 5.0
+depth = 3.0
+material = ExtResource( 1 )
+
+[node name="DoorBedroomDustin" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 1.01332e-07, 0, 1, 0, -1.01332e-07, 0, 1, -16.5, -0.400002, -2.00003 )
+operation = 2
+height = 4.0
+
+[node name="DoorBedroomJessica" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 1.01332e-07, 0, 1, 0, -1.01332e-07, 0, 1, -1.5, -0.400002, -2.00003 )
+operation = 2
+height = 4.0
+
+[node name="DoorLivingAreaRadio" type="CSGBox" parent="."]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, -1, -9.49998, -0.400002, 1.99997 )
+operation = 2
+height = 4.0
+
+[node name="DoorLivingAreaExercise" type="CSGBox" parent="."]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, -1, 7.50001, -0.400002, 1.99997 )
+operation = 2
+height = 4.0
+material = ExtResource( 2 )
+
+[node name="DoorBathroom" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, 1, 12.5, -0.400002, -2.00003 )
+operation = 2
+height = 4.0
+material = ExtResource( 2 )
+
+[node name="DoorStairwellToNursery" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, 1, 19, -0.400002, -3.05176e-05 )
+operation = 2
+height = 4.0
+material = ExtResource( 2 )

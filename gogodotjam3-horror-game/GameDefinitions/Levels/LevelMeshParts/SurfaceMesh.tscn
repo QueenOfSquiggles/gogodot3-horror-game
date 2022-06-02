@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/gltf/SurfaceMesh.gltf" type="PackedScene" id=3]
+
+[node name="SurfaceMesh" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7, 32 )
+
+[node name="SurfaceMesh2" parent="." instance=ExtResource( 3 )]
+
+[editable path="SurfaceMesh2"]

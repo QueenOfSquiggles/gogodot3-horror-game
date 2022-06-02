@@ -206,7 +206,9 @@ Advanced/auto_line_splitter_regular_expression="[^.|,|!|?|\"|'|:|;|`|º|,|\\s]+"
 
 [application]
 
-config/name="GoGodotJam3 Horror Game"
+config/name="AscensionOfTheLamb"
+config/description="A short horror game made for GoGodotJam 3 (Theme: Evolution)
+It follows an early 2000s vlogger called \"xXx_Jibby_xXx\" who is exploring a bunker of a cult that mysteriously disappeared"
 run/main_scene="res://GameDefinitions/Levels/TestingLevel.tscn"
 config/icon="res://icon.png"
 
