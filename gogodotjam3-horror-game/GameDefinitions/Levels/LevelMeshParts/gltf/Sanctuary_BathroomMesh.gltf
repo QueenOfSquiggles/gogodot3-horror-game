@@ -1,1 +1,276 @@
-{"accessors":[{"bufferView":0,"byteOffset":0,"componentType":5126,"count":246,"max":[9,5.5,10.5],"min":[-9,-5.5,-10.5],"normalized":false,"type":"VEC3"},{"bufferView":1,"byteOffset":0,"componentType":5126,"count":246,"max":[0,0,0.999969,1],"min":[-0.999969,-0.999872,-1,-1],"normalized":false,"type":"VEC4"},{"bufferView":2,"byteOffset":0,"componentType":5126,"count":246,"max":[1,1,1],"min":[-1,-1,-1],"normalized":false,"type":"VEC3"},{"bufferView":3,"byteOffset":0,"componentType":5126,"count":246,"max":[1,1],"min":[0,0],"normalized":false,"type":"VEC2"},{"bufferView":4,"byteOffset":0,"componentType":5125,"count":246,"max":[245],"min":[0],"normalized":false,"type":"SCALAR"}],"asset":{"generator":"Godot Engine v3.5.rc3.official@af8a02ddafd64f0195956c74c6a60bf389af278f","version":"2.0"},"bufferViews":[{"buffer":0,"byteLength":2952,"byteOffset":0},{"buffer":0,"byteLength":3936,"byteOffset":2952},{"buffer":0,"byteLength":2952,"byteOffset":6888},{"buffer":0,"byteLength":1968,"byteOffset":9840},{"buffer":0,"byteLength":984,"byteOffset":11808}],"buffers":[{"byteLength":12792,"uri":"Sanctuary_BathroomMesh0.bin"}],"extensionsRequired":["KHR_texture_transform"],"extensionsUsed":["KHR_lights_punctual","KHR_texture_transform"],"meshes":[{"extras":{"targetNames":[]},"primitives":[{"attributes":{"NORMAL":2,"POSITION":0,"TANGENT":1,"TEXCOORD_0":3},"indices":4,"mode":4}]}],"nodes":[{"children":[1,2],"extensions":{},"mesh":0,"name":"Sanctuary_BathroomMesh2","translation":[92,-3,10.5]},{"extensions":{},"name":"CSGBox4"},{"extensions":{},"name":"Doorway3","rotation":[0,0.707107,0,0.707107],"translation":[-2.99999,0,-10]}],"scene":0,"scenes":[{"nodes":[0]}]}
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.8.19",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Sanctuary_BathroomMesh2",
+            "translation" : [
+                92,
+                -3,
+                10.5
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "Sanctuary_Bathroom_Walls",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.049546677619218826,
+                    0.8000000715255737,
+                    0,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "Sanctuary_Bathroom_Ceiling",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.8000000715255737,
+                    0.002379291458055377,
+                    0,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "Sanctuary_Bathroom_Floor",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0,
+                    0,
+                    0,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Mesh_0.016",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "indices" : 7,
+                    "material" : 1
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 8,
+                        "NORMAL" : 9,
+                        "TEXCOORD_0" : 10
+                    },
+                    "indices" : 11,
+                    "material" : 2
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 28,
+            "max" : [
+                8.5,
+                5,
+                10
+            ],
+            "min" : [
+                -8.5,
+                -5,
+                -10.5
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 28,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 28,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 42,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 8,
+            "max" : [
+                8.5,
+                5,
+                10
+            ],
+            "min" : [
+                -8.5,
+                5,
+                -10.5
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 8,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 8,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5123,
+            "count" : 18,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 8,
+            "max" : [
+                8.5,
+                -5,
+                10
+            ],
+            "min" : [
+                -8.5,
+                -5,
+                -10.5
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5126,
+            "count" : 8,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 10,
+            "componentType" : 5126,
+            "count" : 8,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 11,
+            "componentType" : 5123,
+            "count" : 18,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 336,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 336,
+            "byteOffset" : 336
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 224,
+            "byteOffset" : 672
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 84,
+            "byteOffset" : 896
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 96,
+            "byteOffset" : 980
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 96,
+            "byteOffset" : 1076
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 64,
+            "byteOffset" : 1172
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 36,
+            "byteOffset" : 1236
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 96,
+            "byteOffset" : 1272
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 96,
+            "byteOffset" : 1368
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 64,
+            "byteOffset" : 1464
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 36,
+            "byteOffset" : 1528
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 1564,
+            "uri" : "data:application/octet-stream;base64,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"
+        }
+    ]
+}

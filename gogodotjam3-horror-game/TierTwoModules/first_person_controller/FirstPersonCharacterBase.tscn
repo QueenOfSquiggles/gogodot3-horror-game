@@ -129,9 +129,8 @@ __meta__ = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.67458 )
 
 [node name="SpotLight" type="SpotLight" parent="Pivot/Camera"]
-light_energy = 0.6
-spot_range = 20.0
-spot_attenuation = 2.14355
+spot_range = 30.0
+spot_angle = 30.0
 spot_angle_attenuation = 0.287174
 
 [node name="internal_hud" type="Control" parent="."]

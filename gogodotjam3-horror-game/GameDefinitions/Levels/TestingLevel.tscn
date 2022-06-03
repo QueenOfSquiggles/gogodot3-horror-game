@@ -8,10 +8,9 @@
 [sub_resource type="ProceduralSky" id=5]
 
 [sub_resource type="Environment" id=2]
-background_mode = 2
+background_mode = 1
 background_sky = SubResource( 5 )
-ambient_light_color = Color( 1, 1, 1, 1 )
-ambient_light_energy = 0.05
+ambient_light_color = Color( 0.105882, 0.105882, 0.105882, 1 )
 ambient_light_sky_contribution = 0.0
 tonemap_mode = 3
 tonemap_exposure = 0.9
@@ -26,7 +25,7 @@ glow_enabled = true
 [node name="LevelModel" parent="Viewport/Spatial" index="0" instance=ExtResource( 3 )]
 
 [node name="FirstPersonCharacterBase" parent="Viewport/Spatial" index="1" instance=ExtResource( 2 )]
-transform = Transform( -0.412071, 0, 0.911152, 0, 1, 0, -0.911152, 0, -0.412071, 32.6704, -52.8676, 38.8888 )
+transform = Transform( -0.352904, 0, -0.93566, 0, 1, 0, 0.93566, 0, -0.352904, 19.1704, 0.632401, 27.3888 )
 __meta__ = {
 "_editor_description_": "SurfaceMesh"
 }
@@ -41,7 +40,11 @@ environment = SubResource( 2 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="Viewport/Spatial/Lighting" index="1"]
 transform = Transform( -0.5, 0.612372, -0.612372, 0, 0.707107, 0.707107, 0.866025, 0.353553, -0.353553, 0, 16, 0 )
-shadow_enabled = true
+editor_only = true
+directional_shadow_mode = 1
+
+[node name="DirectionalLight2" type="DirectionalLight" parent="Viewport/Spatial/Lighting" index="2"]
+transform = Transform( 0.866025, 0.353553, 0.353553, -0.482963, 0.408494, 0.774519, 0.12941, -0.841506, 0.524519, -5, 16.5, 0 )
 editor_only = true
 directional_shadow_mode = 1
 
