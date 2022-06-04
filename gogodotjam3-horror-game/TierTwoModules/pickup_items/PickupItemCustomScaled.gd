@@ -10,6 +10,7 @@ func _ready() -> void:
 
 func pickup_item(player : FirstPersonCharacterBase) -> void:
 	.pickup_item(player)
+	self.transform = Transform.IDENTITY
 	_set_scales(held_scale)
 
 func remove_item(player : FirstPersonCharacterBase) -> void:

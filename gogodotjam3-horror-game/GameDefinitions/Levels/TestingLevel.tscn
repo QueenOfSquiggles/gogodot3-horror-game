@@ -1,18 +1,20 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://GameDefinitions/Rendering/PlayViewport.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TierTwoModules/first_person_controller/FirstPersonCharacterBase.tscn" type="PackedScene" id=2]
 [ext_resource path="res://GameDefinitions/Levels/LevelModel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Modules/menus/PauseMenu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GameDefinitions/Items/bases/PickupItemReadable.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GameDefinitions/UI/InteractionPromptHud.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ProceduralSky" id=5]
 
 [sub_resource type="Environment" id=2]
 background_mode = 1
 background_sky = SubResource( 5 )
-ambient_light_color = Color( 0.105882, 0.105882, 0.105882, 1 )
+ambient_light_color = Color( 0.0470588, 0.0470588, 0.0470588, 1 )
 ambient_light_sky_contribution = 0.0
-tonemap_mode = 3
+tonemap_mode = 4
 tonemap_exposure = 0.9
 dof_blur_far_distance = 25.0
 dof_blur_far_transition = 20.0
@@ -25,7 +27,7 @@ glow_enabled = true
 [node name="LevelModel" parent="Viewport/Spatial" index="0" instance=ExtResource( 3 )]
 
 [node name="FirstPersonCharacterBase" parent="Viewport/Spatial" index="1" instance=ExtResource( 2 )]
-transform = Transform( -0.352904, 0, -0.93566, 0, 1, 0, 0.93566, 0, -0.352904, 19.1704, 0.632401, 27.3888 )
+transform = Transform( -0.0987124, 0, -0.995116, 0, 1, 0, 0.995116, 0, -0.0987124, -0.829599, -23.3676, -13.6112 )
 __meta__ = {
 "_editor_description_": "SurfaceMesh"
 }
@@ -51,6 +53,14 @@ directional_shadow_mode = 1
 [node name="Items" type="Spatial" parent="Viewport/Spatial" index="3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -8 )
 
-[node name="PauseMenu" parent="." index="1" instance=ExtResource( 4 )]
+[node name="PickupItemReadable" parent="Viewport/Spatial/Items" index="0" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 12, 0, 15 )
+
+[node name="Interaction PromptHud" parent="." index="1" instance=ExtResource( 6 )]
+
+[node name="PauseMenu" parent="." index="2" instance=ExtResource( 4 )]
+
+[connection signal="interactable_select_ended" from="Viewport/Spatial/FirstPersonCharacterBase" to="Interaction PromptHud" method="_on_interactable_select_ended"]
+[connection signal="interactable_select_started" from="Viewport/Spatial/FirstPersonCharacterBase" to="Interaction PromptHud" method="_on_FirstPersonCharacterBase_interactable_select_started"]
 
 [editable path="Viewport/Spatial/FirstPersonCharacterBase"]

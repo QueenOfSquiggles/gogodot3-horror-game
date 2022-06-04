@@ -238,6 +238,10 @@ scene/scene_naming=1
 
 enabled=PoolStringArray( "res://addons/color_grading_lut/plugin.cfg", "res://addons/jamcountdown/plugin.cfg", "res://addons/scatter-master/plugin.cfg", "res://addons/subtitles/plugin.cfg" )
 
+[global]
+
+shader=false
+
 [input]
 
 move_forwards={
@@ -299,6 +303,5 @@ common/physics_fps=30
 [rendering]
 
 threads/thread_model=2
-gles3/shaders/shader_compilation_mode=2
 quality/filters/use_fxaa=true
 environment/default_environment="res://default_env.tres"

@@ -118,6 +118,7 @@ enabled = true
 cast_to = Vector3( 0, 0, -10 )
 collide_with_areas = true
 script = ExtResource( 6 )
+cache_time = 0.1
 
 [node name="held_object" type="Position3D" parent="Pivot/Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.97 )
@@ -232,6 +233,7 @@ script = ExtResource( 13 )
 [node name="ToggleFlashlight" type="Node" parent="PlayerBehaviourTree/root/NormalInteractions/FlashlightSucceeder"]
 script = ExtResource( 17 )
 light_toggle_path = NodePath("../../../../../Pivot/Camera/SpotLight")
+starting_state = false
 
 [node name="SelectorComposite" type="Node" parent="PlayerBehaviourTree/root/NormalInteractions"]
 script = ExtResource( 18 )

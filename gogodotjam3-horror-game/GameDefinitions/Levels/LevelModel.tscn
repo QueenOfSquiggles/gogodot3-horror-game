@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Resources/Materials/rocks_ground_02.material" type="Material" id=1]
 [ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/gltf/imported/NurseryBedroomMesh.tscn" type="PackedScene" id=2]
@@ -26,6 +26,7 @@
 [ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/gltf/imported/StairsNurseryAndSanctuaryMesh.tscn" type="PackedScene" id=24]
 [ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/gltf/imported/Floor1BedroomAbbyMesh.tscn" type="PackedScene" id=25]
 [ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/gltf/imported/Floor1EntranceMesh.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Resources/Materials/FastInvisibility.material" type="Material" id=27]
 
 [node name="LevelModel" type="Spatial"]
 
@@ -36,7 +37,7 @@ merge_meshes = true
 portal_depth_limit = 2
 
 [node name="Surface" type="Room" parent="RoomManager"]
-points = PoolVector3Array( -54.4982, -26.6216, 86.5053, -54.4982, -26.6216, 2.5, 55.2007, -26.6216, 86.5053, 55.2007, -26.6216, 2.5, -54.4982, 1.37369, 86.5053, -54.4982, 1.37369, 2.5, 55.2007, 1.37369, 86.5053, 55.2007, 1.37369, 2.5 )
+points = PoolVector3Array( -54.4982, 33, 94.787, 55.2007, 33, 94.787, -54.4982, -27.4328, 94.787, 55.2007, -27.4328, 94.787, -54.4982, 33, 2.5, 55.2007, 33, 2.5, -54.4982, -27.4328, 2.5, 55.2007, -27.4328, 2.5 )
 
 [node name="SurfaceMesh2" parent="RoomManager/Surface" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.959, -1.213 )
@@ -45,6 +46,25 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.959, -1.213 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22, 2.5 )
 linked_room = NodePath("../../Floor1/Entrance")
 points = PoolVector2Array( 3, -3.5, 3, 3, -3, 3, -3, -3.5 )
+
+[node name="Bounds" type="CSGBox" parent="RoomManager/Surface"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 15, 32 )
+cast_shadow = 0
+generate_lightmap = false
+calculate_tangents = false
+use_collision = true
+width = 98.0
+height = 36.0
+depth = 95.0
+material = ExtResource( 27 )
+
+[node name="CSGBox2" type="CSGBox" parent="RoomManager/Surface/Bounds"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0 )
+operation = 2
+width = 96.0
+height = 36.0
+depth = 93.0
+material = ExtResource( 27 )
 
 [node name="Floor1" type="RoomGroup" parent="RoomManager"]
 
@@ -263,39 +283,21 @@ points = PoolVector2Array( -1, 3.5, -1, -1, 1, -1, 1, 3.5 )
 
 [node name="Portal2" type="Portal" parent="RoomManager/StairsNurseryAndSanctuary"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64.5, -30.5, -67 )
-linked_room = NodePath("../../Sanctuary/Entrance")
-points = PoolVector2Array( 4.5, -3.5, 4.5, 3.5, -4.5, 3.5, -4.5, -3.5 )
+linked_room = NodePath("../../Sanctuary")
+use_default_margin = false
+portal_margin = 5.0
+points = PoolVector2Array( 5, -4, 5, 4, -4.5, 4, -5, -4 )
 
 [node name="StairsNurseryAndSanctuaryMesh2" parent="RoomManager/StairsNurseryAndSanctuary" instance=ExtResource( 24 )]
 
-[node name="Sanctuary" type="RoomGroup" parent="RoomManager"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29, -74.5, -77.5 )
+[node name="Sanctuary" type="Room" parent="RoomManager"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29, -74.5, -76.5 )
+points = PoolVector3Array( 21.7533, -3.18163, -25.0166, 29, -12, 68, 95.4241, -8.0342, 26, 100.5, -7.99998, 20.4999, 11.7397, 11.2514, -23.2425, -12.0002, -8.50008, 25.9996, 106, 2.00001, -0.499908, 91.5906, 16, 71.5, 22.8264, -11.642, -16.046, -12.8623, 8.06686, 26, 15.5091, 34.4349, -13.8108, 21.3172, 33.5539, -26.3571, -14.3759, 2.43222, 12.2507, 71.8216, 39.9501, 25.9998, 106, -8.00001, -20.4999, -12.4732, -7.14055, 12.9495, 66.4209, 11.9426, -31.1939, 106, 2.00004, -20.5, 76.1563, 35.1388, -24.5762, -14.998, -5.50047, 22.5003, 75.0599, -5.92413, -26.3048, -12.5094, -4.502, 26, 71.7137, 34.8869, -25.9893, 15.6184, 31, 63.5 )
 
-[node name="Entrance" type="Room" parent="RoomManager/Sanctuary"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
-points = PoolVector3Array( -15.5001, 8.5, 27.5, 15.5, -8.5, 10.5, -15.5, -8.5, 10.5, 15.5, -8.5, 27.5, 15.5, 8.5, 10.5, -15.5, -8.5, 27.5, -15.5, 8.5, 10.5, 15.5, 8.00001, 27 )
+[node name="Sanctuary_MainChambersMesh2" parent="RoomManager/Sanctuary" instance=ExtResource( 7 )]
 
-[node name="Portal" type="Portal" parent="RoomManager/Sanctuary/Entrance"]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16, 0, 18.5 )
-linked_room = NodePath("../../MainChambers")
-points = PoolVector2Array( 8.5, -8, 8.5, 8, -7.5, 8, -7.5, -8 )
+[node name="Sanctuary_EntranceMesh2" parent="RoomManager/Sanctuary" instance=ExtResource( 11 )]
 
-[node name="Sanctuary_EntranceMesh2" parent="RoomManager/Sanctuary/Entrance" instance=ExtResource( 11 )]
+[node name="Sanctuary_BathroomMesh2" parent="RoomManager/Sanctuary" instance=ExtResource( 3 )]
 
-[node name="MainChambers" type="Room" parent="RoomManager/Sanctuary"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
-points = PoolVector3Array( 75.5, 34.5, -27, 75.5, 34.5, 65, 75.5, -8.5, -27, 75.5, -8.5, 65, 15.5, 34.5, -27, 15.5, 34.5, 65, 15.5, -8.5, -27, 15.5, -8.5, 65 )
-
-[node name="Sanctuary_MainChambersMesh2" parent="RoomManager/Sanctuary/MainChambers" instance=ExtResource( 7 )]
-
-[node name="Bedroom" type="Room" parent="RoomManager/Sanctuary"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
-points = PoolVector3Array( 106.5, -8.5, -21, 106.5, -8.5, 0, 75.5, -8.5, -21, 75.5, -8.5, 0, 106.5, 2.5, -21, 106.5, 2.5, 0, 75.5, 2.5, -21, 75.5, 2.5, 0 )
-
-[node name="Sanctuary_BedroomMesh2" parent="RoomManager/Sanctuary/Bedroom" instance=ExtResource( 5 )]
-
-[node name="Bathroom" type="Room" parent="RoomManager/Sanctuary"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
-points = PoolVector3Array( 101, 2.5, 0, 101, -8.5, 0, 101, 2.5, 21, 101, -8.5, 21, 83, 2.5, 0, 83, -8.5, 0, 83, 2.5, 21, 83, -8.5, 21 )
-
-[node name="Sanctuary_BathroomMesh2" parent="RoomManager/Sanctuary/Bathroom" instance=ExtResource( 3 )]
+[node name="Sanctuary_BedroomMesh2" parent="RoomManager/Sanctuary" instance=ExtResource( 5 )]

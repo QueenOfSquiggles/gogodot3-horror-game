@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="CapsuleMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+emission_enabled = true
+emission = Color( 0.870588, 0.764706, 0.341176, 1 )
+emission_energy = 3.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[node name="SpotLight" type="SpotLight"]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.373967, 0.381159, 0.816874 )
+light_color = Color( 0.870588, 0.764706, 0.341176, 1 )
+shadow_enabled = true
+spot_range = 30.0
+spot_angle = 30.0
+
+[node name="EmissionCapsule" type="MeshInstance" parent="."]
+transform = Transform( -1.24852e-08, 0, 0.285627, 2.49703e-08, -0.285627, 1.09149e-15, 0.285627, 2.49703e-08, 1.24852e-08, 0, 0, 0 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 3 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.19209e-07, -1.37614 )
+light_color = Color( 0.870588, 0.764706, 0.341176, 1 )
+omni_range = 10.0

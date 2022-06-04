@@ -53,10 +53,10 @@ func use_item(_player : FirstPersonCharacterBase) -> void:
 
 func pickup_item(_player : FirstPersonCharacterBase) -> void:
 	is_being_held = true
-	self.mode = RigidBody.MODE_STATIC
-	self.transform = Transform.IDENTITY # reset position to ensure no weird reactions.
-	self.collision_layer = 0
-	self.collision_mask = 0
+	mode = RigidBody.MODE_STATIC
+	transform = Transform.IDENTITY # reset position to ensure no weird reactions.
+	collision_layer = 0
+	collision_mask = 0
 	if audio_lib:
 		audio_lib.play(sfx_pickup)
 

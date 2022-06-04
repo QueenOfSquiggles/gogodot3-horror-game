@@ -1,0 +1,121 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Resources/Models/imported/KitchenSink.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GameDefinitions/Interactables/DrainableSinkParts/NoiseSample.tres" type="Texture" id=2]
+[ext_resource path="res://GameDefinitions/Interactables/StaticBody.gd" type="Script" id=3]
+[ext_resource path="res://GameDefinitions/Interactables/DrainableSinkParts/DrainableSink.gd" type="Script" id=4]
+
+[sub_resource type="QuadMesh" id=1]
+
+[sub_resource type="OpenSimplexNoise" id=4]
+period = 13.3
+persistence = 0.931
+lacunarity = 4.0
+
+[sub_resource type="NoiseTexture" id=7]
+flags = 3
+width = 128
+height = 128
+as_normalmap = true
+bump_strength = 2.0
+noise = SubResource( 4 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0.427451, 0.490196, 0.141176, 1 )
+albedo_texture = ExtResource( 2 )
+roughness = 0.0
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = SubResource( 7 )
+
+[sub_resource type="ConcavePolygonShape" id=8]
+data = PoolVector3Array( -0.5, -0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, 0.5, -0.5, 0 )
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 1.06829, 2, -1.05032 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MeshInstance:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "drain"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 1.06829, 2, -1.05032 ), Vector3( 1.06829, 1.61922, -1.05032 ), Vector3( 1.06829, 1.54768, -1.22794 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MeshInstance:rotation_degrees")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( -90, 0, 0 ), Vector3( -83.477, 0, 0 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("MeshInstance")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "delete_dirty_water"
+} ]
+}
+
+[node name="DrainableSink" type="Spatial"]
+
+[node name="kitchenSink" parent="." instance=ExtResource( 1 )]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1.70333, 0, 0, 0, -5.31823e-08, 1.21667, 0, -1.21667, -5.31823e-08, 1.06829, 2, -1.05032 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 6 )
+script = ExtResource( 4 )
+
+[node name="StaticBody" type="Area" parent="MeshInstance"]
+script = ExtResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
+shape = SubResource( 8 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 3 )
+anims/drain = SubResource( 2 )

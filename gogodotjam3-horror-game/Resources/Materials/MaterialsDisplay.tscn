@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://Resources/Materials/concrete_wall_003.material" type="Material" id=2]
@@ -9,6 +9,11 @@
 [ext_resource path="res://Resources/Materials/rocks_ground_02.material" type="Material" id=7]
 [ext_resource path="res://Resources/Materials/metal_plate.material" type="Material" id=8]
 [ext_resource path="res://Resources/Materials/forest_leaves_02.material" type="Material" id=9]
+[ext_resource path="res://Resources/Materials/FleshyMaterialShader.tres" type="Material" id=10]
+[ext_resource path="res://Resources/Materials/wood_table_001.material" type="Material" id=11]
+[ext_resource path="res://Resources/Materials/denmin_fabric_02.material" type="Material" id=12]
+[ext_resource path="res://Resources/Materials/fabric_pattern_07.material" type="Material" id=13]
+[ext_resource path="res://Resources/Materials/fabric_pattern_05.material" type="Material" id=14]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 4, 4 )
@@ -38,6 +43,18 @@ material/0 = ExtResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 mesh = SubResource( 2 )
 material/0 = ExtResource( 2 )
+
+[node name="Material_FleshyMaterial" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 0 )
+
+[node name="Plane" type="MeshInstance" parent="Material_FleshyMaterial"]
+mesh = SubResource( 1 )
+material/0 = ExtResource( 10 )
+
+[node name="Sphere" type="MeshInstance" parent="Material_FleshyMaterial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 10 )
 
 [node name="Material_forest_leaves_02" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0 )
@@ -122,3 +139,51 @@ material/0 = ExtResource( 3 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 mesh = SubResource( 2 )
 material/0 = ExtResource( 3 )
+
+[node name="Material_fabric_pattern_05" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 4.5 )
+
+[node name="Plane" type="MeshInstance" parent="Material_fabric_pattern_05"]
+mesh = SubResource( 1 )
+material/0 = ExtResource( 14 )
+
+[node name="Sphere" type="MeshInstance" parent="Material_fabric_pattern_05"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 14 )
+
+[node name="Material_fabric_pattern_07" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 4.5 )
+
+[node name="Plane" type="MeshInstance" parent="Material_fabric_pattern_07"]
+mesh = SubResource( 1 )
+material/0 = ExtResource( 13 )
+
+[node name="Sphere" type="MeshInstance" parent="Material_fabric_pattern_07"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 13 )
+
+[node name="Material_wood_table_001" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5 )
+
+[node name="Plane" type="MeshInstance" parent="Material_wood_table_001"]
+mesh = SubResource( 1 )
+material/0 = ExtResource( 11 )
+
+[node name="Sphere" type="MeshInstance" parent="Material_wood_table_001"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 11 )
+
+[node name="Material_denmin_fabric_02" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 4.5 )
+
+[node name="Plane" type="MeshInstance" parent="Material_denmin_fabric_02"]
+mesh = SubResource( 1 )
+material/0 = ExtResource( 12 )
+
+[node name="Sphere" type="MeshInstance" parent="Material_denmin_fabric_02"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 12 )

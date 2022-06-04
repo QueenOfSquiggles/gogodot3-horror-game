@@ -1,0 +1,49 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial;
+
+uniform sampler2D noise_a : hint_black;
+uniform sampler2D noise_b : hint_black;
+uniform vec4 scalars = vec4(0.1, 1.0, 0.1, 1.0);
+uniform vec4 tint : hint_color = vec4(1.0);
+uniform float emission_amount : hint_range(0.0, 1.0) = 0.1 ;
+
+void fragment(){
+	float sample_a = texture(noise_a, UV + (TIME * scalars.x)).r * scalars.y;
+	float sample_b = texture(noise_b, UV + (TIME * scalars.z)).r * scalars.w;
+	sample_a = pow(sample_a, 2);
+	sample_b = pow(sample_b, 2);
+	float sample_max = max(sample_a, sample_b);
+	float sample_min = min(sample_a, sample_b);
+	float density = clamp(sample_max - sample_min, 0.0, 1.0);
+	ALBEDO = vec3(density) * tint.rgb;
+	ROUGHNESS = pow(density, 2);
+	
+}"
+
+[sub_resource type="OpenSimplexNoise" id=2]
+period = 29.7
+persistence = 0.707
+lacunarity = 3.22
+
+[sub_resource type="NoiseTexture" id=3]
+seamless = true
+noise = SubResource( 2 )
+
+[sub_resource type="OpenSimplexNoise" id=4]
+seed = 418
+period = 45.4
+lacunarity = 2.98
+
+[sub_resource type="NoiseTexture" id=5]
+seamless = true
+noise = SubResource( 4 )
+
+[resource]
+shader = SubResource( 1 )
+shader_param/scalars = Plane( 0.05, 1, -0.05, 1 )
+shader_param/tint = Color( 0.835294, 0.101961, 0.823529, 1 )
+shader_param/emission_amount = 0.11
+shader_param/noise_a = SubResource( 3 )
+shader_param/noise_b = SubResource( 5 )

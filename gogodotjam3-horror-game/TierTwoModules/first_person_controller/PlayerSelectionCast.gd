@@ -18,14 +18,23 @@ func _physics_process(delta: float) -> void:
 		if temp.has_method("interact"):
 			if not temp == cached_collider:
 				emit_signal("on_start_collide_mt")
-				emit_signal("on_start_collide", cached_collider)
+				emit_signal("on_start_collide", temp)
 			cached_collider = temp
 			_timer = cache_time
+		else:
+			_idle_process(delta)
 	else:
+		_idle_process(delta)
+
+func _idle_process(delta : float) -> void:
 		if _timer > 0:
 			_timer -= delta
 		elif cached_collider:
-			# emit the signal before we set null so cleanup can be done
-			emit_signal("on_end_collide", cached_collider)
-			emit_signal("on_end_collide_mt")
-			cached_collider = null
+			force_end_interact()
+	
+
+func force_end_interact() -> void:
+	# emit the signal before we set null so cleanup can be done
+	emit_signal("on_end_collide", cached_collider)
+	emit_signal("on_end_collide_mt")
+	cached_collider = null

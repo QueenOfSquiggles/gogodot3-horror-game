@@ -1,16 +1,31 @@
 extends KinematicBody
 class_name FirstPersonCharacterBase
 
+
 onready var bt := $PlayerBehaviourTree
 onready var anim_player := $AnimationPlayer
 onready var held_item_root := $Pivot/Camera/held_object
 onready var selection_raycast : InteractionRayCast = $"Pivot/Camera/SelectionCast"
 onready var drop_item_pos := $Pivot/Camera/DropPosition
 
+signal interactable_select_started(collider)
+signal interactable_select_ended(collider)
+
 var anim_queue := []
 
 func _ready() -> void:
 	var _clear = anim_player.connect("animation_finished", self, "_on_anim_done")
+	_clear = selection_raycast.connect("on_start_collide", self, "_interact_proxy", [true])
+	_clear = selection_raycast.connect("on_end_collide", self, "_interact_proxy", [false])
+	held_item_root.translation.x = -0.6
+	held_item_root.translation.y = -0.6
+	print(held_item_root.translation)
+
+func _interact_proxy(collider : Object, starting : bool) -> void:
+	if starting:
+		emit_signal("interactable_select_started", collider)
+	else:
+		emit_signal("interactable_select_ended", collider)
 
 func _physics_process(delta: float) -> void:
 	bt.tick_tree(delta)

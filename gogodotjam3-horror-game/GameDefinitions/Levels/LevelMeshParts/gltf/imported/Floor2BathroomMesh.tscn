@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/gltf/Floor2_BathroomMesh.gltf" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Materials/concrete_wall_003.material" type="Material" id=2]
 [ext_resource path="res://Resources/Materials/white_rough_plaster.material" type="Material" id=3]
 [ext_resource path="res://Resources/Materials/metal_plate.material" type="Material" id=4]
+[ext_resource path="res://Resources/Models/imported/ToiletSquare.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Resources/Models/imported/BathroomSinkSquare.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Resources/Models/imported/BathroomMirror.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConcavePolygonShape" id=1]
 data = PoolVector3Array( 2, -3.4, 8.5, 6, -3.5, 8.5, 2, -2.4, 8.5, -6, -3.5, 8.5, 0, -3.4, 8.5, 0, 0, 8.5, 0, -3.4, 8.5, 6, -3.5, 8.5, 2, -3.4, 8.5, 0, -3.4, 8.5, -6, -3.5, 8.5, 6, -3.5, 8.5, -6, -3.5, 8.5, -6, 3.5, -8.5, -6, -3.5, -8.5, -6, -3.5, 8.5, -6, 3.5, 8.5, -6, 3.5, -8.5, 6, -3.5, -8.5, 6, 3.5, 8.5, 6, -3.5, 8.5, 6, -3.5, -8.5, 6, 3.5, -8.5, 6, 3.5, 8.5, 0, 0.6, 8.5, -6, -3.5, 8.5, 0, 0, 8.5, 6, 3.5, 8.5, 2, -2.4, 8.5, 6, -3.5, 8.5, 6, 3.5, 8.5, 2, 0.6, 8.5, 2, -2.4, 8.5, 0, 0.6, 8.5, -6, 3.5, 8.5, -6, -3.5, 8.5, 6, 3.5, 8.5, 0, 0.6, 8.5, 2, 0.6, 8.5, 0, 0.6, 8.5, 6, 3.5, 8.5, -6, 3.5, 8.5, -6, 3.5, -8.5, 6, -3.5, -8.5, -6, -3.5, -8.5, -6, 3.5, -8.5, 6, 3.5, -8.5, 6, -3.5, -8.5, 0, 0.6, 9, 0, -3.4, 8.5, 0, -3.4, 9, 0, 0, 8.5, 0, 0.6, 9, 0, 0.6, 8.5, 0, -3.4, 8.5, 0, 0.6, 9, 0, 0, 8.5, 2, -3.4, 9, 2, 0.6, 8.5, 2, 0.6, 9, 2, -2.4, 8.5, 2, -3.4, 9, 2, -3.4, 8.5, 2, 0.6, 8.5, 2, -3.4, 9, 2, -2.4, 8.5, -6, 3.5, -8.5, 6, 3.5, 8.5, 6, 3.5, -8.5, -6, 3.5, -8.5, -6, 3.5, 8.5, 6, 3.5, 8.5, 2, 0.6, 8.5, 0, 0.6, 9, 2, 0.6, 9, 2, 0.6, 8.5, 0, 0.6, 8.5, 0, 0.6, 9, 6, -3.5, -8.5, -6, -3.5, 8.5, -6, -3.5, -8.5, 6, -3.5, -8.5, 6, -3.5, 8.5, -6, -3.5, 8.5, 0, -3.4, 9, 2, -3.4, 8.5, 2, -3.4, 9, 0, -3.4, 9, 0, -3.4, 8.5, 2, -3.4, 8.5 )
@@ -18,3 +21,39 @@ material/2 = ExtResource( 4 )
 [node name="CollisionShape" type="CollisionShape" parent="." index="1"]
 transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, 26, 15, 17 )
 shape = SubResource( 1 )
+
+[node name="Spatial" type="Spatial" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 11.5, 17 )
+
+[node name="toiletSquare" parent="Spatial" index="0" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -4 )
+
+[node name="toiletSquare2" parent="Spatial" index="1" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -4 )
+
+[node name="toiletSquare3" parent="Spatial" index="2" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -4 )
+
+[node name="bathroomSinkSquare" parent="Spatial" index="3" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.5, -0.5, 6 )
+
+[node name="bathroomSinkSquare2" parent="Spatial" index="4" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.499998, -0.5, 6 )
+
+[node name="bathroomSinkSquare3" parent="Spatial" index="5" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.5, -0.5, 6 )
+
+[node name="bathroomSinkSquare4" parent="Spatial" index="6" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.5, -0.5, 6 )
+
+[node name="bathroomMirror" parent="Spatial" index="7" instance=ExtResource( 7 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.24918, 3, 5.74153 )
+
+[node name="bathroomMirror2" parent="Spatial" index="8" instance=ExtResource( 7 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.24918, 3, 5.74153 )
+
+[node name="bathroomMirror3" parent="Spatial" index="9" instance=ExtResource( 7 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.24918, 3, 5.74153 )
+
+[node name="bathroomMirror4" parent="Spatial" index="10" instance=ExtResource( 7 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.75082, 3, 5.74153 )

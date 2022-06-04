@@ -21,5 +21,3 @@ func tick(_actor : Node, bb : Blackboard) -> int:
 func _do_toggle() -> void:
 	toggled = not toggled
 	light.light_energy = default_energy if toggled else 0.0
-	print("toggling flashlight")
-	

@@ -9,4 +9,5 @@ func tick(actor : Node, bb : Blackboard) -> int:
 	if not item or not item.has_method("interact"):
 		return FAILURE
 	item.interact(actor)
+	selection_cast.call_deferred("force_end_interact")
 	return SUCCESS
