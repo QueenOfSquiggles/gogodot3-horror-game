@@ -14,6 +14,7 @@ bottom_radius = 3.0
 height = 0.3
 
 [node name="ItemVent" instance=ExtResource( 1 )]
+transform = Transform( -5.23766e-05, 0, -1, 0, 1, 0, 1, 0, -5.23766e-05, 0, 0, 0 )
 script = ExtResource( 2 )
 rigid_mode_start = 1
 item_name = "Vent Cover"

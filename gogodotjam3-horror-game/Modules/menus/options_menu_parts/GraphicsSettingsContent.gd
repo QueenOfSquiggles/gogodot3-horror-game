@@ -53,6 +53,8 @@ func _on_BtnApply_pressed() -> void:
 	update_options_from_settings()
 
 func _handle_visibility() -> void:
+	if not demo_world_packed:
+		return
 	if get_parent().visible:
 		if demo_world_root.get_child_count() <= 0:
 			var inst : Control = demo_world_packed.instance()

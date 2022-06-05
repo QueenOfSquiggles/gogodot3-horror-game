@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/diane.mp3-fc004324568689984cd6c0980c4858ad.mp3str"
+
+[deps]
+
+source_file="res://Resources/Music/Drones/hiding_place_mp3/diane.mp3"
+dest_files=[ "res://.import/diane.mp3-fc004324568689984cd6c0980c4858ad.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

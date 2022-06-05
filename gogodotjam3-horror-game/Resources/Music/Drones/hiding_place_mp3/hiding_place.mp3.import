@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/hiding_place.mp3-3166c0a8e9d5f90164d31d6ade82bdec.mp3str"
+
+[deps]
+
+source_file="res://Resources/Music/Drones/hiding_place_mp3/hiding_place.mp3"
+dest_files=[ "res://.import/hiding_place.mp3-3166c0a8e9d5f90164d31d6ade82bdec.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

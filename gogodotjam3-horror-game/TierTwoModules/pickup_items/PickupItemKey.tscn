@@ -19,7 +19,7 @@ desired_property_name = "locked"
 desired_value = false
 is_skeleton_key = false
 destroy_after_use = false
-keyed_name = "door_001"
+keyed_name = "nursery"
 
 [node name="key" parent="." index="1" instance=ExtResource( 3 )]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/gltf/Floor2_LivingAreaExerciseMesh.gltf" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Materials/wood_planks_dirt.material" type="Material" id=2]
 [ext_resource path="res://Resources/Materials/concrete_wall_003.material" type="Material" id=3]
 [ext_resource path="res://Resources/Materials/white_rough_plaster.material" type="Material" id=4]
 [ext_resource path="res://Resources/Models/imported/LampSquareCeiling.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GameDefinitions/Items/bases/PickupItemReadable.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ConcavePolygonShape" id=1]
 data = PoolVector3Array( -6, -3.5, 8.5, -6, 3.5, -8.5, -6, -3.5, -8.5, -6, -3.5, 8.5, -6, 3.5, 8.5, -6, 3.5, -8.5, 0, 0.6, 8.5, -6, -3.5, 8.5, 0, -3.4, 8.5, 6, 3.5, 8.5, 2, -3.4, 8.5, 6, -3.5, 8.5, 6, 3.5, 8.5, 2, 0.6, 8.5, 2, -3.4, 8.5, 0, 0.6, 8.5, -6, 3.5, 8.5, -6, -3.5, 8.5, 6, 3.5, 8.5, 0, 0.6, 8.5, 2, 0.6, 8.5, 0, 0.6, 8.5, 6, 3.5, 8.5, -6, 3.5, 8.5, 6, -3.5, -8.5, 6, 3.5, 8.5, 6, -3.5, 8.5, 6, -3.5, -8.5, 6, 3.5, -8.5, 6, 3.5, 8.5, 0, -3.4, 8.5, 6, -3.5, 8.5, 2, -3.4, 8.5, 0, -3.4, 8.5, -6, -3.5, 8.5, 6, -3.5, 8.5, -6, 3.5, -8.5, 6, -3.5, -8.5, -6, -3.5, -8.5, -6, 3.5, -8.5, 6, 3.5, -8.5, 6, -3.5, -8.5, 2, 0.6, 9, 2, -3.4, 8.5, 2, 0.6, 8.5, 2, 0.6, 9, 2, -3.4, 9, 2, -3.4, 8.5, 0, -3.4, 9, 0, 0.6, 8.5, 0, -3.4, 8.5, 0, -3.4, 9, 0, 0.6, 9, 0, 0.6, 8.5, -6, 3.5, -8.5, 6, 3.5, 8.5, 6, 3.5, -8.5, -6, 3.5, -8.5, -6, 3.5, 8.5, 6, 3.5, 8.5, 2, 0.6, 8.5, 0, 0.6, 9, 2, 0.6, 9, 2, 0.6, 8.5, 0, 0.6, 8.5, 0, 0.6, 9, 6, -3.5, -8.5, -6, -3.5, 8.5, -6, -3.5, -8.5, 6, -3.5, -8.5, 6, -3.5, 8.5, -6, -3.5, 8.5, 0, -3.4, 9, 2, -3.4, 8.5, 2, -3.4, 9, 0, -3.4, 9, 0, -3.4, 8.5, 2, -3.4, 8.5 )
@@ -24,3 +25,8 @@ shape = SubResource( 1 )
 
 [node name="lampSquareCeiling" parent="Spatial" index="0" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 17.5, 11.5 )
+
+[node name="PickupItemReadable" parent="Spatial" index="1" instance=ExtResource( 6 )]
+transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 0, 12, 12 )
+title_key = "Dustin's Note"
+text_key = "The Lamb (Blessed Be Most Holy) has given us a room to perform exercise to keep our bodies fresh. We are to reject bodily desires but we also must protect the temple which guards our souls. We have to keep our temple strong and that means ensuring our strength and health. The Lamb (Blessed Be Most Holy) is able to guard His soul through faith alone, but we are weak. We require strength of body, mind, and soul! Exercise, resistence to worldly temptations, and The Sacrement fulfill all of our needs. "

@@ -54,3 +54,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -23.3272, -11 )
 
 [node name="lampSquareTable2" parent="Objects" index="2" instance=ExtResource( 6 )]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 8, -23.0665, -4.5 )
+
+[node name="Label3D" type="Label3D" parent="Objects" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, -21.5, -5 )
+pixel_size = 0.04
+billboard = 1
+alpha_cut = 1
+text = "Left click to pick up and drop items"
+autowrap = true
+width = 200.0

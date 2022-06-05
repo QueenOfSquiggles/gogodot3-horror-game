@@ -53,7 +53,7 @@ func _load_gradual(path: String) -> void:
 	current_scene = get_tree().current_scene
 	loader = ResourceLoader.load_interactive(path)
 	assert(loader, "Failed to create resource loader for %s" % path)
-	set_process(true)
+	call_deferred("set_process", true)
 	current_scene.queue_free()
 	_load_instant(DEFAULT_LOADING_SCREEN)
 	wait_frames = 1

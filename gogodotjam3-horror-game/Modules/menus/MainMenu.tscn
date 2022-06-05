@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Modules/menus/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Modules/menus/OptionsMenu.tscn" type="PackedScene" id=2]
@@ -7,6 +7,17 @@
 [ext_resource path="res://Modules/menus/CreditsMenu.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Modules/menus/theming/basic_theme.tres" type="Theme" id=6]
 [ext_resource path="res://Modules/menus/ui_sounds/UiSoundPack.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Resources/Materials/PostProcess/blue_noise_dither.tres" type="Material" id=8]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/gltf/imported/SurfaceMesh.tscn" type="PackedScene" id=9]
+[ext_resource path="res://dark_environment.tres" type="Environment" id=10]
+[ext_resource path="res://addons/subtitles/default_theming/DuruSans-Regular.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Resources/UI/icons/twitter_icon.png" type="Texture" id=12]
+[ext_resource path="res://Resources/UI/icons/youtube_icon.png" type="Texture" id=13]
+[ext_resource path="res://Resources/UI/icons/itch_icon.png" type="Texture" id=14]
+
+[sub_resource type="DynamicFont" id=1]
+size = 44
+font_data = ExtResource( 11 )
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -17,10 +28,31 @@ game_scene_path = ExtResource( 4 )
 options_menu = ExtResource( 2 )
 credits_menu = ExtResource( 5 )
 
-[node name="BGColour" type="ColorRect" parent="."]
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+material = ExtResource( 8 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
+stretch = true
+stretch_shrink = 3
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 341, 200 )
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="SurfaceMesh" parent="ViewportContainer/Viewport" instance=ExtResource( 9 )]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="ViewportContainer/Viewport"]
+environment = ExtResource( 10 )
+
+[node name="Camera" type="Camera" parent="ViewportContainer/Viewport"]
+transform = Transform( -0.987661, 0, -0.156607, 0, 1, 0, 0.156607, 0, -0.987661, 7.37068, 5.5867, -11.4758 )
+current = true
+
+[node name="DirectionalLight" type="DirectionalLight" parent="ViewportContainer/Viewport"]
+transform = Transform( 0.921816, -0.239718, -0.304616, 0, -0.785846, 0.618422, -0.387628, -0.570071, -0.724405, 0, 24.9981, 0 )
+light_color = Color( 0.333333, 0.376471, 0.619608, 1 )
+light_energy = 0.5
 
 [node name="GameButtons" type="PanelContainer" parent="."]
 anchor_top = 1.0
@@ -111,6 +143,7 @@ alignment = 1
 [node name="Twitter" parent="Socials/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
 margin_left = 97.0
 margin_right = 129.0
+icon = ExtResource( 12 )
 URI = "https://twitter.com/OfSquiggles"
 
 [node name="UiSoundPack6" parent="Socials/VBoxContainer/HBoxContainer/Twitter" instance=ExtResource( 7 )]
@@ -118,6 +151,7 @@ URI = "https://twitter.com/OfSquiggles"
 [node name="Youtube" parent="Socials/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
 margin_left = 133.0
 margin_right = 165.0
+icon = ExtResource( 13 )
 URI = "https://www.youtube.com/channel/UCIh0Th1EBpFlvcKYWld0OsQ"
 
 [node name="UiSoundPack7" parent="Socials/VBoxContainer/HBoxContainer/Youtube" instance=ExtResource( 7 )]
@@ -125,6 +159,7 @@ URI = "https://www.youtube.com/channel/UCIh0Th1EBpFlvcKYWld0OsQ"
 [node name="ItchIO" parent="Socials/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
 margin_left = 169.0
 margin_right = 201.0
+icon = ExtResource( 14 )
 URI = "https://queenofsquiggles.itch.io/"
 
 [node name="UiSoundPack8" parent="Socials/VBoxContainer/HBoxContainer/ItchIO" instance=ExtResource( 7 )]
@@ -132,17 +167,23 @@ URI = "https://queenofsquiggles.itch.io/"
 [node name="Label" type="Label" parent="Socials/VBoxContainer"]
 margin_top = 36.0
 margin_right = 299.0
-margin_bottom = 50.0
+margin_bottom = 57.0
 text = "A game by QueenOfSquiggles (2022)"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 334.0
-margin_top = 89.0
-margin_right = 840.0
-margin_bottom = 129.0
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 521.0
+margin_bottom = 243.0
+custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "[wave] GoGodot Jam 3 Unnamed Horror Game! [/wave]"
-text = " GoGodot Jam 3 Unnamed Horror Game! "
+bbcode_text = "[wave] The Ascension Of The Lamb
+
+(Jam Version) [/wave]"
+meta_underlined = false
+text = " The Ascension Of The Lamb
+
+(Jam Version) "
 fit_content_height = true
 scroll_active = false
 

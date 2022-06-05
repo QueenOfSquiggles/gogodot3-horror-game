@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/gltf/Floor2_BathroomMesh.gltf" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Materials/concrete_wall_003.material" type="Material" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Resources/Models/imported/ToiletSquare.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Resources/Models/imported/BathroomSinkSquare.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Resources/Models/imported/BathroomMirror.tscn" type="PackedScene" id=7]
+[ext_resource path="res://GameDefinitions/Items/bases/PickupItemReadable.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConcavePolygonShape" id=1]
 data = PoolVector3Array( 2, -3.4, 8.5, 6, -3.5, 8.5, 2, -2.4, 8.5, -6, -3.5, 8.5, 0, -3.4, 8.5, 0, 0, 8.5, 0, -3.4, 8.5, 6, -3.5, 8.5, 2, -3.4, 8.5, 0, -3.4, 8.5, -6, -3.5, 8.5, 6, -3.5, 8.5, -6, -3.5, 8.5, -6, 3.5, -8.5, -6, -3.5, -8.5, -6, -3.5, 8.5, -6, 3.5, 8.5, -6, 3.5, -8.5, 6, -3.5, -8.5, 6, 3.5, 8.5, 6, -3.5, 8.5, 6, -3.5, -8.5, 6, 3.5, -8.5, 6, 3.5, 8.5, 0, 0.6, 8.5, -6, -3.5, 8.5, 0, 0, 8.5, 6, 3.5, 8.5, 2, -2.4, 8.5, 6, -3.5, 8.5, 6, 3.5, 8.5, 2, 0.6, 8.5, 2, -2.4, 8.5, 0, 0.6, 8.5, -6, 3.5, 8.5, -6, -3.5, 8.5, 6, 3.5, 8.5, 0, 0.6, 8.5, 2, 0.6, 8.5, 0, 0.6, 8.5, 6, 3.5, 8.5, -6, 3.5, 8.5, -6, 3.5, -8.5, 6, -3.5, -8.5, -6, -3.5, -8.5, -6, 3.5, -8.5, 6, 3.5, -8.5, 6, -3.5, -8.5, 0, 0.6, 9, 0, -3.4, 8.5, 0, -3.4, 9, 0, 0, 8.5, 0, 0.6, 9, 0, 0.6, 8.5, 0, -3.4, 8.5, 0, 0.6, 9, 0, 0, 8.5, 2, -3.4, 9, 2, 0.6, 8.5, 2, 0.6, 9, 2, -2.4, 8.5, 2, -3.4, 9, 2, -3.4, 8.5, 2, 0.6, 8.5, 2, -3.4, 9, 2, -2.4, 8.5, -6, 3.5, -8.5, 6, 3.5, 8.5, 6, 3.5, -8.5, -6, 3.5, -8.5, -6, 3.5, 8.5, 6, 3.5, 8.5, 2, 0.6, 8.5, 0, 0.6, 9, 2, 0.6, 9, 2, 0.6, 8.5, 0, 0.6, 8.5, 0, 0.6, 9, 6, -3.5, -8.5, -6, -3.5, 8.5, -6, -3.5, -8.5, 6, -3.5, -8.5, 6, -3.5, 8.5, -6, -3.5, 8.5, 0, -3.4, 9, 2, -3.4, 8.5, 2, -3.4, 9, 0, -3.4, 9, 0, -3.4, 8.5, 2, -3.4, 8.5 )
@@ -57,3 +58,11 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.24918
 
 [node name="bathroomMirror4" parent="Spatial" index="10" instance=ExtResource( 7 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.75082, 3, 5.74153 )
+
+[node name="PickupItemReadable" parent="Spatial" index="11" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 2.5, 5 )
+title_key = "Dirty Note"
+text_key = "OMG Why is this the bathroom???
+There's no showers
+There's no stalls
+Just three fucking toilets and all the world to see!?!? It's the only one too? We ALL have to share and if one gets clogged, that's it. The Lamb (Blessed Be Most Holy) has His own bathroom private from the rest of us. Why do we all have to share?"

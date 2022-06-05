@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/gltf/Floor2_LivingAreaRadioMesh.gltf" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Materials/wood_planks_dirt.material" type="Material" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Resources/Models/imported/Table.tscn" type="PackedScene" id=7]
 [ext_resource path="res://GameDefinitions/Items/ItemRadio.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Resources/Models/imported/LampWall.tscn" type="PackedScene" id=9]
+[ext_resource path="res://GameDefinitions/Items/bases/PickupItemReadable.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConcavePolygonShape" id=1]
 data = PoolVector3Array( -6, -3.5, 8.5, -6, 3.5, -8.5, -6, -3.5, -8.5, -6, -3.5, 8.5, -6, 3.5, 8.5, -6, 3.5, -8.5, 0, 0.6, 8.5, -6, -3.5, 8.5, 0, -3.4, 8.5, 6, 3.5, 8.5, 2, -3.4, 8.5, 6, -3.5, 8.5, 6, 3.5, 8.5, 2, 0.6, 8.5, 2, -3.4, 8.5, 0, 0.6, 8.5, -6, 3.5, 8.5, -6, -3.5, 8.5, 6, 3.5, 8.5, 0, 0.6, 8.5, 2, 0.6, 8.5, 0, 0.6, 8.5, 6, 3.5, 8.5, -6, 3.5, 8.5, 6, -3.5, -8.5, 6, 3.5, 8.5, 6, -3.5, 8.5, 6, -3.5, -8.5, 6, 3.5, -8.5, 6, 3.5, 8.5, 0, -3.4, 8.5, 6, -3.5, 8.5, 2, -3.4, 8.5, 0, -3.4, 8.5, -6, -3.5, 8.5, 6, -3.5, 8.5, -6, 3.5, -8.5, 6, -3.5, -8.5, -6, -3.5, -8.5, -6, 3.5, -8.5, 6, 3.5, -8.5, 6, -3.5, -8.5, 0, -3.4, 9, 0, 0.6, 8.5, 0, -3.4, 8.5, 0, -3.4, 9, 0, 0.6, 9, 0, 0.6, 8.5, 2, 0.6, 9, 2, -3.4, 8.5, 2, 0.6, 8.5, 2, 0.6, 9, 2, -3.4, 9, 2, -3.4, 8.5, -6, 3.5, -8.5, 6, 3.5, 8.5, 6, 3.5, -8.5, -6, 3.5, -8.5, -6, 3.5, 8.5, 6, 3.5, 8.5, 2, 0.6, 8.5, 0, 0.6, 9, 2, 0.6, 9, 2, 0.6, 8.5, 0, 0.6, 8.5, 0, 0.6, 9, 6, -3.5, -8.5, -6, -3.5, 8.5, -6, -3.5, -8.5, 6, -3.5, -8.5, 6, -3.5, 8.5, -6, -3.5, 8.5, 0, -3.4, 9, 2, -3.4, 8.5, 2, -3.4, 9, 0, -3.4, 9, 0, -3.4, 8.5, 2, -3.4, 8.5 )
@@ -57,3 +58,12 @@ rigid_mode_start = 1
 
 [node name="lampWall" parent="Spatial" index="9" instance=ExtResource( 9 )]
 transform = Transform( -1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 1.5, 5, 3.02408 )
+
+[node name="PickupItemReadable" parent="Spatial" index="10" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.39873, 0.5 )
+title_key = "Divine Scribe's Reflection"
+text_key = "The Lamb (Blessed Be Most Holy) has blessed us with a radio. He (Blessed Be Most Holy) has commanded that we should listen to the radio programs to understand what the faithless are up to. He (Blessed Be Most Holy) wants us to inform Him (Blessed Be Most Holy) of any information regarding our most holy sanctity. We are to practice guarding ourselves from the evils of the faithless by listening to their programs, temptations, and their music. After every session I feel stronger in my faith. He (Blessed Be Most Holy) will protect us from The Enemy and his agents. As long as we keep our faith strong, the faithless cannot hurt us.
+
+Signed,
+Abby
+Divine Scribe of The Lamb (Blessed Be Most Holy) "

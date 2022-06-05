@@ -10,9 +10,11 @@ func tick(actor : Node, bb : Blackboard) -> int:
 	if held_obj_root.get_child_count() <= 0:
 		return FAILURE
 
-
+	
 	var item := held_obj_root.get_child(0) as PickupItemBase
 	if not item:
 		return FAILURE
 	item.use_item(actor)
+	var selection_cast := bb.get("selection_cast") as InteractionRayCast
+	selection_cast.call_deferred("force_end_interact")
 	return SUCCESS

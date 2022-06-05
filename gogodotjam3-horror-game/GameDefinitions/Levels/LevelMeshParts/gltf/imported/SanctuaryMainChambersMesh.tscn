@@ -8,9 +8,43 @@ data = PoolVector3Array( -31.8157, -15.6569, 44.4683, -31.8314, -13.1945, 46.327
 
 [node name="Sanctuary_MainChambersMesh" instance=ExtResource( 1 )]
 
-[node name="Sanctuary_MainChambersMesh2" parent="." index="0"]
-material/0 = ExtResource( 2 )
-
 [node name="CollisionShape2" type="CollisionShape" parent="." index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45.5, 13, 19 )
 shape = SubResource( 1 )
+
+[node name="Sanctuary_MainChambersMesh2" parent="." index="3"]
+material/0 = ExtResource( 2 )
+
+[node name="Spatial" type="Spatial" parent="." index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.5, 0, 9 )
+
+[node name="Label3D" type="Label3D" parent="Spatial" index="0"]
+pixel_size = 0.1
+billboard = 1
+alpha_cut = 1
+text = "This game was not able to be completed for the game jam. This segment and many others are currently unfinished"
+line_spacing = 1.0
+autowrap = true
+width = 250.0
+
+[node name="Label3D2" type="Label3D" parent="Spatial" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 29.5 )
+pixel_size = 0.1
+billboard = 1
+alpha_cut = 1
+text = "Thank you so much for playing!"
+line_spacing = 1.0
+autowrap = true
+width = 250.0
+
+[node name="Label3D3" type="Label3D" parent="Spatial" index="2"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 55, -0.5, -10 )
+pixel_size = 0.05
+shaded = true
+double_sided = false
+alpha_cut = 1
+alpha_scissor_threshold = 0.24
+text = "My my aren't you a curious one"
+line_spacing = 1.0
+autowrap = true
+width = 250.0

@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://addons/godot-psx-shaders-master/shaders/psx_dither_post.shader" type="Shader" id=1]
+[ext_resource path="res://addons/godot-psx-shaders-master/shaders/dithers/bluenoise_128_128.png" type="Texture" id=2]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/col_depth = 16.0
+shader_param/dither_uv_scale = 1.0
+shader_param/dith_range = 1.0
+shader_param/dither_tex = ExtResource( 2 )

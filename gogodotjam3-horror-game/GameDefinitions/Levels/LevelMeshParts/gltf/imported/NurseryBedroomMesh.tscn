@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/gltf/Nursery_BedroomMesh.gltf" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Materials/wood_planks_dirt.material" type="Material" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Resources/Models/imported/CabinetBedDrawerChild.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Resources/Models/imported/TableChild.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Resources/Models/imported/BedSingleChild.tscn" type="PackedScene" id=7]
+[ext_resource path="res://GameDefinitions/Items/bases/PickupItemReadable.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConcavePolygonShape" id=1]
 data = PoolVector3Array( -12.5, -3.5, 8.5, -12.5, 3.5, -8.5, -12.5, -3.5, -8.5, -12.5, -3.5, 8.5, -12.5, 3.5, 8.5, -12.5, 3.5, -8.5, 0, -3.4, 8.5, -12.5, -3.5, 8.5, 1.5, -3.4, 8.5, 12.5, 3.5, 8.5, 2, -3.4, 8.5, 12.5, -3.5, 8.5, 12.5, 3.5, 8.5, 2, 0.6, 8.5, 2, -3.4, 8.5, 0, -3.4, 8.5, -12.5, 3.5, 8.5, -12.5, -3.5, 8.5, 12.5, 3.5, 8.5, 0, 0.6, 8.5, 2, 0.6, 8.5, 0, 0.6, 8.5, -12.5, 3.5, 8.5, 0, -3.4, 8.5, 0, 0.6, 8.5, 12.5, 3.5, 8.5, -12.5, 3.5, 8.5, -12.5, 3.5, -8.5, 12.5, -3.5, -8.5, -12.5, -3.5, -8.5, -12.5, 3.5, -8.5, 12.5, 3.5, -8.5, 12.5, -3.5, -8.5, -12.5, -3.5, 8.5, 2, -3.4, 8.5, 1.5, -3.4, 8.5, -12.5, -3.5, 8.5, 12.5, -3.5, 8.5, 2, -3.4, 8.5, 2, -3.4, 9, 2, 0.6, 8.5, 2, 0.6, 9, 2, -3.4, 9, 2, -3.4, 8.5, 2, 0.6, 8.5, 12.5, -3.5, -8.5, 12.5, 3.5, 8.5, 12.5, -3.5, 8.5, 12.5, -3.5, -8.5, 12.5, 3.5, -8.5, 12.5, 3.5, 8.5, 0, -3.4, 9, 0, 0.6, 8.5, 0, -3.4, 8.5, 0, -3.4, 9, 0, 0.6, 9, 0, 0.6, 8.5, -12.5, 3.5, -8.5, 12.5, 3.5, 8.5, 12.5, 3.5, -8.5, -12.5, 3.5, -8.5, -12.5, 3.5, 8.5, 12.5, 3.5, 8.5, 0, 0.6, 9, 2, 0.6, 8.5, 0, 0.6, 8.5, 0, 0.6, 9, 2, 0.6, 9, 2, 0.6, 8.5, 12.5, -3.5, -8.5, -12.5, -3.5, 8.5, -12.5, -3.5, -8.5, 12.5, -3.5, -8.5, 12.5, -3.5, 8.5, -12.5, -3.5, 8.5, 0, -3.4, 8.5, 2, -3.4, 9, 0, -3.4, 9, 2, -3.4, 9, 1.5, -3.4, 8.5, 2, -3.4, 8.5, 2, -3.4, 9, 0, -3.4, 8.5, 1.5, -3.4, 8.5 )
@@ -138,3 +139,16 @@ transform = Transform( 2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, -1, 0, 11
 
 [node name="table10" parent="Spatial" index="37" instance=ExtResource( 6 )]
 transform = Transform( 2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, -1, 0, 14 )
+
+[node name="PickupItemReadable" parent="Spatial" index="38" instance=ExtResource( 8 )]
+transform = Transform( -0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -0.268957, 1.29936, 4.5 )
+title_key = "Developer's Note"
+text_key = "Thank you so much for playing!
+
+This floor and the floors below are currently unfinished. This game was created for the GoGodotJam 3. This version you are playing is the \"jam version\" which is able to be ranked because it was completed in the time limit of the jam. 
+I plan to release a \"post-jam\" version after the ranking period has completed. That version will include the lore, puzzles, etc... for this floor and deeper. 
+
+I really hope you enjoyed this game. I'd really appreciate any feedback on it! Also keep watching the project page for that \"post jam\" release!
+
+XOXOXO
+QueenOfSquiggles"

@@ -3,6 +3,7 @@ extends KinematicBody
 onready var anim := get_node("../../../AnimationPlayer") as AnimationPlayer
 var is_open := false
 
+var interact_prompt := "Open door"
 
 func interact(_source) -> void:
 	var anim_name := "close" if is_open else "open"

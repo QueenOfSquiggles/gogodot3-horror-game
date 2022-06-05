@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Resources/KenneyPacks/Furniture/GLTF format/cabinetBedDrawer.glb" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Materials/metal_plate.material" type="Material" id=2]
+[ext_resource path="res://Resources/Materials/wood_table_001.material" type="Material" id=3]
 
 [sub_resource type="ConcavePolygonShape" id=1]
 data = PoolVector3Array( 0.1968, 0.0927, 0, 0, 0.0927, 0, 0, 0.0927, -0.0164, 0, 0.0927, -0.0164, 0.1968, 0.0927, -0.0164, 0.1968, 0.0927, 0, 0.1968, 0, -0.0164, 0.1968, 0, 0, 0.1968, 0.0927, 0, 0.1968, 0.0927, 0, 0.1968, 0.0927, -0.0164, 0.1968, 0, -0.0164, 0, 0, -0.0164, 0, 0, 0, 0.1968, 0, 0, 0.1968, 0, 0, 0.1968, 0, -0.0164, 0, 0, -0.0164, 0.1968, 0, 0, 0, 0, 0, 0.1763, 0.0245, 0, 0.1763, 0.0245, 0, 0.1968, 0.0927, 0, 0.1968, 0, 0, 0.1763, 0.0245, 0, 0.1763, 0.0701, 0, 0.1968, 0.0927, 0, 0.1763, 0.0701, 0, 0.1558, 0.0701, 0, 0.1968, 0.0927, 0, 0.1558, 0.0245, 0, 0.1763, 0.0245, 0, 0, 0, 0, 0, 0, 0, 0, 0.0927, 0, 0.1558, 0.0245, 0, 0, 0.0927, 0, 0.1558, 0.0701, 0, 0.1558, 0.0245, 0, 0, 0.0927, 0, 0.1968, 0.0927, 0, 0.1558, 0.0701, 0, 0, 0.0927, -0.0164, 0, 0.0927, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.0164, 0, 0.0927, -0.0164, 0.1742, 0.0635, 0.0123, 0.1742, 0.0311, 0.0123, 0.1579, 0.0311, 0.0123, 0.1579, 0.0311, 0.0123, 0.1579, 0.0635, 0.0123, 0.1742, 0.0635, 0.0123, 0.1558, 0.0701, 0, 0.1579, 0.0635, 0.0123, 0.1579, 0.0311, 0.0123, 0.1579, 0.0311, 0.0123, 0.1558, 0.0245, 0, 0.1558, 0.0701, 0, 0.1763, 0.0245, 0, 0.1558, 0.0245, 0, 0.1579, 0.0311, 0.0123, 0.1579, 0.0311, 0.0123, 0.1742, 0.0311, 0.0123, 0.1763, 0.0245, 0, 0.1579, 0.0635, 0.0123, 0.1558, 0.0701, 0, 0.1763, 0.0701, 0, 0.1763, 0.0701, 0, 0.1742, 0.0635, 0.0123, 0.1579, 0.0635, 0.0123, 0.1742, 0.0311, 0.0123, 0.1742, 0.0635, 0.0123, 0.1763, 0.0701, 0, 0.1763, 0.0701, 0, 0.1763, 0.0245, 0, 0.1742, 0.0311, 0.0123 )
@@ -15,11 +17,21 @@ data = PoolVector3Array( 0, 0.2432, -0.205, 0, 0, -0.205, 0.03, 0, -0.205, 0.03,
 
 [node name="cabinetBedDrawer(Clone)" parent="." index="0"]
 transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
+material/0 = ExtResource( 3 )
+material/1 = ExtResource( 2 )
+
+[node name="door" parent="cabinetBedDrawer(Clone)" index="0"]
+material/0 = ExtResource( 3 )
+material/1 = ExtResource( 2 )
 
 [node name="StaticBody" type="StaticBody" parent="cabinetBedDrawer(Clone)/door" index="0"]
 
 [node name="CollisionShape" type="CollisionShape" parent="cabinetBedDrawer(Clone)/door/StaticBody" index="0"]
 shape = SubResource( 1 )
+
+[node name="drawer" parent="cabinetBedDrawer(Clone)" index="1"]
+material/0 = ExtResource( 3 )
+material/1 = ExtResource( 2 )
 
 [node name="StaticBody" type="StaticBody" parent="cabinetBedDrawer(Clone)/drawer" index="0"]
 

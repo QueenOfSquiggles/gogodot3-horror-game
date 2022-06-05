@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/gltf/Floor1_BedroomAbbyMesh.gltf" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Materials/wood_planks_dirt.material" type="Material" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Resources/Models/imported/BedSingle.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Resources/Models/imported/CabinetBedDrawer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Resources/Models/imported/Table.tscn" type="PackedScene" id=7]
+[ext_resource path="res://GameDefinitions/Items/bases/PickupItemReadable.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConcavePolygonShape" id=1]
 data = PoolVector3Array( -4, -2.5, 6.5, -4, 2.5, -6.5, -4, -2.5, -6.5, -4, -2.5, 6.5, -4, 2.5, 6.5, -4, 2.5, -6.5, 4, 2.5, 6.5, 4, -2.5, -6.5, 4, 2.5, -6.5, 4, 2.5, 6.5, 4, -2.5, 6.5, 4, -2.5, -6.5, -2, 1.6, -7, -2, 1.6, -7, -2, 1.6, -6.5, 0, 1.6, -6.5, -4, 2.5, -6.5, 4, 2.5, -6.5, 0, 1.6, -6.5, -2, 1.6, -6.5, -4, 2.5, -6.5, 4, 2.5, 6.5, -4, -2.5, 6.5, 4, -2.5, 6.5, 4, 2.5, 6.5, -4, 2.5, 6.5, -4, -2.5, 6.5, -4, 2.5, -6.5, -2, -2.4, -6.5, -4, -2.5, -6.5, -4, 2.5, -6.5, -2, 1.6, -6.5, -2, -2.4, -6.5, 0, -2.4, -6.5, 4, 2.5, -6.5, 4, -2.5, -6.5, 0, -2.4, -6.5, 0, 1.6, -6.5, 4, 2.5, -6.5, 4, -2.5, -6.5, -2, -2.4, -6.5, 0, -2.4, -6.5, 4, -2.5, -6.5, -4, -2.5, -6.5, -2, -2.4, -6.5, 0, 1.6, -7, 0, -2.4, -6.5, 0, -2.4, -7, 0, 1.6, -7, 0, 1.6, -6.5, 0, -2.4, -6.5, -2, -2.4, -6.5, -2, 1.6, -7, -2, -2.4, -7, -2, -2.4, -6.5, -2, 1.6, -6.5, -2, 1.6, -7, 4, 2.5, 6.5, -4, 2.5, -6.5, -4, 2.5, 6.5, 4, 2.5, 6.5, 4, 2.5, -6.5, -4, 2.5, -6.5, 0, 1.6, -7, -2, 1.6, -6.5, 0, 1.6, -6.5, 0, 1.6, -7, -2, 1.6, -7, -2, 1.6, -6.5, -4, -2.5, 6.5, 4, -2.5, -6.5, 4, -2.5, 6.5, -4, -2.5, 6.5, -4, -2.5, -6.5, 4, -2.5, -6.5, -2, -2.4, -7, 0, -2.4, -6.5, -2, -2.4, -6.5, -2, -2.4, -7, 0, -2.4, -7, 0, -2.4, -6.5 )
@@ -33,3 +34,15 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -2.5
 
 [node name="table" parent="Objects" index="2" instance=ExtResource( 7 )]
 transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, -4, -2.5, 1.5 )
+
+[node name="PickupItemReadable" parent="Objects" index="3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -1, 10.5 )
+title_key = "Abby's Journal"
+text_key = "BLESSED BE MOST HOLY!
+The Lamb (Blessed Be) has granted me the most respectable rank of \"Divine Scribe\". I am to be to The Lamb (Blessed Be) what the gospels were to jesus (the lesser savior).
+
+Despite my weakness of faith The Glorious Lamb (Blessed Be) has taken pity on my shriveled soul! Perhaps though this divine command of our most sacred Lamb (Blessed Be) I will grow in my faith and become worthy of \"The Sacrement\".
+
+Signed,
+Abby
+Divine Scribe"

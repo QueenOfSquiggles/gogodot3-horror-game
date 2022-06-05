@@ -106,10 +106,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3.36428, -5 )
 [node name="DrainableSink" parent="Objects" index="25" instance=ExtResource( 8 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7, -8.5, -12.5 )
 
-[node name="PickupItemReadable" parent="Objects/DrainableSink" index="3" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.943014, 1.6645, -0.945444 )
-rigid_mode_start = 1
-
 [node name="DrainableSink2" parent="Objects" index="26" instance=ExtResource( 8 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7, -8.5, -10.5 )
 
@@ -128,3 +124,17 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7, -8.5
 
 [node name="DrainableSink6" parent="Objects" index="30" instance=ExtResource( 8 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7, -8.5, -14.5 )
+
+[node name="Label3D" type="Label3D" parent="Objects" index="31"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2, -5.5, -0.626633 )
+pixel_size = 0.05
+double_sided = false
+alpha_cut = 1
+text = "Right click to use a held item"
+autowrap = true
+width = 200.0
+
+[node name="PickupItemReadable" parent="Objects" index="32" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.64113, -2 )
+title_key = "Kitchen Note"
+text_key = "It's so frustrating being such a low class disciple! The Lamb (blessed be) requires that we cook and serve all meals for the entirety of the sanctity. Luckily, The Lamb (blessed be) does not come up here and won't find us lacking in faith."

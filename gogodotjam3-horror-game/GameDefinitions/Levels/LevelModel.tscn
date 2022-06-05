@@ -32,9 +32,8 @@
 
 [node name="RoomManager" type="RoomManager" parent="."]
 roomlist = NodePath(".")
-pvs_mode = 2
 merge_meshes = true
-portal_depth_limit = 2
+show_margins = false
 
 [node name="Surface" type="Room" parent="RoomManager"]
 points = PoolVector3Array( -54.4982, 33, 94.787, 55.2007, 33, 94.787, -54.4982, -27.4328, 94.787, 55.2007, -27.4328, 94.787, -54.4982, 33, 2.5, 55.2007, 33, 2.5, -54.4982, -27.4328, 2.5, 55.2007, -27.4328, 2.5 )

@@ -246,6 +246,9 @@ script = ExtResource( 9 )
 
 [node name="Move" type="Node" parent="PlayerBehaviourTree/root/NormalInteractions"]
 script = ExtResource( 5 )
+walk_speed = 5.0
+sprint_speed = 15.0
+acceleration = 5.0
 
 [connection signal="on_end_collide_mt" from="Pivot/Camera/SelectionCast" to="." method="play_animation" binds= [ "end_can_interact" ]]
 [connection signal="on_start_collide_mt" from="Pivot/Camera/SelectionCast" to="." method="play_animation" binds= [ "start_can_interact" ]]
