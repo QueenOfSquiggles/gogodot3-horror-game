@@ -6,5 +6,5 @@ export(String, MULTILINE) var text_key := "text_key"
 func _ready() -> void:
 	self.item_name = title_key
 
-func use_item(_player : FirstPersonCharacterBase) -> void:
+func use_item(_player : Node) -> void:
 	Readables.display_readable(title_key, text_key)

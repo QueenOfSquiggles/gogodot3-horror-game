@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://GameDefinitions/Rendering/PlayViewport.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TierTwoModules/first_person_controller/FirstPersonCharacterBase.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Globals/serialization/LevelSaver.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Resources/Music/Drones/hiding_place_mp3/last_breath.mp3" type="AudioStream" id=8]
 [ext_resource path="res://dark_environment.tres" type="Environment" id=9]
+[ext_resource path="res://TierTwoModules/first_person_controller/InteractHUD.tscn" type="PackedScene" id=10]
 
 [node name="TestingLevel" instance=ExtResource( 1 )]
 material = ExtResource( 5 )
@@ -41,11 +42,16 @@ __meta__ = {
 [node name="held_object" parent="Viewport/Spatial/FirstPersonCharacterBase/Pivot/Camera" index="1"]
 transform = Transform( 1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, 0, 0, -1.97 )
 
-[node name="Interaction PromptHud" parent="." index="2" instance=ExtResource( 6 )]
+[node name="Dummy" parent="Viewport/Spatial/FirstPersonCharacterBase/Pivot/Camera/DropPosition" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
-[node name="PauseMenu" parent="." index="3" instance=ExtResource( 4 )]
+[node name="InteractHUD" parent="." index="2" instance=ExtResource( 10 )]
 
-[node name="BGM" type="Node" parent="." index="4"]
+[node name="Interaction PromptHud" parent="." index="3" instance=ExtResource( 6 )]
+
+[node name="PauseMenu" parent="." index="4" instance=ExtResource( 4 )]
+
+[node name="BGM" type="Node" parent="." index="5"]
 pause_mode = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BGM" index="0"]
@@ -53,7 +59,9 @@ stream = ExtResource( 8 )
 autoplay = true
 bus = "Music"
 
+[connection signal="interactable_select_ended" from="Viewport/Spatial/FirstPersonCharacterBase" to="InteractHUD" method="end"]
 [connection signal="interactable_select_ended" from="Viewport/Spatial/FirstPersonCharacterBase" to="Interaction PromptHud" method="_on_interactable_select_ended"]
+[connection signal="interactable_select_started" from="Viewport/Spatial/FirstPersonCharacterBase" to="InteractHUD" method="start"]
 [connection signal="interactable_select_started" from="Viewport/Spatial/FirstPersonCharacterBase" to="Interaction PromptHud" method="_on_FirstPersonCharacterBase_interactable_select_started"]
 
 [editable path="Viewport/Spatial/FirstPersonCharacterBase"]

@@ -45,13 +45,14 @@ func _ready() -> void:
 	if not audio_lib:
 		push_warning("PickupItem [%s] does not have an AudioLib3D set" % self.name)
 
-func interact(player : FirstPersonCharacterBase) -> void:
-	player.set_held_item(null if is_being_held else self)
+func interact(source : Node) -> void:
+	if source.has_method("set_held_item"):
+		source.set_held_item(null if is_being_held else self)
 
-func use_item(_player : FirstPersonCharacterBase) -> void:
+func use_item(_source : Node) -> void:
 	pass
 
-func pickup_item(_player : FirstPersonCharacterBase) -> void:
+func pickup_item(_source : Node) -> void:
 	is_being_held = true
 	mode = RigidBody.MODE_STATIC
 	transform = Transform.IDENTITY # reset position to ensure no weird reactions.
@@ -60,16 +61,8 @@ func pickup_item(_player : FirstPersonCharacterBase) -> void:
 	if audio_lib:
 		audio_lib.play(sfx_pickup)
 
-func remove_item(_player : FirstPersonCharacterBase) -> void:
+func remove_item(_player : Node) -> void:
 	is_being_held = false
-	set_as_toplevel(true)
-	var glob_rot := self.rotation
-	set_as_toplevel(false)
-	var trans := (get_parent() as Spatial).global_transform
-	get_parent().remove_child(self)
-	original_parent.add_child(self)
-	self.global_transform = trans
-	self.rotation = glob_rot
 	self.mode = RigidBody.MODE_RIGID
 	self.collision_layer = original_collision_layer
 	self.collision_mask = original_collision_mask
@@ -104,3 +97,7 @@ func load_save_data(data : Dictionary) -> void:
 	if is_being_held:
 		pickup_item(null) # doesn't actually use the player instance
 		original_parent = get_tree().current_scene # fail-safe
+
+
+func _on_InteractableArea_on_interact(source) -> void:
+	self.interact(source)

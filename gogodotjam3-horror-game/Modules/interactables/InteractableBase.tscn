@@ -2,5 +2,5 @@
 
 [ext_resource path="res://Modules/interactables/InteractableBase.gd" type="Script" id=1]
 
-[node name="InteractableBase" type="Area"]
+[node name="InteractableArea" type="Area"]
 script = ExtResource( 1 )

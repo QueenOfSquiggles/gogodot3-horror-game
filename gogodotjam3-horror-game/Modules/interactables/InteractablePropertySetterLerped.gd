@@ -22,14 +22,10 @@ enum TransitionType {
 	TRANS_BACK = 10
 }
 
-
-
 export (float, 0.0, 999.0) var lerp_time := 2.0
 export (EaseType) var ease_type := EaseType.EASE_IN_OUT
 export (TransitionType) var transition_type := TransitionType.TRANS_LINEAR
 onready var tween := $Tween
-
-
 
 func _set_prop(value) -> void:
 	var node : Node = get_node(target_node)

@@ -1,11 +1,10 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://TierTwoModules/first_person_controller/player_bt/LoadInputs.gd" type="Script" id=1]
-[ext_resource path="res://Resources/UI/Reticle/crosshair118.png" type="Texture" id=2]
 [ext_resource path="res://Modules/behaviour_tree/nodes/composites/sequence.gd" type="Script" id=3]
 [ext_resource path="res://Modules/behaviour_tree/nodes/bt_root.gd" type="Script" id=4]
 [ext_resource path="res://TierTwoModules/first_person_controller/player_bt/Move.gd" type="Script" id=5]
-[ext_resource path="res://TierTwoModules/first_person_controller/PlayerSelectionCast.gd" type="Script" id=6]
+[ext_resource path="res://Modules/interactables/InteractionDetector.tscn" type="PackedScene" id=6]
 [ext_resource path="res://TierTwoModules/first_person_controller/player_bt/IsOccupied.gd" type="Script" id=7]
 [ext_resource path="res://TierTwoModules/first_person_controller/player_bt/ItemInteractExternal.gd" type="Script" id=8]
 [ext_resource path="res://TierTwoModules/first_person_controller/player_bt/LookCam.gd" type="Script" id=9]
@@ -24,79 +23,6 @@
 radius = 0.78681
 height = 2.15563
 
-[sub_resource type="Shader" id=5]
-code = "shader_type canvas_item;
-
-void fragment(){
-	float alpha = texture(TEXTURE, UV).a;
-	vec3 screen_colour = texture(SCREEN_TEXTURE, SCREEN_UV).rgb;
-	COLOR = vec4(vec3(1.0) - screen_colour, alpha);	
-}"
-
-[sub_resource type="ShaderMaterial" id=6]
-shader = SubResource( 5 )
-
-[sub_resource type="Animation" id=2]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("internal_hud/Control/TextureRect:rect_scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Pivot/Camera/held_object:translation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, -1.97 ) ]
-}
-
-[sub_resource type="Animation" id=4]
-resource_name = "end_can_interact"
-length = 0.2
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("internal_hud/Control/TextureRect:rect_scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.05, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.5, 1.5 ), Vector2( 1e-05, 1e-05 ) ]
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "start_can_interact"
-length = 0.2
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("internal_hud/Control/TextureRect:rect_scale")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1, 1 ), Vector2( 1.5, 1.5 ), Vector2( 1, 1 ) ]
-}
-
 [node name="FirstPersonCharacterBase" type="KinematicBody" groups=["persist", "player"]]
 script = ExtResource( 14 )
 
@@ -113,64 +39,19 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0 )
 current = true
 far = 1000.0
 
-[node name="SelectionCast" type="RayCast" parent="Pivot/Camera"]
-enabled = true
-cast_to = Vector3( 0, 0, -10 )
-collide_with_areas = true
-script = ExtResource( 6 )
-cache_time = 0.1
-
-[node name="held_object" type="Position3D" parent="Pivot/Camera"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.97 )
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="DropPosition" type="Position3D" parent="Pivot/Camera"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.67458 )
+[node name="InteractionDetector" parent="Pivot/Camera" instance=ExtResource( 6 )]
 
 [node name="SpotLight" type="SpotLight" parent="Pivot/Camera"]
 spot_range = 30.0
 spot_angle = 30.0
 spot_angle_attenuation = 0.287174
 
-[node name="internal_hud" type="Control" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="RemoteTransform" type="RemoteTransform" parent="Pivot/Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.944 )
+remote_path = NodePath("../Dummy")
 
-[node name="Control" type="CenterContainer" parent="internal_hud"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 20.0
-margin_bottom = 20.0
-
-[node name="TextureRect" type="TextureRect" parent="internal_hud/Control"]
-material = SubResource( 6 )
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 36.0
-margin_bottom = 36.0
-grow_horizontal = 2
-grow_vertical = 2
-rect_min_size = Vector2( 32, 32 )
-rect_scale = Vector2( 1e-05, 1e-05 )
-rect_pivot_offset = Vector2( 16, 16 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource( 2 )
-expand = true
-stretch_mode = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "RESET"
-playback_default_blend_time = 0.1
-anims/RESET = SubResource( 2 )
-anims/end_can_interact = SubResource( 4 )
-anims/start_can_interact = SubResource( 3 )
+[node name="Dummy" type="Spatial" parent="Pivot/Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.944 )
 
 [node name="PlayerBehaviourTree" type="Node" parent="."]
 script = ExtResource( 4 )
@@ -193,8 +74,7 @@ script = ExtResource( 3 )
 script = ExtResource( 11 )
 camera_path = NodePath("../../../../../../Pivot/Camera")
 camera_pivot_path = NodePath("../../../../../../Pivot")
-selection_cast = NodePath("../../../../../../Pivot/Camera/SelectionCast")
-held_object_root = NodePath("../../../../../../Pivot/Camera/held_object")
+selection_cast = NodePath("../../../../../../Pivot/Camera/InteractionDetector")
 animation_player = NodePath("../../../../../../AnimationPlayer")
 
 [node name="GrabMouse" type="Node" parent="PlayerBehaviourTree/root/AlwaysSucceedDecorator/LimiterDecorator/SequenceComposite"]
@@ -250,5 +130,4 @@ walk_speed = 5.0
 sprint_speed = 15.0
 acceleration = 5.0
 
-[connection signal="on_end_collide_mt" from="Pivot/Camera/SelectionCast" to="." method="play_animation" binds= [ "end_can_interact" ]]
-[connection signal="on_start_collide_mt" from="Pivot/Camera/SelectionCast" to="." method="play_animation" binds= [ "start_can_interact" ]]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

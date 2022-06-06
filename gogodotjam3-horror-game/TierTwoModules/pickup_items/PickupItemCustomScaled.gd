@@ -8,12 +8,12 @@ export (Array, NodePath) var scale_children : Array
 func _ready() -> void:
 	_set_scales(world_scale)
 
-func pickup_item(player : FirstPersonCharacterBase) -> void:
+func pickup_item(player : Node) -> void:
 	.pickup_item(player)
 	self.transform = Transform.IDENTITY
 	_set_scales(held_scale)
 
-func remove_item(player : FirstPersonCharacterBase) -> void:
+func remove_item(player : Node) -> void:
 	.remove_item(player)
 	_set_scales(world_scale)
 	self.mode = RigidBody.MODE_RIGID

@@ -9,7 +9,10 @@ export (String) var desired_property_name :String = "prop_path_not_set!!!"
 # value to assign to property
 export (bool) var desired_value : bool
 
-func use_item(player : FirstPersonCharacterBase) -> void:
+func use_item(source : Node) -> void:
+	var player := source as FirstPersonCharacterBase
+	if not player:
+		return
 	var inter := player.selection_raycast
 	var collider := inter.cached_collider
 	if collider:

@@ -1,6 +1,7 @@
 extends Leaf
 # Item Interact
 
+
 func tick(actor : Node, bb : Blackboard) -> int:
 	if not bb.get("input_interact", false) as bool:
 		return FAILURE
