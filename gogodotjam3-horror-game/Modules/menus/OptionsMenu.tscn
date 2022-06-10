@@ -39,6 +39,24 @@ size_flags_horizontal = 3
 tabs_visible = false
 use_hidden_tabs_for_min_size = true
 
+[node name="Graphics" type="PanelContainer" parent="OptionsCategories/Pages"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 8.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_min_size = Vector2( 0, 200 )
+size_flags_horizontal = 3
+
+[node name="GraphicsSettingsContent" parent="OptionsCategories/Pages/Graphics" instance=ExtResource( 4 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 1013.0
+margin_bottom = 494.0
+
 [node name="Gameplay" type="PanelContainer" parent="OptionsCategories/Pages"]
 visible = false
 anchor_right = 1.0
@@ -54,37 +72,20 @@ size_flags_horizontal = 3
 margin_left = 1.0
 margin_top = 1.0
 margin_right = 1013.0
-margin_bottom = 513.0
+margin_bottom = 494.0
 alignment = 1
 
 [node name="Label" type="Label" parent="OptionsCategories/Pages/Gameplay/VBoxContainer"]
-margin_top = 243.0
+margin_top = 234.0
 margin_right = 1012.0
-margin_bottom = 264.0
+margin_bottom = 255.0
 text = "There's nothing here yet"
 align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="OptionsCategories/Pages/Gameplay/VBoxContainer"]
-margin_top = 268.0
+margin_top = 259.0
 margin_right = 1012.0
-margin_bottom = 268.0
-
-[node name="Graphics" type="PanelContainer" parent="OptionsCategories/Pages"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 8.0
-margin_right = -4.0
-margin_bottom = -4.0
-rect_min_size = Vector2( 0, 200 )
-size_flags_horizontal = 3
-
-[node name="GraphicsSettingsContent" parent="OptionsCategories/Pages/Graphics" instance=ExtResource( 4 )]
-margin_left = 1.0
-margin_top = 1.0
-margin_right = 1013.0
-margin_bottom = 513.0
+margin_bottom = 259.0
 
 [node name="Audio" type="PanelContainer" parent="OptionsCategories/Pages"]
 visible = false
@@ -106,10 +107,10 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="OptionsCategories/Pages/Audio/PanelContainer"]
-margin_left = 227.0
-margin_top = 145.0
-margin_right = 784.0
-margin_bottom = 367.0
+margin_left = 236.0
+margin_top = 163.0
+margin_right = 775.0
+margin_bottom = 349.0
 custom_constants/separation = 12
 alignment = 1
 
@@ -188,6 +189,7 @@ text = "Nothing here yet"
 align = 1
 
 [node name="Stream & Tube Info" type="PanelContainer" parent="OptionsCategories/Pages"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -335,7 +337,6 @@ text = "Main Menu"
 
 [node name="UiSoundPack" parent="BtnMainMenu" instance=ExtResource( 8 )]
 
-[connection signal="visibility_changed" from="OptionsCategories/Pages/Graphics" to="OptionsCategories/Pages/Graphics/GraphicsSettingsContent" method="_handle_visibility" flags=3]
 [connection signal="toggled" from="OptionsCategories/Pages/Audio/PanelContainer/VBoxContainer/HBoxContainer/SubtitlesEnable" to="OptionsCategories/Pages/Audio/PanelContainer/VBoxContainer/HBoxContainer/SubtitlesEnable" method="_on_SubtitlesEnable_toggled"]
 [connection signal="pressed" from="OptionsCategories/Pages/Danger Zone/VBoxContainer/HBoxContainer/BtnDeleteSaveData" to="." method="_on_BtnDeleteSaveData_pressed"]
 [connection signal="pressed" from="BtnMainMenu" to="." method="_on_BtnMainMenu_pressed"]

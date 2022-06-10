@@ -18,8 +18,6 @@ void fragment(){
 	float sample_min = min(sample_a, sample_b);
 	float density = clamp(sample_max - sample_min, 0.0, 1.0);
 	ALBEDO = vec3(density) * tint.rgb;
-	ROUGHNESS = pow(density, 2);
-	
 }"
 
 [sub_resource type="OpenSimplexNoise" id=2]

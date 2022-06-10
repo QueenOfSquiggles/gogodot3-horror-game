@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Floor2_BedroomJessicaMesh2.scn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Materials/rough_plaster_brick.material" type="Material" id=2]
+[ext_resource path="res://Resources/Materials/cobblestone_floor_07.material" type="Material" id=3]
+[ext_resource path="res://GameDefinitions/Items/bases/PickupItemReadable.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Resources/Models/imported/Table.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Resources/Models/imported/CabinetBedDrawer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Resources/Models/imported/BedSingle.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Resources/Materials/white_rough_plaster.material" type="Material" id=8]
+
+[sub_resource type="ConcavePolygonShape" id=1]
+data = PoolVector3Array( -4, -2.5, 6.5, -4, 2.5, -6.5, -4, -2.5, -6.5, -4, -2.5, 6.5, -4, 2.5, 6.5, -4, 2.5, -6.5, -4, -2.5, 6.5, 4, -2.5, 6.5, 0, -2.4, 6.5, -0.5, -2.4, 6.5, -2, -2.4, 6.5, -4, -2.5, 6.5, -4, -2.5, 6.5, 0, -2.4, 6.5, -0.5, -2.4, 6.5, 4, -2.5, -6.5, 4, 2.5, 6.5, 4, -2.5, 6.5, 4, -2.5, -6.5, 4, 2.5, -6.5, 4, 2.5, 6.5, -2, 1.6, 6.5, -4, -2.5, 6.5, -2, -2.4, 6.5, 4, 2.5, 6.5, 0, -2.4, 6.5, 4, -2.5, 6.5, 4, 2.5, 6.5, 0, 1.6, 6.5, 0, -2.4, 6.5, -2, 1.6, 6.5, -4, 2.5, 6.5, -4, -2.5, 6.5, 4, 2.5, 6.5, -2, 1.6, 6.5, 0, 1.6, 6.5, -2, 1.6, 6.5, 4, 2.5, 6.5, -4, 2.5, 6.5, -4, 2.5, -6.5, 4, -2.5, -6.5, -4, -2.5, -6.5, -4, 2.5, -6.5, 4, 2.5, -6.5, 4, -2.5, -6.5, -2, 1.6, 7, -2, -2.4, 6.5, -2, -2.4, 7, -2, 1.6, 7, -2, 1.6, 6.5, -2, -2.4, 6.5, 0, 1.6, 6.5, 0, -2.4, 7, 0, -2.4, 6.5, 0, 1.6, 6.5, 0, 1.6, 7, 0, -2.4, 7, -4.0577, -2.5577, 6.5577, -4.0577, 2.5577, -6.5577, -4.0577, 2.5577, 6.5577, -4.0577, -2.5577, 6.5577, -4.0577, -2.5577, -6.5577, -4.0577, 2.5577, -6.5577, -4.0577, -2.5577, 6.5577, 0.0302, -2.4302, 6.5905, 4.0577, -2.5577, 6.5577, -0.5, -2.4707, 6.5707, -4.0577, -2.5577, 6.5577, -2.0302, -2.4302, 6.5905, -4.0577, -2.5577, 6.5577, -0.5, -2.4707, 6.5707, 0.0302, -2.4302, 6.5905, 4.0577, -2.5577, -6.5577, 4.0577, 2.5577, 6.5577, 4.0577, 2.5577, -6.5577, 4.0577, -2.5577, -6.5577, 4.0577, -2.5577, 6.5577, 4.0577, 2.5577, 6.5577, 0.0577, 1.6577, 6.5577, 4.0577, -2.5577, 6.5577, 0.0302, -2.4302, 6.5905, -4.0577, 2.5577, 6.5577, -2.0302, -2.4302, 6.5905, -4.0577, -2.5577, 6.5577, -4.0577, 2.5577, 6.5577, -2.0577, 1.6577, 6.5577, -2.0302, -2.4302, 6.5905, 0.0577, 1.6577, 6.5577, 4.0577, 2.5577, 6.5577, 4.0577, -2.5577, 6.5577, -4.0577, 2.5577, 6.5577, 0.0577, 1.6577, 6.5577, -2.0577, 1.6577, 6.5577, 0.0577, 1.6577, 6.5577, -4.0577, 2.5577, 6.5577, 4.0577, 2.5577, 6.5577, -4.0577, 2.5577, -6.5577, 4.0577, -2.5577, -6.5577, 4.0577, 2.5577, -6.5577, -4.0577, 2.5577, -6.5577, -4.0577, -2.5577, -6.5577, 4.0577, -2.5577, -6.5577, -2.0707, 1.6707, 7, -2.0302, -2.4302, 6.5905, -2.0577, 1.6577, 6.5577, -2.0707, 1.6707, 7, -2.0707, -2.4707, 7, -2.0302, -2.4302, 6.5905, 0.0577, 1.6577, 6.5577, 0.0707, -2.4707, 7, 0.0707, 1.6707, 7, 0.0577, 1.6577, 6.5577, 0.0302, -2.4302, 6.5905, 0.0707, -2.4707, 7, 0, 1.6, 7, 0.0707, -2.4707, 7, 0, -2.4, 7, 0, 1.6, 7, 0.0707, 1.6707, 7, 0.0707, -2.4707, 7, -2, -2.4, 7, -2.0707, 1.6707, 7, -2, 1.6, 7, -2, -2.4, 7, -2.0707, -2.4707, 7, -2.0707, 1.6707, 7, -4, 2.5, -6.5, 4, 2.5, 6.5, 4, 2.5, -6.5, -4, 2.5, -6.5, -4, 2.5, 6.5, 4, 2.5, 6.5, 0, 1.6, 6.5, -2, 1.6, 7, 0, 1.6, 7, 0, 1.6, 6.5, -2, 1.6, 6.5, -2, 1.6, 7, -4.0577, 2.5577, -6.5577, 4.0577, 2.5577, 6.5577, -4.0577, 2.5577, 6.5577, -4.0577, 2.5577, -6.5577, 4.0577, 2.5577, -6.5577, 4.0577, 2.5577, 6.5577, 0.0577, 1.6577, 6.5577, -2.0707, 1.6707, 7, -2.0577, 1.6577, 6.5577, 0.0577, 1.6577, 6.5577, 0.0707, 1.6707, 7, -2.0707, 1.6707, 7, -2, 1.6, 7, 0.0707, 1.6707, 7, 0, 1.6, 7, -2, 1.6, 7, -2.0707, 1.6707, 7, 0.0707, 1.6707, 7, 4, -2.5, -6.5, -4, -2.5, 6.5, -4, -2.5, -6.5, 4, -2.5, -6.5, 4, -2.5, 6.5, -4, -2.5, 6.5, -2, -2.4, 6.5, 0, -2.4, 7, -2, -2.4, 7, 0, -2.4, 7, -0.5, -2.4, 6.5, 0, -2.4, 6.5, 0, -2.4, 7, -2, -2.4, 6.5, -0.5, -2.4, 6.5, 4.0577, -2.5577, -6.5577, -4.0577, -2.5577, 6.5577, 4.0577, -2.5577, 6.5577, 4.0577, -2.5577, -6.5577, -4.0577, -2.5577, -6.5577, -4.0577, -2.5577, 6.5577, 0.0707, -2.4707, 7, -2.0302, -2.4302, 6.5905, -2.0707, -2.4707, 7, -2.0302, -2.4302, 6.5905, 0.0302, -2.4302, 6.5905, -0.5, -2.4707, 6.5707, -2.0302, -2.4302, 6.5905, 0.0707, -2.4707, 7, 0.0302, -2.4302, 6.5905, 0, -2.4, 7, -2.0707, -2.4707, 7, -2, -2.4, 7, 0, -2.4, 7, 0.0707, -2.4707, 7, -2.0707, -2.4707, 7 )
+
+[node name="Floor2_BedroomJessicaMesh" type="StaticBody"]
+
+[node name="Floor2_BedroomJessicaMesh2" parent="." instance=ExtResource( 1 )]
+material/0 = ExtResource( 8 )
+material/1 = ExtResource( 2 )
+material/2 = ExtResource( 3 )
+
+[node name="Spatial" type="Spatial" parent="Floor2_BedroomJessicaMesh2"]
+transform = Transform( 0, 0, 1, 0, 1, 0, -1, 0, 0, -0.556561, -2.22572, 2.37856 )
+
+[node name="bedSingle" parent="Floor2_BedroomJessicaMesh2/Spatial" instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, -0.317753, 3 )
+
+[node name="cabinetBedDrawer" parent="Floor2_BedroomJessicaMesh2/Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.276955, -2.5 )
+
+[node name="table" parent="Floor2_BedroomJessicaMesh2/Spatial" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, -0.0401917, -2.79565 )
+
+[node name="PickupItemReadable" parent="Floor2_BedroomJessicaMesh2/Spatial" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0976295, 0 )
+title_key = "Jessica's Note"
+text_key = "OMG
+
+Abby is such a freak! I thought that she was a goody little angel like the rest of this fucked up cult, but she is definitly not the \"christian\" type. She is so desperate to please \"The Lamb\" or whatever, but really? Whenever she gets too troubled she comes right to me. I tell her that the Lamb loves her and then she relaxes and we can talk about real stuff. She even tells me that I have such a strong faith because of how little I worry. I'm not worried because I see right through that little shit. He wants to be a little savior and make a bunch of people devote their lives to him. He takes people into his room in \"The Sanctuary\" (LOL) and performs \"The Sacrement\" (whatever that is!) and then goes about his day pretending to be fucking saint-like. 
+I'm just biding my time waiting out here for something to go down. I know he's got children down here and if he so much as thinks about hurting them, I'm going to use my handcuffs to chain him to his own sacred bed and get them the hell out of here. I know he says that he sealed us in to protect us from \"The Enemy\", but really I think the FBI was hot on his tail and he got scared. I could probably pile up a bunch of random boxes and clamber up out the vent we had to crawl though. Then these kiddos could get a proper life outside.
+
+He keeps saying that he is close to ascending, so if he disappears after that, I might just take the kids out then. I don't expect the cult to last longer than he does."
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, 77.6066, -40.9794, 40.0359 )
+shape = SubResource( 1 )

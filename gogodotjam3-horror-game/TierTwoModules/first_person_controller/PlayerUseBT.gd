@@ -5,7 +5,7 @@ class_name FirstPersonCharacterBase
 onready var bt := $PlayerBehaviourTree
 onready var anim_player := $AnimationPlayer
 onready var selection_raycast : InteractionRayCast = $Pivot/Camera/InteractionDetector
-onready var remote_trans := $Pivot/Camera/RemoteTransform
+onready var remote_trans := $Pivot/Camera/SpringArm/Spatial/RemoteTransform
 onready var remote_trans_dummy := ($Pivot/Camera/Dummy).get_path()
 signal interactable_select_started(collider)
 signal interactable_select_ended(collider)

@@ -6,7 +6,6 @@ SceneManagement.gd
 An autoload for handling scene loading and unloading.
 
 """
-export (float) var test := 0.0
 const DEFAULT_LOADING_SCREEN := "res://Globals/scene_management/DefaultLoadingScreen.tscn"
 const SCENE_TRANSITION_SCENE := "res://Globals/scene_management/SceneTransition.tscn"
 
@@ -61,6 +60,8 @@ func _load_gradual(path: String) -> void:
 func _process(_delta: float) -> void:
 	if loader == null:
 		set_process(false)
+		return
+	if wait_frames == null:
 		return
 	if wait_frames > 0:
 		wait_frames -= 1

@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://Modules/blockout_assets/prototyping/meshes/DefaultCube.tscn" type="PackedScene" id=1]
-
-[node name="BlockoutMeshLib" type="Spatial"]
-
-[node name="DefaultCube" parent="." instance=ExtResource( 1 )]

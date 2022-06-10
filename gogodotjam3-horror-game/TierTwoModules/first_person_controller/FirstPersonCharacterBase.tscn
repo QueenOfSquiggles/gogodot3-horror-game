@@ -20,14 +20,14 @@
 [ext_resource path="res://TierTwoModules/first_person_controller/UseCurrentItem.gd" type="Script" id=19]
 
 [sub_resource type="CapsuleShape" id=1]
-radius = 0.78681
-height = 2.15563
+radius = 0.585846
+height = 2.72128
 
 [node name="FirstPersonCharacterBase" type="KinematicBody" groups=["persist", "player"]]
 script = ExtResource( 14 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.88695, -1.36397e-08 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.9602, -7.31945e-08 )
 shape = SubResource( 1 )
 
 [node name="CharacterModel" type="Spatial" parent="."]
@@ -46,12 +46,18 @@ spot_range = 30.0
 spot_angle = 30.0
 spot_angle_attenuation = 0.287174
 
-[node name="RemoteTransform" type="RemoteTransform" parent="Pivot/Camera"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.944 )
-remote_path = NodePath("../Dummy")
-
 [node name="Dummy" type="Spatial" parent="Pivot/Camera"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.944 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.37114e-08, 0, 0.5 )
+
+[node name="SpringArm" type="SpringArm" parent="Pivot/Camera"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
+spring_length = 4.0
+
+[node name="Spatial" type="Spatial" parent="Pivot/Camera/SpringArm"]
+
+[node name="RemoteTransform" type="RemoteTransform" parent="Pivot/Camera/SpringArm/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5 )
+remote_path = NodePath("../../../Dummy")
 
 [node name="PlayerBehaviourTree" type="Node" parent="."]
 script = ExtResource( 4 )

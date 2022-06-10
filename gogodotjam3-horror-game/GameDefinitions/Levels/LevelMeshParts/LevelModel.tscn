@@ -1,0 +1,284 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/NurseryBedroomMesh.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/SanctuaryBathroomMesh.tscn" type="PackedScene" id=3]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/SurfaceMesh.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/SanctuaryBedroomMesh.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/Floor2BathroomMesh.tscn" type="PackedScene" id=6]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/SanctuaryMainChambersMesh.tscn" type="PackedScene" id=7]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/NurseryPlayroomMesh.tscn" type="PackedScene" id=8]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/Floor2MainHallMesh.tscn" type="PackedScene" id=9]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/StairsFloor2AndNurseryMesh.tscn" type="PackedScene" id=10]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/SanctuaryEntranceMesh.tscn" type="PackedScene" id=11]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/Floor1VentMesh.tscn" type="PackedScene" id=12]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/Floor1KitchenMesh.tscn" type="PackedScene" id=13]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/Floor1BedroomMatthewMesh.tscn" type="PackedScene" id=14]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/NurseryDiningRoomMesh.tscn" type="PackedScene" id=15]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/NurseryMainHallMesh.tscn" type="PackedScene" id=16]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/StairsFloor1And2Mesh.tscn" type="PackedScene" id=17]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/Floor1BedroomJakobMesh.tscn" type="PackedScene" id=18]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/Floor2LivingAreaExerciseMesh.tscn" type="PackedScene" id=19]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/Floor2BedroomJessicaMesh.tscn" type="PackedScene" id=20]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/Floor2BedroomDustinMesh.tscn" type="PackedScene" id=21]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/Floor1MainHallMesh.tscn" type="PackedScene" id=22]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/Floor2LivingAreaRadioMesh.tscn" type="PackedScene" id=23]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/StairsNurseryAndSanctuaryMesh.tscn" type="PackedScene" id=24]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/Floor1BedroomAbbyMesh.tscn" type="PackedScene" id=25]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/Floor1EntranceMesh.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Resources/Materials/FastInvisibility.material" type="Material" id=27]
+
+[node name="LevelModel" type="Spatial"]
+
+[node name="RoomManager" type="RoomManager" parent="."]
+roomlist = NodePath(".")
+gameplay_monitor = true
+merge_meshes = true
+portal_depth_limit = 2
+
+[node name="Surface" type="Room" parent="RoomManager"]
+points = PoolVector3Array( -54.0409, 17, 18.5, -53.7408, -2.58749, 86.0063, 56.1587, -0.634884, 89.5355, 39.9591, 17, 96, 6.24667, -25.4212, 2.5, 52.4, -4.12032, 89.2199, -48.0006, 33.0003, 79.5, 50, 33, 79.5002, -48, 33, 2.5, 56.7322, 0.0271339, 46, 55.6356, -3.70347, 2.5, -50.915, -3.92578, 83.7353, -53.3636, -1.99117, 2.50006, 50, 33.0001, 2.5, 39.9591, -0.000250821, 96, -53.1217, 3.03166, 2.5, -5.0199, -25.2482, 2.5 )
+
+[node name="SurfaceMesh2" parent="RoomManager/Surface" instance=ExtResource( 4 )]
+
+[node name="Portal" type="Portal" parent="RoomManager/Surface"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -22, 2.5 )
+linked_room = NodePath("../../Floor1/Entrance")
+points = PoolVector2Array( 3, -3.5, 3, 3, -3, 3, -3, -3.5 )
+
+[node name="Bounds" type="CSGBox" parent="RoomManager/Surface"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 15, 32 )
+cast_shadow = 0
+generate_lightmap = false
+calculate_tangents = false
+use_collision = true
+width = 98.0
+height = 36.0
+depth = 95.0
+material = ExtResource( 27 )
+
+[node name="CSGBox2" type="CSGBox" parent="RoomManager/Surface/Bounds"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0 )
+operation = 2
+width = 96.0
+height = 36.0
+depth = 93.0
+material = ExtResource( 27 )
+
+[node name="Floor1" type="RoomGroup" parent="RoomManager"]
+
+[node name="Entrance" type="Room" parent="RoomManager/Floor1"]
+points = PoolVector3Array( -9.50058, -25.5, 2.50001, 9.5, -25.5577, -16.5577, -10.9987, -24.0624, -0.2688, -9.5578, -25.5577, -16.5577, 9.50006, -25.5693, 2.5, -8.84264, -26.6692, 0.326716, 9.5, -16.4423, 2.5, -7.16163, -26.6616, 1.56027, 9.5, -16.4423, -16.5577, -9.80426, -24.2059, 2.5, -9.55774, -16.4423, 2.5, -9.55774, -16.4423, -16.5577, 9.5, -26.9999, -7.50007, 9.5, -26.9999, -13.9999, 9.5, -27.0964, -12.4687 )
+
+[node name="Floor1_EntranceMesh2" parent="RoomManager/Floor1/Entrance" instance=ExtResource( 26 )]
+
+[node name="Portal" type="Portal" parent="RoomManager/Floor1/Entrance"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.5, -24, -11 )
+linked_room = NodePath("../../Vent")
+points = PoolVector2Array( 3.5, -3, 3, 3, -3, 3, -3, -3 )
+
+[node name="Vent" type="Room" parent="RoomManager/Floor1"]
+points = PoolVector3Array( 9.50004, -26.9999, -7.50004, 9.5, -27, -13.9999, 9.5, -21, -13.9999, 9.59807, -24.0296, -14.9715, 30.1472, -21.4665, -14.5315, 9.59807, -20.0296, -10.9715, 23.5683, -24.0358, 6, 27.6016, -20.0316, 6, 27.5678, -20.0296, 6, 31.596, -24.026, 6, 9.50004, -21.0001, -8, 24.5179, -20.9419, 6, 30.1517, -26.586, -14.5342, 30.4999, -26.9999, 6, 9.59807, -28.0296, -10.9715, 30.4998, -21, 6, 24.5754, -20.9248, 6, 27.6016, -28.0276, 6, 27.5599, -28.0274, 6, 24.5, -26.9999, 6, 24.5001, -21, 6 )
+
+[node name="Portal" type="Portal" parent="RoomManager/Floor1/Vent"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 27.5, -24, 6 )
+linked_room = NodePath("../../Kitchen")
+points = PoolVector2Array( 3, -3, 3, 3, -3, 3, -3, -3 )
+
+[node name="Floor1_VentMesh2" parent="RoomManager/Floor1/Vent" instance=ExtResource( 12 )]
+
+[node name="Kitchen" type="Room" parent="RoomManager/Floor1"]
+points = PoolVector3Array( 39.6587, -19.9375, 23.0763, 20.5432, -19.9375, 23.0763, 39.6587, -33.053, 23.0763, 20.5432, -33.053, 23.0762, 39.6587, -19.9375, 6, 20.5432, -19.9375, 6, 39.6587, -33.0529, 6, 20.5432, -33.0529, 6 )
+
+[node name="Portal" type="Portal" parent="RoomManager/Floor1/Kitchen"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 36, -31, 23.5 )
+linked_room = NodePath("../../MainHall")
+points = PoolVector2Array( -1, 2.5, -1, -2, 1, -2, 1, 2.5 )
+
+[node name="Floor1_KitchenMesh2" parent="RoomManager/Floor1/Kitchen" instance=ExtResource( 13 )]
+
+[node name="MainHall" type="Room" parent="RoomManager/Floor1"]
+points = PoolVector3Array( 26.0253, -40.4905, 23.6732, 26.0076, -30.2159, 23.6745, 26.0123, -32.9858, 23.6741, 26.0253, -40.4905, 27.5, 26.0076, -30.2159, 27.5, 26.0123, -32.9863, 27.5, 32.6834, -40.4905, 23.6764, 32.6736, -27.9186, 27.5, 71.6834, -33.0438, 23.6963, 71.6834, -27.9283, 23.697, 32.6737, -27.9186, 23.678, 32.6836, -40.4905, 27.5, 71.6834, -33.0437, 27.0607, 71.6834, -27.9283, 27.0607 )
+
+[node name="Floor1_MainHallMesh2" parent="RoomManager/Floor1/MainHall" instance=ExtResource( 22 )]
+
+[node name="BedroomAbby" type="Room" parent="RoomManager/Floor1"]
+points = PoolVector3Array( 39, -28.5001, 27.5, 45.19, -27.9283, 27.9452, 45.19, -33.0438, 41.0607, 45.19, -27.9283, 41.0607, 37.0745, -27.9283, 27.9452, 37.0745, -33.0438, 27.9452, 37.0745, -27.9283, 41.0607, 45.19, -33.0438, 27.9452, 37.0745, -33.0438, 41.0607, 39.0001, -32.9999, 27.5 )
+
+[node name="Portal" type="Portal" parent="RoomManager/Floor1/BedroomAbby"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40, -30.5, 27.5 )
+linked_room = NodePath("../../MainHall")
+points = PoolVector2Array( 1, -2.5, 1, 2, -1, 2, -1, -2.5 )
+
+[node name="Floor1_BedroomAbbyMesh2" parent="RoomManager/Floor1/BedroomAbby" instance=ExtResource( 25 )]
+
+[node name="BedroomMatthew" type="Room" parent="RoomManager/Floor1"]
+points = PoolVector3Array( 53.0001, -33.4999, 27.5, 51.1379, -32.986, 27.9922, 59.1957, -33.0438, 41.05, 51.0802, -27.9277, 27.9345, 55.2787, -28.7999, 27.5, 51.0802, -33.0438, 41.0507, 59.1957, -27.9277, 27.9345, 59.1957, -33.0438, 27.9345, 51.0802, -27.9283, 41.05, 59.1957, -27.9283, 41.05 )
+
+[node name="Portal" type="Portal" parent="RoomManager/Floor1/BedroomMatthew"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54, -31, 27.5 )
+linked_room = NodePath("../../MainHall")
+points = PoolVector2Array( 1, -2.5, 1, 2, -1, 2, -1, -2.5 )
+
+[node name="Floor1_BedroomMatthewMesh2" parent="RoomManager/Floor1/BedroomMatthew" instance=ExtResource( 14 )]
+
+[node name="BedroomJakob" type="Room" parent="RoomManager/Floor1"]
+points = PoolVector3Array( 70.1771, -33.0465, 9.99018, 62.0616, -33.0465, 9.99016, 62.0616, -27.931, 9.99016, 62.0616, -27.931, 23.1056, 62.0616, -33.0465, 23.1056, 70.5, -32.9313, 12.5879, 70.1766, -33.0466, 23.1153, 66.6314, -32.9689, 23.5, 65.6703, -28.785, 23.5, 62.0616, -27.9515, 23.1151, 70.5, -32.9313, 16.1782, 70.1769, -27.931, 23.1056, 65.6799, -29.3384, 23.5, 70.1771, -27.931, 9.99016, 66.6218, -32.4149, 23.5, 65.743, -32.9689, 23.5, 70.5, -28.5001, 11.5012, 66.6218, -28.785, 23.5, 65.6799, -32.9689, 23.5, 70.5, -28.5787, 16.1783, 66.5588, -28.785, 23.5 )
+
+[node name="Portal" type="Portal" parent="RoomManager/Floor1/BedroomJakob"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 65, -30.5, 23.5 )
+linked_room = NodePath("../../MainHall")
+points = PoolVector2Array( -1, 2, -1, -2.5, 1, -2.5, 1, 2 )
+
+[node name="Portal2" type="Portal" parent="RoomManager/Floor1/BedroomJakob"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 70.5, -30.5, 12.5 )
+linked_room = NodePath("../../../StairsFloor1and2")
+points = PoolVector2Array( 1, -2.5, 1, 2, -1, 2, -1, -2.5 )
+
+[node name="Floor1_BedroomJakobMesh2" parent="RoomManager/Floor1/BedroomJakob" instance=ExtResource( 18 )]
+
+[node name="StairsFloor1and2" type="Room" parent="RoomManager"]
+points = PoolVector3Array( 82.5, -44.0001, 20.5, 71.0497, -43.5419, 6.98677, 71.0498, -28.4264, 20.1022, 84.1654, -28.4263, 6.98671, 71.0498, -28.4264, 6.98648, 84.1655, -28.4255, 20.1022, 80.5001, -39.4999, 20.5, 70.5, -28.5001, 11.5002, 71.0499, -43.5415, 20.1023, 84.1653, -43.5419, 6.98679, 84.1655, -43.5421, 20.1019, 77.9128, -28.2886, 13.7078 )
+
+[node name="Portal" type="Portal" parent="RoomManager/StairsFloor1and2"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 81.5, -43, 20.5 )
+linked_room = NodePath("../../Floor2/BedroomDustin")
+points = PoolVector2Array( -1, 3.5, -1, -1, 1, -1, 1, 3.5 )
+
+[node name="StairsFloor1and2Mesh2" parent="RoomManager/StairsFloor1and2" instance=ExtResource( 17 )]
+
+[node name="Floor2" type="RoomGroup" parent="RoomManager"]
+
+[node name="BedroomDustin" type="Room" parent="RoomManager/Floor2"]
+points = PoolVector3Array( 84.1644, -38.4222, 29.0936, 82.4999, -39.5001, 20.5, 84.2515, -43.2421, 26.4067, 70.5, -39.0001, 24.9999, 71.0489, -38.4217, 20.9782, 84.1645, -38.4217, 20.9777, 71.0489, -43.5371, 20.9782, 70.5, -43.4999, 25, 82.5001, -43.9999, 20.5, 84.1644, -43.5372, 20.9776, 71.049, -43.5371, 29.0951, 84.1643, -43.5372, 29.0938, 71.0489, -38.4217, 29.0937 )
+
+[node name="Portal" type="Portal" parent="RoomManager/Floor2/BedroomDustin"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 70.5, -42.5, 24 )
+linked_room = NodePath("../../MainHall")
+points = PoolVector2Array( 1, -1, 1, 3.5, -1, 3.5, -1, -1 )
+
+[node name="Floor2_BedroomDustinMesh2" parent="RoomManager/Floor2/BedroomDustin" instance=ExtResource( 21 )]
+
+[node name="BedroomJessica" type="Room" parent="RoomManager/Floor2"]
+points = PoolVector3Array( 70.5, -43.4999, 40, 71.0489, -43.5371, 44.0936, 71.1066, -38.4794, 44.0359, 84.1644, -38.3633, 35.9782, 71.0489, -38.4217, 35.9782, 84.1644, -43.5371, 35.9782, 71.0489, -43.5371, 35.9782, 70.4999, -39.0001, 39.9998, 84.1638, -38.4217, 44.0936, 84.1644, -43.5371, 44.0936 )
+
+[node name="Portal" type="Portal" parent="RoomManager/Floor2/BedroomJessica"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 70.5, -42.5, 39 )
+linked_room = NodePath("../../MainHall")
+points = PoolVector2Array( 1, -1, 1, 3.5, -1, 3.5, -1, -1 )
+
+[node name="Floor2_BedroomJessicaMesh2" parent="RoomManager/Floor2/BedroomJessica" instance=ExtResource( 20 )]
+
+[node name="MainHall" type="Room" parent="RoomManager/Floor2"]
+points = PoolVector3Array( 67.0489, -43.5374, 59.0936, 67.0489, -38.4218, 59.0943, 66.5, -39.0001, 30, 69.9999, -43.4999, 59.5, 67.0489, -43.5371, 21.9779, 67.0489, -38.4217, 21.9782, 66.5, -43.4999, 49.0001, 70.1645, -43.5371, 21.9777, 69.8054, -43.5374, 59.5031, 70.5, -43.4713, 22.7272, 70.1643, -38.4216, 59.0936, 70.1643, -38.4217, 21.978, 66.5023, -43.5373, 49.0429, 67.5335, -43.5702, 21.9779, 66.5, -43.5373, 49.1583 )
+
+[node name="Floor2_MainHallMesh2" parent="RoomManager/Floor2/MainHall" instance=ExtResource( 9 )]
+
+[node name="Bathroom" type="Room" parent="RoomManager/Floor2"]
+points = PoolVector3Array( 71.0443, -43.5371, 45.9931, 88.1597, -43.5371, 58.1086, 70.5, -43.4999, 53.9999, 85.7704, -43.6742, 58.6232, 71.0443, -43.5371, 58.1086, 88.1597, -36.4217, 58.1086, 71.0443, -36.4217, 45.9931, 88.1597, -43.5371, 45.9931, 70.5, -39.0001, 52.0004, 71.0443, -36.4217, 58.1086, 70.5, -39, 54, 88.1597, -36.4217, 45.9931 )
+
+[node name="Portal" type="Portal" parent="RoomManager/Floor2/Bathroom"]
+transform = Transform( -2.04648e-07, 0, 1, 0, 1, 0, -1, 0, -2.04648e-07, 70.5, -42.5, 53 )
+linked_room = NodePath("../../MainHall")
+points = PoolVector2Array( -1, 3.5, -1, -1, 1, -1, 1, 3.5 )
+
+[node name="Floor2_BathroomMesh2" parent="RoomManager/Floor2/Bathroom" instance=ExtResource( 6 )]
+
+[node name="LivingAreaRadio" type="Room" parent="RoomManager/Floor2"]
+points = PoolVector3Array( 66.1644, -36.4217, 38.0936, 49.0489, -36.4217, 38.0936, 66.5, -41.7557, 31.9248, 66.1644, -36.4217, 25.9782, 49.0489, -36.4217, 25.9782, 66.5, -41.7558, 29.004, 49.0489, -43.5371, 25.9782, 49.0489, -43.5371, 38.0936, 66.1643, -43.5371, 38.094, 66.5, -43.4711, 29.004, 66.5, -43.4711, 31.9248, 66.1643, -43.5371, 25.9781 )
+
+[node name="Floor2_LivingAreaRadioMesh2" parent="RoomManager/Floor2/LivingAreaRadio" instance=ExtResource( 23 )]
+
+[node name="Portal" type="Portal" parent="RoomManager/Floor2/LivingAreaRadio"]
+transform = Transform( 1.17225e-07, 0, -1, 0, 1, 0, 1, 0, 1.17225e-07, 66.5, -42.5, 31 )
+linked_room = NodePath("../../MainHall")
+points = PoolVector2Array( -1, 3.5, -1, -1, 1, -1, 1, 3.5 )
+
+[node name="LivingAreaExercise" type="Room" parent="RoomManager/Floor2"]
+points = PoolVector3Array( 66.1644, -36.4217, 55.0936, 49.0489, -36.4217, 55.0936, 66.5, -41.7557, 48.9249, 66.1644, -36.4217, 42.9782, 49.0489, -36.4217, 42.9782, 66.5, -41.7557, 46.004, 49.0489, -43.5371, 42.9782, 49.0489, -43.5371, 55.0936, 66.1644, -43.5371, 55.094, 66.5, -43.4711, 46.0039, 66.5, -43.4711, 48.925, 66.1643, -43.5371, 42.978 )
+
+[node name="Portal" type="Portal" parent="RoomManager/Floor2/LivingAreaExercise"]
+transform = Transform( 1.17225e-07, 0, -1, 0, 1, 0, 1, 0, 1.17225e-07, 66.5, -42.5, 48 )
+linked_room = NodePath("../../MainHall")
+points = PoolVector2Array( -1, 3.5, -1, -1, 1, -1, 1, 3.5 )
+
+[node name="Floor2_LivingAreaExerciseMesh2" parent="RoomManager/Floor2/LivingAreaExercise" instance=ExtResource( 19 )]
+
+[node name="StairsFloor2andNursery" type="Room" parent="RoomManager"]
+points = PoolVector3Array( 69.9999, -43.4999, 59.5, 71.1597, -36.4198, 67.0925, 66.0924, -36.4057, 67.1026, 22.5437, -53.535, 59.9771, 71.1597, -36.4198, 59.977, 29.1077, -53.714, 59.9676, 71.1597, -43.5353, 67.0925, 71.1597, -43.5353, 59.977, 62.1533, -45.7151, 67.1105, 66.0924, -36.4057, 59.9678, 22.5443, -46.4199, 59.977, 22.5443, -46.4198, 67.0925, 22.5439, -53.5347, 67.0999, 29.0638, -53.55, 67.103 )
+
+[node name="Portal" type="Portal" parent="RoomManager/StairsFloor2andNursery"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 68.5, -42.5, 59.5 )
+linked_room = NodePath("../../Floor2/MainHall")
+points = PoolVector2Array( 1.5, -1, 1.5, 3.5, -1, 3.5, -1, -1 )
+
+[node name="Portal2" type="Portal" parent="RoomManager/StairsFloor2andNursery"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -52.5, 59.5 )
+linked_room = NodePath("../../Nursery/MainHall")
+points = PoolVector2Array( 1, -1, 1, 3.5, -1, 3.5, -1, -1 )
+
+[node name="StairsFloor2andNurseryMesh2" parent="RoomManager/StairsFloor2andNursery" instance=ExtResource( 10 )]
+
+[node name="Nursery" type="RoomGroup" parent="RoomManager"]
+
+[node name="MainHall" type="Room" parent="RoomManager/Nursery"]
+points = PoolVector3Array( 26.6678, -53.535, 21.9998, 27, -51.3884, 41.3384, 26.6673, -48.4195, 59.0927, 23, -53.4999, 51.9999, 23.5518, -48.4195, 22, 23.5517, -53.535, 59.0926, 26.6673, -53.535, 59.0928, 26.6678, -48.4195, 22, 23.5518, -48.4195, 59.0927, 25.3684, -51.9298, 59.5, 25.9714, -50.9396, 59.5, 23.5498, -53.5209, 22.0012, 22.9968, -53.5298, 51.9584, 22.9962, -53.535, 52.2072, 23.7891, -53.535, 22 )
+
+[node name="Nursery_MainHallMesh2" parent="RoomManager/Nursery/MainHall" instance=ExtResource( 16 )]
+
+[node name="NurseryBedroom" type="Room" parent="RoomManager/Nursery"]
+points = PoolVector3Array( 46.1809, -53.4743, 26.1069, 27, -46.4345, 51.0914, 27, -48.8008, 51.5164, 44.0733, -46.4191, 25.973, 27, -53.5169, 25.973, 27.0829, -53.4743, 52.3552, 44.0732, -46.419, 51.0885, 43.718, -53.3234, 52.3558, 27, -46.419, 25.973, 27, -53.5142, 34.8792 )
+
+[node name="Portal" type="Portal" parent="RoomManager/Nursery/NurseryBedroom"]
+transform = Transform( 0, 0, 1, 0, 1, 0, -1, 0, 0, 27, -52.5, 39.5 )
+linked_room = NodePath("../../MainHall")
+points = PoolVector2Array( 1, -1, 1, 3.5, -1, 3.5, -1, -1 )
+
+[node name="Nursery_BedroomMesh2" parent="RoomManager/Nursery/NurseryBedroom" instance=ExtResource( 2 )]
+
+[node name="Playroom" type="Room" parent="RoomManager/Nursery"]
+points = PoolVector3Array( 5.95776, -46.419, 45.973, 23, -46.419, 45.973, 5.95776, -46.419, 58.0885, 23, -46.419, 58.0885, 5.95776, -53.5345, 45.973, 23, -53.5345, 45.973, 5.95776, -53.5345, 58.0885, 23, -53.5345, 58.0885 )
+
+[node name="Portal" type="Portal" parent="RoomManager/Nursery/Playroom"]
+transform = Transform( 4.25189e-07, 0, -1, 0, 1, 0, 1, 0, 4.25189e-07, 23, -52.5, 51 )
+linked_room = NodePath("../../MainHall")
+points = PoolVector2Array( -1, 3, -1, -1, 1, -1, 1, 3 )
+
+[node name="Nursery_PlayroomMesh2" parent="RoomManager/Nursery/Playroom" instance=ExtResource( 8 )]
+
+[node name="DiningRoom" type="Room" parent="RoomManager/Nursery"]
+points = PoolVector3Array( 5.95776, -46.419, 36.5885, 5.95776, -46.419, 24.473, 23, -46.419, 36.5885, 23, -46.419, 24.473, 5.95776, -53.5345, 36.5885, 5.95776, -53.5345, 24.473, 23, -53.5345, 36.5885, 23, -53.5345, 24.473 )
+
+[node name="Portal" type="Portal" parent="RoomManager/Nursery/DiningRoom"]
+transform = Transform( 2.50343e-07, 0, -1, 0, 1, 0, 1, 0, 2.50343e-07, 23, -52.5, 29.5 )
+linked_room = NodePath("../../MainHall")
+points = PoolVector2Array( -1, 3, -1, -1, 1, -1, 1, 3 )
+
+[node name="Nursery_DiningRoomMesh2" parent="RoomManager/Nursery/DiningRoom" instance=ExtResource( 15 )]
+
+[node name="StairsNurseryAndSanctuary" type="Room" parent="RoomManager"]
+points = PoolVector3Array( -40.8547, -61.435, 20.9102, -41.9999, -83.9999, -48.4998, -39.5835, -74.8484, -48.5, 25.1515, -46.4767, 13.4887, 31.4524, -47.8093, 20.9722, 31.9777, -46.775, 15.9115, 31.6271, -52.8136, 13.4847, -30.4728, -75.1933, -48.5, -31.9997, -83.9999, -48.5, 23.9999, -49.0001, 22, -40.9286, -67.9491, 21.0216, 30.7673, -53.5373, 20.9298 )
+
+[node name="Portal" type="Portal" parent="RoomManager/StairsNurseryAndSanctuary"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 25, -52.5, 22 )
+linked_room = NodePath("../../Nursery/MainHall")
+points = PoolVector2Array( -1, 3.5, -1, -1, 1, -1, 1, 3.5 )
+
+[node name="Portal2" type="Portal" parent="RoomManager/StairsNurseryAndSanctuary"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37, -80, -48.5 )
+linked_room = NodePath("../../Sanctuary")
+use_default_margin = false
+portal_margin = 5.0
+points = PoolVector2Array( 5, -4, 5, 4, -4.5, 4, -5, -4 )
+
+[node name="StairsNurseryAndSanctuaryMesh2" parent="RoomManager/StairsNurseryAndSanctuary" instance=ExtResource( 24 )]
+
+[node name="Sanctuary" type="Room" parent="RoomManager"]
+points = PoolVector3Array( 25.132, -82.3952, -103.309, -39.37, -64.1396, -48.5, 76.7202, -82.6512, -97.1582, -44.4463, -78.8224, -51.5539, -43.2406, -68.0854, -64.4445, -9.73147, -40.3095, -100.278, -8.64973, -37.546, -48.5, -42.0004, -83.9999, -48.4996, -43.1799, -66.9972, -52.7535, -41.9804, -78.225, -48.5, 74.6855, -82.7728, -97.3551, 66.6353, -81.8807, -48.5, 55.7214, -45.6774, -48.5, 36.4182, -63.9758, -108.388, 76.7202, -72.5357, -77.0426, -15.1587, -65.3653, -102.926, 76.7202, -82.6512, -77.0426, 11.4457, -86.5503, -89.0734, -9.17718, -80.7884, -99.9249, -43.7761, -77.9405, -64.1007, 76.7202, -72.5358, -97.1582, -6.88577, -41.5118, -104.313, -41.9833, -79.0489, -48.5, -15.7119, -40.4162, -88.3418, -9.21386, -85.683, -94.2025, 41.3906, -39.3088, -103.797, -9.09072, -85.6893, -94.3742, 47.3285, -36.7675, -48.5, -8.64876, -85.7078, -94.2602 )
+
+[node name="Sanctuary_MainChambersMesh2" parent="RoomManager/Sanctuary" instance=ExtResource( 7 )]
+
+[node name="Sanctuary_EntranceMesh2" parent="RoomManager/Sanctuary" instance=ExtResource( 11 )]
+
+[node name="Sanctuary_BathroomMesh2" parent="RoomManager/Sanctuary" instance=ExtResource( 3 )]
+
+[node name="Sanctuary_BedroomMesh2" parent="RoomManager/Sanctuary" instance=ExtResource( 5 )]

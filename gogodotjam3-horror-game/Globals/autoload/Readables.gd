@@ -11,14 +11,16 @@ func _ready():
 	self.layer = 25
 	self.pause_mode = Node.PAUSE_MODE_PROCESS
 
-func display_readable(title : String, text : String, screen_ratio : float = 0.5) -> void:
+func display_readable(title : String, text : String, screen_ratio : float = 0.8) -> void:
 	popup = readable_popup_scene.instance()
-	add_child(popup)
 	popup.window_title = tr(title) # I want to use translation keys here for future translation options
 	popup.dialog_text = tr(text)
 	popup.theme = theme
+	add_child(popup)
+	
 	var _clr := popup.connect("popup_hide", self, "_readable_closed")
-	popup.popup_centered_ratio(screen_ratio)
+	
+	popup.popup_centered_clamped(popup.rect_size, screen_ratio)
 	Globals.set_paused(true)
 	Globals.unlock_mouse()
 

@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Floor2_BathroomMesh.scn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Materials/rough_plaster_brick_02.material" type="Material" id=2]
+[ext_resource path="res://Resources/Materials/metal_plate.material" type="Material" id=3]
+[ext_resource path="res://GameDefinitions/Items/bases/PickupItemReadable.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Resources/Materials/t_concrete_wall_002.material" type="Material" id=5]
+[ext_resource path="res://Resources/Models/imported/ToiletSquare.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Resources/Models/imported/BathroomSinkSquare.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Resources/Models/imported/BathroomMirror.tscn" type="PackedScene" id=8]
+
+[sub_resource type="ConcavePolygonShape" id=1]
+data = PoolVector3Array( 2, -3.4, 8.5, 6, -3.5, 8.5, 2, -2.4, 8.5, -6, -3.5, 8.5, 0, -3.4, 8.5, 0, 0, 8.5, 0, -3.4, 8.5, 6, -3.5, 8.5, 2, -3.4, 8.5, 0, -3.4, 8.5, -6, -3.5, 8.5, 6, -3.5, 8.5, -6, -3.5, 8.5, -6, 3.5, -8.5, -6, -3.5, -8.5, -6, -3.5, 8.5, -6, 3.5, 8.5, -6, 3.5, -8.5, 6, -3.5, -8.5, 6, 3.5, 8.5, 6, -3.5, 8.5, 6, -3.5, -8.5, 6, 3.5, -8.5, 6, 3.5, 8.5, 0, 0.6, 8.5, -6, -3.5, 8.5, 0, 0, 8.5, 6, 3.5, 8.5, 2, -2.4, 8.5, 6, -3.5, 8.5, 6, 3.5, 8.5, 2, 0.6, 8.5, 2, -2.4, 8.5, 0, 0.6, 8.5, -6, 3.5, 8.5, -6, -3.5, 8.5, 6, 3.5, 8.5, 0, 0.6, 8.5, 2, 0.6, 8.5, 0, 0.6, 8.5, 6, 3.5, 8.5, -6, 3.5, 8.5, -6, 3.5, -8.5, 6, -3.5, -8.5, -6, -3.5, -8.5, -6, 3.5, -8.5, 6, 3.5, -8.5, 6, -3.5, -8.5, 0, 0.6, 9, 0, -3.4, 8.5, 0, -3.4, 9, 0, 0, 8.5, 0, 0.6, 9, 0, 0.6, 8.5, 0, -3.4, 8.5, 0, 0.6, 9, 0, 0, 8.5, 2, -3.4, 9, 2, 0.6, 8.5, 2, 0.6, 9, 2, -2.4, 8.5, 2, -3.4, 9, 2, -3.4, 8.5, 2, 0.6, 8.5, 2, -3.4, 9, 2, -2.4, 8.5, -0.0578, -3.4577, 8.5577, -6.0577, -3.5577, 8.5577, -0.0707, 0, 8.5707, 6.0577, -3.5577, 8.5577, 2.0577, -3.4577, 8.5577, 2.0707, -2.4, 8.5707, 2.0577, -3.4577, 8.5577, -6.0577, -3.5577, 8.5577, -0.0578, -3.4577, 8.5577, -6.0577, -3.5577, 8.5577, 2.0577, -3.4577, 8.5577, 6.0577, -3.5577, 8.5577, -6.0577, -3.5577, 8.5577, -6.0577, 3.5577, -8.5577, -6.0577, 3.5577, 8.5577, -6.0577, -3.5577, 8.5577, -6.0577, -3.5577, -8.5577, -6.0577, 3.5577, -8.5577, 6.0577, -3.5577, -8.5577, 6.0577, 3.5577, 8.5577, 6.0577, 3.5577, -8.5577, 6.0577, -3.5577, -8.5577, 6.0577, -3.5577, 8.5577, 6.0577, 3.5577, 8.5577, 2.0577, 0.6577, 8.5577, 6.0577, -3.5577, 8.5577, 2.0707, -2.4, 8.5707, -6.0577, 3.5577, 8.5577, -0.0707, 0, 8.5707, -6.0577, -3.5577, 8.5577, -6.0577, 3.5577, 8.5577, -0.0578, 0.6577, 8.5577, -0.0707, 0, 8.5707, 2.0577, 0.6577, 8.5577, 6.0577, 3.5577, 8.5577, 6.0577, -3.5577, 8.5577, -6.0577, 3.5577, 8.5577, 2.0577, 0.6577, 8.5577, -0.0578, 0.6577, 8.5577, 2.0577, 0.6577, 8.5577, -6.0577, 3.5577, 8.5577, 6.0577, 3.5577, 8.5577, -6.0577, 3.5577, -8.5577, 6.0577, -3.5577, -8.5577, 6.0577, 3.5577, -8.5577, -6.0577, 3.5577, -8.5577, -6.0577, -3.5577, -8.5577, 6.0577, -3.5577, -8.5577, -0.0578, -3.4577, 8.5577, -0.0707, 0.6707, 9, -0.0707, -3.4707, 9, -0.0707, 0.6707, 9, -0.0707, 0, 8.5707, -0.0578, 0.6577, 8.5577, -0.0707, 0.6707, 9, -0.0578, -3.4577, 8.5577, -0.0707, 0, 8.5707, 2.0577, 0.6577, 8.5577, 2.0707, -3.4707, 9, 2.0707, 0.6707, 9, 2.0707, -3.4707, 9, 2.0707, -2.4, 8.5707, 2.0577, -3.4577, 8.5577, 2.0707, -3.4707, 9, 2.0577, 0.6577, 8.5577, 2.0707, -2.4, 8.5707, 0, -3.4, 9, -0.0707, 0.6707, 9, 0, 0.6, 9, 0, -3.4, 9, -0.0707, -3.4707, 9, -0.0707, 0.6707, 9, 2, 0.6, 9, 2.0707, -3.4707, 9, 2, -3.4, 9, 2, 0.6, 9, 2.0707, 0.6707, 9, 2.0707, -3.4707, 9, -6, 3.5, -8.5, 6, 3.5, 8.5, 6, 3.5, -8.5, -6, 3.5, -8.5, -6, 3.5, 8.5, 6, 3.5, 8.5, 2, 0.6, 8.5, 0, 0.6, 9, 2, 0.6, 9, 2, 0.6, 8.5, 0, 0.6, 8.5, 0, 0.6, 9, -6.0577, 3.5577, -8.5577, 6.0577, 3.5577, 8.5577, -6.0577, 3.5577, 8.5577, -6.0577, 3.5577, -8.5577, 6.0577, 3.5577, -8.5577, 6.0577, 3.5577, 8.5577, 2.0577, 0.6577, 8.5577, -0.0707, 0.6707, 9, -0.0578, 0.6577, 8.5577, 2.0577, 0.6577, 8.5577, 2.0707, 0.6707, 9, -0.0707, 0.6707, 9, 0, 0.6, 9, 2.0707, 0.6707, 9, 2, 0.6, 9, 0, 0.6, 9, -0.0707, 0.6707, 9, 2.0707, 0.6707, 9, 6, -3.5, -8.5, -6, -3.5, 8.5, -6, -3.5, -8.5, 6, -3.5, -8.5, 6, -3.5, 8.5, -6, -3.5, 8.5, 0, -3.4, 9, 2, -3.4, 8.5, 2, -3.4, 9, 0, -3.4, 9, 0, -3.4, 8.5, 2, -3.4, 8.5, 6.0577, -3.5577, -8.5577, -6.0577, -3.5577, 8.5577, 6.0577, -3.5577, 8.5577, 6.0577, -3.5577, -8.5577, -6.0577, -3.5577, -8.5577, -6.0577, -3.5577, 8.5577, -0.0707, -3.4707, 9, 2.0577, -3.4577, 8.5577, -0.0578, -3.4577, 8.5577, -0.0707, -3.4707, 9, 2.0707, -3.4707, 9, 2.0577, -3.4577, 8.5577, 2, -3.4, 9, -0.0707, -3.4707, 9, 0, -3.4, 9, 2, -3.4, 9, 2.0707, -3.4707, 9, -0.0707, -3.4707, 9 )
+
+[node name="Floor2_BathroomMesh" type="StaticBody"]
+
+[node name="Floor2_BathroomMesh" parent="." instance=ExtResource( 1 )]
+material/0 = ExtResource( 5 )
+material/1 = ExtResource( 2 )
+material/2 = ExtResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, 79.602, -39.9794, 52.0509 )
+shape = SubResource( 1 )
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 1, 0, 4.37114e-08, 0, 1, 0, -4.37114e-08, 0, 1, 79.602, -39.9794, 52.0509 )
+
+[node name="toiletSquare" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35312, -3.47884, -3.96841 )
+
+[node name="toiletSquare2" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14688, -3.47884, -3.96841 )
+
+[node name="toiletSquare3" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.64688, -3.47884, -3.96841 )
+
+[node name="bathroomSinkSquare" parent="Spatial" instance=ExtResource( 7 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.14688, -3.97884, 6.03159 )
+
+[node name="bathroomSinkSquare2" parent="Spatial" instance=ExtResource( 7 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.146881, -3.97884, 6.03159 )
+
+[node name="bathroomSinkSquare3" parent="Spatial" instance=ExtResource( 7 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.85312, -3.97884, 6.03159 )
+
+[node name="bathroomSinkSquare4" parent="Spatial" instance=ExtResource( 7 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.85312, -3.97884, 6.03159 )
+
+[node name="bathroomMirror" parent="Spatial" instance=ExtResource( 8 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.602303, -0.478836, 5.77312 )
+
+[node name="bathroomMirror2" parent="Spatial" instance=ExtResource( 8 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.6023, -0.478836, 5.77312 )
+
+[node name="bathroomMirror3" parent="Spatial" instance=ExtResource( 8 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.6023, -0.478836, 5.77312 )
+
+[node name="bathroomMirror4" parent="Spatial" instance=ExtResource( 8 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.3977, -0.478836, 5.77312 )
+
+[node name="PickupItemReadable" parent="Spatial" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.85312, -0.978836, 5.03159 )
+title_key = "Dirty Note"
+text_key = "OMG Why is this the bathroom???
+There's no showers
+There's no stalls
+Just three fucking toilets and all the world to see!?!? It's the only one too? We ALL have to share and if one gets clogged, that's it. The Lamb (Blessed Be Most Holy) has His own bathroom private from the rest of us. Why do we all have to share?"

@@ -5,3 +5,8 @@
 
 [node name="PickupItemPropertySetter" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+world_scale = Vector3( 1, 1, 1 )
+held_scale = Vector3( 1, 1, 1 )
+scale_children = [  ]
+desired_property_name = "prop_path_not_set!!!"
+desired_value = false

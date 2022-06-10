@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Resources/KenneyPacks/Furniture/GLTF format/lampSquareCeiling.glb" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Materials/fabric_pattern_07.material" type="Material" id=2]
+
+[sub_resource type="CapsuleMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+emission_enabled = true
+emission = Color( 1, 1, 1, 1 )
+emission_energy = 1.0
+emission_operator = 0
+emission_on_uv2 = false
 
 [node name="lampSquareCeiling" instance=ExtResource( 1 )]
 
@@ -12,5 +21,10 @@ material/0 = ExtResource( 2 )
 
 [node name="SpotLight" type="SpotLight" parent="." index="1"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.5, 0 )
-shadow_enabled = true
 spot_range = 20.0
+
+[node name="MeshInstance" type="MeshInstance" parent="." index="2"]
+transform = Transform( 0.15, 0, 0, 0, -6.55671e-09, -0.15, 0, 0.15, -6.55671e-09, 0, 0.163002, 0 )
+cast_shadow = 0
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )

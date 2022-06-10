@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://Resources/Materials/concrete_wall_003.material" type="Material" id=2]
@@ -14,6 +14,13 @@
 [ext_resource path="res://Resources/Materials/denmin_fabric_02.material" type="Material" id=12]
 [ext_resource path="res://Resources/Materials/fabric_pattern_07.material" type="Material" id=13]
 [ext_resource path="res://Resources/Materials/fabric_pattern_05.material" type="Material" id=14]
+[ext_resource path="res://Resources/Materials/castle_brick_02_white.material" type="Material" id=15]
+[ext_resource path="res://Resources/Materials/cobblestone_floor_07.material" type="Material" id=16]
+[ext_resource path="res://Resources/Materials/wall_bricks_plaster.material" type="Material" id=17]
+[ext_resource path="res://Resources/Materials/t_concrete_wall_002.material" type="Material" id=18]
+[ext_resource path="res://Resources/Materials/rough_plaster_brick.material" type="Material" id=19]
+[ext_resource path="res://Resources/Materials/rough_block_wall.material" type="Material" id=20]
+[ext_resource path="res://Resources/Materials/medieval_blocks_03.material" type="Material" id=21]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 4, 4 )
@@ -187,3 +194,88 @@ material/0 = ExtResource( 12 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 mesh = SubResource( 2 )
 material/0 = ExtResource( 12 )
+
+[node name="Material_castle_brick_02" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0 )
+
+[node name="Plane" type="MeshInstance" parent="Material_castle_brick_02"]
+mesh = SubResource( 1 )
+material/0 = ExtResource( 15 )
+
+[node name="Sphere" type="MeshInstance" parent="Material_castle_brick_02"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 15 )
+
+[node name="Material_cobblestone_floor_07" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, 0 )
+
+[node name="Plane" type="MeshInstance" parent="Material_cobblestone_floor_07"]
+mesh = SubResource( 1 )
+material/0 = ExtResource( 16 )
+
+[node name="Sphere" type="MeshInstance" parent="Material_cobblestone_floor_07"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 16 )
+
+[node name="Material_medieval_blocks_03" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, -4.5 )
+
+[node name="Plane" type="MeshInstance" parent="Material_medieval_blocks_03"]
+mesh = SubResource( 1 )
+material/0 = ExtResource( 21 )
+
+[node name="Sphere" type="MeshInstance" parent="Material_medieval_blocks_03"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 21 )
+
+[node name="Material_rough_block_wall" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -4.5 )
+
+[node name="Plane" type="MeshInstance" parent="Material_rough_block_wall"]
+mesh = SubResource( 1 )
+material/0 = ExtResource( 20 )
+
+[node name="Sphere" type="MeshInstance" parent="Material_rough_block_wall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 20 )
+
+[node name="Material_rough_plaster_brick" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 4.5 )
+
+[node name="Plane" type="MeshInstance" parent="Material_rough_plaster_brick"]
+mesh = SubResource( 1 )
+material/0 = ExtResource( 19 )
+
+[node name="Sphere" type="MeshInstance" parent="Material_rough_plaster_brick"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 19 )
+
+[node name="Material_t_concrete_wall_002" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 9 )
+
+[node name="Plane" type="MeshInstance" parent="Material_t_concrete_wall_002"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -4.5 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 18 )
+
+[node name="Sphere" type="MeshInstance" parent="Material_t_concrete_wall_002"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 1, -4.5 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 18 )
+
+[node name="Material_wall_bricks_plaster" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 0, 9 )
+
+[node name="Plane" type="MeshInstance" parent="Material_wall_bricks_plaster"]
+mesh = SubResource( 1 )
+material/0 = ExtResource( 17 )
+
+[node name="Sphere" type="MeshInstance" parent="Material_wall_bricks_plaster"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 17 )

@@ -18,6 +18,9 @@ These should be available in Project Settings, which may be easier to use than t
 """
 var subtitles_enabled := true
 var use_auto_dialogue_line_splitter := true
+var custom_viewport_scale := 1.0
+
+signal on_viewport_changed(viewport)
 
 func _ready() -> void:
 	layer_3D = SubtitlesLayer3D.new()
@@ -70,3 +73,11 @@ func show() -> void:
 	layer_3D.set_visible(true)
 	layer_2D.set_visible(true)
 	layer_dialogue.set_visible(true)
+
+func set_viewport(viewport : Viewport) -> void:
+	if not is_instance_valid(get_tree()):
+		# for some reason this always produces an error. But it's fine because that only happens when the game is closing anyway
+		return
+	emit_signal("on_viewport_changed", viewport)
+	if not viewport.is_connected("tree_exiting", self, "set_viewport"):
+		viewport.connect("tree_exiting", self, "set_viewport", [get_tree().root.get_viewport()])

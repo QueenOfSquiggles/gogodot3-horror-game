@@ -1,0 +1,69 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Floor2_LivingAreaRadioMesh2.scn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Materials/medieval_blocks_03.material" type="Material" id=2]
+[ext_resource path="res://GameDefinitions/Items/bases/PickupItemReadable.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Resources/Materials/t_concrete_wall_002.material" type="Material" id=4]
+[ext_resource path="res://Resources/Models/imported/Table.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Resources/Models/imported/LampWall.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Resources/Materials/white_rough_plaster.material" type="Material" id=7]
+[ext_resource path="res://Resources/Models/imported/LoungeSofa.tscn" type="PackedScene" id=8]
+[ext_resource path="res://GameDefinitions/Items/ItemRadio.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Resources/Models/imported/LoungeSofaOttoman.tscn" type="PackedScene" id=10]
+
+[sub_resource type="ConcavePolygonShape" id=1]
+data = PoolVector3Array( -6, -3.5, 8.5, -6, 3.5, -8.5, -6, -3.5, -8.5, -6, -3.5, 8.5, -6, 3.5, 8.5, -6, 3.5, -8.5, 0, 0.6, 8.5, -6, -3.5, 8.5, 0, -3.4, 8.5, 6, 3.5, 8.5, 2, -3.4, 8.5, 6, -3.5, 8.5, 6, 3.5, 8.5, 2, 0.6, 8.5, 2, -3.4, 8.5, 0, 0.6, 8.5, -6, 3.5, 8.5, -6, -3.5, 8.5, 6, 3.5, 8.5, 0, 0.6, 8.5, 2, 0.6, 8.5, 0, 0.6, 8.5, 6, 3.5, 8.5, -6, 3.5, 8.5, 6, -3.5, -8.5, 6, 3.5, 8.5, 6, -3.5, 8.5, 6, -3.5, -8.5, 6, 3.5, -8.5, 6, 3.5, 8.5, 0, -3.4, 8.5, 6, -3.5, 8.5, 2, -3.4, 8.5, 0, -3.4, 8.5, -6, -3.5, 8.5, 6, -3.5, 8.5, -6, 3.5, -8.5, 6, -3.5, -8.5, -6, -3.5, -8.5, -6, 3.5, -8.5, 6, 3.5, -8.5, 6, -3.5, -8.5, 0, -3.4, 9, 0, 0.6, 8.5, 0, -3.4, 8.5, 0, -3.4, 9, 0, 0.6, 9, 0, 0.6, 8.5, 2, 0.6, 9, 2, -3.4, 8.5, 2, 0.6, 8.5, 2, 0.6, 9, 2, -3.4, 9, 2, -3.4, 8.5, -6.0577, -3.5577, 8.5577, -6.0577, 3.5577, -8.5577, -6.0577, 3.5577, 8.5577, -6.0577, -3.5577, 8.5577, -6.0577, -3.5577, -8.5577, -6.0577, 3.5577, -8.5577, 2.0577, 0.6577, 8.5577, 6.0577, -3.5577, 8.5577, 2.0301, -3.4302, 8.5905, -6.0577, 3.5577, 8.5577, -0.0302, -3.4302, 8.5905, -6.0577, -3.5577, 8.5577, -6.0577, 3.5577, 8.5577, -0.0578, 0.6577, 8.5577, -0.0302, -3.4302, 8.5905, 2.0577, 0.6577, 8.5577, 6.0577, 3.5577, 8.5577, 6.0577, -3.5577, 8.5577, -6.0577, 3.5577, 8.5577, 2.0577, 0.6577, 8.5577, -0.0578, 0.6577, 8.5577, 2.0577, 0.6577, 8.5577, -6.0577, 3.5577, 8.5577, 6.0577, 3.5577, 8.5577, 6.0577, -3.5577, -8.5577, 6.0577, 3.5577, 8.5577, 6.0577, 3.5577, -8.5577, 6.0577, -3.5577, -8.5577, 6.0577, -3.5577, 8.5577, 6.0577, 3.5577, 8.5577, -0.0302, -3.4302, 8.5905, 6.0577, -3.5577, 8.5577, -6.0577, -3.5577, 8.5577, -0.0302, -3.4302, 8.5905, 2.0301, -3.4302, 8.5905, 6.0577, -3.5577, 8.5577, -6.0577, 3.5577, -8.5577, 6.0577, -3.5577, -8.5577, 6.0577, 3.5577, -8.5577, -6.0577, 3.5577, -8.5577, -6.0577, -3.5577, -8.5577, 6.0577, -3.5577, -8.5577, -0.0707, -3.4707, 9, -0.0578, 0.6577, 8.5577, -0.0707, 0.6707, 9, -0.0707, -3.4707, 9, -0.0302, -3.4302, 8.5905, -0.0578, 0.6577, 8.5577, 2.0707, 0.6707, 9, 2.0301, -3.4302, 8.5905, 2.0707, -3.4707, 9, 2.0707, 0.6707, 9, 2.0577, 0.6577, 8.5577, 2.0301, -3.4302, 8.5905, 0, -3.4, 9, -0.0707, 0.6707, 9, 0, 0.6, 9, 0, -3.4, 9, -0.0707, -3.4707, 9, -0.0707, 0.6707, 9, 2, 0.6, 9, 2.0707, -3.4707, 9, 2, -3.4, 9, 2, 0.6, 9, 2.0707, 0.6707, 9, 2.0707, -3.4707, 9, -6, 3.5, -8.5, 6, 3.5, 8.5, 6, 3.5, -8.5, -6, 3.5, -8.5, -6, 3.5, 8.5, 6, 3.5, 8.5, 2, 0.6, 8.5, 0, 0.6, 9, 2, 0.6, 9, 2, 0.6, 8.5, 0, 0.6, 8.5, 0, 0.6, 9, -6.0577, 3.5577, -8.5577, 6.0577, 3.5577, 8.5577, -6.0577, 3.5577, 8.5577, -6.0577, 3.5577, -8.5577, 6.0577, 3.5577, -8.5577, 6.0577, 3.5577, 8.5577, 2.0577, 0.6577, 8.5577, -0.0707, 0.6707, 9, -0.0578, 0.6577, 8.5577, 2.0577, 0.6577, 8.5577, 2.0707, 0.6707, 9, -0.0707, 0.6707, 9, 0, 0.6, 9, 2.0707, 0.6707, 9, 2, 0.6, 9, 0, 0.6, 9, -0.0707, 0.6707, 9, 2.0707, 0.6707, 9, 6, -3.5, -8.5, -6, -3.5, 8.5, -6, -3.5, -8.5, 6, -3.5, -8.5, 6, -3.5, 8.5, -6, -3.5, 8.5, 0, -3.4, 9, 2, -3.4, 8.5, 2, -3.4, 9, 0, -3.4, 9, 0, -3.4, 8.5, 2, -3.4, 8.5, 6.0577, -3.5577, -8.5577, -6.0577, -3.5577, 8.5577, 6.0577, -3.5577, 8.5577, 6.0577, -3.5577, -8.5577, -6.0577, -3.5577, -8.5577, -6.0577, -3.5577, 8.5577, -0.0707, -3.4707, 9, 2.0301, -3.4302, 8.5905, -0.0302, -3.4302, 8.5905, -0.0707, -3.4707, 9, 2.0707, -3.4707, 9, 2.0301, -3.4302, 8.5905, 2, -3.4, 9, -0.0707, -3.4707, 9, 0, -3.4, 9, 2, -3.4, 9, 2.0707, -3.4707, 9, -0.0707, -3.4707, 9 )
+
+[node name="Floor2_LivingAreaRadioMesh" type="StaticBody"]
+
+[node name="Floor2_LivingAreaRadioMesh2" parent="." instance=ExtResource( 1 )]
+material/0 = ExtResource( 2 )
+material/1 = ExtResource( 7 )
+material/2 = ExtResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0, 0, 1, 0, 1, 0, -1, 0, 0, 57.6066, -39.9794, 32.0359 )
+shape = SubResource( 1 )
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 56.3364, -43.0831, 35.0605 )
+
+[node name="loungeSofa" parent="Spatial" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -7 )
+
+[node name="loungeSofa4" parent="Spatial" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7 )
+
+[node name="loungeSofa2" parent="Spatial" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0, -2 )
+
+[node name="loungeSofa3" parent="Spatial" instance=ExtResource( 8 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0, 3 )
+
+[node name="loungeSofaOttoman" parent="Spatial" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -4 )
+
+[node name="loungeSofaOttoman3" parent="Spatial" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -4 )
+
+[node name="loungeSofaOttoman2" parent="Spatial" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0.5 )
+
+[node name="table" parent="Spatial" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3 )
+
+[node name="ItemRadio" parent="Spatial" instance=ExtResource( 9 )]
+transform = Transform( -0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 3.5, 2, 1.5 )
+rigid_mode_start = 1
+
+[node name="lampWall" parent="Spatial" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, 1.5, 5, 3.02408 )
+
+[node name="PickupItemReadable" parent="Spatial" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.39873, 0.5 )
+title_key = "Divine Scribe's Reflection"
+text_key = "The Lamb (Blessed Be Most Holy) has blessed us with a radio. He (Blessed Be Most Holy) has commanded that we should listen to the radio programs to understand what the faithless are up to. He (Blessed Be Most Holy) wants us to inform Him (Blessed Be Most Holy) of any information regarding our most holy sanctity. We are to practice guarding ourselves from the evils of the faithless by listening to their programs, temptations, and their music. After every session I feel stronger in my faith. He (Blessed Be Most Holy) will protect us from The Enemy and his agents. As long as we keep our faith strong, the faithless cannot hurt us.
+
+Signed,
+Abby
+Divine Scribe of The Lamb (Blessed Be Most Holy) "

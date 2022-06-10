@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://TierTwoModules/pickup_items/PickupItemCustomScaled.tscn" type="PackedScene" id=1]
-[ext_resource path="res://TierTwoModules/pickup_items/PickupItemMethodCaller.gd" type="Script" id=2]
-
-[node name="PickupItemMethodCaller" instance=ExtResource( 1 )]
-script = ExtResource( 2 )

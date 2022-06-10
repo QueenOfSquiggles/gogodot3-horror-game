@@ -2,6 +2,15 @@ extends Spatial
 
 export (String) var keyed_name := "door_001"
 
+onready var door_part := $"doorwayFront(Clone)/door/KinematicBody"
+
 func _ready() -> void:
-	var sub_script := $"doorwayFront(Clone)/door/KinematicBody"
-	sub_script.keyed_name = keyed_name
+	door_part.keyed_name = keyed_name
+
+func save_data() -> Dictionary:
+	return {"is_locked" : door_part.locked}
+
+func load_save_data(data : Dictionary):
+	if "is_locked" in data:
+		door_part.locked = data.is_locked as bool
+		print("Loaded door locked state: %s" % str(data.is_locked))

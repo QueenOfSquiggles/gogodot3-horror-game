@@ -208,17 +208,17 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Subtitles="*res://addons/subtitles/scenes/Subtitles.gd"
 Globals="*res://Globals/autoload/Globals.gd"
 LocksManager="*res://Globals/autoload/LocksManager.gd"
 SaveData="*res://Globals/autoload/SaveData.gd"
 SceneManagement="*res://Globals/autoload/SceneManagement.gd"
 Settings="*res://Globals/autoload/Settings.gd"
 Readables="*res://Globals/autoload/Readables.gd"
+Subtitles="*res://addons/subtitles/scenes/Subtitles.gd"
 
-[debug]
+[display]
 
-settings/stdout/print_fps=true
+window/vsync/use_vsync=false
 
 [editor]
 
@@ -226,11 +226,31 @@ scene/scene_naming=1
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/color_grading_lut/plugin.cfg", "res://addons/jamcountdown/plugin.cfg", "res://addons/scatter-master/plugin.cfg", "res://addons/subtitles/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/color_grading_lut/plugin.cfg", "res://addons/scatter-master/plugin.cfg", "res://addons/subtitles/plugin.cfg" )
 
-[global]
+[importer_defaults]
 
-shader=false
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": true,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/normal_map_invert_y": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
 
 [input]
 
@@ -285,6 +305,14 @@ toggle_flashlight={
  ]
 }
 
+[logging]
+
+file_logging/enable_file_logging=true
+
+[node]
+
+name_num_separator=2
+
 [physics]
 
 3d/smooth_trimesh_collision=true
@@ -294,5 +322,9 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 threads/thread_model=2
-quality/filters/use_fxaa=true
+quality/shadows/filter_mode=0
+quality/reflections/high_quality_ggx=false
+quality/filters/anisotropic_filter_level=2
+gles3/shaders/log_active_async_compiles_count=true
+quality/subsurface_scattering/quality=0
 environment/default_environment="res://default_env.tres"

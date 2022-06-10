@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Modules/menus/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Modules/menus/OptionsMenu.tscn" type="PackedScene" id=2]
@@ -8,12 +8,13 @@
 [ext_resource path="res://Modules/menus/theming/basic_theme.tres" type="Theme" id=6]
 [ext_resource path="res://Modules/menus/ui_sounds/UiSoundPack.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Resources/Materials/PostProcess/blue_noise_dither.tres" type="Material" id=8]
-[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/gltf/imported/SurfaceMesh.tscn" type="PackedScene" id=9]
-[ext_resource path="res://dark_environment.tres" type="Environment" id=10]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/scene_files/SurfaceMesh.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Modules/environment/SettingsCompliantWorldEnvironment.tscn" type="PackedScene" id=10]
 [ext_resource path="res://addons/subtitles/default_theming/DuruSans-Regular.ttf" type="DynamicFontData" id=11]
 [ext_resource path="res://Resources/UI/icons/twitter_icon.png" type="Texture" id=12]
 [ext_resource path="res://Resources/UI/icons/youtube_icon.png" type="Texture" id=13]
 [ext_resource path="res://Resources/UI/icons/itch_icon.png" type="Texture" id=14]
+[ext_resource path="res://Modules/post_processing/PostProcessViewportContainer.gd" type="Script" id=15]
 
 [sub_resource type="DynamicFont" id=1]
 size = 44
@@ -34,6 +35,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 stretch = true
 stretch_shrink = 3
+script = ExtResource( 15 )
+dither_material = ExtResource( 8 )
 
 [node name="Viewport" type="Viewport" parent="ViewportContainer"]
 size = Vector2( 341, 200 )
@@ -42,17 +45,16 @@ render_target_update_mode = 3
 
 [node name="SurfaceMesh" parent="ViewportContainer/Viewport" instance=ExtResource( 9 )]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="ViewportContainer/Viewport"]
-environment = ExtResource( 10 )
-
 [node name="Camera" type="Camera" parent="ViewportContainer/Viewport"]
-transform = Transform( -0.987661, 0, -0.156607, 0, 1, 0, 0.156607, 0, -0.987661, 7.37068, 5.5867, -11.4758 )
+transform = Transform( -0.733789, 0, 0.679377, 0, 1, 0, -0.679377, 0, -0.733789, -17.661, 5.5867, 54.4987 )
 current = true
 
 [node name="DirectionalLight" type="DirectionalLight" parent="ViewportContainer/Viewport"]
 transform = Transform( 0.921816, -0.239718, -0.304616, 0, -0.785846, 0.618422, -0.387628, -0.570071, -0.724405, 0, 24.9981, 0 )
 light_color = Color( 0.333333, 0.376471, 0.619608, 1 )
 light_energy = 0.5
+
+[node name="SettingsCompliantWorldEnvironment" parent="ViewportContainer/Viewport" instance=ExtResource( 10 )]
 
 [node name="GameButtons" type="PanelContainer" parent="."]
 anchor_top = 1.0
@@ -124,50 +126,56 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -313.0
-margin_top = -76.0
-margin_right = -11.6493
-margin_bottom = -12.0
+margin_left = -312.0
+margin_top = -99.0
+margin_right = -10.6493
+margin_bottom = -8.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Socials"]
 margin_left = 1.0
 margin_top = 1.0
 margin_right = 300.351
-margin_bottom = 63.0
+margin_bottom = 90.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Socials/VBoxContainer"]
 margin_right = 299.0
-margin_bottom = 32.0
+margin_bottom = 64.0
 alignment = 1
 
 [node name="Twitter" parent="Socials/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
-margin_left = 97.0
-margin_right = 129.0
+margin_left = 49.0
+margin_right = 113.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
 icon = ExtResource( 12 )
 URI = "https://twitter.com/OfSquiggles"
 
 [node name="UiSoundPack6" parent="Socials/VBoxContainer/HBoxContainer/Twitter" instance=ExtResource( 7 )]
 
 [node name="Youtube" parent="Socials/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
-margin_left = 133.0
-margin_right = 165.0
+margin_left = 117.0
+margin_right = 181.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
 icon = ExtResource( 13 )
 URI = "https://www.youtube.com/channel/UCIh0Th1EBpFlvcKYWld0OsQ"
 
 [node name="UiSoundPack7" parent="Socials/VBoxContainer/HBoxContainer/Youtube" instance=ExtResource( 7 )]
 
 [node name="ItchIO" parent="Socials/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
-margin_left = 169.0
-margin_right = 201.0
+margin_left = 185.0
+margin_right = 249.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
 icon = ExtResource( 14 )
 URI = "https://queenofsquiggles.itch.io/"
 
 [node name="UiSoundPack8" parent="Socials/VBoxContainer/HBoxContainer/ItchIO" instance=ExtResource( 7 )]
 
 [node name="Label" type="Label" parent="Socials/VBoxContainer"]
-margin_top = 36.0
+margin_top = 68.0
 margin_right = 299.0
-margin_bottom = 57.0
+margin_bottom = 89.0
 text = "A game by QueenOfSquiggles (2022)"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]

@@ -5,7 +5,7 @@
 [ext_resource path="res://Modules/interactables/InteractDoorKeyed_RootProps.gd" type="Script" id=3]
 [ext_resource path="res://Resources/Materials/wood_table_001.material" type="Material" id=4]
 
-[node name="InteractDoorKeyed" instance=ExtResource( 1 )]
+[node name="InteractDoorKeyed" groups=["persist"] instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
 [node name="door" parent="doorwayFront(Clone)" index="0"]

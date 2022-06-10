@@ -7,6 +7,8 @@ func tick(actor : Node, bb : Blackboard) -> int:
 		return FAILURE
 	var selection_cast := bb.get("selection_cast") as InteractionRayCast
 	var item := selection_cast.cached_collider
+	if not is_instance_valid(item):
+		return FAILURE
 	if not item or not item.has_method("interact"):
 		return FAILURE
 	item.interact(actor)
