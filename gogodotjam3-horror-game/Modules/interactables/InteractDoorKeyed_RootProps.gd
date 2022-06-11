@@ -13,4 +13,3 @@ func save_data() -> Dictionary:
 func load_save_data(data : Dictionary):
 	if "is_locked" in data:
 		door_part.locked = data.is_locked as bool
-		print("Loaded door locked state: %s" % str(data.is_locked))

@@ -5,7 +5,11 @@ export (bool) var destroy_after_use := false
 export (String) var keyed_name := "door_001"
 
 func _do_additonal_checks(player : FirstPersonCharacterBase, _raycast : InteractionRayCast, collider : Node) -> bool:
+	print("self.keyed_name=", self.keyed_name)
+	if "keyed_name" in collider:
+		print("collider.keyed_name=", collider.keyed_name)
 	var flag :bool = ("keyed_name" in collider) and (collider.keyed_name == keyed_name)
+	
 	if is_skeleton_key:
 		# skeleton key is for any door
 		flag = true

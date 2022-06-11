@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://Resources/Materials/concrete_wall_003.material" type="Material" id=2]
@@ -21,6 +21,8 @@
 [ext_resource path="res://Resources/Materials/rough_plaster_brick.material" type="Material" id=19]
 [ext_resource path="res://Resources/Materials/rough_block_wall.material" type="Material" id=20]
 [ext_resource path="res://Resources/Materials/medieval_blocks_03.material" type="Material" id=21]
+[ext_resource path="res://Resources/Materials/metal_008.material" type="Material" id=22]
+[ext_resource path="res://Resources/Materials/fence_007.material" type="Material" id=23]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 4, 4 )
@@ -279,3 +281,27 @@ material/0 = ExtResource( 17 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 mesh = SubResource( 2 )
 material/0 = ExtResource( 17 )
+
+[node name="Material_fence_007" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 9 )
+
+[node name="Plane" type="MeshInstance" parent="Material_fence_007"]
+mesh = SubResource( 1 )
+material/0 = ExtResource( 23 )
+
+[node name="Sphere" type="MeshInstance" parent="Material_fence_007"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 23 )
+
+[node name="Material_metal_008" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 9 )
+
+[node name="Plane" type="MeshInstance" parent="Material_metal_008"]
+mesh = SubResource( 1 )
+material/0 = ExtResource( 22 )
+
+[node name="Sphere" type="MeshInstance" parent="Material_metal_008"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+mesh = SubResource( 2 )
+material/0 = ExtResource( 22 )

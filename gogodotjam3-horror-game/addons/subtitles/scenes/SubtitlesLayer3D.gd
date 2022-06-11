@@ -26,8 +26,10 @@ func _viewport_changed(n_viewport : Viewport) -> void:
 	_cache_viewport_size()
 
 func _cache_viewport_size() -> void:
-	_viewport_size_cache = viewport.size * Subtitles.custom_viewport_scale
+	_viewport_size_cache = viewport.size
 	print("Viewport Size : %s" % str(_viewport_size_cache))
+	if viewport and viewport.get_camera():
+		print("Using camera: %s" % (viewport.get_camera().get_path()))
 
 func _process(_delta : float) -> void:
 	_update_subtitles() 
@@ -54,6 +56,7 @@ func _update_subtitle_position(panel : PanelContainer, cam : Camera) -> void:
 		var pos_calc := cam.unproject_position(position.global_transform.origin)
 		pos_calc = _apply_cam_angles(cam, position, pos_calc, panel)
 		panel.rect_position = _clamp_subtitle_pos(panel, pos_calc)
+		panel.rect_position *= Subtitles.custom_viewport_scale
 	else:
 		push_warning("Orphaned subtitle detected! " + str(panel))
 

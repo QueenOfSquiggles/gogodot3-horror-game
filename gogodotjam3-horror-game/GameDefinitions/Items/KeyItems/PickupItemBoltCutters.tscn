@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://TierTwoModules/pickup_items/PickupItemKey.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Models/imported/props/items/BoltCutters.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GameDefinitions/Items/KeyItems/PickupItemBoltCutters.gd" type="Script" id=3]
+
+[node name="PickupItemBoltCutters" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+item_name = "Bolt Cutters"
+keyed_name = "chain"
+
+[node name="bolt_cutters" parent="." index="2" instance=ExtResource( 2 )]
+transform = Transform( 0.125028, 0, 0, 0, 0.125028, 0, 0, 0, 0.125028, 0, 0, 0.0724383 )

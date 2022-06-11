@@ -10,31 +10,32 @@ export (String) var desired_property_name :String = "prop_path_not_set!!!"
 export (bool) var desired_value : bool
 
 func use_item(source : Node) -> void:
+	print("Using property setter item")
 	var player := source as FirstPersonCharacterBase
 	if not player:
+		print("failed to find player")
 		return
 	var inter := player.selection_raycast
 	var collider := inter.cached_collider
 	if collider:
-		print("collider present : ", collider)
 		var prop_list := collider.get_property_list()
 		var flag := false
 		for prop in prop_list:
 			var n :String = prop["name"]
-			#print("property found : [%s] desired [%s]" % [n, desired_property_name])
 			if n == desired_property_name:
-				print("found property on collider!!!")
 				flag=true
 				break
 		if flag:
-			print("property is in collider : ", desired_property_name)
 			if _do_additonal_checks(player, inter, collider):
-				print("additional checks passed")
-				inter.cached_collider.set_indexed(desired_property_name, desired_value)
-				print("Set property [%s] to [%s] on node [%s]" % [str(desired_property_name),str(desired_value),str(inter.cached_collider),])
+				collider.set_indexed(desired_property_name, desired_value)
+				print("Assigned property [%s] on %s to [%s]" % [str(desired_property_name),str(collider),str(desired_value)])
+			else:
+				print("Failed additional checks")
 		else:
+			print("Failed to find property [%s] on %s" % [str(desired_property_name),str(collider)])
 			player.set_held_item(null)
 	else:
+		print("Failed to find a collider!")
 		player.set_held_item(null) # should call the remove_item func
 
 func _do_additonal_checks(_player : FirstPersonCharacterBase, _raycast : InteractionRayCast, _collider : Node) -> bool:

@@ -25,7 +25,6 @@ func display_readable(title : String, text : String, screen_ratio : float = 0.8)
 	Globals.unlock_mouse()
 
 func _readable_closed() -> void:
-	print("Readable closed")
 	yield(VisualServer, "frame_post_draw")
 	popup.queue_free()
 	popup = null
