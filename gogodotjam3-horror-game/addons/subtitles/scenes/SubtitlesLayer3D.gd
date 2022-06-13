@@ -27,9 +27,9 @@ func _viewport_changed(n_viewport : Viewport) -> void:
 
 func _cache_viewport_size() -> void:
 	_viewport_size_cache = viewport.size
-	print("Viewport Size : %s" % str(_viewport_size_cache))
-	if viewport and viewport.get_camera():
-		print("Using camera: %s" % (viewport.get_camera().get_path()))
+#	print("Viewport Size : %s" % str(_viewport_size_cache))
+#	if viewport and viewport.get_camera():
+#		print("Using camera: %s" % (viewport.get_camera().get_path()))
 
 func _process(_delta : float) -> void:
 	_update_subtitles() 

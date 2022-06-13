@@ -21,3 +21,8 @@ transform = Transform( -1.24852e-08, 0, 0.285627, 2.49703e-08, -0.285627, 1.0914
 mesh = SubResource( 2 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 3 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.9407e-08, -0.386443 )
+light_color = Color( 0.870588, 0.764706, 0.341176, 1 )
+omni_range = 10.0

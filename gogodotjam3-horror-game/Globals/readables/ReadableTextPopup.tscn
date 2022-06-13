@@ -1,10 +1,25 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Modules/menus/theming/basic_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Modules/audio_library/AudioLib.gd" type="Script" id=2]
+[ext_resource path="res://Resources/sfx/sorted/sfx_note_open0.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Resources/sfx/sorted/sfx_note_open1.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Resources/sfx/sorted/sfx_note_open2.ogg" type="AudioStream" id=5]
+
+[sub_resource type="AudioStreamRandomPitch" id=1]
+audio_stream = ExtResource( 3 )
+random_pitch = 1.5
+
+[sub_resource type="AudioStreamRandomPitch" id=2]
+audio_stream = ExtResource( 4 )
+random_pitch = 1.5
+
+[sub_resource type="AudioStreamRandomPitch" id=3]
+audio_stream = ExtResource( 5 )
+random_pitch = 1.5
 
 [node name="ReadableText" type="AcceptDialog"]
 pause_mode = 2
-visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -17,3 +32,20 @@ theme = ExtResource( 1 )
 window_title = "Readable"
 resizable = true
 dialog_autowrap = true
+
+[node name="AudioLib" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioLib"]
+stream = SubResource( 1 )
+bus = "SoundEffects"
+
+[node name="AudioStreamPlayer_2" type="AudioStreamPlayer" parent="AudioLib"]
+stream = SubResource( 2 )
+bus = "SoundEffects"
+
+[node name="AudioStreamPlayer_3" type="AudioStreamPlayer" parent="AudioLib"]
+stream = SubResource( 3 )
+bus = "SoundEffects"
+
+[connection signal="about_to_show" from="." to="AudioLib" method="play"]

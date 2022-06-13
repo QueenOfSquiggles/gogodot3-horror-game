@@ -214,7 +214,7 @@ func open_file(path: String, open_flags) -> File:
 	var file := File.new()
 	var err := file.open(path, open_flags)
 	if err != OK:
-		print("failed to open file : ", path)
+		push_warning("failed to open file : %s" % path)
 		return null
 	#print("Opened file [", path, "]")
 	return file

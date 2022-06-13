@@ -179,6 +179,6 @@ anims/RESET = SubResource( 2 )
 anims/pulse = SubResource( 3 )
 
 [node name="PickupItemRustedKey" parent="Objects" instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.03894, -4.62805, -5.48526 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.62519, -2.00268, -5.90417 )
 item_name = "Kitchen Key"
 keyed_name = "kitchen_door"

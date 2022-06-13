@@ -4,6 +4,9 @@ class_name InteractDoorKeyed
 export (String) var keyed_name := "door_001"
 export (bool) var locked_by_default := true
 
+export (NodePath) var sfx_locked : NodePath
+export (NodePath) var sfx_unlocked : NodePath
+
 var locked := false setget _set_locked
 onready var unlocked_prompt := self.interact_prompt 
 
@@ -20,6 +23,10 @@ func interact(_source) -> void:
 
 func _set_locked(value : bool) -> void:
 	locked = value
+	if not locked and not sfx_unlocked.is_empty():
+		get_node(sfx_unlocked).play()
+	elif locked and not sfx_locked.is_empty():
+		get_node(sfx_locked).play()
 	_update_prompt()
 
 func _update_prompt() -> void:

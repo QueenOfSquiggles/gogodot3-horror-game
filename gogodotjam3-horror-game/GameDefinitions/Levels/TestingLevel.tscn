@@ -56,8 +56,11 @@ visible = false
 editor_only = true
 directional_shadow_mode = 1
 
-[node name="FirstPersonCharacterBase" parent="TestingLevel/Viewport/Spatial" instance=ExtResource( 2 )]
-transform = Transform( 0.911152, 0, 0.412071, 0, 1, 0, -0.412071, 0, 0.911152, -26.3296, 1.6324, 55.3888 )
+[node name="PlayerStart" type="Spatial" parent="TestingLevel/Viewport/Spatial"]
+transform = Transform( 0.911152, 0, 0.412071, 0, 1, 0, -0.412071, 0, 0.911152, -22.3296, 1.6324, 59.3888 )
+
+[node name="FirstPersonCharacterBase" parent="TestingLevel/Viewport/Spatial/PlayerStart" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 0, 0 )
 __meta__ = {
 "_editor_description_": "SurfaceMesh"
 }
@@ -94,7 +97,7 @@ theme = ExtResource( 13 )
 text = "FPS: 000
 AVG: 000"
 
-[connection signal="interactable_select_ended" from="TestingLevel/Viewport/Spatial/FirstPersonCharacterBase" to="TestingLevel/InteractHUD" method="end"]
-[connection signal="interactable_select_ended" from="TestingLevel/Viewport/Spatial/FirstPersonCharacterBase" to="TestingLevel/Interaction PromptHud" method="_on_interactable_select_ended"]
-[connection signal="interactable_select_started" from="TestingLevel/Viewport/Spatial/FirstPersonCharacterBase" to="TestingLevel/InteractHUD" method="start"]
-[connection signal="interactable_select_started" from="TestingLevel/Viewport/Spatial/FirstPersonCharacterBase" to="TestingLevel/Interaction PromptHud" method="_on_FirstPersonCharacterBase_interactable_select_started"]
+[connection signal="interactable_select_ended" from="TestingLevel/Viewport/Spatial/PlayerStart/FirstPersonCharacterBase" to="TestingLevel/InteractHUD" method="end"]
+[connection signal="interactable_select_ended" from="TestingLevel/Viewport/Spatial/PlayerStart/FirstPersonCharacterBase" to="TestingLevel/Interaction PromptHud" method="_on_interactable_select_ended"]
+[connection signal="interactable_select_started" from="TestingLevel/Viewport/Spatial/PlayerStart/FirstPersonCharacterBase" to="TestingLevel/InteractHUD" method="start"]
+[connection signal="interactable_select_started" from="TestingLevel/Viewport/Spatial/PlayerStart/FirstPersonCharacterBase" to="TestingLevel/Interaction PromptHud" method="_on_FirstPersonCharacterBase_interactable_select_started"]

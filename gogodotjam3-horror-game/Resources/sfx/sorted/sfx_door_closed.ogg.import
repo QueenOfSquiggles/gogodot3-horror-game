@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sfx_door_closed.ogg-5e7466b7613d63d6a9ad7af6357440ec.oggstr"
+
+[deps]
+
+source_file="res://Resources/sfx/sorted/sfx_door_closed.ogg"
+dest_files=[ "res://.import/sfx_door_closed.ogg-5e7466b7613d63d6a9ad7af6357440ec.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

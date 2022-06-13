@@ -1,17 +1,33 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Modules/interactables/InteractDoorSimple.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Modules/interactables/InteractDoorKeyed.gd" type="Script" id=2]
 [ext_resource path="res://Modules/interactables/InteractDoorKeyed_RootProps.gd" type="Script" id=3]
 [ext_resource path="res://Resources/Materials/wood_table_001.material" type="Material" id=4]
+[ext_resource path="res://addons/subtitles/scenes/SubtitleData.gd" type="Script" id=5]
+[ext_resource path="res://addons/subtitles/scripts/ASP_3D_Events.gd" type="Script" id=6]
+[ext_resource path="res://Resources/sfx/sorted/sfx_key_used.ogg" type="AudioStream" id=7]
 
 [node name="InteractDoorKeyed" groups=["persist"] instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
-[node name="door" parent="doorwayFront(Clone)" index="0"]
+[node name="door001" parent="doorwayFront" index="0"]
 material/2 = ExtResource( 4 )
 
-[node name="KinematicBody" parent="doorwayFront(Clone)/door" index="0"]
+[node name="KinematicBody" parent="doorwayFront/door001" index="0"]
 script = ExtResource( 2 )
 keyed_name = "door_001"
 locked_by_default = true
+sfx_locked = NodePath("")
+sfx_unlocked = NodePath("../../../sfx/sfx_door_unlocked")
+
+[node name="sfx_door_unlocked" type="AudioStreamPlayer3D" parent="sfx" index="2"]
+stream = ExtResource( 7 )
+attenuation_model = 3
+bus = "SoundEffects"
+script = ExtResource( 6 )
+
+[node name="SubtitleData" type="Node" parent="sfx/sfx_door_unlocked" index="0"]
+script = ExtResource( 5 )
+subtitle_key = "sfx_door_unlocked"
+subtitle_position_override = NodePath("../../../doorwayFront/door001/SFX_POS")

@@ -251,6 +251,10 @@ texture={
 "stream": false,
 "svg/scale": 1.0
 }
+ogg_vorbis={
+"loop": false,
+"loop_offset": 0
+}
 
 [input]
 
@@ -325,6 +329,8 @@ threads/thread_model=2
 quality/shadows/filter_mode=0
 quality/reflections/high_quality_ggx=false
 quality/filters/anisotropic_filter_level=2
+gles3/shaders/shader_compilation_mode=2
+gles3/shaders/max_simultaneous_compiles=4
 gles3/shaders/log_active_async_compiles_count=true
 quality/subsurface_scattering/quality=0
 environment/default_environment="res://default_env.tres"

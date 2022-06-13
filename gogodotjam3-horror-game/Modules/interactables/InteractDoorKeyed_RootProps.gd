@@ -2,7 +2,7 @@ extends Spatial
 
 export (String) var keyed_name := "door_001"
 
-onready var door_part := $"doorwayFront(Clone)/door/KinematicBody"
+onready var door_part := $"doorwayFront/door001/KinematicBody"
 
 func _ready() -> void:
 	door_part.keyed_name = keyed_name
