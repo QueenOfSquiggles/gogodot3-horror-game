@@ -15,7 +15,7 @@ var bus_name : String
 func _ready() -> void:
 	bus_name = AudioServer.get_bus_name(audio_bus_index)
 	audio.bus = bus_name
-	label.text = label_text
+	label.text = "options.sfx.title." + label_text
 	slider.value = Settings.audio_bus[bus_name].volume
 	muter.pressed = Settings.audio_bus[bus_name].muted
 	

@@ -45,13 +45,23 @@ func tick(_actor : Node, bb : Blackboard) -> int:
 func _get_mouse_delta() -> Vector2:
 	var delta = cache_mouse_pos - last_mouse_pos
 	last_mouse_pos = cache_mouse_pos
-	return delta 
+	return delta
 
 func _process(delta: float) -> void:
 	var joystick_delta := Input.get_vector("joy_look_left", "joy_look_right", "joy_look_down", "joy_look_up")
-	cache_mouse_pos += joystick_delta * delta * 50.0 # fake mouse
+	cache_mouse_pos += joystick_delta * delta * Settings.sensitivity.gamepad * _inversion_vec("gamepad") * Settings.GLOBAL_GAMEPAD_LOOK_FACTOR
+	# basically fake mouse
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		var mouse_event := event as InputEventMouseMotion
-		cache_mouse_pos += mouse_event.relative # accumulates with joystick
+		cache_mouse_pos += mouse_event.relative * Settings.sensitivity.mouse * _inversion_vec("mouse") # accumulates with joystick
+
+func _inversion_vec(key : String) -> Vector2:
+	var vec := Vector2.ONE
+	var invert :Array= Settings.look_inversions[key]
+	if invert[0]:
+		vec.x *= -1
+	if invert[1]:
+		vec.y *= -1
+	return vec

@@ -47,24 +47,115 @@ var audio_bus := {
 	}
 }
 
+var sensitivity := {
+	# sensitivity for mouse and gamepad controls
+	"mouse" : 1.0,
+	"gamepad" : 1.0
+}
+
+# this makes the sensitivity more meaningful for the user.
+# 0.1 sensitivity means 50 pixels per second, which is abysmally slow for a look input 
+const GLOBAL_GAMEPAD_LOOK_FACTOR := 500.0
+
+var look_inversions := {
+	"mouse" : [false, false],
+	"gamepad" : [false, true] # gamepad is invert-y by default. Just like I like it ;D
+}
+
+enum InputTypes {
+	# this should cover all valid types?
+	KEYBOARD,
+	MOUSE_BUTTON,
+	GAMEPAD_BUTTON,
+	GAMEPAD_AXIS,
+	NULL = -1, # used for defaults, basically no custom binding
+}
 
 var control_bindings := {
-	"ui_left" : -1,
-	"ui_right" : -1,
-	"ui_up" : -1,
-	"ui_down" : -1,
-	"ui_accept" : -1,
-	"ui_cancel" : -1,
-	"move_forwards" : -1,
-	"move_backwards" : -1,
-	"move_left" : -1,
-	"move_right" : -1,
-	"jump" : -1,
-	"use_item" : -1,
-	"interact" : -1,
-	"toggle_rotate_item" : -1,
-	"toggle_flashlight" : -1,
-	"pause" : -1
+	"ui_left" : {
+		"bind" : -1,
+		"type" : InputTypes.NULL,
+	},
+	"ui_right" : {
+		"bind" : -1,
+		"type" : InputTypes.NULL,
+	},
+	"ui_up" : {
+		"bind" : -1,
+		"type" : InputTypes.NULL,
+	},
+	"ui_down" : {
+		"bind" : -1,
+		"type" : InputTypes.NULL,
+	},
+	"ui_accept" : {
+		"bind" : -1,
+		"type" : InputTypes.NULL,
+	},
+	"ui_cancel" : {
+		"bind" : -1,
+		"type" : InputTypes.NULL,
+	},
+	"move_forwards" : {
+		"bind" : -1,
+		"type" : InputTypes.NULL,
+	},
+	"move_backwards" : {
+		"bind" : -1,
+		"type" : InputTypes.NULL,
+	},
+	"move_left" : {
+		"bind" : -1,
+		"type" : InputTypes.NULL,
+	},
+	"move_right" : {
+		"bind" : -1,
+		"type" : InputTypes.NULL,
+	},
+	"jump" : {
+		"bind" : -1,
+		"type" : InputTypes.NULL,
+	},
+	"use_item" : {
+		"bind" : -1,
+		"type" : InputTypes.NULL,
+	},
+	"interact" : {
+		"bind" : -1,
+		"type" : InputTypes.NULL,
+	},
+	"sprint" : {
+		"bind" : -1,
+		"type" : InputTypes.NULL,
+	},
+	"toggle_rotate_item" : {
+		"bind" : -1,
+		"type" : InputTypes.NULL,
+	},
+	"toggle_flashlight" : {
+		"bind" : -1,
+		"type" : InputTypes.NULL,
+	},
+	"pause" : {
+		"bind" : -1,
+		"type" : InputTypes.NULL,
+	},
+	"joy_look_up" : {
+		"bind" : -1,
+		"type" : InputTypes.NULL,
+	},
+	"joy_look_down" : {
+		"bind" : -1,
+		"type" : InputTypes.NULL,
+	},
+	"joy_look_left" : {
+		"bind" : -1,
+		"type" : InputTypes.NULL,
+	},
+	"joy_look_right" : {
+		"bind" : -1,
+		"type" : InputTypes.NULL,
+	},
 }
 
 var default_control_bindings_cache := {
@@ -95,24 +186,43 @@ func reload_settings() -> void:
 		_set_input_action(action, control_bindings[action])
 	_save_settings() # when changed, save the settings to disk
 
-func _set_input_action(action_name : String, key_code : int) -> void:
+func _set_input_action(action_name : String, bind_info : Dictionary) -> void:
 	# clear existing bindings
 	var input_events := InputMap.get_action_list(action_name)
 	for event in input_events:
 		InputMap.action_erase_event(action_name, event)
 
-	if key_code < 0:
-		# load default binding(s)
-		# technically the first load of inputs will clear all inputs and then reset them to defaults. Which is kinda weird
-		var events :Array = default_control_bindings_cache[action_name]
-		for e in events:
-			InputMap.action_add_event(action_name, e)
-		pass
-	else:
-		# load custom binding (only supports keyboard input for now)
-		var new_event := InputEventKey.new()
-		new_event.scancode = key_code
-		InputMap.action_add_event(action_name, new_event)
+	# extract dict info
+	var bind_code :int = bind_info.bind
+	var bind_type :int = bind_info.type
+
+	# bind events based on bind_type
+	var bind_event : InputEvent
+	match(bind_type):
+		InputTypes.KEYBOARD: # load keyboard bindings
+			bind_event = InputEventKey.new()
+			(bind_event as InputEventKey).scancode = bind_code
+		
+		InputTypes.MOUSE_BUTTON:
+			bind_event = InputEventMouseButton.new()
+			(bind_event as InputEventMouseButton).button_index = bind_code
+
+		InputTypes.GAMEPAD_BUTTON:
+			bind_event = InputEventJoypadButton.new()
+			(bind_event as InputEventJoypadButton).button_index = bind_code
+		
+		InputTypes.GAMEPAD_AXIS:
+			bind_event = InputEventJoypadMotion.new()
+			(bind_event as InputEventJoypadMotion).axis = bind_code
+		
+		_: # default case -> load default bindings
+			var events :Array = default_control_bindings_cache[action_name]
+			for e in events:
+				InputMap.action_add_event(action_name, e)
+
+	if bind_event:
+		# if a binding was loaded, assign it to the action
+		InputMap.action_add_event(action_name, bind_event)
 
 
 func _save_settings() -> void:
@@ -124,7 +234,9 @@ func _save_settings() -> void:
 		"subtitles_enabled" : subtitles_enabled,
 		"world_environment" : world_environment,
 		"audio_bus" : audio_bus,
-		"control_bindings" : control_bindings
+		"control_bindings" : control_bindings,
+		"sensitivity" : sensitivity,
+		"look_inversions" : look_inversions
 	}
 	var err := SaveData.save_generic(SAVE_PATH,data_dict) 
 	if err != OK:

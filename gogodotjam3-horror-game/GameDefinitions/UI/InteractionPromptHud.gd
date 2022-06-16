@@ -10,7 +10,7 @@ func _on_FirstPersonCharacterBase_interactable_select_started(collider) -> void:
 	if not collider:
 		return
 	if "item_name" in collider:
-		label.text = prompt_format_string % tr(collider.item_name)
+		label.text = tr(prompt_format_string) % tr(collider.item_name)
 	elif "interact_prompt" in collider:
 		label.text = tr(collider.interact_prompt)
 

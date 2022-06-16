@@ -15,7 +15,7 @@ func _ready() -> void:
 	# preset options
 	
 	# msaa filters
-	msaa_filter.add_item("MSAA Disabled", Viewport.MSAA_DISABLED)
+	msaa_filter.add_item("options.gfx.msaa.disabled", Viewport.MSAA_DISABLED)
 	msaa_filter.add_item("MSAA 2x", Viewport.MSAA_2X)
 	msaa_filter.add_item("MSAA 4x",Viewport.MSAA_4X)
 	msaa_filter.add_item("MSAA 8x", Viewport.MSAA_8X)

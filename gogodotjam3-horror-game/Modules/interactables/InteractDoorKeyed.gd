@@ -37,6 +37,6 @@ func try_play_sfx(path : NodePath) -> void:
 
 func _update_prompt() -> void:
 	if locked:
-		self.interact_prompt = "Unlock door (key required)"
+		self.interact_prompt = "interact.prompt.door.unlock"
 	else:
 		self.interact_prompt = unlocked_prompt

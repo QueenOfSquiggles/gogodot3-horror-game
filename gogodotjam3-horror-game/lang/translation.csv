@@ -1,0 +1,99 @@
+keys,en
+main_menu.social_author,A game by QueenOfSquiggles (2022)
+main_menu.continue,Continue
+main_menu.new_game,New Game
+main_menu.options,Options
+main_menu.credits,Credits
+main_menu.quit,Quit
+menu.return_to_main,Return to Main Menu
+credits.queenofsquiggles.header,"Code, Development, all else"
+credits.queenofsquiggles.name,QueenOfSquiggles
+credits.kenney.header,"High Quality Models, UI Textures, SFX, etc"
+credits.kenney.name,Kenney (CC0)
+credits.hiramatsu.header,Background Music / Drones
+credits.hiramatsu.name,"""Hiding Place"" by MakotoHiramatsu (CC BY)"
+credits.polyhaven.header,HD Textures (Modified by QueenOfSquiggles)
+credits.polyhaven.name,PolyHaven (CC0)
+options.Gameplay,Gameplay
+options.Graphics,Graphics
+options.Audio,Audio
+options.Controls,Controls
+options.StreamInfo,Stream & Tube Info
+options.EngineInfo,Engine Info
+options.DangerZone,Danger Zone
+options.gameplay.sensitivity.title,Input Sensitivity
+mouse,Mouse
+gamepad,Gamepad
+generic.reset,Reset
+options.gameplay.invert.title,Look Input Invert
+options.gameplay.invert.x,Invert X
+options.gameplay.invert.y,Invert Y
+options.gfx.fullscreen,Fullscreen
+options.gfx.use_retro_filter,Use Retro Filter
+options.gfx.msaa,MSAA Filter Level
+options.gfx.glow,Glow Enabled
+options.gfx.ssao,SSAO Enabled
+options.gfx.ssr,Screen Space Reflections Enabled
+options.gfx.apply,Apply Settings
+options.gfx.msaa.disabled,MSAA Disabled
+options.sfx.subtitles,Subtitles
+options.sfx.muted,Muted
+options.sfx.test,Test
+options.sfx.title.composite,Composite (All)
+options.sfx.title.sfx,Sound Effects
+options.sfx.title.vo,Voice Lines
+options.sfx.title.music,Music
+options.sfx.title.misc,Misc.
+options.controls.header,Controls Customization
+options.controls.reset_all,Reset All To Defaults
+options.controls.key_bind_prompt,Press a key to set the binding
+options.controls.bind.reset,Reset To Default
+options.controls.bind.default,Default(s)
+options.controls.bind,bind
+KEYBOARD,Keyboard
+MOUSE_BUTTON,Mouse Button
+GAMEPAD_BUTTON,Gamepad Button
+GAMEPAD_AXIS,Gamepad Axis (Stick)
+options.controls.action.ui_left,UI Left
+options.controls.action.ui_right,UI Right
+options.controls.action.ui_up,UI Up
+options.controls.action.ui_down,UI Down
+options.controls.action.ui_accept,UI Accept
+options.controls.action.ui_cancel,UI Cancel
+options.controls.action.move_forwards,Move Forwards
+options.controls.action.move_backwards,Move Backwards
+options.controls.action.move_left,Move Left
+options.controls.action.move_right,Move Right
+options.controls.action.jump,Jump
+options.controls.action.use_item,Use Item
+options.controls.action.interact,Interact
+options.controls.action.sprint,Sprint
+options.controls.action.toggle_rotate_item,Toggle Rotate Item
+options.controls.action.toggle_flashlight,Toggle Flashlight
+options.controls.action.pause,Pause
+options.controls.action.joy_look_up,Joystick Look Up
+options.controls.action.joy_look_down,Joystick Look Down
+options.controls.action.joy_look_left,Joystick Look Left
+options.controls.action.joy_look_right,Joystick Look Right
+options.streaminfo.general.header,General Stuff
+options.streaminfo.general.body,"This is just a series of information that may be useful to content creators who want to play my game for their content. First off you have my full permission to do so Providing a link or reference to me and/or the game download page is highly appreciated! When the content is posted, I would appreciate a link so I can see how people are playing my games. I am easiest to reach on Twitter or the individual game download page"
+options.streaminfo.legal.header,Useful legal and such
+options.streaminfo.legal.body,"The audio, music, sound effects, etc are either made by me or under a creative commons license. This means there should be no problem with copyright issues however I cannot predict how any particular social media platform will behave. "
+options.engine.head,"This game is made with the Godot Engine, which is a free and open-source game engine. If interesed, this button will take you to the website to try it out:"
+options.engine.godotweb,Godot Game Engine Website
+options.engine.framework,"It is made from a framework I built using the Godot Engine which is a base for my 3D horror games, although this game is not necessarily a horror game itself. Over time I will be developing this core game framework to make it better and better. But if a lot of my games seem to have certain similarities and shared quirks, it may be due to my framework and not the Godot Engine as a whole."
+options.engine.addons.title,Addons Used
+options.engine.addons.psx,Godot-PSX-Shaders (WittyCognomen)
+options.engine.addons.subtitles,Godot Dynamic Subtitles (QueenOfSquiggles)
+options.danger.delete_btn,Delete All Save Data
+options.danger.delete_warning,"This will delete all save data you have, including any settings you may have selected There is no confirmation dialogue"
+item.generic.name,Generic Item
+interact.prompt.pickup,Pick up %s
+interact.prompt.drain_sink,Drain sink
+interact.prompt.door.open,Open door
+interact.prompt.door.close,Close Door
+interact.prompt.door.unlock,Unlock door (key required)
+interact.prompt.chain_fence,Chain fence (need tool)
+sfx.item.impact,~clunk~
+sfx.item.pickup,~whoosh~
+sfx.item.drop,~plop~

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Modules/menus/OptionsMenu.gd" type="Script" id=1]
 [ext_resource path="res://Modules/menus/BtnSocial.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Modules/menus/theming/basic_theme.tres" type="Theme" id=7]
 [ext_resource path="res://Modules/menus/ui_sounds/UiSoundPack.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Modules/menus/options_menu_parts/ControlsSettingsPage.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Modules/menus/options_menu_parts/GameplayPageContent.tscn" type="PackedScene" id=10]
 
 [node name="OptionsMenu" type="VBoxContainer"]
 anchor_right = 1.0
@@ -24,9 +25,9 @@ margin_bottom = 32.0
 rect_min_size = Vector2( 0, 32 )
 
 [node name="OptionsCategories" type="PanelContainer" parent="."]
-margin_top = 36.0
+margin_top = 42.0
 margin_right = 1024.0
-margin_bottom = 545.0
+margin_bottom = 540.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -34,11 +35,30 @@ size_flags_vertical = 3
 margin_left = 1.0
 margin_top = 1.0
 margin_right = 1023.0
-margin_bottom = 508.0
+margin_bottom = 497.0
 rect_min_size = Vector2( 0, 200 )
 size_flags_horizontal = 3
 tabs_visible = false
 use_hidden_tabs_for_min_size = true
+
+[node name="Gameplay" type="PanelContainer" parent="OptionsCategories/Pages"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 8.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_min_size = Vector2( 0, 200 )
+size_flags_horizontal = 3
+
+[node name="GameplayPageContent" parent="OptionsCategories/Pages/Gameplay" instance=ExtResource( 10 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 1013.0
+margin_bottom = 483.0
 
 [node name="Graphics" type="PanelContainer" parent="OptionsCategories/Pages"]
 visible = false
@@ -57,37 +77,7 @@ anchor_bottom = 0.0
 margin_left = 1.0
 margin_top = 1.0
 margin_right = 1013.0
-margin_bottom = 494.0
-
-[node name="Gameplay" type="PanelContainer" parent="OptionsCategories/Pages"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 8.0
-margin_right = -4.0
-margin_bottom = -4.0
-rect_min_size = Vector2( 0, 200 )
-size_flags_horizontal = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="OptionsCategories/Pages/Gameplay"]
-margin_left = 1.0
-margin_top = 1.0
-margin_right = 1013.0
-margin_bottom = 494.0
-alignment = 1
-
-[node name="Label" type="Label" parent="OptionsCategories/Pages/Gameplay/VBoxContainer"]
-margin_top = 234.0
-margin_right = 1012.0
-margin_bottom = 255.0
-text = "There's nothing here yet"
-align = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="OptionsCategories/Pages/Gameplay/VBoxContainer"]
-margin_top = 259.0
-margin_right = 1012.0
-margin_bottom = 259.0
+margin_bottom = 483.0
 
 [node name="Audio" type="PanelContainer" parent="OptionsCategories/Pages"]
 visible = false
@@ -104,69 +94,69 @@ size_flags_horizontal = 3
 margin_left = 1.0
 margin_top = 1.0
 margin_right = 1013.0
-margin_bottom = 494.0
+margin_bottom = 483.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="OptionsCategories/Pages/Audio/PanelContainer"]
-margin_left = 236.0
-margin_top = 153.0
-margin_right = 775.0
-margin_bottom = 339.0
+margin_left = 100.0
+margin_top = 148.0
+margin_right = 911.0
+margin_bottom = 334.0
 custom_constants/separation = 12
 alignment = 1
 
 [node name="MasterVolumeSlider" parent="OptionsCategories/Pages/Audio/PanelContainer/VBoxContainer" instance=ExtResource( 3 )]
 margin_top = 0.0
-margin_right = 539.0
+margin_right = 811.0
 margin_bottom = 21.0
 alignment = 2
-label_text = "Composite (All) Volume"
+label_text = "composite"
 
 [node name="SoundFXVolumeSlider" parent="OptionsCategories/Pages/Audio/PanelContainer/VBoxContainer" instance=ExtResource( 3 )]
 margin_top = 33.0
-margin_right = 539.0
+margin_right = 811.0
 margin_bottom = 54.0
 alignment = 2
 audio_bus_index = 1
-label_text = "Sound Effects"
+label_text = "sfx"
 
 [node name="VoiceLinesVolumeSlider" parent="OptionsCategories/Pages/Audio/PanelContainer/VBoxContainer" instance=ExtResource( 3 )]
 margin_top = 66.0
-margin_right = 539.0
+margin_right = 811.0
 margin_bottom = 87.0
 alignment = 2
 audio_bus_index = 2
-label_text = "Voice Lines"
+label_text = "vo"
 
 [node name="MusicVolumeSlider" parent="OptionsCategories/Pages/Audio/PanelContainer/VBoxContainer" instance=ExtResource( 3 )]
 margin_top = 99.0
-margin_right = 539.0
+margin_right = 811.0
 margin_bottom = 120.0
 alignment = 2
 audio_bus_index = 3
-label_text = "Music"
+label_text = "music"
 
 [node name="MiscVolumeSlider" parent="OptionsCategories/Pages/Audio/PanelContainer/VBoxContainer" instance=ExtResource( 3 )]
 margin_top = 132.0
-margin_right = 539.0
+margin_right = 811.0
 margin_bottom = 153.0
 alignment = 2
 audio_bus_index = 4
-label_text = "Misc"
+label_text = "misc"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="OptionsCategories/Pages/Audio/PanelContainer/VBoxContainer"]
 margin_top = 165.0
-margin_right = 539.0
+margin_right = 811.0
 margin_bottom = 186.0
 alignment = 1
 
 [node name="SubtitlesEnable" type="CheckBox" parent="OptionsCategories/Pages/Audio/PanelContainer/VBoxContainer/HBoxContainer"]
-margin_left = 223.0
-margin_right = 315.0
+margin_left = 311.0
+margin_right = 499.0
 margin_bottom = 21.0
 pressed = true
-text = "Subtitles"
+text = "options.sfx.subtitles"
 script = ExtResource( 5 )
 
 [node name="UiSoundPack" parent="OptionsCategories/Pages/Audio/PanelContainer/VBoxContainer/HBoxContainer/SubtitlesEnable" instance=ExtResource( 8 )]
@@ -183,8 +173,10 @@ rect_min_size = Vector2( 0, 200 )
 size_flags_horizontal = 3
 
 [node name="ControlsSettingsPage" parent="OptionsCategories/Pages/Controls" instance=ExtResource( 9 )]
+margin_bottom = 483.0
 
-[node name="Stream & Tube Info" type="PanelContainer" parent="OptionsCategories/Pages"]
+[node name="StreamInfo" type="PanelContainer" parent="OptionsCategories/Pages"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -194,144 +186,179 @@ margin_bottom = -4.0
 rect_min_size = Vector2( 0, 200 )
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="OptionsCategories/Pages/Stream & Tube Info"]
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsCategories/Pages/StreamInfo"]
 margin_left = 1.0
 margin_top = 1.0
 margin_right = 1013.0
-margin_bottom = 494.0
+margin_bottom = 483.0
 custom_constants/separation = 10
 alignment = 1
 
-[node name="Label6" type="Label" parent="OptionsCategories/Pages/Stream & Tube Info/VBoxContainer"]
-margin_top = 124.0
+[node name="Label6" type="Label" parent="OptionsCategories/Pages/StreamInfo/VBoxContainer"]
+margin_top = 179.0
 margin_right = 1012.0
-margin_bottom = 145.0
-text = "General Stuff"
+margin_bottom = 200.0
+text = "options.streaminfo.general.header"
 autowrap = true
 
-[node name="Label" type="Label" parent="OptionsCategories/Pages/Stream & Tube Info/VBoxContainer"]
-margin_top = 155.0
+[node name="Label" type="Label" parent="OptionsCategories/Pages/StreamInfo/VBoxContainer"]
+margin_top = 210.0
+margin_right = 1012.0
+margin_bottom = 231.0
+text = "options.streaminfo.general.body"
+align = 1
+autowrap = true
+
+[node name="Control" type="Control" parent="OptionsCategories/Pages/StreamInfo/VBoxContainer"]
+margin_top = 241.0
+margin_right = 1012.0
+margin_bottom = 241.0
+
+[node name="Label5" type="Label" parent="OptionsCategories/Pages/StreamInfo/VBoxContainer"]
+margin_top = 251.0
 margin_right = 1012.0
 margin_bottom = 272.0
-text = "This is just a series of information that may be useful to content creators who want to play my game for their content.
-First off you have my full permission to do so
-Providing a link or reference to me and/or the game download page is highly appreciated!
-When the content is posted, I would appreciate a link so I can see how people are playing my games. I am easiest to reach on Twitter or the individual game download page"
-align = 1
+text = "options.streaminfo.legal.header"
 autowrap = true
 
-[node name="Control" type="Control" parent="OptionsCategories/Pages/Stream & Tube Info/VBoxContainer"]
+[node name="Label7" type="Label" parent="OptionsCategories/Pages/StreamInfo/VBoxContainer"]
 margin_top = 282.0
 margin_right = 1012.0
-margin_bottom = 282.0
-
-[node name="Label5" type="Label" parent="OptionsCategories/Pages/Stream & Tube Info/VBoxContainer"]
-margin_top = 292.0
-margin_right = 1012.0
-margin_bottom = 313.0
-text = "Useful legal and such"
-autowrap = true
-
-[node name="Label7" type="Label" parent="OptionsCategories/Pages/Stream & Tube Info/VBoxContainer"]
-margin_top = 323.0
-margin_right = 1012.0
-margin_bottom = 368.0
-text = "The audio, music, sound effects, etc are either made by me or under a creative commons license. This means there should be no problem with copyright issues however I cannot predict how any particular social media platform will behave. "
+margin_bottom = 303.0
+text = "options.streaminfo.legal.body"
 align = 1
 autowrap = true
 
-[node name="Engine Info" type="PanelContainer" parent="OptionsCategories/Pages"]
+[node name="EngineInfo" type="PanelContainer" parent="OptionsCategories/Pages"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
+margin_top = 8.0
 margin_right = -4.0
 margin_bottom = -4.0
 rect_min_size = Vector2( 0, 200 )
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="OptionsCategories/Pages/Engine Info"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 995.0
-margin_bottom = 507.0
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsCategories/Pages/EngineInfo"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 1013.0
+margin_bottom = 483.0
 custom_constants/separation = 10
 alignment = 1
 
-[node name="Label" type="Label" parent="OptionsCategories/Pages/Engine Info/VBoxContainer"]
-margin_top = 193.0
-margin_right = 988.0
-margin_bottom = 207.0
-text = "This game is made with the Godot Engine, which is a free and open-source game engine. If interesed, this button will take you to the website to try it out:"
+[node name="Label" type="Label" parent="OptionsCategories/Pages/EngineInfo/VBoxContainer"]
+margin_top = 135.0
+margin_right = 1012.0
+margin_bottom = 156.0
+text = "options.engine.head"
 align = 1
 autowrap = true
 
-[node name="BtnSocial" parent="OptionsCategories/Pages/Engine Info/VBoxContainer" instance=ExtResource( 2 )]
+[node name="BtnSocial" parent="OptionsCategories/Pages/EngineInfo/VBoxContainer" instance=ExtResource( 2 )]
 margin_left = 0.0
-margin_top = 217.0
-margin_right = 988.0
-margin_bottom = 249.0
-text = "Godot Game Engine Website"
+margin_top = 166.0
+margin_right = 1012.0
+margin_bottom = 198.0
+text = "options.engine.godotweb"
 icon = null
 URI = "https://godotengine.org/"
 
-[node name="Label2" type="Label" parent="OptionsCategories/Pages/Engine Info/VBoxContainer"]
-margin_top = 259.0
-margin_right = 988.0
-margin_bottom = 307.0
-text = "It is made from a framework I built using the Godot Engine which is a base for my 3D horror games, although this game is not necessarily a horror game itself. Over time I will be developing this core game framework to make it better and better. But if a lot of my games seem to have certain similarities and shared quirks, it may be due to my framework and not the Godot Engine as a whole."
+[node name="Label2" type="Label" parent="OptionsCategories/Pages/EngineInfo/VBoxContainer"]
+margin_top = 208.0
+margin_right = 1012.0
+margin_bottom = 229.0
+text = "options.engine.framework"
 align = 1
 autowrap = true
 
-[node name="Danger Zone" type="PanelContainer" parent="OptionsCategories/Pages"]
-visible = false
+[node name="PanelContainer" type="PanelContainer" parent="OptionsCategories/Pages/EngineInfo/VBoxContainer"]
+margin_top = 239.0
+margin_right = 1012.0
+margin_bottom = 346.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsCategories/Pages/EngineInfo/VBoxContainer/PanelContainer"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 1011.0
+margin_bottom = 106.0
+
+[node name="Label" type="Label" parent="OptionsCategories/Pages/EngineInfo/VBoxContainer/PanelContainer/VBoxContainer"]
+margin_right = 1010.0
+margin_bottom = 21.0
+text = "options.engine.addons.title"
+align = 1
+
+[node name="Link_PSX_Shaders" parent="OptionsCategories/Pages/EngineInfo/VBoxContainer/PanelContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_left = 0.0
+margin_top = 31.0
+margin_right = 1010.0
+margin_bottom = 63.0
+text = "options.engine.addons.psx"
+icon = null
+URI = "https://github.com/WittyCognomen/godot-psx-shaders"
+
+[node name="Link_PSX_Shaders_2" parent="OptionsCategories/Pages/EngineInfo/VBoxContainer/PanelContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_left = 0.0
+margin_top = 73.0
+margin_right = 1010.0
+margin_bottom = 105.0
+text = "options.engine.addons.subtitles"
+icon = null
+URI = "https://github.com/QueenOfSquiggles/godot-dynamic-subtitles"
+
+[node name="DangerZone" type="PanelContainer" parent="OptionsCategories/Pages"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
+margin_top = 8.0
 margin_right = -4.0
 margin_bottom = -4.0
 rect_min_size = Vector2( 0, 200 )
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="OptionsCategories/Pages/Danger Zone"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 995.0
-margin_bottom = 507.0
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsCategories/Pages/DangerZone"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 1013.0
+margin_bottom = 483.0
 alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="OptionsCategories/Pages/Danger Zone/VBoxContainer"]
-margin_top = 234.0
-margin_right = 988.0
-margin_bottom = 265.0
+[node name="HBoxContainer" type="HBoxContainer" parent="OptionsCategories/Pages/DangerZone/VBoxContainer"]
+margin_top = 230.0
+margin_right = 1012.0
+margin_bottom = 251.0
+custom_constants/separation = 20
 alignment = 1
 
-[node name="BtnDeleteSaveData" type="Button" parent="OptionsCategories/Pages/Danger Zone/VBoxContainer/HBoxContainer"]
-margin_left = 151.0
-margin_right = 293.0
-margin_bottom = 31.0
-text = "Delete All Save Data"
+[node name="BtnDeleteSaveData" type="Button" parent="OptionsCategories/Pages/DangerZone/VBoxContainer/HBoxContainer"]
+margin_left = 131.0
+margin_right = 349.0
+margin_bottom = 21.0
+text = "options.danger.delete_btn"
 
-[node name="Label" type="Label" parent="OptionsCategories/Pages/Danger Zone/VBoxContainer/HBoxContainer"]
-margin_left = 297.0
-margin_right = 836.0
-margin_bottom = 31.0
-text = "This will delete all save data you have, including any settings you may have selected
-There is no confirmation dialogue"
+[node name="Label" type="Label" parent="OptionsCategories/Pages/DangerZone/VBoxContainer/HBoxContainer"]
+margin_left = 369.0
+margin_right = 881.0
+margin_bottom = 21.0
+rect_min_size = Vector2( 512, 0 )
+text = "options.danger.delete_warning"
+autowrap = true
 
 [node name="BtnMainMenu" type="Button" parent="."]
-margin_top = 549.0
+margin_top = 550.0
 margin_right = 1024.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 0, 32 )
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.1
-text = "Main Menu"
+text = "menu.return_to_main"
 
 [node name="DefaultSelectControl" parent="BtnMainMenu" instance=ExtResource( 6 )]
 
 [node name="UiSoundPack" parent="BtnMainMenu" instance=ExtResource( 8 )]
 
 [connection signal="toggled" from="OptionsCategories/Pages/Audio/PanelContainer/VBoxContainer/HBoxContainer/SubtitlesEnable" to="OptionsCategories/Pages/Audio/PanelContainer/VBoxContainer/HBoxContainer/SubtitlesEnable" method="_on_SubtitlesEnable_toggled"]
-[connection signal="pressed" from="OptionsCategories/Pages/Danger Zone/VBoxContainer/HBoxContainer/BtnDeleteSaveData" to="." method="_on_BtnDeleteSaveData_pressed"]
+[connection signal="pressed" from="OptionsCategories/Pages/DangerZone/VBoxContainer/HBoxContainer/BtnDeleteSaveData" to="." method="_on_BtnDeleteSaveData_pressed"]
 [connection signal="pressed" from="BtnMainMenu" to="." method="_on_BtnMainMenu_pressed"]

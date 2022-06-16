@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Modules/menus/options_menu_parts/InputInverterSettingsSlot.gd" type="Script" id=1]
+
+[node name="InputInverterSettingsSlot" type="HBoxContainer"]
+margin_right = 988.0
+margin_bottom = 21.0
+custom_constants/separation = 13
+alignment = 1
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 256.0
+margin_top = 5.0
+margin_right = 320.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 64, 0 )
+text = "Mouse"
+align = 1
+
+[node name="Check_X" type="CheckBox" parent="."]
+margin_left = 333.0
+margin_right = 526.0
+margin_bottom = 24.0
+text = "options.gameplay.invert.x"
+
+[node name="Check_Y" type="CheckBox" parent="."]
+margin_left = 539.0
+margin_right = 732.0
+margin_bottom = 24.0
+text = "options.gameplay.invert.y"
+
+[connection signal="toggled" from="Check_X" to="." method="_on_Check_X_toggled"]
+[connection signal="toggled" from="Check_Y" to="." method="_on_Check_Y_toggled"]

@@ -17,15 +17,18 @@ func _create_binding_entry(action : String) -> void:
 	slot.connect("choose_key_start", self, "select_key", [], CONNECT_DEFERRED)
 
 func select_key(slot) -> void:
-	print("Key selecting! %s" % slot.input_action_name)
 	select_pane.open()
-	var key_code :int = yield(select_pane, "key_selected")
+	var bind_info :Dictionary = yield(select_pane, "key_selected")
 	yield(VisualServer, "frame_post_draw")
-	Settings.control_bindings[slot.input_action_name] = key_code
+	print("Assiging action [%s] to binding\n\t%s" % [slot.input_action_name, str(bind_info)])
+	Settings.control_bindings[slot.input_action_name] = bind_info
 	Settings.reload_settings()
 
 
 func _on_BtnResetAll_pressed() -> void:
 	for action in Settings.control_bindings.keys():
-		Settings.control_bindings[action] = -1
+		Settings.control_bindings[action] = {
+			"bind" : -1,
+			"type" : -1
+		}
 	Settings.reload_settings()

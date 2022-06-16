@@ -68,7 +68,6 @@ script = ExtResource( 3 )
 anims/rustle = SubResource( 1 )
 
 [node name="door001" parent="doorwayFront" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02835, 0, -0.04455 )
 material/2 = ExtResource( 4 )
 
 [node name="KinematicBody" parent="doorwayFront/door001" index="0"]

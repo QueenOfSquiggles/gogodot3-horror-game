@@ -35,11 +35,11 @@ size_flags_horizontal = 3
 alignment = 2
 
 [node name="BtnMainMenu" type="Button" parent="HBoxContainer/VBoxContainer3"]
-margin_top = 500.0
+margin_top = 494.0
 margin_right = 439.0
-margin_bottom = 564.0
+margin_bottom = 558.0
 rect_min_size = Vector2( 0, 64 )
-text = "Return to Main Menu"
+text = "menu.return_to_main"
 
 [node name="DefaultSelectControl" parent="HBoxContainer/VBoxContainer3/BtnMainMenu" instance=ExtResource( 3 )]
 
@@ -67,34 +67,34 @@ custom_constants/separation = 20
 alignment = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
-margin_top = 152.0
+margin_top = 140.0
 margin_right = 439.0
-margin_bottom = 211.0
+margin_bottom = 205.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer"]
 margin_left = 1.0
 margin_top = 1.0
 margin_right = 438.0
-margin_bottom = 58.0
+margin_bottom = 64.0
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer"]
 margin_right = 437.0
 margin_bottom = 21.0
-text = "Code, Development, all else"
+text = "credits.queenofsquiggles.header"
 
 [node name="BtnSocial3" parent="HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer" instance=ExtResource( 1 )]
 margin_left = 0.0
-margin_top = 25.0
+margin_top = 31.0
 margin_right = 437.0
-margin_bottom = 57.0
-text = "QueenOfSquiggles (Ko-Fi)"
+margin_bottom = 63.0
+text = "credits.queenofsquiggles.name"
 icon = null
 URI = "https://ko-fi.com/queenofsquiggles"
 
 [node name="UiSoundPack4" parent="HBoxContainer/VBoxContainer/PanelContainer/VBoxContainer/BtnSocial3" instance=ExtResource( 5 )]
 
 [node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
-margin_top = 231.0
+margin_top = 225.0
 margin_right = 439.0
 margin_bottom = 290.0
 
@@ -102,20 +102,20 @@ margin_bottom = 290.0
 margin_left = 1.0
 margin_top = 1.0
 margin_right = 438.0
-margin_bottom = 58.0
+margin_bottom = 64.0
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer2/VBoxContainer"]
 margin_right = 437.0
 margin_bottom = 21.0
-text = "Good looking Models, UI Textures, SFX, etc"
+text = "credits.kenney.header"
 autowrap = true
 
 [node name="BtnSocial" parent="HBoxContainer/VBoxContainer/PanelContainer2/VBoxContainer" instance=ExtResource( 1 )]
 margin_left = 0.0
-margin_top = 25.0
+margin_top = 31.0
 margin_right = 437.0
-margin_bottom = 57.0
-text = "Kenney (CC0)"
+margin_bottom = 63.0
+text = "credits.kenney.name"
 icon = null
 URI = "https://www.kenney.nl/"
 
@@ -124,54 +124,54 @@ URI = "https://www.kenney.nl/"
 [node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
 margin_top = 310.0
 margin_right = 439.0
-margin_bottom = 369.0
+margin_bottom = 375.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer3"]
 margin_left = 1.0
 margin_top = 1.0
 margin_right = 438.0
-margin_bottom = 58.0
+margin_bottom = 64.0
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer3/VBoxContainer"]
 margin_right = 437.0
 margin_bottom = 21.0
-text = "Background Music / Drones"
+text = "credits.hiramatsu.header"
 autowrap = true
 
 [node name="BtnSocial" parent="HBoxContainer/VBoxContainer/PanelContainer3/VBoxContainer" instance=ExtResource( 1 )]
 margin_left = 0.0
-margin_top = 25.0
+margin_top = 31.0
 margin_right = 437.0
-margin_bottom = 57.0
-text = "\"Hiding Place\" by MakotoHiramatsu (CC BY)"
+margin_bottom = 63.0
+text = "credits.hiramatsu.name"
 icon = null
 URI = "https://makotohiramatsu.itch.io/hiding-place"
 
 [node name="UiSoundPack5" parent="HBoxContainer/VBoxContainer/PanelContainer3/VBoxContainer/BtnSocial" instance=ExtResource( 5 )]
 
 [node name="PanelContainer4" type="PanelContainer" parent="HBoxContainer/VBoxContainer"]
-margin_top = 389.0
+margin_top = 395.0
 margin_right = 439.0
-margin_bottom = 448.0
+margin_bottom = 460.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/PanelContainer4"]
 margin_left = 1.0
 margin_top = 1.0
 margin_right = 438.0
-margin_bottom = 58.0
+margin_bottom = 64.0
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/PanelContainer4/VBoxContainer"]
 margin_right = 437.0
 margin_bottom = 21.0
-text = "HD Textures (Modified by QueenOfSquiggles)"
+text = "credits.polyhaven.header"
 autowrap = true
 
 [node name="BtnSocial" parent="HBoxContainer/VBoxContainer/PanelContainer4/VBoxContainer" instance=ExtResource( 1 )]
 margin_left = 0.0
-margin_top = 25.0
+margin_top = 31.0
 margin_right = 437.0
-margin_bottom = 57.0
-text = "PolyHaven (CC0)"
+margin_bottom = 63.0
+text = "credits.polyhaven.name"
 icon = null
 URI = "https://polyhaven.com/"
 

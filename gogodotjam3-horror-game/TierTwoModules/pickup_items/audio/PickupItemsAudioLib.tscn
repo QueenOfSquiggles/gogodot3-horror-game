@@ -20,7 +20,7 @@ script = ExtResource( 6 )
 
 [node name="SubtitleData" type="Node" parent="impact/AudioStreamPlayer3D"]
 script = ExtResource( 5 )
-subtitle_key = "sfx.impact"
+subtitle_key = "sfx.item.impact"
 
 [node name="pickup" type="Spatial" parent="."]
 script = ExtResource( 1 )
@@ -32,7 +32,7 @@ script = ExtResource( 6 )
 
 [node name="SubtitleData" type="Node" parent="pickup/AudioStreamPlayer3D2"]
 script = ExtResource( 5 )
-subtitle_key = "sfx.pickup"
+subtitle_key = "sfx.item.pickup"
 
 [node name="drop" type="Spatial" parent="."]
 script = ExtResource( 1 )
@@ -44,4 +44,4 @@ script = ExtResource( 6 )
 
 [node name="SubtitleData" type="Node" parent="drop/AudioStreamPlayer3D3"]
 script = ExtResource( 5 )
-subtitle_key = "sfx.drop"
+subtitle_key = "sfx.item.drop"
