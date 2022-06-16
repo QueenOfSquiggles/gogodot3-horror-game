@@ -29,5 +29,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.61098, 2.37792, -2.48717 )
 
 [node name="PickupItemReadable" parent="Spatial" instance=ExtResource( 4 )]
 transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -4.11098, -3.12208, -1.98717 )
-title_key = "Dustin's Note"
-text_key = "The Lamb (Blessed Be Most Holy) has given us a room to perform exercise to keep our bodies fresh. We are to reject bodily desires but we also must protect the temple which guards our souls. We have to keep our temple strong and that means ensuring our strength and health. The Lamb (Blessed Be Most Holy) is able to guard His soul through faith alone, but we are weak. We require strength of body, mind, and soul! Exercise, resistence to worldly temptations, and The Sacrement fulfill all of our needs. "
+title_key = "note.dustin_exercise.title"
+text_key = "note.dustin_exercise.body"

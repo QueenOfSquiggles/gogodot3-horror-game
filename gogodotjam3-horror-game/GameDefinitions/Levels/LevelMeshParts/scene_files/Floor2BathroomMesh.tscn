@@ -61,8 +61,5 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.3977
 
 [node name="PickupItemReadable" parent="Spatial" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.85312, -0.978836, 5.03159 )
-title_key = "Dirty Note"
-text_key = "OMG Why is this the bathroom???
-There's no showers
-There's no stalls
-Just three fucking toilets and all the world to see!?!? It's the only one too? We ALL have to share and if one gets clogged, that's it. The Lamb (Blessed Be Most Holy) has His own bathroom private from the rest of us. Why do we all have to share?"
+title_key = "note.bathroom.title"
+text_key = "note.bathroom.body"

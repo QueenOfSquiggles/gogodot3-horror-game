@@ -37,12 +37,5 @@ transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, -4, -2.5, 1.5 )
 
 [node name="PickupItemReadable" parent="Objects" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.869732, 10.3801 )
-title_key = "Abby's Journal"
-text_key = "BLESSED BE MOST HOLY!
-The Lamb (Blessed Be) has granted me the most respectable rank of \"Divine Scribe\". I am to be to The Lamb (Blessed Be) what the gospels were to jesus (the lesser savior).
-
-Despite my weakness of faith The Glorious Lamb (Blessed Be) has taken pity on my shriveled soul! Perhaps though this divine command of our most sacred Lamb (Blessed Be) I will grow in my faith and become worthy of \"The Sacrement\".
-
-Signed,
-Abby
-Divine Scribe"
+title_key = "note.abby.title"
+text_key = "note.abby.body"

@@ -37,10 +37,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, -2.5, -4 )
 
 [node name="PickupItemReadable" parent="Objects" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -0.616488, -5 )
-title_key = "Jakob's Note"
-text_key = "Since The Ascension, the energy among our sanctity has grown dark. The faithful still believe and the faithless are wracked with fear and anxiety. 
-I am unsure. The Lamb (Blessed Be His Name Most Holy!) has taken care of us for so long. We have survived under His blessed care and have lived safe from the temptations of The Enemy for so long. Without the sun to guide us, it is difficult to tell time, but the faithless on the radio speak of years. We heard the faithless tell that we have been hiding well over a decade now. 
-The Ascension was achieved, yet The Lamb still remains here. I am unsure what to believe? Have I fallen astray? Or could we have placed our faith in an agent of The Enemy?
-I will have to take comfort in the love of my dearest Dustin. He is always able to fill me with peace and serenity when the world seems so uncertain. His thick, corded muscles hold me so tight that I cannot help my melt into his loving arms. I hope we both can grow old together.
-
-My dearest, if you ever read this, I love you, and I will always care for you. Even if only one of us is able to Ascend, we can continue performing our own Sacrement as much as you like ;)"
+title_key = "note.jakob.title"
+text_key = "note.jakob.body"

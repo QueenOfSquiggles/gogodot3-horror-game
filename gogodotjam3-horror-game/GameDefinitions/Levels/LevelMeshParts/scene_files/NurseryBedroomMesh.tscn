@@ -143,13 +143,10 @@ transform = Transform( 2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, -1, 0, 14
 
 [node name="PickupItemReadable" parent="Spatial" instance=ExtResource( 8 )]
 transform = Transform( -0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -0.268957, 1.29936, 4.5 )
-title_key = "Developer's Note"
-text_key = "Thank you so much for playing!
-
-This floor and the floors below are currently unfinished. This game was created for the GoGodotJam 3. This version you are playing is the \"jam version\" which is able to be ranked because it was completed in the time limit of the jam. 
-I plan to release a \"post-jam\" version after the ranking period has completed. That version will include the lore, puzzles, etc... for this floor and deeper. 
-
-I really hope you enjoyed this game. I'd really appreciate any feedback on it! Also keep watching the project page for that \"post jam\" release!
-
-XOXOXO
-QueenOfSquiggles"
+title_key = "note.dev_note.title"
+text_key = "note.dev_note.line0
+note.dev_note.line1
+note.dev_note.line2
+note.dev_note.line3
+note.dev_note.line4
+note.dev_note.line5"

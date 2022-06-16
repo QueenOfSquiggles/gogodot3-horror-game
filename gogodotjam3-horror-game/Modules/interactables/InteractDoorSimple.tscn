@@ -198,7 +198,7 @@ script = ExtResource( 7 )
 
 [node name="SubtitleData" type="Node" parent="sfx/sfx_door_open"]
 script = ExtResource( 6 )
-subtitle_key = "sfx_door_open"
+subtitle_key = "sfx.door.open"
 subtitle_position_override = NodePath("../../../doorwayFront/door001/SFX_POS")
 
 [node name="sfx_door_close" type="AudioStreamPlayer3D" parent="sfx"]
@@ -208,5 +208,5 @@ script = ExtResource( 7 )
 
 [node name="SubtitleData" type="Node" parent="sfx/sfx_door_close"]
 script = ExtResource( 6 )
-subtitle_key = "sfx_door_close"
+subtitle_key = "sfx.door.close"
 subtitle_position_override = NodePath("../../../doorwayFront/door001/SFX_POS")

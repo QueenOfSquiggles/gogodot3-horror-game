@@ -172,8 +172,8 @@ width = 200.0
 [node name="PickupItemReadable" parent="Objects" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0704937, -4.4642, 7.03874 )
 continuous_cd = false
-title_key = "Kitchen Note"
-text_key = "It's so frustrating being such a low class disciple! The Lamb (blessed be) requires that we cook and serve all meals for the entirety of the sanctity. Luckily, The Lamb (blessed be) does not come up here and won't find us lacking in faith."
+title_key = "note.kitchen.title"
+text_key = "note.kitchen.line0"
 
 [node name="SDF_Decal" parent="Objects" instance=ExtResource( 6 )]
 transform = Transform( -2.17924e-08, 0, -0.498551, 0, 0.498551, 0, 0.498551, 0, -2.17924e-08, 9.49854, -3.19418, 6.83694 )

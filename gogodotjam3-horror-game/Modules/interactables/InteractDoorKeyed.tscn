@@ -85,5 +85,5 @@ script = ExtResource( 6 )
 
 [node name="SubtitleData" type="Node" parent="sfx/sfx_door_unlocked" index="0"]
 script = ExtResource( 5 )
-subtitle_key = "sfx_door_unlocked"
+subtitle_key = "sfx.door.unlocked"
 subtitle_position_override = NodePath("../../../doorwayFront/door001/SFX_POS")

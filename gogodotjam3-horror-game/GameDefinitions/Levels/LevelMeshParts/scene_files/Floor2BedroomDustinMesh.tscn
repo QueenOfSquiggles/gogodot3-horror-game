@@ -33,15 +33,8 @@ transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8.5, 0,
 
 [node name="PickupItemReadable" parent="Floor2_BedroomDustinMesh/Objects" instance=ExtResource( 3 )]
 transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 4.72063, 1.84006, 3.5 )
-title_key = "Dustin's Journal"
-text_key = "MY DEAREST IF YOU ARE READING THIS ABSOLUTELY DO NOT!!!
-IT IS NOT FOR YOU SO PLEASE DO NOT READ!!!
-
-Dearest Journal,
-I'm torn. The Lamb (Blessed Be Most Holy), has blessed me with a higher rank than my beloved. I am able to live even closer to His love. Yet my dearest remains with weaker faith. I do wish to continue loving him until the day I die, but I fear that his weak faith my tarnish mine. What if I am rejected from Ascension due to loving one who is not He, the most venerable precious Lamb (Blessed Be Most Holy). What if these desires of the flesh are what cause me to worry so. The Lamb (Blessed Be Most Holy) promises that all who have faith will have no fear. Does that mean my faith is weak? Am I truely worthy of the love of the flesh, let alone the blessed love of The Sacrement?
-Am I even worthy of either?
-
-I am a sinful, rejected maggot. Why would The Lamb (Blessed Be Most Holy) ever allow me to ascend as He has? My soul is tainted by the desires of the physical world. I could never be"
+title_key = "note.dustin.title"
+text_key = "note.dustin.body"
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, 77.6066, -40.9794, 25.0359 )

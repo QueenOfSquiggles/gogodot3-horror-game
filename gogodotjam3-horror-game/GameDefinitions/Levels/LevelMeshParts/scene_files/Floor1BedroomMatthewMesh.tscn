@@ -37,11 +37,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -2.5, 6.5 )
 
 [node name="PickupItemReadable" parent="Objects" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.606867, 6 )
-title_key = "Matthew's Diary"
-text_key = "Dear Diary,
-
-I do miss home. The Lamb (blessed be) has taken us here under his most holy patronage and has sealed us down here. Several children were also brought here to \"continue the Sacrement\" as The Lamb (blessed be) proclaimed. The Enemy has been following us. I do hope The Lamb (blessed be) can protect us from The Enemy. 
-Maybe if my faith was stronger, I wouldn't have such worries?
-
-Signed,
-The cowardly, faithless Matthew"
+title_key = "note.matt.title"
+text_key = "note.matt.body"

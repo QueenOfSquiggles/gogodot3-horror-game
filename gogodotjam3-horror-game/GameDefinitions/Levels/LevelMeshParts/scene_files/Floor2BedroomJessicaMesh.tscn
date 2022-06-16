@@ -34,17 +34,11 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, -0.3
 
 [node name="PickupItemReadable" parent="Floor2_BedroomJessicaMesh2/Spatial" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51735, 1.27077, -2.71779 )
-title_key = "Jessica's Note"
-text_key = "OMG
-
-Abby is such a freak! I thought that she was a goody little angel like the rest of this fucked up cult, but she is definitly not the \"christian\" type. She is so desperate to please \"The Lamb\" or whatever, but really? Whenever she gets too troubled she comes right to me. I tell her that the Lamb loves her and then she relaxes and we can talk about real stuff. She even tells me that I have such a strong faith because of how little I worry. I'm not worried because I see right through that little shit. He wants to be a little savior and make a bunch of people devote their lives to him. He takes people into his room in \"The Sanctuary\" (LOL) and performs \"The Sacrement\" (whatever that is!) and then goes about his day pretending to be fucking saint-like. 
-I'm just biding my time waiting out here for something to go down. I know he's got children down here and if he so much as thinks about hurting them, I'm going to use my handcuffs to chain him to his own sacred bed and get them the hell out of here. I know he says that he sealed us in to protect us from \"The Enemy\", but really I think the FBI was hot on his tail and he got scared. I could probably pile up a bunch of random boxes and clamber up out the vent we had to crawl though. Then these kiddos could get a proper life outside.
-
-He keeps saying that he is close to ascending, so if he disappears after that, I might just take the kids out then. I don't expect the cult to last longer than he does."
+title_key = "note.jessica.title"
+text_key = "note.jessica.body"
 
 [node name="PickupItemBoltCutters" parent="Floor2_BedroomJessicaMesh2/Spatial" instance=ExtResource( 9 )]
 transform = Transform( 0.49602, 0, 0.868311, 0, 1, 0, -0.868311, 0, 0.49602, 6.08008, -0.0722427, 0.646698 )
-keyed_name = "chain"
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, 77.6066, -40.9794, 40.0359 )
