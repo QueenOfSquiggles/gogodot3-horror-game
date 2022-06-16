@@ -144,9 +144,4 @@ transform = Transform( 2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, -1, 0, 14
 [node name="PickupItemReadable" parent="Spatial" instance=ExtResource( 8 )]
 transform = Transform( -0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -0.268957, 1.29936, 4.5 )
 title_key = "note.dev_note.title"
-text_key = "note.dev_note.line0
-note.dev_note.line1
-note.dev_note.line2
-note.dev_note.line3
-note.dev_note.line4
-note.dev_note.line5"
+text_key = "note.dev_note.body"
