@@ -1,16 +1,58 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Resources/KenneyPacks/Furniture/GLTF format/books.glb" type="PackedScene" id=1]
-[ext_resource path="res://Resources/Materials/white_rough_plaster.material" type="Material" id=2]
+[ext_resource path="res://Modules/sdf_texture/SdfDecal.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Models/Props/items/book_single.glb" type="PackedScene" id=2]
 [ext_resource path="res://Resources/Materials/fabric_pattern_07.material" type="Material" id=3]
-[ext_resource path="res://Resources/Materials/denmin_fabric_02.material" type="Material" id=4]
-[ext_resource path="res://Resources/Materials/fabric_pattern_05.material" type="Material" id=5]
+[ext_resource path="res://Resources/SDF/text_test_sdf_128.png" type="Texture" id=4]
 
-[node name="books" instance=ExtResource( 1 )]
+[sub_resource type="Shader" id=1]
+code = "shader_type spatial;
+/*
+Simple SDF parsing shader. Takes in an SDF texture and outputs it as usable for a Sprite3D.
+Extensions of this could modulate density using a noise pattern or even apply emission
 
-[node name="books(Clone)" parent="." index="0"]
-transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0 )
+
+*/
+uniform sampler2D tex : hint_albedo;
+uniform float min_density : hint_range(0.0, 1.0) = 0.3;
+uniform float range : hint_range(0.0, 1.0) = 0.1;
+uniform vec4 line_colour : hint_color = vec4(1.0);
+uniform vec4 emission_colour : hint_color = vec4(0.0);
+uniform float forced_mipmap : hint_range(0.0, 1.0, 0.1) = 0.1;
+
+void fragment(){
+	vec4 sdf_sample = texture(tex, UV);
+	float density = abs(sdf_sample.r - min_density);
+	if (density > range){
+		discard;
+	}
+	ALBEDO = line_colour.rgb;
+	EMISSION = emission_colour.rgb;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/min_density = 0.5
+shader_param/range = 0.315
+shader_param/line_colour = Color( 0, 0, 0, 1 )
+shader_param/emission_colour = Color( 0, 0, 0, 0 )
+shader_param/forced_mipmap = 0.1
+shader_param/tex = ExtResource( 4 )
+
+[node name="books" type="Spatial"]
+
+[node name="book_single" parent="." instance=ExtResource( 2 )]
+
+[node name="BookSingle" parent="book_single" index="0"]
 material/0 = ExtResource( 3 )
-material/1 = ExtResource( 4 )
-material/2 = ExtResource( 5 )
-material/3 = ExtResource( 2 )
+material/2 = ExtResource( 3 )
+material/3 = ExtResource( 3 )
+
+[node name="SDF_Decal" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1.86265e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, 1.86265e-09, -0.0574235, 0.0263141, 0 )
+material_override = SubResource( 2 )
+cast_shadow = 0
+axis = 1
+texture = ExtResource( 4 )
+
+[editable path="book_single"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Modules/menus/OptionsMenu.gd" type="Script" id=1]
 [ext_resource path="res://Modules/menus/BtnSocial.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Modules/menus/utility/DefaultSelectControl.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Modules/menus/theming/basic_theme.tres" type="Theme" id=7]
 [ext_resource path="res://Modules/menus/ui_sounds/UiSoundPack.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Modules/menus/options_menu_parts/ControlsSettingsPage.tscn" type="PackedScene" id=9]
 
 [node name="OptionsMenu" type="VBoxContainer"]
 anchor_right = 1.0
@@ -40,6 +41,7 @@ tabs_visible = false
 use_hidden_tabs_for_min_size = true
 
 [node name="Graphics" type="PanelContainer" parent="OptionsCategories/Pages"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -102,67 +104,67 @@ size_flags_horizontal = 3
 margin_left = 1.0
 margin_top = 1.0
 margin_right = 1013.0
-margin_bottom = 513.0
+margin_bottom = 494.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="OptionsCategories/Pages/Audio/PanelContainer"]
 margin_left = 236.0
-margin_top = 163.0
+margin_top = 153.0
 margin_right = 775.0
-margin_bottom = 349.0
+margin_bottom = 339.0
 custom_constants/separation = 12
 alignment = 1
 
 [node name="MasterVolumeSlider" parent="OptionsCategories/Pages/Audio/PanelContainer/VBoxContainer" instance=ExtResource( 3 )]
 margin_top = 0.0
-margin_right = 557.0
-margin_bottom = 27.0
+margin_right = 539.0
+margin_bottom = 21.0
 alignment = 2
 label_text = "Composite (All) Volume"
 
 [node name="SoundFXVolumeSlider" parent="OptionsCategories/Pages/Audio/PanelContainer/VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 39.0
-margin_right = 557.0
-margin_bottom = 66.0
+margin_top = 33.0
+margin_right = 539.0
+margin_bottom = 54.0
 alignment = 2
 audio_bus_index = 1
 label_text = "Sound Effects"
 
 [node name="VoiceLinesVolumeSlider" parent="OptionsCategories/Pages/Audio/PanelContainer/VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 78.0
-margin_right = 557.0
-margin_bottom = 105.0
+margin_top = 66.0
+margin_right = 539.0
+margin_bottom = 87.0
 alignment = 2
 audio_bus_index = 2
 label_text = "Voice Lines"
 
 [node name="MusicVolumeSlider" parent="OptionsCategories/Pages/Audio/PanelContainer/VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 117.0
-margin_right = 557.0
-margin_bottom = 144.0
+margin_top = 99.0
+margin_right = 539.0
+margin_bottom = 120.0
 alignment = 2
 audio_bus_index = 3
 label_text = "Music"
 
 [node name="MiscVolumeSlider" parent="OptionsCategories/Pages/Audio/PanelContainer/VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 156.0
-margin_right = 557.0
-margin_bottom = 183.0
+margin_top = 132.0
+margin_right = 539.0
+margin_bottom = 153.0
 alignment = 2
 audio_bus_index = 4
 label_text = "Misc"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="OptionsCategories/Pages/Audio/PanelContainer/VBoxContainer"]
-margin_top = 195.0
-margin_right = 557.0
-margin_bottom = 222.0
+margin_top = 165.0
+margin_right = 539.0
+margin_bottom = 186.0
 alignment = 1
 
 [node name="SubtitlesEnable" type="CheckBox" parent="OptionsCategories/Pages/Audio/PanelContainer/VBoxContainer/HBoxContainer"]
-margin_left = 229.0
-margin_right = 327.0
-margin_bottom = 27.0
+margin_left = 223.0
+margin_right = 315.0
+margin_bottom = 21.0
 pressed = true
 text = "Subtitles"
 script = ExtResource( 5 )
@@ -180,16 +182,9 @@ margin_bottom = -4.0
 rect_min_size = Vector2( 0, 200 )
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="OptionsCategories/Pages/Controls"]
-margin_left = 1.0
-margin_top = 246.0
-margin_right = 1013.0
-margin_bottom = 267.0
-text = "Nothing here yet"
-align = 1
+[node name="ControlsSettingsPage" parent="OptionsCategories/Pages/Controls" instance=ExtResource( 9 )]
 
 [node name="Stream & Tube Info" type="PanelContainer" parent="OptionsCategories/Pages"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0

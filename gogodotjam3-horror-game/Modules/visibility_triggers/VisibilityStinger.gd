@@ -36,7 +36,7 @@ func _on_VisibilityStinger_camera_entered(camera: Camera) -> void:
 		return
 	executed = true
 	if execute_once:
-		audio.connect("finished", self, "queue_free", [], CONNECT_DEFERRED)
+		var _clr := audio.connect("finished", self, "queue_free", [], CONNECT_DEFERRED)
 	audio.play()
 
 func _physics_process(_delta: float) -> void:
@@ -58,7 +58,7 @@ func _raycast_check(camera : Camera) -> bool:
 		return false
 	return not raycast.is_colliding()
 
-func _on_VisibilityStinger_camera_exited(camera: Camera) -> void:
+func _on_VisibilityStinger_camera_exited(_camera: Camera) -> void:
 	if Engine.editor_hint:
 		return
 	current_timer = null

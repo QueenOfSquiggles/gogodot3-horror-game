@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/subtitles/scripts/ASP_Events.gd" type="Script" id=1]
+[ext_resource path="res://Modules/effects/FxStinger.gd" type="Script" id=2]
+[ext_resource path="res://addons/subtitles/scenes/SubtitleData.gd" type="Script" id=3]
+[ext_resource path="res://Modules/godot_splash_screens/resources/audio/271945__rodincoil__stingers-001_modified.ogg" type="AudioStream" id=5]
+
+[node name="FxStinger" type="Area"]
+script = ExtResource( 2 )
+group_limiter = "player"
+
+[node name="sfx_stinger" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+bus = "SoundEffects"
+script = ExtResource( 1 )
+
+[node name="SubtitleData" type="Node" parent="sfx_stinger"]
+script = ExtResource( 3 )
+subtitle_key = "sfx_stinger"
+is_character_dialogue = true
+
+[connection signal="body_entered" from="." to="." method="_body_entered"]

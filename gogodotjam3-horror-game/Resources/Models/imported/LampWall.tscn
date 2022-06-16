@@ -15,8 +15,10 @@ emission_on_uv2 = false
 [node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.364532, 0.325912 )
 light_energy = 0.5
+shadow_enabled = true
 
 [node name="lampWall(Clone)_2" parent="." instance=ExtResource( 1 )]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
+cast_shadow = 0
 material/0 = SubResource( 1 )
 material/1 = ExtResource( 2 )

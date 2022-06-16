@@ -18,6 +18,7 @@ export (String) var input_toggle_rotate_item := "toggle_rotate_item"
 
 var last_mouse_pos := Vector2()
 var cache_mouse_pos := Vector2()
+
 func tick(_actor : Node, bb : Blackboard) -> int:
 	# get values
 	var move_vector := Input.get_vector(input_left, input_right, input_back, input_forwards)
@@ -44,10 +45,13 @@ func tick(_actor : Node, bb : Blackboard) -> int:
 func _get_mouse_delta() -> Vector2:
 	var delta = cache_mouse_pos - last_mouse_pos
 	last_mouse_pos = cache_mouse_pos
-	return delta
+	return delta 
 
+func _process(delta: float) -> void:
+	var joystick_delta := Input.get_vector("joy_look_left", "joy_look_right", "joy_look_down", "joy_look_up")
+	cache_mouse_pos += joystick_delta * delta * 50.0 # fake mouse
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		var mouse_event := event as InputEventMouseMotion
-		cache_mouse_pos += mouse_event.relative
+		cache_mouse_pos += mouse_event.relative # accumulates with joystick

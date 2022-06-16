@@ -4,8 +4,8 @@
 [ext_resource path="res://GameDefinitions/Items/bases/PickupItemReadable.gd" type="Script" id=2]
 [ext_resource path="res://Resources/Models/imported/props/items/Books.tscn" type="PackedScene" id=3]
 
-[sub_resource type="BoxShape" id=2]
-extents = Vector3( 0.309846, 0.225903, 0.220208 )
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.502791, 0.12749, 0.401414 )
 
 [node name="PickupItemReadable" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -14,7 +14,8 @@ title_key = "Note"
 text_key = "text_key"
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="1"]
-shape = SubResource( 2 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000877947, 0 )
+shape = SubResource( 1 )
 
 [node name="books" parent="." index="2" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.300188, -0.216608, 0.20185 )
+transform = Transform( 4, 0, 0, 0, 5, 0, 0, 0, 4, 0, 0, 0 )

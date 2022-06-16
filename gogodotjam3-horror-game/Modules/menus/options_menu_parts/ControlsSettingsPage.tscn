@@ -1,0 +1,117 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Modules/menus/theming/basic_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Modules/menus/options_menu_parts/KeySelectPane.gd" type="Script" id=2]
+[ext_resource path="res://Modules/menus/options_menu_parts/ControlsSettingsPage.gd" type="Script" id=3]
+
+[node name="MarginContainer" type="MarginContainer"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 1013.0
+margin_bottom = 494.0
+theme = ExtResource( 1 )
+custom_constants/margin_right = 16
+custom_constants/margin_top = 16
+custom_constants/margin_left = 16
+custom_constants/margin_bottom = 16
+script = ExtResource( 3 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 996.0
+margin_bottom = 477.0
+follow_focus = true
+scroll_horizontal_enabled = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_right = 980.0
+margin_bottom = 118.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer"]
+margin_right = 980.0
+margin_bottom = 55.0
+custom_constants/margin_right = 16
+custom_constants/margin_top = 16
+custom_constants/margin_left = 16
+custom_constants/margin_bottom = 16
+
+[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer/VBoxContainer/MarginContainer"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 964.0
+margin_bottom = 39.0
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/MarginContainer/PanelContainer"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 947.0
+margin_bottom = 22.0
+text = "Controls Customization"
+align = 1
+valign = 1
+
+[node name="MarginContainer_2" type="MarginContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 59.0
+margin_right = 980.0
+margin_bottom = 98.0
+custom_constants/margin_right = 64
+custom_constants/margin_top = 0
+custom_constants/margin_left = 64
+custom_constants/margin_bottom = 16
+
+[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer/VBoxContainer/MarginContainer_2"]
+margin_left = 64.0
+margin_right = 916.0
+margin_bottom = 23.0
+
+[node name="BtnResetAll" type="Button" parent="ScrollContainer/VBoxContainer/MarginContainer_2/PanelContainer"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 851.0
+margin_bottom = 22.0
+text = "Reset All To Defaults"
+
+[node name="MarginContainer_3" type="MarginContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 102.0
+margin_right = 980.0
+margin_bottom = 118.0
+custom_constants/margin_right = 64
+custom_constants/margin_top = 0
+custom_constants/margin_left = 64
+custom_constants/margin_bottom = 16
+
+[node name="ControlsBindingsRoot" type="VBoxContainer" parent="ScrollContainer/VBoxContainer/MarginContainer_3"]
+unique_name_in_owner = true
+margin_left = 64.0
+margin_right = 916.0
+custom_constants/separation = 20
+
+[node name="SelectPane" type="ColorRect" parent="."]
+visible = false
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 996.0
+margin_bottom = 477.0
+color = Color( 0, 0, 0, 0.737255 )
+script = ExtResource( 2 )
+
+[node name="CenterContainer" type="CenterContainer" parent="SelectPane"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PanelContainer" type="PanelContainer" parent="SelectPane/CenterContainer"]
+margin_left = 489.0
+margin_top = 229.0
+margin_right = 491.0
+margin_bottom = 231.0
+
+[node name="Label" type="Label" parent="SelectPane/CenterContainer/PanelContainer"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 242.0
+margin_bottom = 22.0
+text = "Press a key to set the binding"
+
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/MarginContainer_2/PanelContainer/BtnResetAll" to="." method="_on_BtnResetAll_pressed"]

@@ -47,6 +47,36 @@ var audio_bus := {
 	}
 }
 
+
+var control_bindings := {
+	"ui_left" : -1,
+	"ui_right" : -1,
+	"ui_up" : -1,
+	"ui_down" : -1,
+	"ui_accept" : -1,
+	"ui_cancel" : -1,
+	"move_forwards" : -1,
+	"move_backwards" : -1,
+	"move_left" : -1,
+	"move_right" : -1,
+	"jump" : -1,
+	"use_item" : -1,
+	"interact" : -1,
+	"toggle_rotate_item" : -1,
+	"toggle_flashlight" : -1,
+	"pause" : -1
+}
+
+var default_control_bindings_cache := {
+	# This holds the default events lists (deep copy) for each action. This lets us reset to the 'true" default without requiring a restart of the application! Does take up storage space, but it's worth it for the benefit I think
+}
+
+func _ready() -> void:
+	for action in control_bindings.keys():
+		var events := InputMap.get_action_list(action)
+		default_control_bindings_cache[action] = events.duplicate(true)
+	_load_settings()
+
 func reload_settings() -> void:
 	emit_signal("refresh_settings")
 	get_viewport().msaa = viewport_msaa
@@ -61,11 +91,29 @@ func reload_settings() -> void:
 		var data = audio_bus[bus]
 		AudioServer.set_bus_volume_db(idx, data.volume)
 		AudioServer.set_bus_mute(idx, data.muted)
+	for action in control_bindings:
+		_set_input_action(action, control_bindings[action])
 	_save_settings() # when changed, save the settings to disk
 
+func _set_input_action(action_name : String, key_code : int) -> void:
+	# clear existing bindings
+	var input_events := InputMap.get_action_list(action_name)
+	for event in input_events:
+		InputMap.action_erase_event(action_name, event)
 
-func _ready() -> void:
-	_load_settings()
+	if key_code < 0:
+		# load default binding(s)
+		# technically the first load of inputs will clear all inputs and then reset them to defaults. Which is kinda weird
+		var events :Array = default_control_bindings_cache[action_name]
+		for e in events:
+			InputMap.action_add_event(action_name, e)
+		pass
+	else:
+		# load custom binding (only supports keyboard input for now)
+		var new_event := InputEventKey.new()
+		new_event.scancode = key_code
+		InputMap.action_add_event(action_name, new_event)
+
 
 func _save_settings() -> void:
 	var data_dict := {
@@ -75,7 +123,8 @@ func _save_settings() -> void:
 		"viewport_msaa" : viewport_msaa,
 		"subtitles_enabled" : subtitles_enabled,
 		"world_environment" : world_environment,
-		"audio_bus" : audio_bus
+		"audio_bus" : audio_bus,
+		"control_bindings" : control_bindings
 	}
 	var err := SaveData.save_generic(SAVE_PATH,data_dict) 
 	if err != OK:

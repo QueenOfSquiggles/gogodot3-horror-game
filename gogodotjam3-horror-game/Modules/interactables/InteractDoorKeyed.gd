@@ -16,6 +16,7 @@ func _ready() -> void:
 
 func interact(_source) -> void:
 	if locked:
+		anim.play("rustle")
 		return
 	else:
 		# when unlocked, act as regular door
@@ -23,11 +24,16 @@ func interact(_source) -> void:
 
 func _set_locked(value : bool) -> void:
 	locked = value
-	if not locked and not sfx_unlocked.is_empty():
-		get_node(sfx_unlocked).play()
-	elif locked and not sfx_locked.is_empty():
-		get_node(sfx_locked).play()
+	if not locked:
+		try_play_sfx(sfx_unlocked)
+	elif locked:
+		try_play_sfx(sfx_locked)
 	_update_prompt()
+
+func try_play_sfx(path : NodePath) -> void:
+	if not path.is_empty():
+		get_node(path).play()
+	
 
 func _update_prompt() -> void:
 	if locked:

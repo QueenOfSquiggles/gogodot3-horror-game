@@ -34,6 +34,7 @@ size = Vector2( 512, 300 )
 handle_input_locally = false
 render_target_update_mode = 3
 audio_listener_enable_3d = true
+shadow_atlas_size = 2048
 
 [node name="CustomViewportFix" type="Node" parent="TestingLevel/Viewport"]
 script = ExtResource( 12 )

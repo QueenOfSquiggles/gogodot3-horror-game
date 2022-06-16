@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Modules/interactables/InteractDoorSimple.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Modules/interactables/InteractDoorKeyed.gd" type="Script" id=2]
@@ -8,10 +8,67 @@
 [ext_resource path="res://addons/subtitles/scripts/ASP_3D_Events.gd" type="Script" id=6]
 [ext_resource path="res://Resources/sfx/sorted/sfx_key_used.ogg" type="AudioStream" id=7]
 
+[sub_resource type="Animation" id=1]
+resource_name = "rustle"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("doorwayFront/door001:rotation_degrees")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 15, 0 ), Vector3( 0, 8.53774e-07, 0 ), Vector3( 0, 15, 0 ), Vector3( 0, 1.70755e-06, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("sfx/sfx_door_open")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("sfx/sfx_door_close")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
+
 [node name="InteractDoorKeyed" groups=["persist"] instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
+[node name="AnimationPlayer" parent="." index="0"]
+anims/rustle = SubResource( 1 )
+
 [node name="door001" parent="doorwayFront" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02835, 0, -0.04455 )
 material/2 = ExtResource( 4 )
 
 [node name="KinematicBody" parent="doorwayFront/door001" index="0"]

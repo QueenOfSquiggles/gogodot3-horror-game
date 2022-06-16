@@ -1,6 +1,6 @@
 extends Popup
 
-export (String) var pause_input := "ui_cancel"
+export (String) var pause_input := "pause"
 
 export (String) var options_menu_path := "res://Modules/menus/OptionsMenu.tscn"
 export (String) var main_menu_path := "res://Modules/menus/MainMenu.tscn"

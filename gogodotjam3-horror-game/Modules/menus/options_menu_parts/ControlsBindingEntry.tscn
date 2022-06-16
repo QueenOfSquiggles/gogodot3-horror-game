@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Modules/menus/theming/basic_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Modules/menus/options_menu_parts/ControlsBindingEntry.gd" type="Script" id=2]
+
+[node name="ControlsBinding" type="PanelContainer"]
+margin_top = 59.0
+margin_right = 980.0
+margin_bottom = 82.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 979.0
+margin_bottom = 22.0
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_right = 282.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+text = "Control Name"
+align = 1
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+margin_left = 286.0
+margin_right = 371.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="BtnCtrlChange" type="Button" parent="HBoxContainer"]
+margin_left = 375.0
+margin_right = 658.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+text = "Change Binding"
+
+[node name="Control_2" type="Control" parent="HBoxContainer"]
+margin_left = 662.0
+margin_right = 691.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="BtnCtrlReset" type="Button" parent="HBoxContainer"]
+margin_left = 695.0
+margin_right = 978.0
+margin_bottom = 21.0
+size_flags_horizontal = 3
+text = "Reset To Default"
+
+[connection signal="pressed" from="HBoxContainer/BtnCtrlChange" to="." method="_on_BtnCtrlChange_pressed"]
+[connection signal="pressed" from="HBoxContainer/BtnCtrlReset" to="." method="_on_BtnCtrlReset_pressed"]

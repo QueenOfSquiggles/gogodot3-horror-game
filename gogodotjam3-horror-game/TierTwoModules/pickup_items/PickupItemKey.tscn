@@ -7,8 +7,6 @@
 extents = Vector3( 0.294217, 0.162724, 0.527663 )
 
 [node name="PickupItemKey" instance=ExtResource( 1 )]
-gravity_scale = 0.5
-continuous_cd = true
 script = ExtResource( 2 )
 item_name = "Rusted Key"
 desired_property_name = "locked"

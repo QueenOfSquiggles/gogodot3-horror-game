@@ -4,6 +4,7 @@
 [ext_resource path="res://TierTwoModules/pickup_items/audio/PickupItemsAudioLib.tscn" type="PackedScene" id=2]
 
 [node name="PickupItemBase" type="RigidBody" groups=["persist"]]
+continuous_cd = true
 contacts_reported = 4
 contact_monitor = true
 script = ExtResource( 1 )
