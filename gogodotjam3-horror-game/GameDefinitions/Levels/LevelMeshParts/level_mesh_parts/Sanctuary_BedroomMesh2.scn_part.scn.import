@@ -1,0 +1,14 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/Sanctuary_BedroomMesh2.scn_part.scn-d08b5450b14ce752c006e81c22539dd9.scn"
+
+[deps]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Sanctuary_BedroomMesh2.scn_part.scn"
+dest_files=[ "res://.import/Sanctuary_BedroomMesh2.scn_part.scn-d08b5450b14ce752c006e81c22539dd9.scn" ]
+
+[params]
+
+test=false

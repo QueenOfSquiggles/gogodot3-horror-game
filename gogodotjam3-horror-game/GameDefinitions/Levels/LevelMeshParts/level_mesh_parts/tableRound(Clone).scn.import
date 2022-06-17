@@ -1,0 +1,14 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/tableRound(Clone).scn-0ec04f2675092fc5202b87b91ce713f3.scn"
+
+[deps]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/tableRound(Clone).scn"
+dest_files=[ "res://.import/tableRound(Clone).scn-0ec04f2675092fc5202b87b91ce713f3.scn" ]
+
+[params]
+
+generate_physical=false

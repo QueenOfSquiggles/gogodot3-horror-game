@@ -1,0 +1,14 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/tableCoffeeGlassSquare(Clone).scn-b97929005d3f5dd04d7e087babb83347.scn"
+
+[deps]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/tableCoffeeGlassSquare(Clone).scn"
+dest_files=[ "res://.import/tableCoffeeGlassSquare(Clone).scn-b97929005d3f5dd04d7e087babb83347.scn" ]
+
+[params]
+
+generate_physical=false

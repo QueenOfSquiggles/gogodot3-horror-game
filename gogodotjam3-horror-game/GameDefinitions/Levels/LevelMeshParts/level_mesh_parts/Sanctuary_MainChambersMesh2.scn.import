@@ -1,0 +1,16 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/Sanctuary_MainChambersMesh2.scn-760695480f2fc7e3d8a40ea3ee2b5d21.scn"
+
+[deps]
+
+files=[ "res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Sanctuary_MainChambersMesh2.scn_part.scn" ]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Sanctuary_MainChambersMesh2.scn"
+dest_files=[ "res://.import/Sanctuary_MainChambersMesh2.scn-760695480f2fc7e3d8a40ea3ee2b5d21.scn", "res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Sanctuary_MainChambersMesh2.scn_part.scn" ]
+
+[params]
+
+generate_physical=true

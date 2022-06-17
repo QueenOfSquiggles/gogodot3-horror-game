@@ -1,0 +1,16 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/Floor2_BedroomDustinMesh.scn-54ddaf92461a7b5fb2d901c61111f9eb.scn"
+
+[deps]
+
+files=[ "res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Floor2_BedroomDustinMesh.scn_part.scn" ]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Floor2_BedroomDustinMesh.scn"
+dest_files=[ "res://.import/Floor2_BedroomDustinMesh.scn-54ddaf92461a7b5fb2d901c61111f9eb.scn", "res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Floor2_BedroomDustinMesh.scn_part.scn" ]
+
+[params]
+
+generate_physical=true

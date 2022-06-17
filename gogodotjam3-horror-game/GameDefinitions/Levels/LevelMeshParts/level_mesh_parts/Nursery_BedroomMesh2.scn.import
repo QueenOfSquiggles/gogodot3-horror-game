@@ -1,0 +1,16 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/Nursery_BedroomMesh2.scn-0cdd6b6ba4ad70e4537c88cf60b7b32c.scn"
+
+[deps]
+
+files=[ "res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Nursery_BedroomMesh2.scn_part.scn" ]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Nursery_BedroomMesh2.scn"
+dest_files=[ "res://.import/Nursery_BedroomMesh2.scn-0cdd6b6ba4ad70e4537c88cf60b7b32c.scn", "res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Nursery_BedroomMesh2.scn_part.scn" ]
+
+[params]
+
+generate_physical=true

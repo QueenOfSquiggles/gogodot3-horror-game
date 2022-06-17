@@ -1,0 +1,14 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/plantSmall2(Clone).scn-b69b9fe459bbeb92ee4de816f00b74ea.scn"
+
+[deps]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/plantSmall2(Clone).scn"
+dest_files=[ "res://.import/plantSmall2(Clone).scn-b69b9fe459bbeb92ee4de816f00b74ea.scn" ]
+
+[params]
+
+generate_physical=false

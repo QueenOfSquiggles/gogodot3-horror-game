@@ -1,0 +1,16 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/Floor2_LivingAreaRadioMesh2.scn-a01d6861f8e6a113975cf131580e7b85.scn"
+
+[deps]
+
+files=[ "res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Floor2_LivingAreaRadioMesh2.scn_part.scn" ]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Floor2_LivingAreaRadioMesh2.scn"
+dest_files=[ "res://.import/Floor2_LivingAreaRadioMesh2.scn-a01d6861f8e6a113975cf131580e7b85.scn", "res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Floor2_LivingAreaRadioMesh2.scn_part.scn" ]
+
+[params]
+
+generate_physical=true

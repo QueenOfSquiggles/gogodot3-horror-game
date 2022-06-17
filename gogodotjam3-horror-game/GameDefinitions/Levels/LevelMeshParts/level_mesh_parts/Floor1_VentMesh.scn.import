@@ -1,0 +1,16 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/Floor1_VentMesh.scn-6460ea4540ba682078baaeacdee6b078.scn"
+
+[deps]
+
+files=[ "res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Floor1_VentMesh.scn_part.scn" ]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Floor1_VentMesh.scn"
+dest_files=[ "res://.import/Floor1_VentMesh.scn-6460ea4540ba682078baaeacdee6b078.scn", "res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Floor1_VentMesh.scn_part.scn" ]
+
+[params]
+
+generate_physical=true

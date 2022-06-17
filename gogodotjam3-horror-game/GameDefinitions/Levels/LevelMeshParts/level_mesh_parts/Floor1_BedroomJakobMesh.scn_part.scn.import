@@ -1,0 +1,14 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/Floor1_BedroomJakobMesh.scn_part.scn-ba6ad9b427839e62c2170f5d0a583aff.scn"
+
+[deps]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Floor1_BedroomJakobMesh.scn_part.scn"
+dest_files=[ "res://.import/Floor1_BedroomJakobMesh.scn_part.scn-ba6ad9b427839e62c2170f5d0a583aff.scn" ]
+
+[params]
+
+test=false

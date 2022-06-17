@@ -1,0 +1,14 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/Floor1_BedroomAbbyMesh.scn_part.scn-c89d777a330b43e1ae3ebe8d2112a8e8.scn"
+
+[deps]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Floor1_BedroomAbbyMesh.scn_part.scn"
+dest_files=[ "res://.import/Floor1_BedroomAbbyMesh.scn_part.scn-c89d777a330b43e1ae3ebe8d2112a8e8.scn" ]
+
+[params]
+
+test=false

@@ -1,0 +1,16 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/shower(Clone).scn-b902b02306bc30981f8a3ae6869dd9bf.scn"
+
+[deps]
+
+files=[ "res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/shower(Clone).scn_part.scn" ]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/shower(Clone).scn"
+dest_files=[ "res://.import/shower(Clone).scn-b902b02306bc30981f8a3ae6869dd9bf.scn", "res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/shower(Clone).scn_part.scn" ]
+
+[params]
+
+test=false

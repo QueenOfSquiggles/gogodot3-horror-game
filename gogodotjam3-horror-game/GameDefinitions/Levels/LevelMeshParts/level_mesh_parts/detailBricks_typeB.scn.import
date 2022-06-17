@@ -1,0 +1,14 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/detailBricks_typeB.scn-b73c69d187d3496490f51b6fc67bad77.scn"
+
+[deps]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/detailBricks_typeB.scn"
+dest_files=[ "res://.import/detailBricks_typeB.scn-b73c69d187d3496490f51b6fc67bad77.scn" ]
+
+[params]
+
+generate_physical=false

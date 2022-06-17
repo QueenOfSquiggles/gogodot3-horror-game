@@ -1,0 +1,16 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/Nursery_ChainLinkFence.scn-12064d91952aa6f6d5918a0bb4adc8e8.scn"
+
+[deps]
+
+files=[ "res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Nursery_ChainLinkFence.scn_part.scn" ]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Nursery_ChainLinkFence.scn"
+dest_files=[ "res://.import/Nursery_ChainLinkFence.scn-12064d91952aa6f6d5918a0bb4adc8e8.scn", "res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Nursery_ChainLinkFence.scn_part.scn" ]
+
+[params]
+
+generate_physical=true

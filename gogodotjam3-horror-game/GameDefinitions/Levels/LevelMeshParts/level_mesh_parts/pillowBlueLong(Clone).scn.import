@@ -1,0 +1,14 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/pillowBlueLong(Clone).scn-b754164ebb4dfa23f94ebd01b81de974.scn"
+
+[deps]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/pillowBlueLong(Clone).scn"
+dest_files=[ "res://.import/pillowBlueLong(Clone).scn-b754164ebb4dfa23f94ebd01b81de974.scn" ]
+
+[params]
+
+generate_physical=false

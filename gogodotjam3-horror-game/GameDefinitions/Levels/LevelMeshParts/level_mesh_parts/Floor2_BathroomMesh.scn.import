@@ -1,0 +1,16 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/Floor2_BathroomMesh.scn-ceede6c301600e3cc787d244348e3741.scn"
+
+[deps]
+
+files=[ "res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Floor2_BathroomMesh.scn_part.scn" ]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Floor2_BathroomMesh.scn"
+dest_files=[ "res://.import/Floor2_BathroomMesh.scn-ceede6c301600e3cc787d244348e3741.scn", "res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Floor2_BathroomMesh.scn_part.scn" ]
+
+[params]
+
+generate_physical=true

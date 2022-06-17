@@ -47,5 +47,5 @@ func _on_BtnCredits_pressed() -> void:
 
 func _on_BtnQuit_pressed() -> void:
 	anim.play("transition_out")
-	yield(anim, "animation_finished")
+	yield(get_tree().create_timer(0.9), "timeout")
 	get_tree().quit()

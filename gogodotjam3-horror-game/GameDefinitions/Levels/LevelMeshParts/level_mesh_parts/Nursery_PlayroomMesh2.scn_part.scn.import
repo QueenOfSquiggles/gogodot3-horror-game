@@ -1,0 +1,14 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/Nursery_PlayroomMesh2.scn_part.scn-1cf5e4a1d32a2f8fb425ba07a1aeb2b7.scn"
+
+[deps]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Nursery_PlayroomMesh2.scn_part.scn"
+dest_files=[ "res://.import/Nursery_PlayroomMesh2.scn_part.scn-1cf5e4a1d32a2f8fb425ba07a1aeb2b7.scn" ]
+
+[params]
+
+test=false

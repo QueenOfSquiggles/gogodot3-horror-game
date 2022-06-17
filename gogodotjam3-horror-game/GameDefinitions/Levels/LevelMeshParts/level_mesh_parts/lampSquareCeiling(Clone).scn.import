@@ -1,0 +1,14 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/lampSquareCeiling(Clone).scn-0eb081994888aa5daebf756eb309bd19.scn"
+
+[deps]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/lampSquareCeiling(Clone).scn"
+dest_files=[ "res://.import/lampSquareCeiling(Clone).scn-0eb081994888aa5daebf756eb309bd19.scn" ]
+
+[params]
+
+generate_physical=false

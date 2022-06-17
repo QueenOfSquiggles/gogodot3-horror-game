@@ -1,0 +1,14 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/books(Clone).scn-9fa9373e696a95c19b5a2dd5069e4660.scn"
+
+[deps]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/books(Clone).scn"
+dest_files=[ "res://.import/books(Clone).scn-9fa9373e696a95c19b5a2dd5069e4660.scn" ]
+
+[params]
+
+generate_physical=false

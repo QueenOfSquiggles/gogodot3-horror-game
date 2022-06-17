@@ -1,0 +1,14 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/mushroom_redTall.scn-f8038e03882bfaaefed15db512dc311c.scn"
+
+[deps]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/mushroom_redTall.scn"
+dest_files=[ "res://.import/mushroom_redTall.scn-f8038e03882bfaaefed15db512dc311c.scn" ]
+
+[params]
+
+generate_physical=false

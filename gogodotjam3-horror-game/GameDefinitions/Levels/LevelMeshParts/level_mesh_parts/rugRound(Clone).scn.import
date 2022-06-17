@@ -1,0 +1,14 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/rugRound(Clone).scn-4fa669da0577610cf9f806e3e0c69aff.scn"
+
+[deps]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/rugRound(Clone).scn"
+dest_files=[ "res://.import/rugRound(Clone).scn-4fa669da0577610cf9f806e3e0c69aff.scn" ]
+
+[params]
+
+generate_physical=false

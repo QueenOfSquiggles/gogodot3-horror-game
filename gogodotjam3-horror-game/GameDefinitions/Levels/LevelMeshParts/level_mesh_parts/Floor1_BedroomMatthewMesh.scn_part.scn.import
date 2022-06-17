@@ -1,0 +1,14 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/Floor1_BedroomMatthewMesh.scn_part.scn-048575850f519be7b4cf2eaf7f727955.scn"
+
+[deps]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Floor1_BedroomMatthewMesh.scn_part.scn"
+dest_files=[ "res://.import/Floor1_BedroomMatthewMesh.scn_part.scn-048575850f519be7b4cf2eaf7f727955.scn" ]
+
+[params]
+
+test=false

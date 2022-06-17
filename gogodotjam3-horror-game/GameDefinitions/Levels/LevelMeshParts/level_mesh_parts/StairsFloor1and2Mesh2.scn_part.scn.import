@@ -1,0 +1,14 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/StairsFloor1and2Mesh2.scn_part.scn-91aa5af739e8ea194e225b91de327829.scn"
+
+[deps]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/StairsFloor1and2Mesh2.scn_part.scn"
+dest_files=[ "res://.import/StairsFloor1and2Mesh2.scn_part.scn-91aa5af739e8ea194e225b91de327829.scn" ]
+
+[params]
+
+test=false

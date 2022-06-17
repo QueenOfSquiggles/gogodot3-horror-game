@@ -1,0 +1,14 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/SurfaceMesh.scn_part.scn-80396242bdc0db434a7ce4b12625e6fe.scn"
+
+[deps]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/SurfaceMesh.scn_part.scn"
+dest_files=[ "res://.import/SurfaceMesh.scn_part.scn-80396242bdc0db434a7ce4b12625e6fe.scn" ]
+
+[params]
+
+test=false

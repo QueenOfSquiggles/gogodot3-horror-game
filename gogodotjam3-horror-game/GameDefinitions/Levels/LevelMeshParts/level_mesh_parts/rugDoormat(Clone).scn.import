@@ -1,0 +1,14 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/rugDoormat(Clone).scn-45290f9c90f765c0cacf91f35102c360.scn"
+
+[deps]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/rugDoormat(Clone).scn"
+dest_files=[ "res://.import/rugDoormat(Clone).scn-45290f9c90f765c0cacf91f35102c360.scn" ]
+
+[params]
+
+generate_physical=false

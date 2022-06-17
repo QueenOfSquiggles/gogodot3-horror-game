@@ -1,0 +1,16 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/StairsFloor2andNurseryMesh2.scn-37ac2d43507399f8c8ace83c0de247e0.scn"
+
+[deps]
+
+files=[ "res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/StairsFloor2andNurseryMesh2.scn_part.scn" ]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/StairsFloor2andNurseryMesh2.scn"
+dest_files=[ "res://.import/StairsFloor2andNurseryMesh2.scn-37ac2d43507399f8c8ace83c0de247e0.scn", "res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/StairsFloor2andNurseryMesh2.scn_part.scn" ]
+
+[params]
+
+generate_physical=true

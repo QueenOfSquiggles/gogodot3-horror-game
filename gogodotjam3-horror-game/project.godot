@@ -109,6 +109,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Globals/scene_management/LoadingScreen.gd"
 }, {
+"base": "Resource",
+"class": "ModuleDef",
+"language": "GDScript",
+"path": "res://addons/squiggles_core/modules/core/module.gd"
+}, {
 "base": "RigidBody",
 "class": "PickupItemBase",
 "language": "GDScript",
@@ -180,6 +185,7 @@ _global_script_class_icons={
 "Leaf": "",
 "LimiterDecorator": "",
 "LoadingScreen": "",
+"ModuleDef": "",
 "PickupItemBase": "",
 "PickupItemContainer": "",
 "SelectorComposite": "",
@@ -230,7 +236,7 @@ scene/scene_naming=1
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/subtitles/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/squiggles_core/plugin.cfg", "res://addons/subtitles/plugin.cfg" )
 
 [importer_defaults]
 
@@ -398,6 +404,7 @@ name_num_separator=2
 [physics]
 
 3d/smooth_trimesh_collision=true
+3d/godot_physics/use_bvh=false
 
 [rendering]
 

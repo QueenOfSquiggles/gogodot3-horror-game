@@ -1,0 +1,14 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/Nursery_MainHallMesh2.scn_part.scn-9e542c0a85446283ec8f9920024dbf50.scn"
+
+[deps]
+
+source_file="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Nursery_MainHallMesh2.scn_part.scn"
+dest_files=[ "res://.import/Nursery_MainHallMesh2.scn_part.scn-9e542c0a85446283ec8f9920024dbf50.scn" ]
+
+[params]
+
+test=false

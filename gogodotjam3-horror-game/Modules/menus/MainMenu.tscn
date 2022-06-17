@@ -322,7 +322,6 @@ anims/RESET = SubResource( 9 )
 anims/menu_idle = SubResource( 2 )
 anims/transition_out = SubResource( 10 )
 next/transition_out = "transition_out"
-blend_times = [ "transition_out", "menu_idle", 0.3, "transition_out", "transition_out", 0.3 ]
 
 [connection signal="pressed" from="GameButtons/VBoxContainer/BtnContinue" to="." method="_on_BtnContinue_pressed"]
 [connection signal="pressed" from="GameButtons/VBoxContainer/BtnNewGame" to="." method="_on_BtnNewGame_pressed"]
