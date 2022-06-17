@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Modules/menus/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Modules/menus/OptionsMenu.tscn" type="PackedScene" id=2]
@@ -16,9 +16,127 @@
 [ext_resource path="res://Resources/UI/icons/itch_icon.png" type="Texture" id=14]
 [ext_resource path="res://Modules/post_processing/PostProcessViewportContainer.gd" type="Script" id=15]
 
-[sub_resource type="DynamicFont" id=1]
-size = 44
+[sub_resource type="DynamicFont" id=3]
+size = 30
+extra_spacing_char = -3
 font_data = ExtResource( 11 )
+
+[sub_resource type="SpatialMaterial" id=4]
+emission_enabled = true
+emission = Color( 1, 1, 1, 1 )
+emission_energy = 1.5
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="TextMesh" id=5]
+material = SubResource( 4 )
+text = "The Ascension"
+font = SubResource( 3 )
+pixel_size = 0.05
+depth = 0.1
+
+[sub_resource type="TextMesh" id=6]
+material = SubResource( 4 )
+text = "Of The"
+font = SubResource( 3 )
+pixel_size = 0.05
+depth = 0.1
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 1, 0.956863, 0, 1 )
+metallic = 1.0
+roughness = 0.0
+
+[sub_resource type="TextMesh" id=7]
+material = SubResource( 8 )
+text = "Lamb"
+font = SubResource( 3 )
+pixel_size = 0.05
+depth = 0.1
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ViewportContainer/Viewport/Camera:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -17.661, 5.5867, 54.4987 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ViewportContainer/Viewport/Camera:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 135.055, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "menu_idle"
+length = 30.0
+loop = true
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ViewportContainer/Viewport/Camera:translation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10, 20, 30 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -17.661, 5.5867, 54.4987 ), Vector3( -26.3163, 5.5867, 50.8085 ), Vector3( -26.3163, 13.6352, 50.8085 ), Vector3( -17.661, 5.5867, 54.4987 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ViewportContainer/Viewport/Camera:rotation_degrees")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 10, 20, 30 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 135.055, 0 ), Vector3( 0, 171.564, 0 ), Vector3( -31.948, 171.564, 0 ), Vector3( 0, 135.055, 0 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "transition_out"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ViewportContainer/Viewport/Camera:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -21.5805, 4.06955, 59.5981 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ViewportContainer/Viewport/Camera:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 178.959, 0 ) ]
+}
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -46,7 +164,7 @@ render_target_update_mode = 3
 [node name="SurfaceMesh" parent="ViewportContainer/Viewport" instance=ExtResource( 9 )]
 
 [node name="Camera" type="Camera" parent="ViewportContainer/Viewport"]
-transform = Transform( -0.733789, 0, 0.679377, 0, 1, 0, -0.679377, 0, -0.733789, -17.661, 5.5867, 54.4987 )
+transform = Transform( -0.707785, 0, 0.706428, 0, 1, 0, -0.706428, 0, -0.707785, -17.661, 5.5867, 54.4987 )
 current = true
 
 [node name="DirectionalLight" type="DirectionalLight" parent="ViewportContainer/Viewport"]
@@ -55,6 +173,18 @@ light_color = Color( 0.333333, 0.376471, 0.619608, 1 )
 light_energy = 0.5
 
 [node name="SettingsCompliantWorldEnvironment" parent="ViewportContainer/Viewport" instance=ExtResource( 10 )]
+
+[node name="TextTitle_Line_1" type="MeshInstance" parent="ViewportContainer/Viewport"]
+transform = Transform( -0.968128, 0, 0.00711368, 0, 0.968154, 0, -0.00711368, 0, -0.968128, -22.0578, 5.47579, 64.369 )
+mesh = SubResource( 5 )
+
+[node name="TextTitle_Line_2" type="MeshInstance" parent="ViewportContainer/Viewport"]
+transform = Transform( -0.968128, 0, 0.00711368, 0, 0.968154, 0, -0.00711368, 0, -0.968128, -22.0578, 3.58241, 64.369 )
+mesh = SubResource( 6 )
+
+[node name="TextTitle_Line_3" type="MeshInstance" parent="ViewportContainer/Viewport"]
+transform = Transform( -0.968128, 0, 0.00711368, 0, 0.968154, 0, -0.00711368, 0, -0.968128, -22.0578, 1.7072, 64.369 )
+mesh = SubResource( 7 )
 
 [node name="GameButtons" type="PanelContainer" parent="."]
 anchor_top = 1.0
@@ -185,22 +315,14 @@ margin_bottom = 126.0
 text = "v.1.0-ALPHA"
 align = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 36.0
-margin_top = 42.0
-margin_right = 681.0
-margin_bottom = 213.0
-custom_fonts/normal_font = SubResource( 1 )
-bbcode_enabled = true
-bbcode_text = "[wave] 
-The Ascension of the Lamb
-[/wave]"
-meta_underlined = false
-text = " 
-The Ascension of the Lamb
-"
-fit_content_height = true
-scroll_active = false
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "menu_idle"
+playback_default_blend_time = 0.3
+anims/RESET = SubResource( 9 )
+anims/menu_idle = SubResource( 2 )
+anims/transition_out = SubResource( 10 )
+next/transition_out = "transition_out"
+blend_times = [ "transition_out", "menu_idle", 0.3, "transition_out", "transition_out", 0.3 ]
 
 [connection signal="pressed" from="GameButtons/VBoxContainer/BtnContinue" to="." method="_on_BtnContinue_pressed"]
 [connection signal="pressed" from="GameButtons/VBoxContainer/BtnNewGame" to="." method="_on_BtnNewGame_pressed"]

@@ -11,6 +11,10 @@ data = PoolVector3Array( -4.5555, -2.3796, 47.7888, -13.5803, 5.1888, 46.3599, -
 [node name="Sanctuary_MainChambersMesh2" parent="." instance=ExtResource( 1 )]
 material/0 = ExtResource( 2 )
 
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1625, -61.5935, -57.6005 )
+shape = SubResource( 1 )
+
 [node name="Spatial" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83142, -76.145, -63.2019 )
 
@@ -32,7 +36,3 @@ text = "Thank you so much for playing!"
 line_spacing = 1.0
 autowrap = true
 width = 250.0
-
-[node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1625, -61.5935, -57.6005 )
-shape = SubResource( 1 )

@@ -20,26 +20,26 @@ material/0 = ExtResource( 8 )
 material/1 = ExtResource( 2 )
 material/2 = ExtResource( 3 )
 
-[node name="Spatial" type="Spatial" parent="Floor2_BedroomJessicaMesh2"]
-transform = Transform( 0, 0, 1, 0, 1, 0, -1, 0, 0, -0.556561, -2.22572, 2.37856 )
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( -1.19209e-07, 0, -1, 0, 1, 0, 1, 0, -1.19209e-07, 77.6066, -40.9794, 40.0359 )
+shape = SubResource( 1 )
 
-[node name="bedSingle" parent="Floor2_BedroomJessicaMesh2/Spatial" instance=ExtResource( 7 )]
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, 1, 75.2281, -43.2051, 39.4793 )
+
+[node name="bedSingle" parent="Spatial" instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, -0.326145, 3 )
 
-[node name="cabinetBedDrawer" parent="Floor2_BedroomJessicaMesh2/Spatial" instance=ExtResource( 6 )]
+[node name="cabinetBedDrawer" parent="Spatial" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.276955, -2.5 )
 
-[node name="table" parent="Floor2_BedroomJessicaMesh2/Spatial" instance=ExtResource( 5 )]
+[node name="table" parent="Spatial" instance=ExtResource( 5 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, -0.375195, -2.79565 )
 
-[node name="PickupItemReadable" parent="Floor2_BedroomJessicaMesh2/Spatial" instance=ExtResource( 4 )]
+[node name="PickupItemReadable" parent="Spatial" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51735, 1.27077, -2.71779 )
 title_key = "note.jessica.title"
 text_key = "note.jessica.body"
 
-[node name="PickupItemBoltCutters" parent="Floor2_BedroomJessicaMesh2/Spatial" instance=ExtResource( 9 )]
+[node name="PickupItemBoltCutters" parent="Spatial" instance=ExtResource( 9 )]
 transform = Transform( 0.49602, 0, 0.868311, 0, 1, 0, -0.868311, 0, 0.49602, 6.08008, -0.0722427, 0.646698 )
-
-[node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, 77.6066, -40.9794, 40.0359 )
-shape = SubResource( 1 )

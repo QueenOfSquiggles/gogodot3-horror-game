@@ -102,7 +102,7 @@ sfx.door.unlocked,~key clinking~
 sfx.door.close,~door closing~
 sfx.door.open,~door opening~
 note.dev_note.title,Developer's Note
-note.dev_note.line0,"Thank you so much for playing! This floor and the floors below are currently unfinished. This game was created for the GoGodotJam 3. This version you are playing is the ""jam version"" which is able to be ranked because it was completed in the time limit of the jam. I plan to release a ""post-jam"" version after the ranking period has completed. That version will include the lore, puzzles, etc... for this floor and deeper. I really hope you enjoyed this game. I'd really appreciate any feedback on it! Also keep watching the project page for that ""post jam"" release! XOXOXO – QueenOfSquiggles"
+note.dev_note.body,"Thank you so much for playing! This floor and the floors below are currently unfinished. This game was created for the GoGodotJam 3. This version you are playing is the ""jam version"" which is able to be ranked because it was completed in the time limit of the jam. I plan to release a ""post-jam"" version after the ranking period has completed. That version will include the lore, puzzles, etc... for this floor and deeper. I really hope you enjoyed this game. I'd really appreciate any feedback on it! Also keep watching the project page for that ""post jam"" release! XOXOXO – QueenOfSquiggles"
 note.kitchen.title,Kitchen Note
 note.kitchen.line0,"It's so frustrating being such a low class disciple! The Lamb (blessed be) requires that we cook and serve all meals for the entirety of the sanctity. Luckily, The Lamb (blessed be) does not come up here and won't find us lacking in faith."
 note.matt.title,Matthew's Diary

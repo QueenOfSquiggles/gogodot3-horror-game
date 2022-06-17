@@ -19,28 +19,28 @@ material/0 = ExtResource( 6 )
 material/1 = ExtResource( 2 )
 material/2 = ExtResource( 3 )
 
-[node name="Spatial" type="Spatial" parent="Nursery_MainHallMesh2"]
-transform = Transform( 0, 0, 1, 0, 1, 0, -1, 0, 0, 2.01415, 0.028038, 0 )
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( -1.19209e-07, 0, -1, 0, 1, 0, 1, 0, -1.19209e-07, 25.1095, -50.9773, 40.535 )
+shape = SubResource( 1 )
 
-[node name="doorwayFront2" parent="Nursery_MainHallMesh2/Spatial" instance=ExtResource( 5 )]
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( 1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, 1, 25.1095, -50.9492, 42.5491 )
+
+[node name="doorwayFront2" parent="Spatial" instance=ExtResource( 5 )]
 transform = Transform( 2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, -2, -2.5, 7.5 )
 
-[node name="doorwayFront3" parent="Nursery_MainHallMesh2/Spatial" instance=ExtResource( 5 )]
+[node name="doorwayFront3" parent="Spatial" instance=ExtResource( 5 )]
 transform = Transform( 2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, -2, -2.5, -14 )
 
-[node name="doorwayFront4" parent="Nursery_MainHallMesh2/Spatial" instance=ExtResource( 5 )]
+[node name="doorwayFront4" parent="Spatial" instance=ExtResource( 5 )]
 transform = Transform( -1.17225e-07, 0, 1, 0, 1, 0, -1, 0, -1.17225e-07, 2, -2.5, -2 )
 
-[node name="InteractDoorKeyed" parent="Nursery_MainHallMesh2/Spatial" instance=ExtResource( 7 )]
+[node name="InteractDoorKeyed" parent="Spatial" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -2.5, 17 )
 keyed_name = "nursery"
 
-[node name="lampWall" parent="Nursery_MainHallMesh2/Spatial" instance=ExtResource( 4 )]
+[node name="lampWall" parent="Spatial" instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5, 0, 3.5 )
 
-[node name="Nursery_ChainLinkFence" parent="Nursery_MainHallMesh2/Spatial" instance=ExtResource( 8 )]
+[node name="Nursery_ChainLinkFence" parent="Spatial" instance=ExtResource( 8 )]
 transform = Transform( 1.51493, 0, 0, 0, 2.76612, 0, 0, 0, 0.197261, 0, -0.0948982, -19.6551 )
-
-[node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, 25.1095, -50.9773, 40.535 )
-shape = SubResource( 1 )
