@@ -4,7 +4,7 @@
 [ext_resource path="res://Resources/Models/imported/props/items/Key.tscn" type="PackedScene" id=2]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.236099, 0.0874704, 0.546465 )
+extents = Vector3( 0.345128, 0.220446, 0.571537 )
 
 [node name="PickupItemRustedKey" instance=ExtResource( 1 )]
 

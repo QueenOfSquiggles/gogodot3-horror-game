@@ -1,20 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://TierTwoModules/pickup_items/PickupItemBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TierTwoModules/pickup_items/PickupItemCustomScaled.gd" type="Script" id=2]
 [ext_resource path="res://Resources/Materials/metal_plate.material" type="Material" id=3]
+[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Floor1_VentCover.scn" type="PackedScene" id=4]
 
 [sub_resource type="CylinderShape" id=1]
-height = 0.3
-radius = 3.0
-
-[sub_resource type="CylinderMesh" id=2]
-top_radius = 3.0
-bottom_radius = 3.0
-height = 0.3
-
-[sub_resource type="BoxShape" id=3]
-extents = Vector3( 0.858271, 2.05615, 1.92596 )
+height = 0.550431
+radius = 3.11394
 
 [node name="ItemVent" instance=ExtResource( 1 )]
 transform = Transform( -5.23766e-05, 0, -1, 0, 1, 0, 1, 0, -5.23766e-05, 0, 0, 0 )
@@ -23,16 +16,12 @@ rigid_mode_start = 1
 item_name = "Vent Cover"
 world_scale = Vector3( 1, 1, 1 )
 held_scale = Vector3( 0.5, 0.5, 0.5 )
-scale_children = [ NodePath("MeshInstance") ]
+scale_children = [ NodePath("Floor1_VentCover") ]
 
-[node name="CollisionShape" type="CollisionShape" parent="." index="1"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
-shape = SubResource( 1 )
-
-[node name="MeshInstance" type="MeshInstance" parent="." index="2"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0.0265799 )
-mesh = SubResource( 2 )
+[node name="Floor1_VentCover" parent="." index="0" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 material/0 = ExtResource( 3 )
 
-[node name="CollisionShape" type="CollisionShape" parent="InteractableArea" index="0"]
-shape = SubResource( 3 )
+[node name="CollisionShape" type="CollisionShape" parent="." index="2"]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 1 )

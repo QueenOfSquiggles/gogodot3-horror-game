@@ -225,6 +225,13 @@ SceneManagement="*res://Globals/autoload/SceneManagement.gd"
 Settings="*res://Globals/autoload/Settings.gd"
 Readables="*res://Globals/autoload/Readables.gd"
 Subtitles="*res://addons/subtitles/scenes/Subtitles.gd"
+MusicManager="*res://Globals/autoload/MusicManager.gd"
+
+[debug]
+
+settings/physics_interpolation/enable_warnings=false
+gdscript/warnings/exclude_addons=false
+gdscript/warnings/return_value_discarded=false
 
 [display]
 
@@ -404,7 +411,9 @@ name_num_separator=2
 [physics]
 
 3d/smooth_trimesh_collision=true
-3d/godot_physics/use_bvh=false
+3d/godot_physics/bvh_collision_margin=0.5
+3d/default_gravity=6.86
+common/physics_interpolation=true
 
 [rendering]
 

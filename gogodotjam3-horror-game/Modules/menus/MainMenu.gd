@@ -46,6 +46,5 @@ func _on_BtnCredits_pressed() -> void:
 
 
 func _on_BtnQuit_pressed() -> void:
-	anim.play("transition_out")
-	yield(get_tree().create_timer(0.9), "timeout")
+	# just feels unresponsive when an animation plays first
 	get_tree().quit()

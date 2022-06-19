@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=2]
+
+[sub_resource type="Gradient" id=5]
+offsets = PoolRealArray( 0, 0.599447, 1 )
+colors = PoolColorArray( 1, 0, 0, 1, 1, 0.579398, 0, 1, 1, 0.667969, 0, 1 )
+
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 5 )
+
+[sub_resource type="Curve" id=13]
+_data = [ Vector2( 0, 0 ), 0.0, 0.00951036, 0, 0, Vector2( 0.0571429, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), -0.00825427, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=14]
+curve = SubResource( 13 )
+
+[sub_resource type="ParticlesMaterial" id=12]
+lifetime_randomness = 0.3
+direction = Vector3( 0, 1, 0 )
+gravity = Vector3( 0, 1, 0 )
+initial_velocity = 1.0
+angular_velocity = 90.0
+angular_velocity_random = 1.0
+damping_random = 1.0
+angle = 720.0
+angle_random = 1.0
+scale = 2.5
+scale_random = 1.0
+scale_curve = SubResource( 14 )
+color_ramp = SubResource( 6 )
+hue_variation = 0.32
+hue_variation_random = 1.0
+anim_offset = 1.0
+anim_offset_random = 1.0
+
+[sub_resource type="SpatialMaterial" id=10]
+flags_transparent = true
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_color = Color( 1, 0.45098, 0, 0.341176 )
+emission_enabled = true
+emission = Color( 1, 0.45098, 0, 1 )
+emission_energy = 3.0
+emission_operator = 0
+emission_on_uv2 = false
+proximity_fade_enable = true
+proximity_fade_distance = 0.1
+
+[sub_resource type="QuadMesh" id=11]
+material = SubResource( 10 )
+
+[node name="FireVFX_3" type="Particles"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.188924, 0, 0 )
+amount = 100
+lifetime = 5.0
+preprocess = 30.0
+visibility_aabb = AABB( -4, -4, -3.98212, 8, 8, 7.96425 )
+process_material = SubResource( 12 )
+draw_pass_1 = SubResource( 11 )

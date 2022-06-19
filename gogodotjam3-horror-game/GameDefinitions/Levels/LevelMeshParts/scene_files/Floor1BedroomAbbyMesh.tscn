@@ -1,5 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
+[ext_resource path="res://Resources/Materials/sorted/walls/rough_block_wall.material" type="Material" id=1]
+[ext_resource path="res://Resources/Materials/sorted/ceilings/white_rough_plaster.material" type="Material" id=2]
+[ext_resource path="res://Resources/Materials/sorted/floors/stone_brick_wall_001.material" type="Material" id=3]
 [ext_resource path="res://GameDefinitions/Items/bases/PickupItemReadable.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Resources/Models/imported/Table.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Resources/Models/imported/CabinetBedDrawer.tscn" type="PackedScene" id=6]
@@ -7,6 +10,11 @@
 [ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Floor1_BedroomAbbyMesh.scn_part.scn" type="PackedScene" id=9]
 
 [node name="Floor1_BedroomAbbyMesh" instance=ExtResource( 9 )]
+
+[node name="Mesh(Imported)" parent="." index="0"]
+material/0 = ExtResource( 1 )
+material/1 = ExtResource( 2 )
+material/2 = ExtResource( 3 )
 
 [node name="CollisionShape" parent="." index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.132, -30.486, 34.503 )

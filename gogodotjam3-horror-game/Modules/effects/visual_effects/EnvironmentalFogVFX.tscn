@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Resources/KenneyPacks/Particles/smoke_08.png" type="Texture" id=1]
+
+[sub_resource type="ParticlesMaterial" id=1]
+lifetime_randomness = 1.0
+emission_shape = 2
+emission_box_extents = Vector3( 20, 5, 20 )
+direction = Vector3( 1, 0, 1 )
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.1
+angle = 720.0
+angle_random = 1.0
+scale = 30.0
+scale_random = 0.5
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_color = Color( 1, 1, 1, 0.372549 )
+albedo_texture = ExtResource( 1 )
+proximity_fade_enable = true
+proximity_fade_distance = 1.0
+distance_fade_mode = 1
+distance_fade_min_distance = 5.0
+distance_fade_max_distance = 15.0
+
+[sub_resource type="QuadMesh" id=3]
+material = SubResource( 2 )
+
+[node name="EnvironmentalFogVFX" type="Particles"]
+amount = 150
+lifetime = 30.0
+preprocess = 20.0
+visibility_aabb = AABB( -27.1005, -4.7265, -27.8434, 54.2009, 9.453, 55.6868 )
+process_material = SubResource( 1 )
+draw_pass_1 = SubResource( 3 )

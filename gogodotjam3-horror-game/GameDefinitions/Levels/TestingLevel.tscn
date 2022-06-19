@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
+[ext_resource path="res://Globals/music_manager/BackgroundMusic.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TierTwoModules/first_person_controller/FirstPersonCharacterBase.tscn" type="PackedScene" id=2]
 [ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/LevelModel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Modules/menus/PauseMenu.tscn" type="PackedScene" id=4]
@@ -74,14 +75,6 @@ __meta__ = {
 
 [node name="PauseMenu" parent="TestingLevel" instance=ExtResource( 4 )]
 
-[node name="BGM" type="Node" parent="TestingLevel"]
-pause_mode = 2
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TestingLevel/BGM"]
-stream = ExtResource( 8 )
-autoplay = true
-bus = "Music"
-
 [node name="DebugStats" type="PanelContainer" parent="."]
 margin_left = 36.0
 margin_top = 34.0
@@ -97,6 +90,9 @@ margin_bottom = 52.0
 theme = ExtResource( 13 )
 text = "FPS: 000
 AVG: 000"
+
+[node name="BackgroundMusic" parent="." instance=ExtResource( 1 )]
+audio_stream = ExtResource( 8 )
 
 [connection signal="interactable_select_ended" from="TestingLevel/Viewport/Spatial/PlayerStart/FirstPersonCharacterBase" to="TestingLevel/InteractHUD" method="end"]
 [connection signal="interactable_select_ended" from="TestingLevel/Viewport/Spatial/PlayerStart/FirstPersonCharacterBase" to="TestingLevel/Interaction PromptHud" method="_on_interactable_select_ended"]
