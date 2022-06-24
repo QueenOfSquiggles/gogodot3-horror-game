@@ -1,0 +1,22 @@
+on:
+    push:
+        branches:
+            - release
+jobs:
+    export_game:
+        runs-on: ubuntu-latest
+        name: Export game to GitHub
+        steps:
+            - name: checkout
+                uses: actions/checkout@v.2.3.1 # <-- is this version specific to my project?
+                with:
+                    fetch-depth: 0
+            - name: create game release
+                uses: firebelly/godot-export@v.2.3.0
+                with:
+                    godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/3.5/rc3/Godot_v3.5-rc3_linux_headless.64.zip
+                    godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/3.5/rc3/Godot_v3.5-rc3_export_templates.tpz
+                relative_project_path: ./gogodotjam3-horror-game/
+            env:
+                GITHUB_TOKEN: ${{secrets.GH_CREDENTIALS}}
+                ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
