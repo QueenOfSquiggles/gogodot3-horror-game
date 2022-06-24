@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Modules/menus/theming/basic_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Modules/menus/options_menu_parts/InputSensitivtySlider.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Modules/menus/options_menu_parts/InputInverterSettingsSlot.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Modules/menus/options_menu_parts/DebugSettings.gd" type="Script" id=4]
+[ext_resource path="res://Modules/menus/options_menu_parts/SkipSplash.gd" type="Script" id=5]
 
 [node name="GameplayPageContent" type="PanelContainer"]
 anchor_right = 1.0
@@ -113,4 +114,32 @@ margin_right = 748.0
 margin_bottom = 21.0
 text = "options.gameplay.debug.fps"
 
+[node name="PanelContainer_3" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 308.0
+margin_right = 990.0
+margin_bottom = 331.0
+
+[node name="SkipSplash" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer_3"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 989.0
+margin_bottom = 22.0
+custom_constants/separation = 16
+alignment = 1
+script = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer_3/SkipSplash"]
+margin_left = 184.0
+margin_right = 467.0
+margin_bottom = 21.0
+text = "options.gameplay.skip_splash.title"
+align = 1
+
+[node name="CheckSkipSplash" type="CheckBox" parent="MarginContainer/VBoxContainer/PanelContainer_3/SkipSplash"]
+margin_left = 483.0
+margin_right = 803.0
+margin_bottom = 21.0
+text = "options.gameplay.skip_splash.toggle"
+
 [connection signal="toggled" from="MarginContainer/VBoxContainer/PanelContainer_2/DebugSettings/CheckDebugFPS" to="MarginContainer/VBoxContainer/PanelContainer_2/DebugSettings" method="_on_CheckDebugFPS_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/PanelContainer_3/SkipSplash/CheckSkipSplash" to="MarginContainer/VBoxContainer/PanelContainer_3/SkipSplash" method="_on_CheckSkipSplash_toggled"]

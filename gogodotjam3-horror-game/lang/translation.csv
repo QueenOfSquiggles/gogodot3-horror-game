@@ -134,3 +134,35 @@ note.nighttime_prayer.body,"Blessed Lamb Most Holy, watch over me as I sleep. Te
 options.gameplay.debug.title,Debug Stats
 options.gameplay.debug.fps,Frames Per Second
 item.handweight.name,Hand Weight
+options.gameplay.skip_splash.title,Skip Opening Splash Screen(s)
+options.gameplay.skip_splash.toggle,Toggle Skip?
+credits.button.view_scroll,View Credits Scroll
+game.title,The Ascension Of The Lamb
+credits_scroll.skip_prompt,Press 'pause' input at any time to skip; Duration is roughly 2 minutes
+credits_scroll.forward,"This game was originally created for GoGodotJam3, a 10 day game jam with the theme ""Evolution"". Congratulations to the winners of the jam! <3"
+credits_scroll.header.third_party,3rd Party Resources & Tools
+credits_scroll.third_party.models.title,3D Models
+credits_scroll.third_party.audio_sfx.title,Audio & SFX
+credits_scroll.third_party.heartbeat_sfx.title,Heartbeat SFX (Edited)
+credits_scroll.third_party.ui_textures.title,UI Element Textures
+credits_scroll.third_party.pbr_textures.title,PBR Texture Resources
+credits_scroll.third_party.game_engine.title,Game Engine
+credits_scroll.third_party.jam_feedback.title,Game Jam Version Feedback
+credits_scroll.header.direct,Direct Contributors
+credits_scroll.direct.producer,Producer
+credits_scroll.direct.game_design,Game Design
+credits_scroll.direct.narrative_design,Narrative Design
+credits_scroll.direct.writing,Writing
+credits_scroll.direct.animations,Animations
+credits_scroll.direct.texture_processing,Texture Processing
+credits_scroll.direct.programming,Programming
+credits_scroll.direct.sequencing,Sequencing
+credits_scroll.direct.level_design,Level Design
+credits_scroll.direct.fuel,Fuel
+credits_scroll.direct.emotional_support,Emotional Support
+credits_scroll.direct.level_modelling,Level Modelling
+credits_scroll.direct.odds_and_ends,Odds & Ends 3D Modelling
+credits_scroll.direct.music,Music
+credits_scroll.direct.emotional_support_two,Emotional Support #2
+credits_scroll.members.diet_cola,Diet Cola
+credits_scroll.members.lovers,QueenOfSquiggles’ lovers <3

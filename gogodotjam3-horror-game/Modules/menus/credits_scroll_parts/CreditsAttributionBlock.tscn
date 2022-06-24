@@ -29,11 +29,13 @@ custom_constants/separation = 16
 [node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 margin_right = 936.0
 margin_bottom = 14.0
+text = "Title"
 align = 1
 
 [node name="MembersLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 margin_top = 30.0
 margin_right = 936.0
 margin_bottom = 44.0
+text = " | "
 align = 1
 autowrap = true

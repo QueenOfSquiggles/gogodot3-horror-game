@@ -19,6 +19,7 @@ var viewport_msaa := Viewport.MSAA_DISABLED
 var subtitles_enabled := false
 
 var show_debug := false
+var skip_splash_screens := false
 
 var world_environment := {
 	"glow_enabled" : true,
@@ -238,7 +239,8 @@ func _save_settings() -> void:
 		"audio_bus" : audio_bus,
 		"control_bindings" : control_bindings,
 		"sensitivity" : sensitivity,
-		"look_inversions" : look_inversions
+		"look_inversions" : look_inversions,
+		"skip_splash_screens" : skip_splash_screens
 	}
 	var err := SaveData.save_generic(SAVE_PATH,data_dict) 
 	if err != OK:

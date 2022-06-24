@@ -19,3 +19,4 @@ shape = SubResource( 1 )
 [node name="OmniLight" type="OmniLight" parent="." index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0 )
 shadow_enabled = true
+shadow_reverse_cull_face = true

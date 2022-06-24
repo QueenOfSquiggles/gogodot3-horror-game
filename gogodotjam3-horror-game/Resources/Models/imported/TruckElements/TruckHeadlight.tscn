@@ -13,6 +13,7 @@ emission_on_uv2 = false
 transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0.373967, 0.381159, 0.816874 )
 light_color = Color( 0.870588, 0.764706, 0.341176, 1 )
 shadow_enabled = true
+shadow_reverse_cull_face = true
 spot_range = 30.0
 spot_angle = 30.0
 
@@ -25,4 +26,5 @@ material/0 = SubResource( 3 )
 [node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.9407e-08, -0.386443 )
 light_color = Color( 0.870588, 0.764706, 0.341176, 1 )
+shadow_reverse_cull_face = true
 omni_range = 10.0

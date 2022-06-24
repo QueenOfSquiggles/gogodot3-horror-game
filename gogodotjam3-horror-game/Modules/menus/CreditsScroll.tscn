@@ -36,7 +36,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1, 120 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 0, 0, 5448 ]
+"values": [ 0, 0, 5618 ]
 }
 tracks/1/type = "method"
 tracks/1/path = NodePath(".")
@@ -73,19 +73,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 64.0
 margin_right = -64.0
+follow_focus = true
 scroll_horizontal_enabled = false
 
 [node name="Credits Entries" type="VBoxContainer" parent="ScrollContainer"]
-margin_top = -537.0
+margin_top = -5574.0
 margin_right = 896.0
-margin_bottom = 5511.0
+margin_bottom = 600.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="ScrollContainer/Credits Entries"]
 margin_right = 896.0
 margin_bottom = 41.0
 size_flags_horizontal = 3
-text = "The Ascension Of The Lamb"
+text = "game.title"
 align = 1
 
 [node name="TextureRect" type="TextureRect" parent="ScrollContainer/Credits Entries"]
@@ -108,218 +109,224 @@ rect_min_size = Vector2( 0, 64 )
 [node name="Label_2" type="Label" parent="ScrollContainer/Credits Entries"]
 margin_top = 809.0
 margin_right = 896.0
-margin_bottom = 894.0
+margin_bottom = 850.0
 size_flags_horizontal = 3
-text = "Press 'pause' input at any time to skip
-Duration is roughly 2 minutes"
+text = "credits_scroll.skip_prompt"
 align = 1
 autowrap = true
 
 [node name="Forward" parent="ScrollContainer/Credits Entries" instance=ExtResource( 3 )]
-margin_top = 958.0
+margin_top = 914.0
 margin_right = 896.0
-margin_bottom = 1099.0
-text = "This game was originally created for GoGodotJam3, a 10 day game jam with the theme \"Evolution\". Congratulations to the winners of the jam! <3"
+margin_bottom = 967.0
+text = "credits_scroll.forward"
 
 [node name="Spacer" type="Control" parent="ScrollContainer/Credits Entries"]
-margin_top = 1163.0
+margin_top = 1031.0
 margin_right = 896.0
-margin_bottom = 1227.0
+margin_bottom = 1095.0
 rect_min_size = Vector2( 0, 64 )
 
 [node name="Header_External" parent="ScrollContainer/Credits Entries" instance=ExtResource( 3 )]
-margin_top = 1291.0
+margin_top = 1159.0
 margin_right = 896.0
-margin_bottom = 1344.0
-text = "3rd Party Resources/Tools"
+margin_bottom = 1212.0
+text = "credits_scroll.header.third_party"
 
 [node name="Spacer_4" type="Control" parent="ScrollContainer/Credits Entries"]
-margin_top = 1408.0
+margin_top = 1276.0
 margin_right = 896.0
-margin_bottom = 1472.0
+margin_bottom = 1340.0
 rect_min_size = Vector2( 0, 64 )
 
 [node name="Credits_3dModels" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
-margin_top = 1536.0
+margin_top = 1404.0
 margin_right = 896.0
-margin_bottom = 1646.0
-title = "3D Models"
+margin_bottom = 1514.0
+title = "credits_scroll.third_party.models.title"
 members = [ "Kenney.nl (CC0)" ]
 
 [node name="Credits_AudioSFX" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
-margin_top = 1710.0
+margin_top = 1578.0
 margin_right = 896.0
-margin_bottom = 1820.0
-title = "Audio & SFX"
+margin_bottom = 1688.0
+title = "credits_scroll.third_party.audio_sfx.title"
 members = [ "Kenney.nl (CC0)" ]
 
-[node name="Credits_UI" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
-margin_top = 1884.0
+[node name="Credits_AudioSFX_2" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
+margin_top = 1752.0
 margin_right = 896.0
-margin_bottom = 1994.0
-title = "UI Element Textures"
+margin_bottom = 1862.0
+title = "credits_scroll.third_party.heartbeat_sfx.title"
+members = [ "\"fuzzpapi\" @ freesound.org (CC0)" ]
+
+[node name="Credits_UI" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
+margin_top = 1926.0
+margin_right = 896.0
+margin_bottom = 2036.0
+title = "credits_scroll.third_party.ui_textures.title"
 members = [ "Kenney.nl (CC0)" ]
 
 [node name="Credits_PBR_Textures" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
-margin_top = 2058.0
+margin_top = 2100.0
 margin_right = 896.0
-margin_bottom = 2168.0
-title = "PBR Texture Resources"
-members = [ "PolyHaven.com (CC0)", "AmbientCG.com (CC0)" ]
+margin_bottom = 2210.0
+title = "credits_scroll.third_party.pbr_textures.title"
+members = [ "PolyHaven.com", "AmbientCG.com" ]
 
 [node name="Credits_Engine" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
-margin_top = 2232.0
+margin_top = 2274.0
 margin_right = 896.0
-margin_bottom = 2342.0
-title = "Game Engine"
+margin_bottom = 2384.0
+title = "credits_scroll.third_party.game_engine.title"
 members = [ "Godot" ]
 
 [node name="Spacer_2" type="Control" parent="ScrollContainer/Credits Entries"]
-margin_top = 2406.0
+margin_top = 2448.0
 margin_right = 896.0
-margin_bottom = 2470.0
+margin_bottom = 2512.0
 rect_min_size = Vector2( 0, 64 )
 
-[node name="Credits_ME_16" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
-margin_top = 2534.0
+[node name="Credits_JamFeedback" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
+margin_top = 2576.0
 margin_right = 896.0
-margin_bottom = 2776.0
+margin_bottom = 2818.0
 title = "Game Jam Version Feedback"
 members = [ "\"JadeTheKobold\"", "\"ToriFloop\"", "\"Bread\"", "\"Pumpkin\"", "\"TheJarmanitor\"", "\"khalynin\"", "\"Basiliskka\"", "\"Fredspipa\"", "\"jetpackgone\"", "\"SuspiciousUniKorn\"", "\"BodaMat\"" ]
 
 [node name="Spacer_6" type="Control" parent="ScrollContainer/Credits Entries"]
-margin_top = 2840.0
+margin_top = 2882.0
 margin_right = 896.0
-margin_bottom = 2904.0
+margin_bottom = 2946.0
 rect_min_size = Vector2( 0, 64 )
 
 [node name="Header_Internal" parent="ScrollContainer/Credits Entries" instance=ExtResource( 3 )]
-margin_top = 2968.0
+margin_top = 3010.0
 margin_right = 896.0
-margin_bottom = 3021.0
-text = "Direct Contributors"
+margin_bottom = 3063.0
+text = "credits_scroll.header.direct"
 
 [node name="Spacer_3" type="Control" parent="ScrollContainer/Credits Entries"]
-margin_top = 3085.0
+margin_top = 3127.0
 margin_right = 896.0
-margin_bottom = 3149.0
+margin_bottom = 3191.0
 rect_min_size = Vector2( 0, 64 )
 
 [node name="Credits_ME_1" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
-margin_top = 3213.0
+margin_top = 3255.0
 margin_right = 896.0
-margin_bottom = 3323.0
-title = "Producer"
+margin_bottom = 3365.0
+title = "credits_scroll.direct.producer"
 members = [ "QueenOfSquiggles" ]
 
 [node name="Credits_ME_2" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
-margin_top = 3387.0
+margin_top = 3429.0
 margin_right = 896.0
-margin_bottom = 3497.0
-title = "Game Design"
+margin_bottom = 3539.0
+title = "credits_scroll.direct.game_design"
 members = [ "QueenOfSquiggles" ]
 
 [node name="Credits_ME_3" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
-margin_top = 3561.0
+margin_top = 3603.0
 margin_right = 896.0
-margin_bottom = 3671.0
-title = "Narrative Design"
+margin_bottom = 3713.0
+title = "credits_scroll.direct.narrative_design"
 members = [ "QueenOfSquiggles" ]
 
 [node name="Credits_ME_4" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
-margin_top = 3735.0
+margin_top = 3777.0
 margin_right = 896.0
-margin_bottom = 3845.0
-title = "Writing"
+margin_bottom = 3887.0
+title = "credits_scroll.direct.writing"
 members = [ "QueenOfSquiggles" ]
 
 [node name="Credits_ME_5" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
-margin_top = 3909.0
+margin_top = 3951.0
 margin_right = 896.0
-margin_bottom = 4019.0
-title = "Animations"
+margin_bottom = 4061.0
+title = "credits_scroll.direct.animations"
 members = [ "QueenOfSquiggles" ]
 
 [node name="Credits_ME_6" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
-margin_top = 4083.0
+margin_top = 4125.0
 margin_right = 896.0
-margin_bottom = 4193.0
-title = "Texture Processing"
+margin_bottom = 4235.0
+title = "credits_scroll.direct.texture_processing"
 members = [ "QueenOfSquiggles" ]
 
 [node name="Credits_ME_7" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
-margin_top = 4257.0
+margin_top = 4299.0
 margin_right = 896.0
-margin_bottom = 4367.0
-title = "Programming"
+margin_bottom = 4409.0
+title = "credits_scroll.direct.programming"
 members = [ "QueenOfSquiggles" ]
 
 [node name="Credits_ME_8" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
-margin_top = 4431.0
+margin_top = 4473.0
 margin_right = 896.0
-margin_bottom = 4541.0
-title = "Sequencing"
+margin_bottom = 4583.0
+title = "credits_scroll.direct.sequencing"
 members = [ "QueenOfSquiggles" ]
 
 [node name="Credits_ME_9" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
-margin_top = 4605.0
+margin_top = 4647.0
 margin_right = 896.0
-margin_bottom = 4715.0
-title = "Level Design"
+margin_bottom = 4757.0
+title = "credits_scroll.direct.level_design"
 members = [ "QueenOfSquiggles" ]
 
 [node name="Credits_ME_13" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
-margin_top = 4779.0
+margin_top = 4821.0
 margin_right = 896.0
-margin_bottom = 4889.0
-title = "Fuel"
-members = [ "Diet Cola" ]
+margin_bottom = 4931.0
+title = "credits_scroll.direct.fuel"
+members = [ "credits_scroll.members.diet_cola" ]
 
 [node name="Credits_ME_14" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
-margin_top = 4953.0
+margin_top = 4995.0
 margin_right = 896.0
-margin_bottom = 5063.0
-title = "Emotional Support"
-members = [ "QueenOfSquuggles' lovers <3" ]
+margin_bottom = 5105.0
+title = "credits_scroll.direct.emotional_support"
+members = [ "credits_scroll.members.lovers" ]
 
 [node name="Credits_ME_10" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
-margin_top = 5127.0
+margin_top = 5169.0
 margin_right = 896.0
-margin_bottom = 5237.0
-title = "Level Modeling"
+margin_bottom = 5279.0
+title = "credits_scroll.direct.level_modelling"
 members = [ "QueenOfSquiggles" ]
 
 [node name="Credits_ME_11" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
-margin_top = 5301.0
+margin_top = 5343.0
 margin_right = 896.0
-margin_bottom = 5411.0
-title = "Odds & Ends 3D Modelling"
+margin_bottom = 5453.0
+title = "credits_scroll.direct.odds_and_ends"
 members = [ "QueenOfSquiggles" ]
 
 [node name="Credits_ME_12" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
-margin_top = 5475.0
+margin_top = 5517.0
 margin_right = 896.0
-margin_bottom = 5585.0
-title = "Music"
+margin_bottom = 5627.0
+title = "credits_scroll.direct.music"
 members = [ "QueenOfSquiggles" ]
 
 [node name="Credits_ME_15" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
-margin_top = 5649.0
+margin_top = 5691.0
 margin_right = 896.0
-margin_bottom = 5759.0
-title = "Emotional Support #2"
-members = [ "Diet Cola" ]
+margin_bottom = 5801.0
+title = "credits_scroll.direct.emotional_support_two"
+members = [ "credits_scroll.members.diet_cola" ]
 
 [node name="Spacer_5" type="Control" parent="ScrollContainer/Credits Entries"]
-margin_top = 5823.0
+margin_top = 5865.0
 margin_right = 896.0
-margin_bottom = 5887.0
+margin_bottom = 5929.0
 rect_min_size = Vector2( 0, 64 )
 
 [node name="FinalThanks" type="PanelContainer" parent="ScrollContainer/Credits Entries"]
-margin_top = 5951.0
+margin_top = 5993.0
 margin_right = 896.0
-margin_bottom = 6048.0
+margin_bottom = 6046.0
 script = ExtResource( 4 )
 text = "Thank you so much for playing my game! I hope you enjoyed it <3"
 
@@ -327,7 +334,7 @@ text = "Thank you so much for playing my game! I hope you enjoyed it <3"
 margin_left = 1.0
 margin_top = 1.0
 margin_right = 895.0
-margin_bottom = 96.0
+margin_bottom = 52.0
 custom_constants/margin_right = 5
 custom_constants/margin_top = 5
 custom_constants/margin_left = 5
@@ -337,10 +344,16 @@ custom_constants/margin_bottom = 5
 margin_left = 5.0
 margin_top = 5.0
 margin_right = 889.0
-margin_bottom = 90.0
-text = "Thank you so much for playing my game! I hope you enjoyed it <3"
+margin_bottom = 46.0
+text = "credits_scroll.final_thanks"
 align = 1
 autowrap = true
+
+[node name="Spacer_8" type="Control" parent="ScrollContainer/Credits Entries"]
+margin_top = 6110.0
+margin_right = 896.0
+margin_bottom = 6174.0
+rect_min_size = Vector2( 0, 64 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "credits_scroll"

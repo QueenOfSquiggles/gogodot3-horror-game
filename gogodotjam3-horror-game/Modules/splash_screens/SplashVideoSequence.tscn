@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Modules/splash_screens/queen_of_squiggles_branding_1k.webm" type="VideoStream" id=1]
+[ext_resource path="res://Modules/splash_screens/SplashVideo.gd" type="Script" id=2]
+[ext_resource path="res://Modules/splash_screens/godot_splash_horror.webm" type="VideoStream" id=3]
+
+[node name="SplashVideo" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Video_QueenOfSquiggles" type="VideoPlayer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+stream = ExtResource( 1 )
+bus = "Misc"
+
+[node name="Video_Godot" type="VideoPlayer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+stream = ExtResource( 3 )
+bus = "Misc"

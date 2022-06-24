@@ -143,6 +143,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.42951, 5.40073, -3.46127 )
 
 [node name="lampSquareCeiling2" parent="Objects" index="24" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0705, 5.40073, 4.03874 )
+visible = false
 
 [node name="DrainableSink" parent="Objects" index="25" instance=ExtResource( 9 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.0705, -6.46355, -3.46127 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Globals/music_manager/BackgroundMusic.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TierTwoModules/first_person_controller/FirstPersonCharacterBase.tscn" type="PackedScene" id=2]
@@ -16,11 +16,12 @@
 [ext_resource path="res://GameDefinitions/Levels/FPS_Counter.gd" type="Script" id=14]
 [ext_resource path="res://icon.png" type="Texture" id=15]
 [ext_resource path="res://GameDefinitions/Levels/FinalCutscene.gd" type="Script" id=16]
+[ext_resource path="res://Resources/sfx/freesoundorg/147338__fuzzpapi__heartbeats.ogg" type="AudioStream" id=17]
 
 [sub_resource type="Animation" id=1]
 resource_name = "FinalCutscene"
 length = 38.5
-step = 0.5
+step = 1.0
 tracks/0/type = "animation"
 tracks/0/path = NodePath("CameraAnims")
 tracks/0/interp = 1
@@ -104,6 +105,112 @@ tracks/6/keys = {
 "args": [  ],
 "method": "end_cutscene"
 } ]
+}
+tracks/7/type = "audio"
+tracks/7/path = NodePath("sfx/HeartbeatSFX")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 17 )
+} ],
+"times": PoolRealArray( 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 23.5, 25, 26.5, 28, 29.5, 31, 32.5, 33.5, 34.5, 35.5, 36.5, 37.5 )
 }
 
 [sub_resource type="Animation" id=5]
@@ -244,6 +351,8 @@ custom_viewport_scale = 2.0
 
 [node name="LevelModel" parent="TestingLevel/Viewport/Spatial" instance=ExtResource( 3 )]
 
+[node name="LevelModel_2" parent="TestingLevel/Viewport/Spatial" instance=ExtResource( 3 )]
+
 [node name="Lighting" type="Spatial" parent="TestingLevel/Viewport/Spatial"]
 
 [node name="DirectionalLight" type="DirectionalLight" parent="TestingLevel/Viewport/Spatial/Lighting"]
@@ -284,7 +393,7 @@ anims/running = SubResource( 2 )
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -13.7871, -78.4766, -56.9248 )
 
 [node name="CutsceneCamera" type="Camera" parent="TestingLevel/Viewport/Spatial/FinalCutscene/cam_root"]
-transform = Transform( 0.999391, -0.0348995, 0, 0.0348995, 0.999391, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 0.999998, 0.00195464, 0, -0.00195464, 0.999998, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="SpotLight" type="SpotLight" parent="TestingLevel/Viewport/Spatial/FinalCutscene/cam_root"]
 spot_range = 8.63622
@@ -300,6 +409,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 15 )
 expand = true
+
+[node name="sfx" type="Spatial" parent="TestingLevel/Viewport/Spatial/FinalCutscene"]
+
+[node name="HeartbeatSFX" type="AudioStreamPlayer" parent="TestingLevel/Viewport/Spatial/FinalCutscene/sfx"]
+stream = ExtResource( 17 )
+bus = "SoundEffects"
 
 [node name="InteractHUD" parent="TestingLevel" instance=ExtResource( 10 )]
 

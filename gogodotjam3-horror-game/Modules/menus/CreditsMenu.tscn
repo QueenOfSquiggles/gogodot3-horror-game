@@ -39,7 +39,7 @@ margin_top = 378.0
 margin_right = 439.0
 margin_bottom = 442.0
 rect_min_size = Vector2( 0, 64 )
-text = "%%View Scroll"
+text = "credits.button.view_scroll"
 
 [node name="UiSoundPack" parent="HBoxContainer/VBoxContainer3/BtnViewScroll" instance=ExtResource( 5 )]
 

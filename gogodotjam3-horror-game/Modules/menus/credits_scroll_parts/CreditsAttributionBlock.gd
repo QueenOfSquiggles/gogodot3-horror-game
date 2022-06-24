@@ -15,12 +15,12 @@ func _ready() -> void:
 func _set_title(n_title : String) -> void:
 	title = n_title
 	if lbl_title:
-		lbl_title.text = title
+		lbl_title.text = tr(title)
 
 func _set_members(n_members : Array) -> void:
 	members = n_members
 	if lbl_members:
 		var composite := " | "
 		for m in members:
-			composite += m + " | "
+			composite += tr(m) + " | "
 		lbl_members.text = composite

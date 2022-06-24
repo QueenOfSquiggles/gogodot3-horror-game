@@ -16,6 +16,7 @@ emission_on_uv2 = false
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.364532, 0.325912 )
 light_energy = 0.5
 shadow_enabled = true
+shadow_reverse_cull_face = true
 
 [node name="lampWall(Clone)_2" parent="." instance=ExtResource( 1 )]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
