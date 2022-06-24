@@ -9,4 +9,8 @@ var locked := true setget _set_locked
 func _set_locked(value : bool) -> void:
 	locked = value
 	if not value:
-		get_node(root_delete).call_deferred("queue_free")
+		queue_free()
+
+func _exit_tree() -> void:
+	# theoretically should call any time this is deleted
+	get_node(root_delete).call_deferred("queue_free")

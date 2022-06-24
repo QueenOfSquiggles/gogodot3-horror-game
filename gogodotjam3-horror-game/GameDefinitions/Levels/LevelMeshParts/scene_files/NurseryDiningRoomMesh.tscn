@@ -1,9 +1,58 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Nursery_DiningRoomMesh2.scn_part.scn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Materials/sorted/walls/rough_block_wall.material" type="Material" id=2]
 [ext_resource path="res://Resources/Materials/sorted/floors/medieval_blocks_03.material" type="Material" id=3]
 [ext_resource path="res://Resources/Materials/sorted/ceilings/white_rough_plaster.material" type="Material" id=4]
+[ext_resource path="res://Resources/Models/imported/TableChild.tscn" type="PackedScene" id=5]
+[ext_resource path="res://GameDefinitions/Items/misc/PickupItemSpoiledStew.tscn" type="PackedScene" id=6]
+[ext_resource path="res://GameDefinitions/Interactables/DrainableSink.tscn" type="PackedScene" id=7]
+[ext_resource path="res://GameDefinitions/Items/bases/PickupItemReadable.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Modules/effects/visual_effects/DustMotesVFX.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Modules/effects/sound_effects/ReverbArea.tscn" type="PackedScene" id=10]
+[ext_resource path="res://GameDefinitions/Levels/reverb_presets/ReverbMedium.tres" type="AudioEffectReverb" id=11]
+
+[sub_resource type="Gradient" id=6]
+interpolation_mode = 2
+offsets = PoolRealArray( 0, 0.0694444, 0.368056, 1 )
+colors = PoolColorArray( 0.466667, 0.466667, 0.466667, 0, 0.466667, 0.466667, 0.466667, 1, 0.466667, 0.466667, 0.466667, 1, 0.466667, 0.466667, 0.466667, 0 )
+
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
+
+[sub_resource type="Curve" id=8]
+max_value = 100.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 100 ), 284.087, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 8 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.0643087, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=10]
+lifetime_randomness = 0.43
+emission_shape = 2
+emission_box_extents = Vector3( 3.5, 2, 5 )
+gravity = Vector3( 0, -0.1, 0 )
+initial_velocity = 0.5
+angular_velocity = 45.0
+angular_velocity_random = 0.25
+tangential_accel = -2.0
+tangential_accel_random = 0.33
+damping_curve = SubResource( 9 )
+angle = 720.0
+angle_random = 1.0
+scale = 0.5
+scale_random = 0.75
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 7 )
+
+[sub_resource type="BoxShape" id=11]
+extents = Vector3( 1, 1, 0.529472 )
 
 [node name="Nursery_DiningRoomMesh2" instance=ExtResource( 1 )]
 
@@ -11,3 +60,57 @@
 material/0 = ExtResource( 2 )
 material/1 = ExtResource( 4 )
 material/2 = ExtResource( 3 )
+
+[node name="Spatial" type="Spatial" parent="." index="2"]
+transform = Transform( -1.19209e-07, 0, 1, 0, 1, 0, -1, 0, -1.19209e-07, 14.5155, -49.9768, 30.5308 )
+
+[node name="table" parent="Spatial" index="0" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 0, -3.5, 0 )
+
+[node name="table_2" parent="Spatial" index="1" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, -3.55271e-14, 0, 1, 0, 3.55271e-14, 0, 1, -2.5, -3.5, 0 )
+
+[node name="table_3" parent="Spatial" index="2" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, -3.55271e-14, 0, 1, 0, 3.55271e-14, 0, 1, 0, -3.5, 3.5 )
+
+[node name="table_4" parent="Spatial" index="3" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, -4.9738e-14, 0, 1, 0, 4.9738e-14, 0, 1, -2.5, -3.5, 3.5 )
+
+[node name="table_5" parent="Spatial" index="4" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, -4.9738e-14, 0, 1, 0, 4.9738e-14, 0, 1, 0, -3.5, -3.5 )
+
+[node name="table_6" parent="Spatial" index="5" instance=ExtResource( 5 )]
+transform = Transform( 0.999999, 0, -6.39488e-14, 0, 1, 0, 6.39488e-14, 0, 0.999999, -2.49999, -3.5, -3.5 )
+
+[node name="PickupItemSpoiledStew" parent="Spatial" index="6" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, -4.9738e-14, 0, 1, 0, 4.9738e-14, 0, 1, 1.5, -2, -0.647416 )
+
+[node name="PickupItemSpoiledStew_2" parent="Spatial" index="7" instance=ExtResource( 6 )]
+transform = Transform( 0.728119, 0, 0.685449, 0, 1, 0, -0.685449, 0, 0.728119, -1, -2, -4.14742 )
+
+[node name="PickupItemSpoiledStew_3" parent="Spatial" index="8" instance=ExtResource( 6 )]
+transform = Transform( 0.593699, 0, -0.804686, 0, 1, 0, 0.804686, 0, 0.593699, -1, -2, 2.85258 )
+
+[node name="DrainableSink" parent="Spatial" index="9" instance=ExtResource( 7 )]
+transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -4.99998, -3.5, 7 )
+
+[node name="DrainableSink_2" parent="Spatial" index="10" instance=ExtResource( 7 )]
+transform = Transform( -2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -4.99998, -3.5, 6 )
+
+[node name="PickupItemReadable" parent="Spatial" index="11" instance=ExtResource( 8 )]
+transform = Transform( 0.697353, 0, 0.716728, 0, 1, 0, -0.716728, 0, 0.697353, -5.27015, -2.29785, 5.90505 )
+item_name = "note.nursery.dining_room.title"
+title_key = "note.nursery.dining_room.title"
+text_key = "note.nursery.dining_room.body"
+
+[node name="DustMotesVFX" parent="Spatial" index="12" instance=ExtResource( 9 )]
+visibility_aabb = AABB( -3.44179, -2, -4.9168, 6.88359, 4, 9.83359 )
+process_material = SubResource( 10 )
+
+[node name="ReverbArea" parent="Spatial" index="13" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.98484, 0, 7.78982 )
+reverb_settings = ExtResource( 11 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial/ReverbArea" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.168144 )
+shape = SubResource( 11 )

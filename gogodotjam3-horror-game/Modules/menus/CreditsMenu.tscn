@@ -34,6 +34,21 @@ margin_bottom = 600.0
 size_flags_horizontal = 3
 alignment = 2
 
+[node name="BtnViewScroll" type="Button" parent="HBoxContainer/VBoxContainer3"]
+margin_top = 378.0
+margin_right = 439.0
+margin_bottom = 442.0
+rect_min_size = Vector2( 0, 64 )
+text = "%%View Scroll"
+
+[node name="UiSoundPack" parent="HBoxContainer/VBoxContainer3/BtnViewScroll" instance=ExtResource( 5 )]
+
+[node name="Control_2" type="Control" parent="HBoxContainer/VBoxContainer3"]
+margin_top = 452.0
+margin_right = 439.0
+margin_bottom = 484.0
+rect_min_size = Vector2( 0, 32 )
+
 [node name="BtnMainMenu" type="Button" parent="HBoxContainer/VBoxContainer3"]
 margin_top = 494.0
 margin_right = 439.0
@@ -184,4 +199,5 @@ margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.1
 
+[connection signal="pressed" from="HBoxContainer/VBoxContainer3/BtnViewScroll" to="." method="_on_BtnViewScroll_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer3/BtnMainMenu" to="." method="_on_BtnMainMenu_pressed"]

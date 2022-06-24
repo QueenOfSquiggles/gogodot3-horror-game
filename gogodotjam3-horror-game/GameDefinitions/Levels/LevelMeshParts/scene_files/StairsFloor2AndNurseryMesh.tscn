@@ -1,9 +1,52 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/StairsFloor2andNurseryMesh2.scn_part.scn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Materials/sorted/walls/rough_block_wall.material" type="Material" id=2]
 [ext_resource path="res://Resources/Materials/sorted/floors/cobblestone_floor_07.material" type="Material" id=3]
 [ext_resource path="res://Resources/Materials/sorted/ceilings/concrete_wall_003.material" type="Material" id=4]
+[ext_resource path="res://Modules/effects/visual_effects/DustMotesVFX.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Modules/effects/sound_effects/ReverbArea.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Gradient" id=6]
+interpolation_mode = 2
+offsets = PoolRealArray( 0, 0.0694444, 0.368056, 1 )
+colors = PoolColorArray( 0.466667, 0.466667, 0.466667, 0, 0.466667, 0.466667, 0.466667, 1, 0.466667, 0.466667, 0.466667, 1, 0.466667, 0.466667, 0.466667, 0 )
+
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
+
+[sub_resource type="Curve" id=8]
+max_value = 100.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 100 ), 284.087, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 8 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.0643087, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=10]
+lifetime_randomness = 0.43
+emission_shape = 2
+emission_box_extents = Vector3( 15, 2.5, 2 )
+gravity = Vector3( 0, -0.1, 0 )
+initial_velocity = 0.5
+angular_velocity = 45.0
+angular_velocity_random = 0.25
+tangential_accel = -2.0
+tangential_accel_random = 0.33
+damping_curve = SubResource( 9 )
+angle = 720.0
+angle_random = 1.0
+scale = 0.5
+scale_random = 0.75
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 7 )
+
+[sub_resource type="BoxShape" id=11]
 
 [node name="StairsFloor2andNurseryMesh2" instance=ExtResource( 1 )]
 
@@ -11,3 +54,23 @@
 material/0 = ExtResource( 2 )
 material/1 = ExtResource( 4 )
 material/2 = ExtResource( 3 )
+
+[node name="Spatial" type="Spatial" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 68.602, -41.9776, 64.0347 )
+
+[node name="DustMotesVFX" parent="Spatial" index="0" instance=ExtResource( 5 )]
+transform = Transform( 1.64207, -0.439992, 0, 0.439992, 1.64207, 0, 0, 0, 1.7, -21.7465, -3.03237, -0.382576 )
+visibility_aabb = AABB( -14.4542, -2.20532, -2.13795, 28.9084, 4.41064, 4.27591 )
+process_material = SubResource( 10 )
+
+[node name="ReverbArea" parent="Spatial" index="1" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.592861, -2.9482 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial/ReverbArea" index="0"]
+shape = SubResource( 11 )
+
+[node name="ReverbArea_2" parent="Spatial" index="2" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -43.4893, -9.28207, -2.9482 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial/ReverbArea_2" index="0"]
+shape = SubResource( 11 )

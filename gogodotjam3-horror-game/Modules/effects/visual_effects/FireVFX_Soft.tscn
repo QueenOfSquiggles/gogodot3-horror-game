@@ -55,6 +55,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.188924, 0, 0 )
 amount = 100
 lifetime = 5.0
 preprocess = 30.0
-visibility_aabb = AABB( -4, -4, -3.98212, 8, 8, 7.96425 )
+visibility_aabb = AABB( -2.6836, -1.56985, -2.97109, 5.3672, 16.7169, 5.9422 )
 process_material = SubResource( 12 )
 draw_pass_1 = SubResource( 11 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+light_color = Color( 1, 0.621661, 0.0862745, 1 )
+shadow_enabled = true
+omni_range = 10.0
+omni_attenuation = 0.5

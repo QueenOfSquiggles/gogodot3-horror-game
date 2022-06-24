@@ -1,0 +1,14 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/WoodenBlock.scn-a0cf9b1e506ef7d05da24dbc20e22b1b.scn"
+
+[deps]
+
+source_file="res://Resources/Models/packed/WoodenBlock.scn"
+dest_files=[ "res://.import/WoodenBlock.scn-a0cf9b1e506ef7d05da24dbc20e22b1b.scn" ]
+
+[params]
+
+generate_physical=false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Floor1_KitchenMesh.scn_part.scn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Materials/sorted/walls/rough_plaster_brick.material" type="Material" id=2]
@@ -9,11 +9,55 @@
 [ext_resource path="res://Resources/Models/imported/KitchenCabinetUpper.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Resources/Models/imported/LampSquareCeiling.tscn" type="PackedScene" id=8]
 [ext_resource path="res://GameDefinitions/Interactables/DrainableSink.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Modules/effects/FxStinger.tscn" type="PackedScene" id=10]
 [ext_resource path="res://GameDefinitions/Items/KeyItems/PickupItemRustedKey.tscn" type="PackedScene" id=11]
+[ext_resource path="res://GameDefinitions/Items/misc/PickupItemOpenedCan.tscn" type="PackedScene" id=12]
+[ext_resource path="res://GameDefinitions/Items/misc/PickupItemCannedFood.tscn" type="PackedScene" id=13]
+[ext_resource path="res://GameDefinitions/Items/misc/PickupItemSpoiledStew.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Modules/effects/visual_effects/DustMotesVFX.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Modules/effects/sound_effects/ReverbArea.tscn" type="PackedScene" id=16]
+[ext_resource path="res://GameDefinitions/Levels/reverb_presets/ReverbMedium.tres" type="AudioEffectReverb" id=17]
 
-[sub_resource type="BoxShape" id=4]
-extents = Vector3( 1.80701, 1.68016, 1.32327 )
+[sub_resource type="Gradient" id=6]
+interpolation_mode = 2
+offsets = PoolRealArray( 0, 0.0694444, 0.368056, 1 )
+colors = PoolColorArray( 0.466667, 0.466667, 0.466667, 0, 0.466667, 0.466667, 0.466667, 1, 0.466667, 0.466667, 0.466667, 1, 0.466667, 0.466667, 0.466667, 0 )
+
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
+
+[sub_resource type="Curve" id=8]
+max_value = 100.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 100 ), 284.087, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 8 )
+
+[sub_resource type="Curve" id=10]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.0643087, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 10 )
+
+[sub_resource type="ParticlesMaterial" id=11]
+lifetime_randomness = 0.43
+emission_shape = 2
+emission_box_extents = Vector3( 6, 4, 5 )
+gravity = Vector3( 0, -0.1, 0 )
+initial_velocity = 0.5
+angular_velocity = 45.0
+angular_velocity_random = 0.25
+tangential_accel = -2.0
+tangential_accel_random = 0.33
+damping_curve = SubResource( 9 )
+angle = 720.0
+angle_random = 1.0
+scale = 0.5
+scale_random = 0.75
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 7 )
+
+[sub_resource type="BoxShape" id=12]
+extents = Vector3( 9.1207, 6.29957, 8.07893 )
 
 [node name="Floor1_KitchenMesh" instance=ExtResource( 1 )]
 
@@ -113,7 +157,8 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.0705,
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.0705, -6.46355, 2.53874 )
 
 [node name="PickupItemRustedKey" parent="Objects/DrainableSink4" index="3" instance=ExtResource( 11 )]
-transform = Transform( 0.0183074, 9.42806e-09, -0.999833, 0, 1, 2.31666e-08, 0.999833, -1.72633e-10, 0.0183075, 1.10476, 1.79548, -1.31442 )
+transform = Transform( 0.0183074, 9.42806e-09, -0.999833, 0, 1, 2.31666e-08, 0.999833, -1.72633e-10, 0.0183075, 1.10476, 1.65081, -1.19439 )
+rigid_mode_start = 1
 
 [node name="DrainableSink5" parent="Objects" index="29" instance=ExtResource( 9 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.0705, -6.46355, 4.53874 )
@@ -141,9 +186,216 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.62519, -2.00268, -5.90417 )
 item_name = "Kitchen Key"
 keyed_name = "kitchen_door"
 
-[node name="FX_Stinger" parent="Objects" index="34" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.24564, -3.32297, -6.60545 )
+[node name="MiscItemProps" type="Spatial" parent="Objects" index="34"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Objects/FX_Stinger" index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.77264, 0, 11.2058 )
-shape = SubResource( 4 )
+[node name="PickupItemCannedFood" parent="Objects/MiscItemProps" index="0" instance=ExtResource( 13 )]
+transform = Transform( 0.530082, 0, 0.847946, 0, 1, 0, -0.847946, 0, 0.530082, -8.71452, -1.92921, 0.540422 )
+
+[node name="PickupItemCannedFood_2" parent="Objects/MiscItemProps" index="1" instance=ExtResource( 13 )]
+transform = Transform( 0.530082, 0, 0.847946, 0, 1, 0, -0.847946, 0, 0.530082, -8.71452, -1.92921, 1.64263 )
+
+[node name="PickupItemCannedFood_3" parent="Objects/MiscItemProps" index="2" instance=ExtResource( 13 )]
+transform = Transform( 0.530082, 0, 0.847946, 0, 1, 0, -0.847946, 0, 0.530082, -8.71452, -1.92921, 2.16996 )
+
+[node name="PickupItemCannedFood_4" parent="Objects/MiscItemProps" index="3" instance=ExtResource( 13 )]
+transform = Transform( 0.530082, 0, 0.847946, 0, 1, 0, -0.847946, 0, 0.530082, -8.71452, -1.06342, 2.48418 )
+
+[node name="PickupItemCannedFood_5" parent="Objects/MiscItemProps" index="4" instance=ExtResource( 13 )]
+transform = Transform( 0.530082, 0, 0.847946, 0, 1, 0, -0.847946, 0, 0.530082, -8.71452, -1.06342, -0.20278 )
+
+[node name="PickupItemCannedFood_6" parent="Objects/MiscItemProps" index="5" instance=ExtResource( 13 )]
+transform = Transform( 0.530082, 0, 0.847946, 0, 1, 0, -0.847946, 0, 0.530082, -8.71452, -1.06342, -2.23469 )
+
+[node name="PickupItemCannedFood_7" parent="Objects/MiscItemProps" index="6" instance=ExtResource( 13 )]
+transform = Transform( 0.530082, 0, 0.847946, 0, 1, 0, -0.847946, 0, 0.530082, -8.71452, -1.06342, -4.47583 )
+
+[node name="PickupItemCannedFood_8" parent="Objects/MiscItemProps" index="7" instance=ExtResource( 13 )]
+transform = Transform( 0.530082, 0, 0.847946, 0, 1, 0, -0.847946, 0, 0.530082, -8.71452, -1.88931, -4.47583 )
+
+[node name="PickupItemCannedFood_9" parent="Objects/MiscItemProps" index="8" instance=ExtResource( 13 )]
+transform = Transform( 0.530082, 0, 0.847946, 0, 1, 0, -0.847946, 0, 0.530082, -8.71452, 0.0461864, -4.47583 )
+
+[node name="PickupItemCannedFood_10" parent="Objects/MiscItemProps" index="9" instance=ExtResource( 13 )]
+transform = Transform( 0.530082, 0, 0.847946, 0, 1, 0, -0.847946, 0, 0.530082, -8.71452, 0.0461864, -6.59274 )
+
+[node name="PickupItemCannedFood_11" parent="Objects/MiscItemProps" index="10" instance=ExtResource( 13 )]
+transform = Transform( 0.530082, 0, 0.847946, 0, 1, 0, -0.847946, 0, 0.530082, -8.71452, -1.05234, -6.59274 )
+
+[node name="PickupItemCannedFood_12" parent="Objects/MiscItemProps" index="11" instance=ExtResource( 13 )]
+transform = Transform( 0.530082, 0, 0.847946, 0, 1, 0, -0.847946, 0, 0.530082, -8.71452, -1.05234, -6.15991 )
+
+[node name="PickupItemCannedFood_13" parent="Objects/MiscItemProps" index="12" instance=ExtResource( 13 )]
+transform = Transform( 0.530082, 0, 0.847946, 0, 1, 0, -0.847946, 0, 0.530082, -8.71452, -1.05234, -5.68867 )
+
+[node name="PickupItemCannedFood_14" parent="Objects/MiscItemProps" index="13" instance=ExtResource( 13 )]
+transform = Transform( 0.530082, 0, 0.847946, 0, 1, 0, -0.847946, 0, 0.530082, -8.71452, -1.05234, -3.81667 )
+
+[node name="PickupItemCannedFood_15" parent="Objects/MiscItemProps" index="14" instance=ExtResource( 13 )]
+transform = Transform( 0.985906, 0, -0.167302, 0, 1, 0, 0.167302, 0, 0.985906, -7.03637, -1.92271, -7.89902 )
+
+[node name="PickupItemCannedFood_16" parent="Objects/MiscItemProps" index="15" instance=ExtResource( 13 )]
+transform = Transform( 0.985906, 0, -0.167302, 0, 1, 0, 0.167302, 0, 0.985906, -7.03637, -0.995975, -7.89902 )
+
+[node name="PickupItemCannedFood_17" parent="Objects/MiscItemProps" index="16" instance=ExtResource( 13 )]
+transform = Transform( 0.985906, 0, -0.167302, 0, 1, 0, 0.167302, 0, 0.985906, -6.33213, -1.08022, -7.89902 )
+
+[node name="PickupItemCannedFood_18" parent="Objects/MiscItemProps" index="17" instance=ExtResource( 13 )]
+transform = Transform( 0.985906, 0, -0.167302, 0, 1, 0, 0.167302, 0, 0.985906, -5.48593, -1.08022, -7.89902 )
+
+[node name="PickupItemCannedFood_19" parent="Objects/MiscItemProps" index="18" instance=ExtResource( 13 )]
+transform = Transform( 0.985906, 0, -0.167302, 0, 1, 0, 0.167302, 0, 0.985906, -5.27106, -1.98795, -7.89902 )
+
+[node name="PickupItemCannedFood_20" parent="Objects/MiscItemProps" index="19" instance=ExtResource( 13 )]
+transform = Transform( 0.985906, 0, -0.167302, 0, 1, 0, 0.167302, 0, 0.985906, -4.1866, -1.98795, -7.89902 )
+
+[node name="PickupItemCannedFood_21" parent="Objects/MiscItemProps" index="20" instance=ExtResource( 13 )]
+transform = Transform( 0.985906, 0, -0.167302, 0, 1, 0, 0.167302, 0, 0.985906, -3.4971, -1.98795, -7.89902 )
+
+[node name="PickupItemCannedFood_22" parent="Objects/MiscItemProps" index="21" instance=ExtResource( 13 )]
+transform = Transform( 0.985906, 0, -0.167302, 0, 1, 0, 0.167302, 0, 0.985906, -2.98619, -1.98795, -7.89902 )
+
+[node name="PickupItemCannedFood_23" parent="Objects/MiscItemProps" index="22" instance=ExtResource( 13 )]
+transform = Transform( 0.985906, 0, -0.167302, 0, 1, 0, 0.167302, 0, 0.985906, -0.38945, -1.98795, -7.89902 )
+
+[node name="PickupItemCannedFood_24" parent="Objects/MiscItemProps" index="23" instance=ExtResource( 13 )]
+transform = Transform( 0.985906, 0, -0.167302, 0, 1, 0, 0.167302, 0, 0.985906, 0.580769, -1.98795, -7.89902 )
+
+[node name="PickupItemCannedFood_25" parent="Objects/MiscItemProps" index="24" instance=ExtResource( 13 )]
+transform = Transform( 0.985906, 0, -0.167302, 0, 1, 0, 0.167302, 0, 0.985906, 0.580769, -1.11568, -7.89902 )
+
+[node name="PickupItemCannedFood_26" parent="Objects/MiscItemProps" index="25" instance=ExtResource( 13 )]
+transform = Transform( 0.985906, 0, -0.167302, 0, 1, 0, 0.167302, 0, 0.985906, 2.52727, -1.11568, -7.89902 )
+
+[node name="PickupItemCannedFood_27" parent="Objects/MiscItemProps" index="26" instance=ExtResource( 13 )]
+transform = Transform( 0.985906, 0, -0.167302, 0, 1, 0, 0.167302, 0, 0.985906, 3.23092, -1.11568, -7.89902 )
+
+[node name="PickupItemCannedFood_28" parent="Objects/MiscItemProps" index="27" instance=ExtResource( 13 )]
+transform = Transform( 0.985906, 0, -0.167302, 0, 1, 0, 0.167302, 0, 0.985906, 3.01414, -2.00369, -7.89902 )
+
+[node name="PickupItemCannedFood_29" parent="Objects/MiscItemProps" index="28" instance=ExtResource( 13 )]
+transform = Transform( 0.985906, 0, -0.167302, 0, 1, 0, 0.167302, 0, 0.985906, 2.46351, -2.00369, -7.89902 )
+
+[node name="PickupItemCannedFood_30" parent="Objects/MiscItemProps" index="29" instance=ExtResource( 13 )]
+transform = Transform( 0.985906, 0, -0.167302, 0, 1, 0, 0.167302, 0, 0.985906, 1.76014, -2.00369, -7.89902 )
+
+[node name="PickupItemCannedFood_31" parent="Objects/MiscItemProps" index="30" instance=ExtResource( 13 )]
+transform = Transform( 0.985906, 0, -0.167302, 0, 1, 0, 0.167302, 0, 0.985906, 1.76014, -1.12554, -7.89902 )
+
+[node name="PickupItemCannedFood_32" parent="Objects/MiscItemProps" index="31" instance=ExtResource( 13 )]
+transform = Transform( 0.985906, 0, -0.167302, 0, 1, 0, 0.167302, 0, 0.985906, 1.76014, -0.23443, -7.89902 )
+
+[node name="PickupItemCannedFood_33" parent="Objects/MiscItemProps" index="32" instance=ExtResource( 13 )]
+transform = Transform( 0.985906, 0, -0.167302, 0, 1, 0, 0.167302, 0, 0.985906, 2.18392, -0.23443, -7.89902 )
+
+[node name="PickupItemCannedFood_34" parent="Objects/MiscItemProps" index="33" instance=ExtResource( 13 )]
+transform = Transform( 0.985906, 0, -0.167302, 0, 1, 0, 0.167302, 0, 0.985906, 2.6309, -0.23443, -7.89902 )
+
+[node name="PickupItemCannedFood_35" parent="Objects/MiscItemProps" index="34" instance=ExtResource( 13 )]
+transform = Transform( 0.985906, 0, -0.167302, 0, 1, 0, 0.167302, 0, 0.985906, 2.42533, 0.331203, -7.89902 )
+
+[node name="PickupItemCannedFood_36" parent="Objects/MiscItemProps" index="35" instance=ExtResource( 13 )]
+transform = Transform( 0.985906, 0, -0.167302, 0, 1, 0, 0.167302, 0, 0.985906, 1.98522, 0.331203, -7.89902 )
+
+[node name="PickupItemCannedFood_37" parent="Objects/MiscItemProps" index="36" instance=ExtResource( 13 )]
+transform = Transform( 0.985906, 0, -0.167302, 0, 1, 0, 0.167302, 0, 0.985906, 2.18664, 0.872097, -7.89902 )
+
+[node name="PickupItemOpenedCan" parent="Objects/MiscItemProps" index="37" instance=ExtResource( 12 )]
+transform = Transform( 0.104476, -0.994527, 0, 0.994527, 0.104476, 0, 0, 0, 1, -0.255537, -4.60834, 0 )
+
+[node name="PickupItemOpenedCan_2" parent="Objects/MiscItemProps" index="38" instance=ExtResource( 12 )]
+transform = Transform( 0.104476, -0.994527, 0, 0.994527, 0.104476, 0, 0, 0, 1, -1.15711, -6.1903, 0 )
+
+[node name="PickupItemOpenedCan_3" parent="Objects/MiscItemProps" index="39" instance=ExtResource( 12 )]
+transform = Transform( 0.0793437, -0.755285, 0.650575, 0.994527, 0.104476, 0, -0.0679698, 0.647015, 0.759442, -3.77129, -6.21304, 0.241534 )
+
+[node name="PickupItemOpenedCan_4" parent="Objects/MiscItemProps" index="40" instance=ExtResource( 12 )]
+transform = Transform( 0.0793437, -0.755285, 0.650575, 0.994527, 0.104476, 0, -0.0679698, 0.647015, 0.759442, -7.12926, -6.21304, -5.04921 )
+
+[node name="PickupItemOpenedCan_5" parent="Objects/MiscItemProps" index="41" instance=ExtResource( 12 )]
+transform = Transform( 0.0793437, -0.755285, 0.650575, 0.994527, 0.104476, 0, -0.0679698, 0.647015, 0.759442, -3.79833, -6.21304, -6.46229 )
+
+[node name="PickupItemOpenedCan_6" parent="Objects/MiscItemProps" index="42" instance=ExtResource( 12 )]
+transform = Transform( 0.0793437, -0.755285, 0.650575, 0.994527, 0.104476, 0, -0.0679698, 0.647015, 0.759442, -5.5266, -6.21304, -6.77341 )
+
+[node name="PickupItemOpenedCan_7" parent="Objects/MiscItemProps" index="43" instance=ExtResource( 12 )]
+transform = Transform( 0.0793437, -0.755285, 0.650575, 0.994527, 0.104476, 0, -0.0679698, 0.647015, 0.759442, -4.59179, -6.21304, -5.51022 )
+
+[node name="PickupItemOpenedCan_8" parent="Objects/MiscItemProps" index="44" instance=ExtResource( 12 )]
+transform = Transform( 0.0793437, -0.755285, 0.650575, 0.994527, 0.104476, 0, -0.0679698, 0.647015, 0.759442, 3.33262, -6.21304, -6.81077 )
+
+[node name="PickupItemOpenedCan_9" parent="Objects/MiscItemProps" index="45" instance=ExtResource( 12 )]
+transform = Transform( 0.0793437, -0.755285, 0.650575, 0.994527, 0.104476, 0, -0.0679698, 0.647015, 0.759442, 7.55876, -6.21304, -6.79532 )
+
+[node name="PickupItemOpenedCan_10" parent="Objects/MiscItemProps" index="46" instance=ExtResource( 12 )]
+transform = Transform( 0.0793437, -0.755285, 0.650575, 0.994527, 0.104476, 0, -0.0679698, 0.647015, 0.759442, 6.87088, -6.21304, -7.24991 )
+
+[node name="PickupItemOpenedCan_11" parent="Objects/MiscItemProps" index="47" instance=ExtResource( 12 )]
+transform = Transform( 0.0793437, -0.755285, 0.650575, 0.994527, 0.104476, 0, -0.0679698, 0.647015, 0.759442, 7.51916, -6.21304, -8.0891 )
+
+[node name="PickupItemOpenedCan_12" parent="Objects/MiscItemProps" index="48" instance=ExtResource( 12 )]
+transform = Transform( 0.0793437, -0.755285, 0.650575, 0.994527, 0.104476, 0, -0.0679698, 0.647015, 0.759442, 8.63291, -6.21304, -7.28394 )
+
+[node name="PickupItemOpenedCan_13" parent="Objects/MiscItemProps" index="49" instance=ExtResource( 12 )]
+transform = Transform( 0.0793437, -0.755285, 0.650575, 0.994527, 0.104476, 0, -0.0679698, 0.647015, 0.759442, 8.28108, -6.21304, -6.62227 )
+
+[node name="PickupItemOpenedCan_14" parent="Objects/MiscItemProps" index="50" instance=ExtResource( 12 )]
+transform = Transform( 0.0793437, -0.755285, 0.650575, 0.994527, 0.104476, 0, -0.0679698, 0.647015, 0.759442, 5.60028, -6.21304, -5.16183 )
+
+[node name="PickupItemOpenedCan_15" parent="Objects/MiscItemProps" index="51" instance=ExtResource( 12 )]
+transform = Transform( 0.0793437, -0.755285, 0.650575, 0.994527, 0.104476, 0, -0.0679698, 0.647015, 0.759442, 5.87586, -6.21304, -3.0207 )
+
+[node name="PickupItemOpenedCan_16" parent="Objects/MiscItemProps" index="52" instance=ExtResource( 12 )]
+transform = Transform( 0.0793437, -0.755285, 0.650575, 0.994527, 0.104476, 0, -0.0679698, 0.647015, 0.759442, 8.13714, -4.03871, -3.3544 )
+
+[node name="PickupItemOpenedCan_17" parent="Objects/MiscItemProps" index="53" instance=ExtResource( 12 )]
+transform = Transform( 0.0793437, -0.755285, 0.650575, 0.994527, 0.104476, 0, -0.0679698, 0.647015, 0.759442, 8.13714, -4.03871, 0.584644 )
+
+[node name="PickupItemOpenedCan_18" parent="Objects/MiscItemProps" index="54" instance=ExtResource( 12 )]
+transform = Transform( 0.0793437, -0.755285, 0.650575, 0.994527, 0.104476, 0, -0.0679698, 0.647015, 0.759442, 7.46252, -4.03871, 0.584644 )
+
+[node name="PickupItemOpenedCan_19" parent="Objects/MiscItemProps" index="55" instance=ExtResource( 12 )]
+transform = Transform( 0.0793437, -0.755285, 0.650575, 0.994527, 0.104476, 0, -0.0679698, 0.647015, 0.759442, 7.62051, -4.03871, -0.271433 )
+
+[node name="PickupItemOpenedCan_20" parent="Objects/MiscItemProps" index="56" instance=ExtResource( 12 )]
+transform = Transform( 0.0793437, -0.755285, 0.650575, 0.994527, 0.104476, 0, -0.0679698, 0.647015, 0.759442, 2.04656, -4.42994, 0.568454 )
+
+[node name="PickupItemOpenedCan_21" parent="Objects/MiscItemProps" index="57" instance=ExtResource( 12 )]
+transform = Transform( 0.0793437, -0.755285, 0.650575, 0.994527, 0.104476, 0, -0.0679698, 0.647015, 0.759442, 2.04656, -4.42994, -0.294239 )
+
+[node name="PickupItemOpenedCan_22" parent="Objects/MiscItemProps" index="58" instance=ExtResource( 12 )]
+transform = Transform( 0.0793437, -0.755285, 0.650575, 0.994527, 0.104476, 0, -0.0679698, 0.647015, 0.759442, -8.74642, -4.42994, 3.36198 )
+
+[node name="PickupItemOpenedCan_23" parent="Objects/MiscItemProps" index="59" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.74642, -2.04941, 3.36198 )
+
+[node name="PickupItemOpenedCan_24" parent="Objects/MiscItemProps" index="60" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.74642, -2.04941, 3.90934 )
+
+[node name="PickupItemOpenedCan_25" parent="Objects/MiscItemProps" index="61" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.74642, -2.04941, 4.49955 )
+
+[node name="PickupItemSpoiledStew" parent="Objects/MiscItemProps" index="62" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.105618, -4.77355, -1.77789 )
+
+[node name="PickupItemSpoiledStew_2" parent="Objects/MiscItemProps" index="63" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.60351, -4.77355, -7.17692 )
+
+[node name="PickupItemSpoiledStew_3" parent="Objects/MiscItemProps" index="64" instance=ExtResource( 14 )]
+transform = Transform( 0.066448, 0, 0.99779, 0, 1, 0, -0.99779, 0, 0.066448, -8.37197, -4.77355, -5.57081 )
+
+[node name="PickupItemSpoiledStew_4" parent="Objects/MiscItemProps" index="65" instance=ExtResource( 14 )]
+transform = Transform( 0.066448, 0, 0.99779, 0, 1, 0, -0.99779, 0, 0.066448, -8.39586, -4.86665, -1.51176 )
+
+[node name="PickupItemSpoiledStew_5" parent="Objects/MiscItemProps" index="66" instance=ExtResource( 14 )]
+transform = Transform( -0.996551, 0, 0.0829822, 0, 1, 0, -0.0829822, 0, -0.996551, -4.98298, -4.79618, 7.08438 )
+
+[node name="DustMotesVFX" parent="Objects" index="35" instance=ExtResource( 15 )]
+amount = 80
+visibility_aabb = AABB( -5.44123, -3.69049, -4.87055, 10.8825, 7.38097, 9.7411 )
+process_material = SubResource( 11 )
+
+[node name="ReverbArea" parent="Objects" index="36" instance=ExtResource( 16 )]
+reverb_settings = ExtResource( 17 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Objects/ReverbArea" index="0"]
+shape = SubResource( 12 )

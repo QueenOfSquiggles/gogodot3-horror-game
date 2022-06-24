@@ -12,6 +12,9 @@ export (bool) var stop_on_slopes := true
 export (float) var jump_height := 2.5
 export (float) var time_to_peak := 0.2
 
+export (float) var walking_anim_threshold := 0.2
+export (float) var walking_anim_sprint_scalar := 1.7
+
 onready var _gravity := -(2.0 * jump_height) / pow(time_to_peak, 2)
 onready var _jump_velocity := -_gravity * time_to_peak
 
@@ -22,6 +25,11 @@ var sprinting : bool
 var jumping :bool
 var kine :KinematicBody
 var delta : float
+
+onready var tween := Tween.new()
+
+func _ready() -> void:
+	add_child(tween)
 
 func tick(actor : Node, bb : Blackboard) -> int:
 	input_move_vector = bb.get("move_vector", Vector2.ZERO) as Vector2
@@ -48,8 +56,27 @@ func tick(actor : Node, bb : Blackboard) -> int:
 		velocity.y = 0
 	var _clear = kine.move_and_slide(velocity, Vector3.UP, stop_on_slopes)
 	bb.set("velocity", velocity)
+
+	_manage_anim(bb.get("animation_player") as AnimationPlayer)
 	return SUCCESS
 
+func _manage_anim(anim : AnimationPlayer) -> void:
+	var walk_move := velocity * Vector3(1.0, 0.0, 1.0)
+	var moving := walk_move.length() >= walking_anim_threshold
+	var play_speed := walking_anim_sprint_scalar if sprinting else 1.0
+	# wow this should really be solved with some kind of state machine!
+	# or at least some kind of animation player level logic
+	if anim.is_playing() and not moving:
+		anim.playback_speed = 1.0
+		anim.play("RESET") # reset position
+		tween.stop_all()
+	elif moving:
+		if not anim.is_playing():
+			anim.play("walking_anim", -1, play_speed)
+		if not tween.is_active() and anim.playback_speed != play_speed:
+			tween.interpolate_property(anim, "playback_speed", anim.playback_speed, play_speed, 0.1, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
+			tween.start()
+			
 func _get_movement(input : Vector2) -> Vector3:
 	var movement :Vector3= (-camera.global_transform.basis.z * input.y) + (camera.global_transform.basis.x * input.x)
 	movement.y = 0

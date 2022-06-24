@@ -16,6 +16,7 @@ func _ready() -> void:
 	var _clear = anim_player.connect("animation_finished", self, "_on_anim_done")
 	_clear = selection_raycast.connect("on_start_collide", self, "_interact_proxy", [true])
 	_clear = selection_raycast.connect("on_end_collide", self, "_interact_proxy", [false])
+	EventBus.connect("final_cutscene", self, "queue_free", [], CONNECT_DEFERRED)
 
 func _interact_proxy(collider : Object, starting : bool) -> void:
 	if starting:

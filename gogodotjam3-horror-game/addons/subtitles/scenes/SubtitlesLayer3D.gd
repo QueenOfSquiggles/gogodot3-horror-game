@@ -74,7 +74,7 @@ func _update_subtitle_visibility(panel : PanelContainer, cam : Camera) -> void:
 		push_warning("Orphaned subtitle detected! " + str(panel))
 
 
-func _apply_cam_angles(cam : Camera, pos : Spatial, calc_pos : Vector2, panel : PanelContainer) -> Vector2:
+func _apply_cam_angles(cam : Camera, pos : Spatial, calc_pos : Vector2, _panel : PanelContainer) -> Vector2:
 	# better calculations for where to place the subtitle on screen based on closeness of angle (along y-axis)
 	var cam_forward :Vector3= -cam.global_transform.basis.z
 	var delta :Vector3= pos.global_transform.origin - cam.global_transform.origin
@@ -153,7 +153,7 @@ func _get_position(stream_node : AudioStreamPlayer3D, sub_data : SubtitleData) -
 	# revert to the actual audio stream player position, which can be set fairly easily in editor
 	return stream_node as Spatial
 
-func _create_sub(sub_data : SubtitleData, position : Spatial) -> PanelContainer:
+func _create_sub(sub_data : SubtitleData, _position : Spatial) -> PanelContainer:
 	var panel := PanelContainer.new()
 	var key := sub_data.subtitle_key
 	if key.find(":") != -1:

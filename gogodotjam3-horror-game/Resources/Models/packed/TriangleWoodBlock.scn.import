@@ -1,0 +1,14 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/TriangleWoodBlock.scn-302dbf39078d180c572a776208e97405.scn"
+
+[deps]
+
+source_file="res://Resources/Models/packed/TriangleWoodBlock.scn"
+dest_files=[ "res://.import/TriangleWoodBlock.scn-302dbf39078d180c572a776208e97405.scn" ]
+
+[params]
+
+generate_physical=false

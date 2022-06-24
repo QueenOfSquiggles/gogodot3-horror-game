@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Modules/effects/sound_effects/ReverbArea.gd" type="Script" id=1]
+[ext_resource path="res://GameDefinitions/Levels/reverb_presets/ReverbSmall.tres" type="AudioEffectReverb" id=2]
+
+[node name="ReverbArea" type="Area"]
+collision_layer = 0
+monitorable = false
+script = ExtResource( 1 )
+reverb_settings = ExtResource( 2 )
+
+[connection signal="body_entered" from="." to="." method="_on_ReverbArea_body_entered"]

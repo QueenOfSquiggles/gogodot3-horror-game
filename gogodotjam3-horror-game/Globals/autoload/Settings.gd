@@ -18,6 +18,8 @@ var use_retro_filter := true
 var viewport_msaa := Viewport.MSAA_DISABLED
 var subtitles_enabled := false
 
+var show_debug := false
+
 var world_environment := {
 	"glow_enabled" : true,
 	"ssao_enabled" : false,

@@ -1,0 +1,14 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/HandWeight.scn-8753ac684cbc7507a966c3ebd16cfaae.scn"
+
+[deps]
+
+source_file="res://Resources/Models/Props/items/HandWeight.scn"
+dest_files=[ "res://.import/HandWeight.scn-8753ac684cbc7507a966c3ebd16cfaae.scn" ]
+
+[params]
+
+generate_physical=false

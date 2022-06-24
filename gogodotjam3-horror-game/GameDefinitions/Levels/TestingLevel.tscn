@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Globals/music_manager/BackgroundMusic.tscn" type="PackedScene" id=1]
 [ext_resource path="res://TierTwoModules/first_person_controller/FirstPersonCharacterBase.tscn" type="PackedScene" id=2]
@@ -7,13 +7,212 @@
 [ext_resource path="res://Resources/Materials/PostProcess/blue_noise_dither.tres" type="Material" id=5]
 [ext_resource path="res://GameDefinitions/UI/InteractionPromptHud.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Globals/serialization/LevelSaver.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Resources/Music/Drones/hiding_place_mp3/last_breath.mp3" type="AudioStream" id=8]
+[ext_resource path="res://Resources/Music/subtle_drone.ogg" type="AudioStream" id=8]
 [ext_resource path="res://Modules/environment/SettingsCompliantWorldEnvironment.tscn" type="PackedScene" id=9]
 [ext_resource path="res://TierTwoModules/first_person_controller/InteractHUD.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Modules/post_processing/PostProcessViewportContainer.gd" type="Script" id=11]
 [ext_resource path="res://addons/subtitles/scripts/CustomViewportFix.gd" type="Script" id=12]
 [ext_resource path="res://Modules/menus/theming/basic_theme.tres" type="Theme" id=13]
 [ext_resource path="res://GameDefinitions/Levels/FPS_Counter.gd" type="Script" id=14]
+[ext_resource path="res://icon.png" type="Texture" id=15]
+[ext_resource path="res://GameDefinitions/Levels/FinalCutscene.gd" type="Script" id=16]
+
+[sub_resource type="Animation" id=1]
+resource_name = "FinalCutscene"
+length = 38.5
+step = 0.5
+tracks/0/type = "animation"
+tracks/0/path = NodePath("CameraAnims")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": PoolStringArray( "running", "[stop]" ),
+"times": PoolRealArray( 12.5, 37.5 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ScreenFX:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ScreenFX/ColorRect:material:shader_param/vignette_power")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2, 11.5, 12, 13.5, 13.75, 15.5, 16, 17, 17.5, 20.75, 21.5, 23.5, 23.75, 25, 25.5, 26.5, 26.75, 29, 29.5, 30.5, 30.75, 31.25, 31.5, 32.5, 32.75, 34, 34.5, 36.5, 36.75, 38 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 2.0, 2.0, 0.0, 0.0, 2.0, 2.0, 0.0, 0.0, 2.0, 2.0, 0.0, 0.0, 2.0, 2.0, 0.0, 0.0, 2.0, 2.0, 0.0, 0.0, 2.0, 2.0, 0.0, 0.0, 2.0, 2.0, 0.0, 0.0, 2.0, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("cam_root:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 4, 5.5, 11.5, 13.5, 16, 17, 21.5, 23.5, 25.5, 26.5, 29.5, 30.5, 31.5, 32.5, 33, 33.5, 34, 34.5, 36, 36.5, 37.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -13.7871, -78.4766, -56.9248 ), Vector3( 12.5127, -78.4766, -60.9189 ), Vector3( 17.734, -72.8962, -60.9189 ), Vector3( 17.734, -72.8962, -60.9189 ), Vector3( -7.07216, -77.2663, -60.9189 ), Vector3( -35.5464, -78.2354, -60.9189 ), Vector3( 25.3124, -50.6866, 24.5165 ), Vector3( 25.3124, -50.6866, 56.1504 ), Vector3( 68.4185, -40.0028, 56.1504 ), Vector3( 68.4185, -40.0028, 26.7253 ), Vector3( 68.4185, -29.5182, 25.2904 ), Vector3( 40.3023, -29.5182, 25.2904 ), Vector3( 35.6963, -29.7237, 21.5564 ), Vector3( 35.6963, -29.7237, 12.188 ), Vector3( 6.18819, -22.6814, -10.9745 ), Vector3( 5.82885, -22.6814, -12.9722 ), Vector3( -0.639378, -22.6814, -12.9722 ), Vector3( -0.639378, -21.8982, -1.9034 ), Vector3( 0.489443, -21.2556, 3.34153 ), Vector3( 0.489443, -5.68963, 27.9899 ), Vector3( -5.89044, 3.42848, 51.2313 ), Vector3( -22.5624, 3.42848, 57.3452 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("cam_root:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 4, 5.5, 10, 10.5, 11, 11.5, 11.51, 13.5, 16, 17, 21.5, 23.5, 25.5, 26.5, 29.5, 30.5, 31.5, 32.5, 33, 33.5, 34, 34.5, 36, 36.5, 37.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -90, 0 ), Vector3( 0, -172.986, 0 ), Vector3( 0, -178.553, 0 ), Vector3( 0, -178.553, 0 ), Vector3( 0, -144.477, 0 ), Vector3( 0, -178.553, 0 ), Vector3( 0, -219.292, 0 ), Vector3( 0, 140.708, 0 ), Vector3( 0, 88.712, 0 ), Vector3( 0, 123.244, 0 ), Vector3( 0, 180, 0 ), Vector3( 0, 180, 0 ), Vector3( 0, 1.00179e-05, 0 ), Vector3( 0, 1.00179e-05, 0 ), Vector3( 0, 90, 0 ), Vector3( 0, 90, 0 ), Vector3( 0, 11.142, 0 ), Vector3( 0, 63.792, 0 ), Vector3( 0, 9.31701, 0 ), Vector3( 0, 73.496, 0 ), Vector3( 0, 148.28, 0 ), Vector3( 0, 165.477, 0 ), Vector3( 0, 165.477, 0 ), Vector3( 27.03, 180.718, 0 ), Vector3( 0, 110.139, 0 ), Vector3( 0, 110.139, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("cam_root/CutsceneCamera:current")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 38.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "end_cutscene"
+} ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ScreenFX:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ScreenFX/ColorRect:material:shader_param/vignette_power")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("cam_root:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -13.7871, -78.4766, -56.9248 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("cam_root:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, -90, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("cam_root/CutsceneCamera:current")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "running"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("cam_root/CutsceneCamera:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("cam_root/CutsceneCamera:rotation_degrees")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 1, 1.25, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 1.90735e-06 ), Vector3( 0, 0, 1.5 ), Vector3( 0, 0, 2 ), Vector3( 0, 0, 1.90735e-06 ), Vector3( 0, 0, -1.5 ), Vector3( 0, 0, -2 ), Vector3( 0, 0, 1.90735e-06 ) ]
+}
+
+[sub_resource type="Shader" id=3]
+code = "shader_type canvas_item;
+
+uniform float vignette_power = 2.0; 
+
+// vignette
+void fragment(){
+	float d = distance(UV, vec2(0.5)) * 2.0;//0-1.0
+	float vignette = smoothstep(0.0, 1.0, max(pow(d, vignette_power), 0.0));
+	COLOR = vec4(vec3(0.0),vignette);
+}"
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
+shader_param/vignette_power = 1.0
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -68,6 +267,39 @@ __meta__ = {
 }
 
 [node name="SettingsCompliantWorldEnvironment" parent="TestingLevel/Viewport/Spatial" instance=ExtResource( 9 )]
+
+[node name="FinalCutscene" type="Spatial" parent="TestingLevel/Viewport/Spatial"]
+script = ExtResource( 16 )
+main_menu_path = "res://Modules/menus/MainMenu.tscn"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TestingLevel/Viewport/Spatial/FinalCutscene"]
+anims/FinalCutscene = SubResource( 1 )
+anims/RESET = SubResource( 5 )
+
+[node name="CameraAnims" type="AnimationPlayer" parent="TestingLevel/Viewport/Spatial/FinalCutscene"]
+playback_speed = 6.0
+anims/running = SubResource( 2 )
+
+[node name="cam_root" type="Spatial" parent="TestingLevel/Viewport/Spatial/FinalCutscene"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -13.7871, -78.4766, -56.9248 )
+
+[node name="CutsceneCamera" type="Camera" parent="TestingLevel/Viewport/Spatial/FinalCutscene/cam_root"]
+transform = Transform( 0.999391, -0.0348995, 0, 0.0348995, 0.999391, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="SpotLight" type="SpotLight" parent="TestingLevel/Viewport/Spatial/FinalCutscene/cam_root"]
+spot_range = 8.63622
+
+[node name="ScreenFX" type="Control" parent="TestingLevel/Viewport/Spatial/FinalCutscene"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="TextureRect" parent="TestingLevel/Viewport/Spatial/FinalCutscene/ScreenFX"]
+material = SubResource( 4 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 15 )
+expand = true
 
 [node name="InteractHUD" parent="TestingLevel" instance=ExtResource( 10 )]
 

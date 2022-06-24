@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Floor2_BathroomMesh.scn_part.scn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Materials/sorted/walls/rough_block_wall.material" type="Material" id=2]
@@ -8,6 +8,51 @@
 [ext_resource path="res://Resources/Models/imported/ToiletSquare.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Resources/Models/imported/BathroomSinkSquare.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Resources/Models/imported/BathroomMirror.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Modules/effects/visual_effects/DustMotesVFX.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Modules/effects/sound_effects/ReverbArea.tscn" type="PackedScene" id=10]
+[ext_resource path="res://GameDefinitions/Levels/reverb_presets/ReverbMedium.tres" type="AudioEffectReverb" id=11]
+
+[sub_resource type="Gradient" id=6]
+interpolation_mode = 2
+offsets = PoolRealArray( 0, 0.0694444, 0.368056, 1 )
+colors = PoolColorArray( 0.466667, 0.466667, 0.466667, 0, 0.466667, 0.466667, 0.466667, 1, 0.466667, 0.466667, 0.466667, 1, 0.466667, 0.466667, 0.466667, 0 )
+
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
+
+[sub_resource type="Curve" id=8]
+max_value = 100.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 100 ), 284.087, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 8 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.0643087, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=10]
+lifetime_randomness = 0.43
+emission_shape = 2
+emission_box_extents = Vector3( 5, 2, 3.5 )
+gravity = Vector3( 0, -0.1, 0 )
+initial_velocity = 0.5
+angular_velocity = 45.0
+angular_velocity_random = 0.25
+tangential_accel = -2.0
+tangential_accel_random = 0.33
+damping_curve = SubResource( 9 )
+angle = 720.0
+angle_random = 1.0
+scale = 0.5
+scale_random = 0.75
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 7 )
+
+[sub_resource type="BoxShape" id=11]
+extents = Vector3( 8.28989, 1, 5.84843 )
 
 [node name="Floor2_BathroomMesh" instance=ExtResource( 1 )]
 
@@ -56,3 +101,13 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.3977
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.85312, -0.978836, 5.03159 )
 title_key = "note.bathroom.title"
 text_key = "note.bathroom.body"
+
+[node name="DustMotesVFX" parent="Spatial" index="12" instance=ExtResource( 9 )]
+visibility_aabb = AABB( -4.86875, -1.9993, -3.43922, 9.73751, 3.9986, 6.87845 )
+process_material = SubResource( 10 )
+
+[node name="ReverbArea" parent="Spatial" index="13" instance=ExtResource( 10 )]
+reverb_settings = ExtResource( 11 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial/ReverbArea" index="0"]
+shape = SubResource( 11 )

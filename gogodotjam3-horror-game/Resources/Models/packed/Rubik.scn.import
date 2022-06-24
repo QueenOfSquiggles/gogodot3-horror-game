@@ -1,0 +1,14 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/Rubik.scn-71bc6572ec6a06cbd21638a0d73de99e.scn"
+
+[deps]
+
+source_file="res://Resources/Models/packed/Rubik.scn"
+dest_files=[ "res://.import/Rubik.scn-71bc6572ec6a06cbd21638a0d73de99e.scn" ]
+
+[params]
+
+generate_physical=false

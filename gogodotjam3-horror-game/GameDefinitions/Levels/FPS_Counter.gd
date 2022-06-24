@@ -5,6 +5,10 @@ onready var counter := $Label
 var progressive_average := []
 const AVERAGE_RANGE := 100
 
+func _ready() -> void:
+	if not Settings.show_debug:
+		queue_free()
+
 func _process(_delta: float) -> void:
 	var fps := Engine.get_frames_per_second()
 	if Engine.get_idle_frames() % 60 == 0:

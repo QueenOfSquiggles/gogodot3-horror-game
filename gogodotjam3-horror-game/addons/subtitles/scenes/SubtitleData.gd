@@ -46,7 +46,7 @@ func _ready() -> void:
 		# if this is intended, feel free to delete the warning push
 		push_warning("SubtitleNode [%s] will be running in process mode, use the 'Attach Event Scripts in Scene' tool to attach scripts to convert standard AudioStreamPlayers into event driven players. This will only work for built-in AudioStreamPlayer nodes" % get_path())
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var cur :bool = parent.playing # this will throw an error if the parent isn't an AudioStreamPlayer node. Check the node parent if you got here from the debugger!
 	if cur and not _last_check:
 		trigger_audio_play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Nursery_BedroomMesh2.scn_part.scn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Materials/sorted/floors/medieval_blocks_03.material" type="Material" id=2]
@@ -8,6 +8,50 @@
 [ext_resource path="res://Resources/Models/imported/TableChild.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Resources/Models/imported/BedSingleChild.tscn" type="PackedScene" id=7]
 [ext_resource path="res://GameDefinitions/Items/bases/PickupItemReadable.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Modules/effects/visual_effects/DustMotesVFX.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Modules/effects/sound_effects/ReverbArea.tscn" type="PackedScene" id=10]
+
+[sub_resource type="Gradient" id=6]
+interpolation_mode = 2
+offsets = PoolRealArray( 0, 0.0694444, 0.368056, 1 )
+colors = PoolColorArray( 0.466667, 0.466667, 0.466667, 0, 0.466667, 0.466667, 0.466667, 1, 0.466667, 0.466667, 0.466667, 1, 0.466667, 0.466667, 0.466667, 0 )
+
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
+
+[sub_resource type="Curve" id=8]
+max_value = 100.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 100 ), 284.087, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 8 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.0643087, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=10]
+lifetime_randomness = 0.43
+emission_shape = 2
+emission_box_extents = Vector3( 5, 2, 7 )
+gravity = Vector3( 0, -0.1, 0 )
+initial_velocity = 0.5
+angular_velocity = 45.0
+angular_velocity_random = 0.25
+tangential_accel = -2.0
+tangential_accel_random = 0.33
+damping_curve = SubResource( 9 )
+angle = 720.0
+angle_random = 1.0
+scale = 0.5
+scale_random = 0.75
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 7 )
+
+[sub_resource type="BoxShape" id=11]
+extents = Vector3( 0.450638, 1, 1 )
 
 [node name="Nursery_BedroomMesh2" instance=ExtResource( 1 )]
 
@@ -140,6 +184,18 @@ transform = Transform( 0.496807, 0, -0.867861, 0, 1, 0, 0.867861, 0, 0.496807, -
 transform = Transform( 0.496807, 0, -0.867861, 0, 1, 0, 0.867861, 0, 0.496807, -1.44692, -0.1213, 13.071 )
 
 [node name="PickupItemReadable" parent="Spatial" index="40" instance=ExtResource( 8 )]
-transform = Transform( -0.593658, 0, -0.804718, 0, 1, 0, 0.804718, 0, -0.593658, -3.70327, 1.12181, 8.01853 )
-title_key = "note.dev_note.title"
-text_key = "note.dev_note.body"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.646278, 0.967274, 0.625423 )
+title_key = "note.nighttime_prayer.title"
+text_key = "note.nighttime_prayer.body"
+
+[node name="DustMotesVFX" parent="Spatial" index="41" instance=ExtResource( 9 )]
+transform = Transform( 1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, -4.33214, 3.53187, 9.02897 )
+visibility_aabb = AABB( -4.90999, -1.96445, -7.24304, 9.81997, 3.92891, 14.4861 )
+process_material = SubResource( 10 )
+
+[node name="ReverbArea" parent="Spatial" index="42" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2493, 1.67911, 10.0959 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial/ReverbArea" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0378666, 0, -0.166622 )
+shape = SubResource( 11 )

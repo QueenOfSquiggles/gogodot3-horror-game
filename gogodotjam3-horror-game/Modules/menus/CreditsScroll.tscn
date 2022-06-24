@@ -1,0 +1,348 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Modules/menus/theming/credits_scroll_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Modules/menus/credits_scroll_parts/CreditsAttributionBlock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Modules/menus/credits_scroll_parts/CreditsHeader.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Modules/menus/credits_scroll_parts/CreditsHeader.gd" type="Script" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://Modules/menus/CreditsScroll.gd" type="Script" id=6]
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ScrollContainer:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "credits_scroll"
+length = 120.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ScrollContainer:scroll_vertical")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 120 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 0, 5448 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 120 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "on_credits_end"
+} ]
+}
+
+[node name="CreditsScroll" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+script = ExtResource( 6 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0, 0, 0, 1 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 64.0
+margin_right = -64.0
+scroll_horizontal_enabled = false
+
+[node name="Credits Entries" type="VBoxContainer" parent="ScrollContainer"]
+margin_top = -537.0
+margin_right = 896.0
+margin_bottom = 5511.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/Credits Entries"]
+margin_right = 896.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+text = "The Ascension Of The Lamb"
+align = 1
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/Credits Entries"]
+margin_top = 105.0
+margin_right = 896.0
+margin_bottom = 617.0
+rect_min_size = Vector2( 512, 512 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+
+[node name="Spacer_7" type="Control" parent="ScrollContainer/Credits Entries"]
+margin_top = 681.0
+margin_right = 896.0
+margin_bottom = 745.0
+rect_min_size = Vector2( 0, 64 )
+
+[node name="Label_2" type="Label" parent="ScrollContainer/Credits Entries"]
+margin_top = 809.0
+margin_right = 896.0
+margin_bottom = 894.0
+size_flags_horizontal = 3
+text = "Press 'pause' input at any time to skip
+Duration is roughly 2 minutes"
+align = 1
+autowrap = true
+
+[node name="Forward" parent="ScrollContainer/Credits Entries" instance=ExtResource( 3 )]
+margin_top = 958.0
+margin_right = 896.0
+margin_bottom = 1099.0
+text = "This game was originally created for GoGodotJam3, a 10 day game jam with the theme \"Evolution\". Congratulations to the winners of the jam! <3"
+
+[node name="Spacer" type="Control" parent="ScrollContainer/Credits Entries"]
+margin_top = 1163.0
+margin_right = 896.0
+margin_bottom = 1227.0
+rect_min_size = Vector2( 0, 64 )
+
+[node name="Header_External" parent="ScrollContainer/Credits Entries" instance=ExtResource( 3 )]
+margin_top = 1291.0
+margin_right = 896.0
+margin_bottom = 1344.0
+text = "3rd Party Resources/Tools"
+
+[node name="Spacer_4" type="Control" parent="ScrollContainer/Credits Entries"]
+margin_top = 1408.0
+margin_right = 896.0
+margin_bottom = 1472.0
+rect_min_size = Vector2( 0, 64 )
+
+[node name="Credits_3dModels" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
+margin_top = 1536.0
+margin_right = 896.0
+margin_bottom = 1646.0
+title = "3D Models"
+members = [ "Kenney.nl (CC0)" ]
+
+[node name="Credits_AudioSFX" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
+margin_top = 1710.0
+margin_right = 896.0
+margin_bottom = 1820.0
+title = "Audio & SFX"
+members = [ "Kenney.nl (CC0)" ]
+
+[node name="Credits_UI" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
+margin_top = 1884.0
+margin_right = 896.0
+margin_bottom = 1994.0
+title = "UI Element Textures"
+members = [ "Kenney.nl (CC0)" ]
+
+[node name="Credits_PBR_Textures" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
+margin_top = 2058.0
+margin_right = 896.0
+margin_bottom = 2168.0
+title = "PBR Texture Resources"
+members = [ "PolyHaven.com (CC0)", "AmbientCG.com (CC0)" ]
+
+[node name="Credits_Engine" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
+margin_top = 2232.0
+margin_right = 896.0
+margin_bottom = 2342.0
+title = "Game Engine"
+members = [ "Godot" ]
+
+[node name="Spacer_2" type="Control" parent="ScrollContainer/Credits Entries"]
+margin_top = 2406.0
+margin_right = 896.0
+margin_bottom = 2470.0
+rect_min_size = Vector2( 0, 64 )
+
+[node name="Credits_ME_16" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
+margin_top = 2534.0
+margin_right = 896.0
+margin_bottom = 2776.0
+title = "Game Jam Version Feedback"
+members = [ "\"JadeTheKobold\"", "\"ToriFloop\"", "\"Bread\"", "\"Pumpkin\"", "\"TheJarmanitor\"", "\"khalynin\"", "\"Basiliskka\"", "\"Fredspipa\"", "\"jetpackgone\"", "\"SuspiciousUniKorn\"", "\"BodaMat\"" ]
+
+[node name="Spacer_6" type="Control" parent="ScrollContainer/Credits Entries"]
+margin_top = 2840.0
+margin_right = 896.0
+margin_bottom = 2904.0
+rect_min_size = Vector2( 0, 64 )
+
+[node name="Header_Internal" parent="ScrollContainer/Credits Entries" instance=ExtResource( 3 )]
+margin_top = 2968.0
+margin_right = 896.0
+margin_bottom = 3021.0
+text = "Direct Contributors"
+
+[node name="Spacer_3" type="Control" parent="ScrollContainer/Credits Entries"]
+margin_top = 3085.0
+margin_right = 896.0
+margin_bottom = 3149.0
+rect_min_size = Vector2( 0, 64 )
+
+[node name="Credits_ME_1" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
+margin_top = 3213.0
+margin_right = 896.0
+margin_bottom = 3323.0
+title = "Producer"
+members = [ "QueenOfSquiggles" ]
+
+[node name="Credits_ME_2" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
+margin_top = 3387.0
+margin_right = 896.0
+margin_bottom = 3497.0
+title = "Game Design"
+members = [ "QueenOfSquiggles" ]
+
+[node name="Credits_ME_3" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
+margin_top = 3561.0
+margin_right = 896.0
+margin_bottom = 3671.0
+title = "Narrative Design"
+members = [ "QueenOfSquiggles" ]
+
+[node name="Credits_ME_4" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
+margin_top = 3735.0
+margin_right = 896.0
+margin_bottom = 3845.0
+title = "Writing"
+members = [ "QueenOfSquiggles" ]
+
+[node name="Credits_ME_5" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
+margin_top = 3909.0
+margin_right = 896.0
+margin_bottom = 4019.0
+title = "Animations"
+members = [ "QueenOfSquiggles" ]
+
+[node name="Credits_ME_6" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
+margin_top = 4083.0
+margin_right = 896.0
+margin_bottom = 4193.0
+title = "Texture Processing"
+members = [ "QueenOfSquiggles" ]
+
+[node name="Credits_ME_7" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
+margin_top = 4257.0
+margin_right = 896.0
+margin_bottom = 4367.0
+title = "Programming"
+members = [ "QueenOfSquiggles" ]
+
+[node name="Credits_ME_8" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
+margin_top = 4431.0
+margin_right = 896.0
+margin_bottom = 4541.0
+title = "Sequencing"
+members = [ "QueenOfSquiggles" ]
+
+[node name="Credits_ME_9" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
+margin_top = 4605.0
+margin_right = 896.0
+margin_bottom = 4715.0
+title = "Level Design"
+members = [ "QueenOfSquiggles" ]
+
+[node name="Credits_ME_13" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
+margin_top = 4779.0
+margin_right = 896.0
+margin_bottom = 4889.0
+title = "Fuel"
+members = [ "Diet Cola" ]
+
+[node name="Credits_ME_14" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
+margin_top = 4953.0
+margin_right = 896.0
+margin_bottom = 5063.0
+title = "Emotional Support"
+members = [ "QueenOfSquuggles' lovers <3" ]
+
+[node name="Credits_ME_10" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
+margin_top = 5127.0
+margin_right = 896.0
+margin_bottom = 5237.0
+title = "Level Modeling"
+members = [ "QueenOfSquiggles" ]
+
+[node name="Credits_ME_11" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
+margin_top = 5301.0
+margin_right = 896.0
+margin_bottom = 5411.0
+title = "Odds & Ends 3D Modelling"
+members = [ "QueenOfSquiggles" ]
+
+[node name="Credits_ME_12" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
+margin_top = 5475.0
+margin_right = 896.0
+margin_bottom = 5585.0
+title = "Music"
+members = [ "QueenOfSquiggles" ]
+
+[node name="Credits_ME_15" parent="ScrollContainer/Credits Entries" instance=ExtResource( 2 )]
+margin_top = 5649.0
+margin_right = 896.0
+margin_bottom = 5759.0
+title = "Emotional Support #2"
+members = [ "Diet Cola" ]
+
+[node name="Spacer_5" type="Control" parent="ScrollContainer/Credits Entries"]
+margin_top = 5823.0
+margin_right = 896.0
+margin_bottom = 5887.0
+rect_min_size = Vector2( 0, 64 )
+
+[node name="FinalThanks" type="PanelContainer" parent="ScrollContainer/Credits Entries"]
+margin_top = 5951.0
+margin_right = 896.0
+margin_bottom = 6048.0
+script = ExtResource( 4 )
+text = "Thank you so much for playing my game! I hope you enjoyed it <3"
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/Credits Entries/FinalThanks"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 895.0
+margin_bottom = 96.0
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+
+[node name="Label" type="Label" parent="ScrollContainer/Credits Entries/FinalThanks/MarginContainer"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 889.0
+margin_bottom = 90.0
+text = "Thank you so much for playing my game! I hope you enjoyed it <3"
+align = 1
+autowrap = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "credits_scroll"
+anims/RESET = SubResource( 3 )
+anims/credits_scroll = SubResource( 2 )

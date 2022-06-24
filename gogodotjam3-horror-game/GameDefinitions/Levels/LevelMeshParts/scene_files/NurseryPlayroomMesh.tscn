@@ -1,9 +1,61 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Nursery_PlayroomMesh2.scn_part.scn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Materials/sorted/walls/wall_bricks_plaster.material" type="Material" id=2]
 [ext_resource path="res://Resources/Materials/sorted/floors/stone_brick_wall_001.material" type="Material" id=3]
 [ext_resource path="res://Resources/Materials/sorted/ceilings/concrete_wall_003.material" type="Material" id=4]
+[ext_resource path="res://Resources/Models/imported/KitchenCabinetUpper.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Resources/Models/imported/LampSquareTable.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Resources/Models/imported/LampSquareFloor.tscn" type="PackedScene" id=7]
+[ext_resource path="res://GameDefinitions/Items/misc/PickupItemRubik.tscn" type="PackedScene" id=8]
+[ext_resource path="res://GameDefinitions/Items/misc/PickupItemWoodBlock.tscn" type="PackedScene" id=9]
+[ext_resource path="res://GameDefinitions/Items/misc/PickupItemWoodBlockTriangle.tscn" type="PackedScene" id=10]
+[ext_resource path="res://GameDefinitions/Items/bases/PickupItemReadable.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Modules/effects/visual_effects/DustMotesVFX.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Modules/effects/sound_effects/ReverbArea.tscn" type="PackedScene" id=13]
+[ext_resource path="res://GameDefinitions/Levels/reverb_presets/ReverbMedium.tres" type="AudioEffectReverb" id=14]
+
+[sub_resource type="Gradient" id=6]
+interpolation_mode = 2
+offsets = PoolRealArray( 0, 0.0694444, 0.368056, 1 )
+colors = PoolColorArray( 0.466667, 0.466667, 0.466667, 0, 0.466667, 0.466667, 0.466667, 1, 0.466667, 0.466667, 0.466667, 1, 0.466667, 0.466667, 0.466667, 0 )
+
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
+
+[sub_resource type="Curve" id=8]
+max_value = 100.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 100 ), 284.087, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 8 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.0643087, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=10]
+lifetime_randomness = 0.43
+emission_shape = 2
+emission_box_extents = Vector3( 5, 2, 3.5 )
+gravity = Vector3( 0, -0.1, 0 )
+initial_velocity = 0.5
+angular_velocity = 45.0
+angular_velocity_random = 0.25
+tangential_accel = -2.0
+tangential_accel_random = 0.33
+damping_curve = SubResource( 9 )
+angle = 720.0
+angle_random = 1.0
+scale = 0.5
+scale_random = 0.75
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 7 )
+
+[sub_resource type="BoxShape" id=11]
+extents = Vector3( 0.62042, 1, 1 )
 
 [node name="Nursery_PlayroomMesh2" instance=ExtResource( 1 )]
 
@@ -11,3 +63,103 @@
 material/0 = ExtResource( 2 )
 material/1 = ExtResource( 4 )
 material/2 = ExtResource( 3 )
+
+[node name="Spatial" type="Spatial" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5155, -49.9768, 52.0308 )
+
+[node name="static" type="Spatial" parent="Spatial" index="0"]
+
+[node name="kitchenCabinetUpper" parent="Spatial/static" index="0" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.5, -5 )
+
+[node name="kitchenCabinetUpper_2" parent="Spatial/static" index="1" instance=ExtResource( 5 )]
+transform = Transform( 0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, -2, -3.5, -5 )
+
+[node name="kitchenCabinetUpper_3" parent="Spatial/static" index="2" instance=ExtResource( 5 )]
+transform = Transform( 0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, -4, -3.5, -5 )
+
+[node name="kitchenCabinetUpper_4" parent="Spatial/static" index="3" instance=ExtResource( 5 )]
+transform = Transform( 0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, -6, -3.5, -5 )
+
+[node name="lampSquareTable" parent="Spatial/static" index="4" instance=ExtResource( 6 )]
+transform = Transform( 0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 1.5, -1.5, -5.5 )
+
+[node name="lampSquareFloor" parent="Spatial/static" index="5" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -3.5, 5 )
+
+[node name="items" type="Spatial" parent="Spatial" index="1"]
+
+[node name="PickupItemRubik" parent="Spatial/items" index="0" instance=ExtResource( 8 )]
+transform = Transform( 0.860732, 0, 0.509056, 0, 1, 0, -0.509056, 0, 0.860732, -3, -1.33512, -5.5 )
+
+[node name="PickupItemWoodBlock" parent="Spatial/items" index="1" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.02232, 0 )
+
+[node name="PickupItemWoodBlockTriangle" parent="Spatial/items" index="2" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -3, 0 )
+
+[node name="PickupItemWoodBlock_2" parent="Spatial/items" index="3" instance=ExtResource( 9 )]
+transform = Transform( 0.707106, 0, 0.707106, 0, 1, 0, -0.707106, 0, 0.707106, -0.366117, -3.02232, 0.616116 )
+
+[node name="PickupItemWoodBlockTriangle_2" parent="Spatial/items" index="4" instance=ExtResource( 10 )]
+transform = Transform( 0.707106, 0, 0.707106, 0, 1, 0, -0.707106, 0, 0.707106, -2.13389, -3, 2.38388 )
+
+[node name="PickupItemWoodBlock_3" parent="Spatial/items" index="5" instance=ExtResource( 9 )]
+transform = Transform( 0.965925, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965925, 4.95741, -3.02232, 1.32352 )
+
+[node name="PickupItemWoodBlockTriangle_3" parent="Spatial/items" index="6" instance=ExtResource( 10 )]
+transform = Transform( 0.965925, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965925, 2.54259, -3, 0.676476 )
+
+[node name="PickupItemWoodBlock_4" parent="Spatial/items" index="7" instance=ExtResource( 9 )]
+transform = Transform( 0.499999, 0, 0.866024, 0, 1, 0, -0.866024, 0, 0.499999, -4.625, -3.02232, -3.08253 )
+
+[node name="PickupItemWoodBlockTriangle_4" parent="Spatial/items" index="8" instance=ExtResource( 10 )]
+transform = Transform( 0.499999, 0, 0.866024, 0, 1, 0, -0.866024, 0, 0.499999, -5.875, -3, -0.917469 )
+
+[node name="PickupItemWoodBlock_5" parent="Spatial/items" index="9" instance=ExtResource( 9 )]
+transform = Transform( 0.866024, 0, 0.499999, 0, 1, 0, -0.499999, 0, 0.866024, -4.16747, -3.02232, 1.875 )
+
+[node name="PickupItemWoodBlockTriangle_5" parent="Spatial/items" index="10" instance=ExtResource( 10 )]
+transform = Transform( 0.866024, 0, 0.499999, 0, 1, 0, -0.499999, 0, 0.866024, -6.33253, -3, 3.125 )
+
+[node name="PickupItemWoodBlock_6" parent="Spatial/items" index="11" instance=ExtResource( 9 )]
+transform = Transform( 0.866024, 0, 0.499999, 0, 1, 0, -0.499999, 0, 0.866024, -4.16747, -3.02232, 0.374996 )
+
+[node name="PickupItemWoodBlockTriangle_6" parent="Spatial/items" index="12" instance=ExtResource( 10 )]
+transform = Transform( 0.866024, 0, 0.499999, 0, 1, 0, -0.499999, 0, 0.866024, -6.33253, -3, 1.625 )
+
+[node name="PickupItemWoodBlock_7" parent="Spatial/items" index="13" instance=ExtResource( 9 )]
+transform = Transform( 0.866024, 0, 0.499999, 0, 1, 0, -0.499999, 0, 0.866024, -3.16747, -3.02232, 2.875 )
+
+[node name="PickupItemWoodBlockTriangle_7" parent="Spatial/items" index="14" instance=ExtResource( 10 )]
+transform = Transform( 0.866024, 0, 0.499999, 0, 1, 0, -0.499999, 0, 0.866024, -5.33253, -3, 4.125 )
+
+[node name="PickupItemWoodBlock_8" parent="Spatial/items" index="15" instance=ExtResource( 9 )]
+transform = Transform( 0.866024, 0, 0.499999, 0, 1, 0, -0.499999, 0, 0.866024, 0.832534, -3.02232, 2.375 )
+
+[node name="PickupItemWoodBlockTriangle_8" parent="Spatial/items" index="16" instance=ExtResource( 10 )]
+transform = Transform( 0.866024, 0, 0.499999, 0, 1, 0, -0.499999, 0, 0.866024, -1.33253, -3, 3.625 )
+
+[node name="PickupItemWoodBlock_9" parent="Spatial/items" index="17" instance=ExtResource( 9 )]
+transform = Transform( 0.866024, 0, 0.499999, 0, 1, 0, -0.499999, 0, 0.866024, 0.832534, -3.02232, -5.125 )
+
+[node name="PickupItemWoodBlockTriangle_9" parent="Spatial/items" index="18" instance=ExtResource( 10 )]
+transform = Transform( 0.866023, 0, 0.499999, 0, 1, 0, -0.499999, 0, 0.866023, -1.33253, -2, -5.375 )
+
+[node name="PickupItemReadable" parent="Spatial" index="2" instance=ExtResource( 11 )]
+transform = Transform( 0.383377, 0, -0.923592, 0, 1, 0, 0.923592, 0, 0.383377, 0.576637, -1.37316, -5.29279 )
+item_name = "note.story.title"
+title_key = "note.story.title"
+text_key = "note.story.body"
+
+[node name="DustMotesVFX" parent="Spatial" index="3" instance=ExtResource( 12 )]
+visibility_aabb = AABB( -4.89176, -2, -3.4723, 9.78351, 4, 6.9446 )
+process_material = SubResource( 10 )
+
+[node name="ReverbArea" parent="Spatial" index="4" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.80825, 0, -0.90794 )
+reverb_settings = ExtResource( 14 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial/ReverbArea" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.211851, -0.816231, 0 )
+shape = SubResource( 11 )

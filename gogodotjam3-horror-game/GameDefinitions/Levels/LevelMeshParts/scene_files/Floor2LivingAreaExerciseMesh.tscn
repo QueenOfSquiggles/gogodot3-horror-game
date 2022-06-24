@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/Floor2_LivingAreaExerciseMesh2.scn_part.scn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Materials/sorted/walls/castle_brick_02_white.material" type="Material" id=2]
@@ -6,6 +6,51 @@
 [ext_resource path="res://GameDefinitions/Items/bases/PickupItemReadable.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Resources/Models/imported/LampSquareCeiling.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Resources/Materials/sorted/ceilings/concrete_wall_003.material" type="Material" id=6]
+[ext_resource path="res://GameDefinitions/Items/misc/PickupItemHandWeight.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Modules/effects/visual_effects/DustMotesVFX.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Modules/effects/sound_effects/ReverbArea.tscn" type="PackedScene" id=9]
+
+[sub_resource type="Gradient" id=6]
+interpolation_mode = 2
+offsets = PoolRealArray( 0, 0.0694444, 0.368056, 1 )
+colors = PoolColorArray( 0.466667, 0.466667, 0.466667, 0, 0.466667, 0.466667, 0.466667, 1, 0.466667, 0.466667, 0.466667, 1, 0.466667, 0.466667, 0.466667, 0 )
+
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
+
+[sub_resource type="Curve" id=8]
+max_value = 100.0
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 100 ), 284.087, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 8 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.0643087, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=10]
+lifetime_randomness = 0.43
+emission_shape = 2
+emission_box_extents = Vector3( 5, 2, 4 )
+gravity = Vector3( 0, -0.1, 0 )
+initial_velocity = 0.5
+angular_velocity = 45.0
+angular_velocity_random = 0.25
+tangential_accel = -2.0
+tangential_accel_random = 0.33
+damping_curve = SubResource( 9 )
+angle = 720.0
+angle_random = 1.0
+scale = 0.5
+scale_random = 0.75
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 7 )
+
+[sub_resource type="BoxShape" id=11]
+extents = Vector3( 1, 1, 1.85102 )
 
 [node name="Floor2_LivingAreaExerciseMesh2" instance=ExtResource( 1 )]
 
@@ -24,3 +69,22 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.61098, 2.37792, -2.48717 )
 transform = Transform( 0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -4.11098, -3.12208, -1.98717 )
 title_key = "note.dustin_exercise.title"
 text_key = "note.dustin_exercise.body"
+
+[node name="PickupItemHandWeight" parent="Spatial" index="2" instance=ExtResource( 7 )]
+transform = Transform( 0.981637, 0, 0.190758, 0, 1, 0, -0.190758, 0, 0.981637, 0, -2.64513, 4.87166 )
+
+[node name="PickupItemHandWeight_2" parent="Spatial" index="3" instance=ExtResource( 7 )]
+transform = Transform( 0.894225, 0, -0.447619, 0, 1, 0, 0.447619, 0, 0.894225, -4.1705, -2.64513, 4.31718 )
+
+[node name="PickupItemHandWeight_3" parent="Spatial" index="4" instance=ExtResource( 7 )]
+transform = Transform( 0.82107, 0, -0.570828, 0, 1, 0, 0.570828, 0, 0.82107, 4.19066, -2.7952, 4.44831 )
+
+[node name="DustMotesVFX" parent="Spatial" index="5" instance=ExtResource( 8 )]
+visibility_aabb = AABB( -4.94926, -1.98682, -3.44164, 9.89853, 3.97364, 6.88327 )
+process_material = SubResource( 10 )
+
+[node name="ReverbArea" parent="Spatial" index="6" instance=ExtResource( 9 )]
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial/ReverbArea" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.35231, -1.43105, -1.1132 )
+shape = SubResource( 11 )

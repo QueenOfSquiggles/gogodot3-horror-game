@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/subtle_drone.ogg-07b25a4d72321c382eef7d561c5ec544.oggstr"
+
+[deps]
+
+source_file="res://Resources/Music/subtle_drone.ogg"
+dest_files=[ "res://.import/subtle_drone.ogg-07b25a4d72321c382eef7d561c5ec544.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

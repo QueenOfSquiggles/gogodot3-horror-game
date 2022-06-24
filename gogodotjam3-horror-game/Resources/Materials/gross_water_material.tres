@@ -1,0 +1,24 @@
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+
+[ext_resource path="res://GameDefinitions/Interactables/DrainableSinkParts/NoiseSample.tres" type="Texture" id=1]
+
+[sub_resource type="OpenSimplexNoise" id=4]
+period = 13.3
+persistence = 0.931
+lacunarity = 4.0
+
+[sub_resource type="NoiseTexture" id=7]
+flags = 3
+width = 128
+height = 128
+as_normalmap = true
+bump_strength = 2.0
+noise = SubResource( 4 )
+
+[resource]
+albedo_color = Color( 0.427451, 0.490196, 0.141176, 1 )
+albedo_texture = ExtResource( 1 )
+roughness = 0.0
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = SubResource( 7 )

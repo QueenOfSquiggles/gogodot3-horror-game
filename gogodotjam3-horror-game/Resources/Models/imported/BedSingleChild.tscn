@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://GameDefinitions/Levels/LevelMeshParts/level_mesh_parts/bedSingle(Clone).scn" type="PackedScene" id=1]
+[ext_resource path="res://Resources/Models/imported/BedSingle.tscn" type="PackedScene" id=1]
 
 [node name="bedSingle" type="Spatial"]
 
-[node name="bedSingle(Clone)_2" parent="." instance=ExtResource( 1 )]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, -2, 0, 2 )
+[node name="bedSingle" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0 )

@@ -1,0 +1,14 @@
+[remap]
+
+importer="squiggles.core.level_part_importer"
+type="PackedScene"
+path="res://.import/SpoiledStew.scn-745b2bb77908eda9ddf0626a2210d572.scn"
+
+[deps]
+
+source_file="res://Resources/Models/Props/items/SpoiledStew.scn"
+dest_files=[ "res://.import/SpoiledStew.scn-745b2bb77908eda9ddf0626a2210d572.scn" ]
+
+[params]
+
+generate_physical=false
