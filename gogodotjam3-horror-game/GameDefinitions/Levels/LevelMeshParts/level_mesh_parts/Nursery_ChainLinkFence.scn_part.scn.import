@@ -11,4 +11,4 @@ dest_files=[ "res://.import/Nursery_ChainLinkFence.scn_part.scn-84ef8688018ab184
 
 [params]
 
-test=false
+generate_physical=false

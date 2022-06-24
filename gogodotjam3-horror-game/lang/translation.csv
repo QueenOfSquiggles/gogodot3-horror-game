@@ -138,7 +138,7 @@ options.gameplay.skip_splash.title,Skip Opening Splash Screen(s)
 options.gameplay.skip_splash.toggle,Toggle Skip?
 credits.button.view_scroll,View Credits Scroll
 game.title,The Ascension Of The Lamb
-credits_scroll.skip_prompt,Press 'pause' input at any time to skip; Duration is roughly 2 minutes
+credits_scroll.skip_prompt,Press 'pause' input at any time to skip;  Duration is roughly 2 minutes
 credits_scroll.forward,"This game was originally created for GoGodotJam3, a 10 day game jam with the theme ""Evolution"". Congratulations to the winners of the jam! <3"
 credits_scroll.header.third_party,3rd Party Resources & Tools
 credits_scroll.third_party.models.title,3D Models
@@ -166,3 +166,4 @@ credits_scroll.direct.music,Music
 credits_scroll.direct.emotional_support_two,Emotional Support #2
 credits_scroll.members.diet_cola,Diet Cola
 credits_scroll.members.lovers,QueenOfSquiggles’ lovers <3
+credits_scroll.final_thanks,Thank you so much for playing my game! I hope you enjoyed it <3

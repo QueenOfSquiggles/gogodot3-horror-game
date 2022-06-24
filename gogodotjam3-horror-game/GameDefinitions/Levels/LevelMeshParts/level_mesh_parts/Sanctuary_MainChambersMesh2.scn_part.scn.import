@@ -11,4 +11,4 @@ dest_files=[ "res://.import/Sanctuary_MainChambersMesh2.scn_part.scn-d266bd38fba
 
 [params]
 
-test=false
+generate_physical=false

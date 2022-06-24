@@ -11,4 +11,4 @@ dest_files=[ "res://.import/StairsFloor1and2Mesh2.scn_part.scn-91aa5af739e8ea194
 
 [params]
 
-test=false
+generate_physical=false

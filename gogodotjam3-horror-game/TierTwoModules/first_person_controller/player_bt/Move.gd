@@ -68,15 +68,16 @@ func _manage_anim(anim : AnimationPlayer) -> void:
 	# or at least some kind of animation player level logic
 	if anim.is_playing() and not moving:
 		anim.playback_speed = 1.0
-		anim.play("RESET") # reset position
+		anim.play("RESET", 0.1) # reset position, with blend
 		tween.stop_all()
 	elif moving:
 		if not anim.is_playing():
-			anim.play("walking_anim", -1, play_speed)
-		if not tween.is_active() and anim.playback_speed != play_speed:
-			tween.interpolate_property(anim, "playback_speed", anim.playback_speed, play_speed, 0.1, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
+			anim.playback_speed = play_speed
+			anim.play("walking_anim")
+		if not tween.is_active() and abs(anim.playback_speed - play_speed) > 0.1:
+			tween.interpolate_property(anim, "playback_speed", anim.playback_speed, play_speed, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 			tween.start()
-			
+
 func _get_movement(input : Vector2) -> Vector3:
 	var movement :Vector3= (-camera.global_transform.basis.z * input.y) + (camera.global_transform.basis.x * input.x)
 	movement.y = 0

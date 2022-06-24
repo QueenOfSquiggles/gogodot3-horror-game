@@ -11,4 +11,4 @@ dest_files=[ "res://.import/Floor1_BedroomAbbyMesh.scn_part.scn-c89d777a330b43e1
 
 [params]
 
-test=false
+generate_physical=false

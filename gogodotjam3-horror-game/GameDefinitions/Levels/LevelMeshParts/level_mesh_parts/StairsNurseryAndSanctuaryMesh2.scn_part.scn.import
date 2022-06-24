@@ -11,4 +11,4 @@ dest_files=[ "res://.import/StairsNurseryAndSanctuaryMesh2.scn_part.scn-fd8ba1f1
 
 [params]
 
-test=false
+generate_physical=false

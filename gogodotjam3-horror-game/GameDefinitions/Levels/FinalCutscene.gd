@@ -1,6 +1,6 @@
 extends Spatial
 
-export (String) var main_menu_path : String
+export (String) var credit_scroll_path : String
 onready var anim := $AnimationPlayer
 
 func _ready() -> void:
@@ -12,4 +12,4 @@ func _play_final_cutscene() -> void:
 
 func end_cutscene() -> void:
 	Globals.unlock_mouse()
-	SceneManagement.load_scene(main_menu_path)
+	SceneManagement.load_scene(credit_scroll_path)

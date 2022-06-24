@@ -11,4 +11,4 @@ dest_files=[ "res://.import/Nursery_MainHallMesh2.scn_part.scn-9e542c0a85446283e
 
 [params]
 
-test=false
+generate_physical=false

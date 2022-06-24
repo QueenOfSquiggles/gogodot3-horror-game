@@ -11,4 +11,4 @@ dest_files=[ "res://.import/Floor2_BedroomDustinMesh.scn_part.scn-4de3bd081dafac
 
 [params]
 
-test=false
+generate_physical=false

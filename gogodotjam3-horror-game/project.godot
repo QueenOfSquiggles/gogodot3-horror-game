@@ -69,16 +69,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Modules/behaviour_tree/nodes/decorators/decorator.gd"
 }, {
-"base": "Node",
-"class": "DiscordRPC",
-"language": "GDScript",
-"path": "res://addons/godot_editor_discord_presence/Discord RPC/DiscordRPC.gd"
-}, {
-"base": "Reference",
-"class": "DiscordRPCEnum",
-"language": "GDScript",
-"path": "res://addons/godot_editor_discord_presence/Discord RPC/DiscordRPCEnum.gd"
-}, {
 "base": "KinematicBody",
 "class": "FirstPersonCharacterBase",
 "language": "GDScript",
@@ -88,31 +78,6 @@ _global_script_classes=[ {
 "class": "GraphicsPresets",
 "language": "GDScript",
 "path": "res://Globals/settings_management/GraphicsPresets.gd"
-}, {
-"base": "Reference",
-"class": "IPC",
-"language": "GDScript",
-"path": "res://addons/godot_editor_discord_presence/Discord RPC/ipc/IPC.gd"
-}, {
-"base": "Reference",
-"class": "IPCModule",
-"language": "GDScript",
-"path": "res://addons/godot_editor_discord_presence/Discord RPC/ipc/module/IPCModule.gd"
-}, {
-"base": "Reference",
-"class": "IPCPayload",
-"language": "GDScript",
-"path": "res://addons/godot_editor_discord_presence/Discord RPC/ipc/IPCPayload.gd"
-}, {
-"base": "Reference",
-"class": "IPCPipe",
-"language": "GDScript",
-"path": "res://addons/godot_editor_discord_presence/Discord RPC/ipc/pipe/IPCPipe.gd"
-}, {
-"base": "Reference",
-"class": "IPCUtil",
-"language": "GDScript",
-"path": "res://addons/godot_editor_discord_presence/Discord RPC/util/IPCUtil.gd"
 }, {
 "base": "KinematicBody",
 "class": "InteractDoorKeyed",
@@ -159,21 +124,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://TierTwoModules/pickup_items/PickupItemContainer.gd"
 }, {
-"base": "Reference",
-"class": "RichPresence",
-"language": "GDScript",
-"path": "res://addons/godot_editor_discord_presence/Discord RPC/ipc/module/rich presence/RichPresence.gd"
-}, {
-"base": "Reference",
-"class": "RichPresenceButton",
-"language": "GDScript",
-"path": "res://addons/godot_editor_discord_presence/Discord RPC/ipc/module/rich presence/RichPresenceButton.gd"
-}, {
-"base": "IPCModule",
-"class": "RichPresenceModule",
-"language": "GDScript",
-"path": "res://addons/godot_editor_discord_presence/Discord RPC/ipc/module/rich presence/RichPresenceModule.gd"
-}, {
 "base": "Composite",
 "class": "SelectorComposite",
 "language": "GDScript",
@@ -183,11 +133,6 @@ _global_script_classes=[ {
 "class": "SequenceComposite",
 "language": "GDScript",
 "path": "res://Modules/behaviour_tree/nodes/composites/sequence.gd"
-}, {
-"base": "StreamPeerGDNative",
-"class": "StreamPeerUnix",
-"language": "NativeScript",
-"path": "res://addons/godot_editor_discord_presence/godot-unix-socket/unix-socket.gdns"
 }, {
 "base": "Node",
 "class": "SubtitleData",
@@ -213,31 +158,6 @@ _global_script_classes=[ {
 "class": "TimeLimiterDecorator",
 "language": "GDScript",
 "path": "res://Modules/behaviour_tree/nodes/decorators/time_limiter.gd"
-}, {
-"base": "Reference",
-"class": "URLUtil",
-"language": "GDScript",
-"path": "res://addons/godot_editor_discord_presence/Discord RPC/util/URLUtil.gd"
-}, {
-"base": "Reference",
-"class": "UUID",
-"language": "GDScript",
-"path": "res://addons/godot_editor_discord_presence/Discord RPC/util/UUID.gd"
-}, {
-"base": "IPCPipe",
-"class": "UnixPipe",
-"language": "GDScript",
-"path": "res://addons/godot_editor_discord_presence/Discord RPC/ipc/pipe/UnixPipe.gd"
-}, {
-"base": "IPCPayload",
-"class": "UpdateRichPresencePayload",
-"language": "GDScript",
-"path": "res://addons/godot_editor_discord_presence/Discord RPC/ipc/module/rich presence/UpdateRichPresencePayload.gd"
-}, {
-"base": "IPCPipe",
-"class": "WindowsPipe",
-"language": "GDScript",
-"path": "res://addons/godot_editor_discord_presence/Discord RPC/ipc/pipe/WindowsPipe.gd"
 } ]
 _global_script_class_icons={
 "ActionLeaf": "",
@@ -252,15 +172,8 @@ _global_script_class_icons={
 "Composite": "",
 "ConditionLeaf": "",
 "Decorator": "",
-"DiscordRPC": "",
-"DiscordRPCEnum": "",
 "FirstPersonCharacterBase": "",
 "GraphicsPresets": "",
-"IPC": "",
-"IPCModule": "",
-"IPCPayload": "",
-"IPCPipe": "",
-"IPCUtil": "",
 "InteractDoorKeyed": "",
 "InteractionRayCast": "",
 "InverterDecorator": "",
@@ -270,22 +183,13 @@ _global_script_class_icons={
 "ModuleDef": "",
 "PickupItemBase": "",
 "PickupItemContainer": "",
-"RichPresence": "",
-"RichPresenceButton": "",
-"RichPresenceModule": "",
 "SelectorComposite": "",
 "SequenceComposite": "",
-"StreamPeerUnix": "",
 "SubtitleData": "",
 "SubtitlesLayer2D": "",
 "SubtitlesLayer3D": "",
 "SubtitlesLayerDialogue": "",
-"TimeLimiterDecorator": "",
-"URLUtil": "",
-"UUID": "",
-"UnixPipe": "",
-"UpdateRichPresencePayload": "",
-"WindowsPipe": ""
+"TimeLimiterDecorator": ""
 }
 
 [Subtitles]
@@ -339,7 +243,7 @@ scene/scene_naming=1
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/godot_editor_discord_presence/plugin.cfg", "res://addons/squiggles_core/plugin.cfg", "res://addons/subtitles/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/squiggles_core/plugin.cfg", "res://addons/subtitles/plugin.cfg" )
 
 [importer_defaults]
 

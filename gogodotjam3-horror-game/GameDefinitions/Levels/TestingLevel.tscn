@@ -351,8 +351,6 @@ custom_viewport_scale = 2.0
 
 [node name="LevelModel" parent="TestingLevel/Viewport/Spatial" instance=ExtResource( 3 )]
 
-[node name="LevelModel_2" parent="TestingLevel/Viewport/Spatial" instance=ExtResource( 3 )]
-
 [node name="Lighting" type="Spatial" parent="TestingLevel/Viewport/Spatial"]
 
 [node name="DirectionalLight" type="DirectionalLight" parent="TestingLevel/Viewport/Spatial/Lighting"]
@@ -379,7 +377,7 @@ __meta__ = {
 
 [node name="FinalCutscene" type="Spatial" parent="TestingLevel/Viewport/Spatial"]
 script = ExtResource( 16 )
-main_menu_path = "res://Modules/menus/MainMenu.tscn"
+credit_scroll_path = "res://Modules/menus/CreditsScroll.tscn"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TestingLevel/Viewport/Spatial/FinalCutscene"]
 anims/FinalCutscene = SubResource( 1 )

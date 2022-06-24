@@ -11,4 +11,4 @@ dest_files=[ "res://.import/Sanctuary_BedroomMesh2.scn_part.scn-d08b5450b14ce752
 
 [params]
 
-test=false
+generate_physical=false

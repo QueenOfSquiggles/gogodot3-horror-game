@@ -11,4 +11,4 @@ dest_files=[ "res://.import/Floor2_LivingAreaRadioMesh2.scn_part.scn-7524472b503
 
 [params]
 
-test=false
+generate_physical=false

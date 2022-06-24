@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Modules/menus/theming/credits_scroll_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Modules/menus/credits_scroll_parts/CreditsAttributionBlock.tscn" type="PackedScene" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Modules/menus/credits_scroll_parts/CreditsHeader.gd" type="Script" id=4]
 [ext_resource path="res://icon.png" type="Texture" id=5]
 [ext_resource path="res://Modules/menus/CreditsScroll.gd" type="Script" id=6]
+[ext_resource path="res://Globals/music_manager/BackgroundMusic.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Resources/Music/main_theme_proto.ogg" type="AudioStream" id=8]
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -77,9 +79,8 @@ follow_focus = true
 scroll_horizontal_enabled = false
 
 [node name="Credits Entries" type="VBoxContainer" parent="ScrollContainer"]
-margin_top = -5574.0
 margin_right = 896.0
-margin_bottom = 600.0
+margin_bottom = 6218.0
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="ScrollContainer/Credits Entries"]
@@ -326,7 +327,7 @@ rect_min_size = Vector2( 0, 64 )
 [node name="FinalThanks" type="PanelContainer" parent="ScrollContainer/Credits Entries"]
 margin_top = 5993.0
 margin_right = 896.0
-margin_bottom = 6046.0
+margin_bottom = 6090.0
 script = ExtResource( 4 )
 text = "Thank you so much for playing my game! I hope you enjoyed it <3"
 
@@ -334,7 +335,7 @@ text = "Thank you so much for playing my game! I hope you enjoyed it <3"
 margin_left = 1.0
 margin_top = 1.0
 margin_right = 895.0
-margin_bottom = 52.0
+margin_bottom = 96.0
 custom_constants/margin_right = 5
 custom_constants/margin_top = 5
 custom_constants/margin_left = 5
@@ -344,18 +345,22 @@ custom_constants/margin_bottom = 5
 margin_left = 5.0
 margin_top = 5.0
 margin_right = 889.0
-margin_bottom = 46.0
-text = "credits_scroll.final_thanks"
+margin_bottom = 90.0
+text = "Thank you so much for playing my game! I hope you enjoyed it <3"
 align = 1
 autowrap = true
 
 [node name="Spacer_8" type="Control" parent="ScrollContainer/Credits Entries"]
-margin_top = 6110.0
+margin_top = 6154.0
 margin_right = 896.0
-margin_bottom = 6174.0
+margin_bottom = 6218.0
 rect_min_size = Vector2( 0, 64 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "credits_scroll"
 anims/RESET = SubResource( 3 )
 anims/credits_scroll = SubResource( 2 )
+
+[node name="BackgroundMusic" parent="." instance=ExtResource( 7 )]
+cross_fade_time = 5.0
+audio_stream = ExtResource( 8 )

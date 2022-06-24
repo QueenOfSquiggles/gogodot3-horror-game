@@ -11,4 +11,4 @@ dest_files=[ "res://.import/Nursery_PlayroomMesh2.scn_part.scn-1cf5e4a1d32a2f8fb
 
 [params]
 
-test=false
+generate_physical=false

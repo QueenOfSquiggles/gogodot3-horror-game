@@ -11,4 +11,4 @@ dest_files=[ "res://.import/Nursery_BedroomMesh2.scn_part.scn-abd2878d9e7c28337f
 
 [params]
 
-test=false
+generate_physical=false

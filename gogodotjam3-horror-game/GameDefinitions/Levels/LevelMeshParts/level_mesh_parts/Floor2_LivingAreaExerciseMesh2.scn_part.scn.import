@@ -11,4 +11,4 @@ dest_files=[ "res://.import/Floor2_LivingAreaExerciseMesh2.scn_part.scn-ebe5709c
 
 [params]
 
-test=false
+generate_physical=false

@@ -11,4 +11,4 @@ dest_files=[ "res://.import/SurfaceMesh.scn_part.scn-80396242bdc0db434a7ce4b1262
 
 [params]
 
-test=false
+generate_physical=false

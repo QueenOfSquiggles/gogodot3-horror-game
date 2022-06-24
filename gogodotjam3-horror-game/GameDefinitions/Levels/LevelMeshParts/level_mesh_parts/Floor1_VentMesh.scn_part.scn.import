@@ -11,4 +11,4 @@ dest_files=[ "res://.import/Floor1_VentMesh.scn_part.scn-ccdeb20e356af04bf4d79ce
 
 [params]
 
-test=false
+generate_physical=false

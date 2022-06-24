@@ -11,4 +11,4 @@ dest_files=[ "res://.import/Floor1_KitchenMesh.scn_part.scn-99ed001a56d668e38cfa
 
 [params]
 
-test=false
+generate_physical=false

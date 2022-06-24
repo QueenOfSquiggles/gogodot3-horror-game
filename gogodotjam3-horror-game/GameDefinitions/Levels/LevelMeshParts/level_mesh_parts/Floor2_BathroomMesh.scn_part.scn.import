@@ -11,4 +11,4 @@ dest_files=[ "res://.import/Floor2_BathroomMesh.scn_part.scn-76c9790757388832cf5
 
 [params]
 
-test=false
+generate_physical=false

@@ -11,4 +11,4 @@ dest_files=[ "res://.import/Floor2_MainHallMesh.scn_part.scn-43eeb2fd0e377949f56
 
 [params]
 
-test=false
+generate_physical=false

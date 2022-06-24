@@ -11,4 +11,4 @@ dest_files=[ "res://.import/Floor1_EntranceMesh.scn_part.scn-839d025c24a655ac6a6
 
 [params]
 
-test=false
+generate_physical=false
