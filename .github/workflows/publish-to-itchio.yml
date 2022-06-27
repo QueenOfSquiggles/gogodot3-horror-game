@@ -1,8 +1,3 @@
-#
-# Original script by bitbrain.
-# Tutorial here: https://bitbra.in/2020/08/01/publish-godot-game-to-itchio.html
-#
-
 on:
   release:
     types: [published]
