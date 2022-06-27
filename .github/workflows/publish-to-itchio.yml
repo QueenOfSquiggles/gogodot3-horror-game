@@ -21,7 +21,7 @@ jobs:
           ITCH_USER: queenofsquiggles
           PACKAGE: the_ascension_of_the_lamb-windows.zip
           VERSION: ${{ steps.download-windows.outputs.version }}
-release_macos:
+  release_macos:
     runs-on: ubuntu-latest
     steps:
       - name: download MacOS
