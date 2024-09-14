@@ -160,36 +160,36 @@ _global_script_classes=[ {
 "path": "res://Modules/behaviour_tree/nodes/decorators/time_limiter.gd"
 } ]
 _global_script_class_icons={
-"ActionLeaf": "",
-"AlwaysFailDecorator": "",
-"AlwaysSucceedDecorator": "",
+"ActionLeaf": "res://Modules/behaviour_tree/icons/action.svg",
+"AlwaysFailDecorator": "res://Modules/behaviour_tree/icons/fail.svg",
+"AlwaysSucceedDecorator": "res://Modules/behaviour_tree/icons/succeed.svg",
 "AudioLib": "",
 "AudioLib3D": "",
 "BehaviorTree": "",
-"BehaviorTreeNode": "",
-"BehaviorTreeRoot": "",
+"BehaviorTreeNode": "res://Modules/behaviour_tree/icons/action.svg",
+"BehaviorTreeRoot": "res://Modules/behaviour_tree/icons/tree.svg",
 "Blackboard": "",
-"Composite": "",
-"ConditionLeaf": "",
-"Decorator": "",
+"Composite": "res://Modules/behaviour_tree/icons/category_composite.svg",
+"ConditionLeaf": "res://Modules/behaviour_tree/icons/condition.svg",
+"Decorator": "res://Modules/behaviour_tree/icons/category_decorator.svg",
 "FirstPersonCharacterBase": "",
 "GraphicsPresets": "",
 "InteractDoorKeyed": "",
 "InteractionRayCast": "",
-"InverterDecorator": "",
-"Leaf": "",
-"LimiterDecorator": "",
+"InverterDecorator": "res://Modules/behaviour_tree/icons/inverter.svg",
+"Leaf": "res://Modules/behaviour_tree/icons/action.svg",
+"LimiterDecorator": "res://Modules/behaviour_tree/icons/limiter.svg",
 "LoadingScreen": "",
 "ModuleDef": "",
 "PickupItemBase": "",
 "PickupItemContainer": "",
-"SelectorComposite": "",
-"SequenceComposite": "",
+"SelectorComposite": "res://Modules/behaviour_tree/icons/selector.svg",
+"SequenceComposite": "res://Modules/behaviour_tree/icons/sequencer.svg",
 "SubtitleData": "",
 "SubtitlesLayer2D": "",
 "SubtitlesLayer3D": "",
 "SubtitlesLayerDialogue": "",
-"TimeLimiterDecorator": ""
+"TimeLimiterDecorator": "res://Modules/behaviour_tree/icons/limiter.svg"
 }
 
 [Subtitles]
@@ -227,7 +227,6 @@ EventBus="*res://Globals/autoload/EventBus.gd"
 settings/physics_interpolation/enable_warnings=false
 gdscript/warnings/exclude_addons=false
 gdscript/warnings/unused_signal=false
-gdscript/warnings/return_value_discarded=false
 
 [discord_presence]
 
@@ -1395,7 +1394,7 @@ jump={
 }
 use_item={
 "deadzone": 0.5,
-"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"canceled":false,"pressed":false,"doubleclick":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":4,"pressure":0.0,"pressed":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":6,"pressure":0.0,"pressed":false,"script":null)
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":6,"axis_value":1.0,"script":null)
@@ -1409,7 +1408,7 @@ toggle_rotate_item={
 }
 interact={
 "deadzone": 0.5,
-"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"doubleclick":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":5,"pressure":0.0,"pressed":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":7,"pressure":0.0,"pressed":false,"script":null)
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":7,"axis_value":1.0,"script":null)
